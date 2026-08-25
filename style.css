@@ -5509,8 +5509,8 @@ img {
     }
 }
 /* =========================================================
-   ACADEMIC CERTIFICATE BUTTONS
-   Premium compact design for KSET / M.Sc. / B.Sc. cards
+   CREATIVE ACADEMIC CERTIFICATE BUTTONS
+   KSET / M.Sc. / B.Sc.
    ========================================================= */
 
 .about-top-grid .academic-info {
@@ -5523,137 +5523,310 @@ img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 7px;
-    margin-top: 9px;
-    padding: 7px 12px;
+    gap: 10px;
+
+    margin-top: 14px;
+    padding: 10px 16px;
+
     border: 1px solid rgba(37, 99, 235, 0.16);
-    border-radius: 999px;
-    background: linear-gradient(135deg, #f7faff, #eef5ff);
-    color: #1769e0;
-    font-size: 11px;
+    border-radius: 12px;
+
+    background: #ffffff;
+    color: #174a86;
+
+    font-size: 12px;
     font-weight: 800;
     line-height: 1;
-    letter-spacing: .2px;
+    letter-spacing: 0.2px;
+
     text-decoration: none;
-    box-shadow: 0 5px 14px rgba(37, 99, 235, .08);
-    transition: transform .25s ease, box-shadow .25s ease,
-                background .25s ease, border-color .25s ease,
-                color .25s ease;
     white-space: nowrap;
+
+    box-shadow:
+        0 6px 18px rgba(20, 50, 90, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        color 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
 }
 
-.about-top-grid .certificate-button::before {
+.about-top-grid .certificate-button::after {
     content: "";
     position: absolute;
-    inset: -3px;
+    inset: 0;
+
     border-radius: inherit;
-    border: 1px solid rgba(37, 99, 235, 0);
-    transition: border-color .25s ease;
+
+    background: linear-gradient(
+        120deg,
+        transparent 20%,
+        rgba(255,255,255,0.35) 50%,
+        transparent 80%
+    );
+
+    transform: translateX(-120%);
+    transition: transform 0.55s ease;
+
     pointer-events: none;
 }
 
+.about-top-grid .certificate-button:hover::after {
+    transform: translateX(120%);
+}
+
 .about-top-grid .certificate-button span:first-child {
-    font-size: 13px;
+    width: 30px;
+    height: 30px;
+
+    flex: 0 0 30px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: linear-gradient(
+        135deg,
+        #eaf3ff,
+        #d8e9ff
+    );
+
+    font-size: 16px;
     line-height: 1;
+
+    box-shadow:
+        0 4px 10px rgba(37, 99, 235, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
 }
 
 .about-top-grid .certificate-button span:last-child {
-    font-size: 14px;
+    font-size: 17px;
     line-height: 1;
-    transition: transform .25s ease;
+
+    transition: transform 0.3s ease;
 }
 
 .about-top-grid .certificate-button:hover {
     color: #ffffff;
-    background: linear-gradient(135deg, #1769e0, #0b2d56);
+
+    background:
+        linear-gradient(
+            135deg,
+            #1769e0,
+            #0b2d56
+        );
+
     border-color: transparent;
-    transform: translateY(-2px);
-    box-shadow: 0 9px 20px rgba(23, 105, 224, .22);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 28px rgba(23, 105, 224, 0.25);
 }
 
-.about-top-grid .certificate-button:hover::before {
-    border-color: rgba(37, 99, 235, .16);
+.about-top-grid .certificate-button:hover span:first-child {
+    background: rgba(255,255,255,0.18);
+    transform: scale(1.08);
 }
 
 .about-top-grid .certificate-button:hover span:last-child {
-    transform: translateX(3px);
+    transform: translateX(5px);
 }
 
 .about-top-grid .certificate-button:focus-visible {
-    outline: 3px solid rgba(37, 99, 235, .18);
+    outline: 3px solid rgba(37, 99, 235, 0.22);
     outline-offset: 3px;
 }
 
-/* Individual certificate accents */
-.about-top-grid .academic-item:nth-child(1) .certificate-button {
+
+/* =========================================================
+   KSET — BLUE
+   ========================================================= */
+
+.about-top-grid
+.academic-item:nth-child(1)
+.certificate-button {
     color: #164c8b;
+    border-color: rgba(22, 76, 139, 0.18);
 }
 
-.about-top-grid .academic-item:nth-child(1) .certificate-button:hover {
-    color: #ffffff;
-    background: linear-gradient(135deg, #0b2d56, #1769e0);
+.about-top-grid
+.academic-item:nth-child(1)
+.certificate-button span:first-child {
+    background:
+        linear-gradient(
+            135deg,
+            #eaf3ff,
+            #d8e9ff
+        );
 }
 
-.about-top-grid .academic-item:nth-child(2) .certificate-button {
+.about-top-grid
+.academic-item:nth-child(1)
+.certificate-button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #0b2d56,
+            #1769e0
+        );
+}
+
+
+/* =========================================================
+   M.Sc. — GREEN
+   ========================================================= */
+
+.about-top-grid
+.academic-item:nth-child(2)
+.certificate-button {
     color: #247a46;
-    border-color: rgba(62, 154, 93, .18);
-    background: linear-gradient(135deg, #f3fbf5, #eaf8ee);
+    border-color: rgba(62, 154, 93, 0.20);
 }
 
-.about-top-grid .academic-item:nth-child(2) .certificate-button:hover {
-    color: #ffffff;
-    background: linear-gradient(135deg, #1f7a45, #3e9a5d);
+.about-top-grid
+.academic-item:nth-child(2)
+.certificate-button span:first-child {
+    background:
+        linear-gradient(
+            135deg,
+            #eaf9ef,
+            #d8f2e2
+        );
 }
 
-.about-top-grid .academic-item:nth-child(3) .certificate-button {
+.about-top-grid
+.academic-item:nth-child(2)
+.certificate-button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #1f7a45,
+            #3e9a5d
+        );
+}
+
+
+/* =========================================================
+   B.Sc. — PURPLE
+   ========================================================= */
+
+.about-top-grid
+.academic-item:nth-child(3)
+.certificate-button {
     color: #5639b0;
-    border-color: rgba(109, 75, 212, .18);
-    background: linear-gradient(135deg, #f7f4ff, #f0ebff);
+    border-color: rgba(109, 75, 212, 0.20);
 }
 
-.about-top-grid .academic-item:nth-child(3) .certificate-button:hover {
-    color: #ffffff;
-    background: linear-gradient(135deg, #4b32a3, #6d4bd4);
+.about-top-grid
+.academic-item:nth-child(3)
+.certificate-button span:first-child {
+    background:
+        linear-gradient(
+            135deg,
+            #f2edff,
+            #e5dcff
+        );
 }
 
-/* Keep the certificate action from stretching the cards */
+.about-top-grid
+.academic-item:nth-child(3)
+.certificate-button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #4b32a3,
+            #6d4bd4
+        );
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
 @media (min-width: 901px) {
     .about-top-grid .certificate-button {
+        width: fit-content;
         max-width: max-content;
     }
 }
 
-/* Tablet */
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
 @media (max-width: 900px) {
     .about-top-grid .certificate-button {
-        margin-top: 8px;
-        padding: 7px 11px;
-        font-size: 10.5px;
+        margin-top: 10px;
+        padding: 9px 14px;
+        gap: 9px;
+        font-size: 11px;
+    }
+
+    .about-top-grid .certificate-button span:first-child {
+        width: 28px;
+        height: 28px;
+        flex-basis: 28px;
+        font-size: 15px;
     }
 }
 
-/* Mobile */
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 600px) {
     .about-top-grid .certificate-button {
-        margin-top: 7px;
+        margin-top: 9px;
+        padding: 8px 12px;
+        gap: 8px;
+        font-size: 10.5px;
+        border-radius: 10px;
+    }
+
+    .about-top-grid .certificate-button span:first-child {
+        width: 26px;
+        height: 26px;
+        flex-basis: 26px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    .about-top-grid .certificate-button span:last-child {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 380px) {
+    .about-top-grid .certificate-button {
         padding: 7px 10px;
-        gap: 6px;
+        gap: 7px;
         font-size: 10px;
     }
 
     .about-top-grid .certificate-button span:first-child {
-        font-size: 12px;
+        width: 24px;
+        height: 24px;
+        flex-basis: 24px;
+        font-size: 13px;
     }
 
     .about-top-grid .certificate-button span:last-child {
-        font-size: 13px;
-    }
-}
-
-/* Very small screens */
-@media (max-width: 380px) {
-    .about-top-grid .certificate-button {
-        padding: 6px 9px;
-        font-size: 9.5px;
+        font-size: 14px;
     }
 }
