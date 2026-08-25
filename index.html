@@ -26,55 +26,62 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
-<style>
-/* =====================================================
-   ROTATING PROFILE PHOTO + MATHEMATICAL SYMBOLS
-   Added directly to index.html
-   ===================================================== */
 
+
+
+
+
+<style id="final-mobile-fix">
+/* =========================================================
+   FINAL RESPONSIVE HERO FIX
+   This block intentionally comes AFTER the existing hero CSS
+   so it overrides conflicting mobile rules.
+   ========================================================= */
+
+/* Desktop */
 .hero-image.rotating-profile {
     position: relative;
     width: 520px;
     height: 520px;
+    min-width: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
 }
 
-/* Circular orbit line */
 .hero-image.rotating-profile .orbit-ring {
     position: absolute;
     width: 475px;
     height: 475px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
     border: 2px solid rgba(37, 99, 235, 0.22);
     border-radius: 50%;
     z-index: 1;
     pointer-events: none;
 }
 
-/* Profile image */
 .hero-image.rotating-profile .image-circle {
     position: relative;
     width: 390px;
     height: 390px;
-    border-radius: 50%;
     padding: 12px;
-    background: #ffffff;
-    z-index: 5;
-    box-shadow: 0 15px 40px rgba(0, 80, 180, 0.08);
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 50%;
     overflow: hidden;
+    z-index: 5;
 }
 
 .hero-image.rotating-profile .image-circle img {
     width: 100%;
     height: 100%;
-    display: block;
     object-fit: cover;
     border-radius: 50%;
 }
 
-/* The entire symbol group rotates around the photo */
 .hero-image.rotating-profile .symbol-orbit {
     position: absolute;
     width: 475px;
@@ -83,35 +90,29 @@
     top: 50%;
     margin-left: -237.5px;
     margin-top: -237.5px;
-    border-radius: 50%;
     animation: profileSymbolOrbit 16s linear infinite;
     z-index: 10;
     pointer-events: none;
 }
 
-/* Symbol cards */
 .hero-image.rotating-profile .math-symbol {
     position: absolute;
     width: 68px;
     height: 68px;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
-
-    background: rgba(255, 255, 255, 0.97);
-    border: 1px solid rgba(37, 99, 235, 0.08);
+    background: rgba(255,255,255,.97);
+    border: 1px solid rgba(37,99,235,.08);
     border-radius: 18px;
-
     color: #1261df;
     font-size: 30px;
     font-weight: 600;
     line-height: 1;
-
-    box-shadow: 0 10px 30px rgba(0, 80, 180, 0.12);
+    box-shadow: 0 10px 30px rgba(0,80,180,.12);
 }
 
-/* Four starting positions */
 .hero-image.rotating-profile .symbol-one {
     top: -5px;
     left: 65px;
@@ -132,132 +133,318 @@
     right: 65px;
 }
 
-/* Keep each mathematical symbol upright while its card orbits */
 .hero-image.rotating-profile .math-symbol span {
     display: block;
     animation: profileSymbolCounterRotate 16s linear infinite;
 }
 
-/* Orbit animation */
 @keyframes profileSymbolOrbit {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
-/* Counter rotation */
 @keyframes profileSymbolCounterRotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(-360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
 }
 
-/* Pause animation when the user prefers reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .hero-image.rotating-profile .symbol-orbit,
-    .hero-image.rotating-profile .math-symbol span {
-        animation: none;
-    }
-}
 
-/* Mobile */
-@media (max-width: 700px) {
+/* =========================================================
+   TABLETS + PHONES
+   ========================================================= */
 
-    .hero-image.rotating-profile {
-        width: 360px;
-        height: 360px;
+@media screen and (max-width: 900px) {
+
+    html,
+    body {
+        width: 100%;
         max-width: 100%;
+        overflow-x: hidden;
     }
 
-    .hero-image.rotating-profile .orbit-ring,
+    .hero {
+        width: 100%;
+        max-width: 100%;
+        min-height: auto !important;
+        padding: 120px 18px 65px !important;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .hero-container {
+        width: 100% !important;
+        max-width: 680px !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 38px !important;
+        box-sizing: border-box;
+    }
+
+    /* PHOTO FIRST ON PHONE */
+    .hero-image.rotating-profile {
+        order: -1 !important;
+        width: min(88vw, 390px) !important;
+        height: min(88vw, 390px) !important;
+        max-width: 390px !important;
+        max-height: 390px !important;
+        margin: 0 auto !important;
+        flex: 0 0 auto !important;
+    }
+
+    .hero-image.rotating-profile .orbit-ring {
+        width: 88% !important;
+        height: 88% !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        margin: 0 !important;
+    }
+
     .hero-image.rotating-profile .symbol-orbit {
-        width: 330px;
-        height: 330px;
-        margin-left: -165px;
-        margin-top: -165px;
+        width: 88% !important;
+        height: 88% !important;
+        left: 50% !important;
+        top: 50% !important;
+        margin-left: -44% !important;
+        margin-top: -44% !important;
     }
 
     .hero-image.rotating-profile .image-circle {
-        width: 270px;
-        height: 270px;
-        padding: 9px;
+        width: 70% !important;
+        height: 70% !important;
+        padding: 9px !important;
+        border: 0 !important;
     }
 
     .hero-image.rotating-profile .math-symbol {
-        width: 52px;
-        height: 52px;
-        border-radius: 14px;
-        font-size: 24px;
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 14px !important;
+        font-size: 23px !important;
     }
 
     .hero-image.rotating-profile .symbol-one {
-        top: -5px;
-        left: 42px;
+        top: -4px !important;
+        left: 10% !important;
     }
 
     .hero-image.rotating-profile .symbol-two {
-        top: 0;
-        right: 42px;
+        top: -4px !important;
+        right: 10% !important;
     }
 
     .hero-image.rotating-profile .symbol-three {
-        bottom: -5px;
-        left: 42px;
+        bottom: -4px !important;
+        left: 10% !important;
     }
 
     .hero-image.rotating-profile .symbol-four {
-        bottom: -5px;
-        right: 42px;
+        bottom: -4px !important;
+        right: 10% !important;
     }
-}
 
-</style>
+    /* TEXT */
+    .hero-content {
+        width: 100% !important;
+        max-width: 650px !important;
+        min-width: 0 !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+    }
 
-<style>
-/* =====================================================
-   PROFESSIONAL HERO CONTENT
-   ===================================================== */
+    .hero-small-title {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        font-size: 11px !important;
+        line-height: 1.7 !important;
+        letter-spacing: 1.2px !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: normal !important;
+        margin: 0 auto 16px !important;
+    }
 
-.hero-subtitle-line {
-    font-size: 0.72em;
-    font-weight: 600;
-    letter-spacing: 0.2px;
-}
+    .hero h1 {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        font-size: clamp(38px, 12vw, 62px) !important;
+        line-height: 1.05 !important;
+        white-space: normal !important;
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+        margin: 0 auto 14px !important;
+    }
 
-.experience-badge {
-    display: inline-flex;
-    align-items: center;
-    margin: 18px 0 4px;
-    padding: 8px 15px;
-    border-radius: 999px;
-    background: rgba(37, 99, 235, 0.08);
-    color: #1261df;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.2px;
-}
+    .hero h2 {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        font-size: clamp(24px, 7vw, 34px) !important;
+        line-height: 1.25 !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: normal !important;
+        margin: 0 auto 12px !important;
+    }
 
-.hero-description strong {
-    color: #17365d;
-    font-weight: 700;
-}
-
-@media (max-width: 700px) {
     .hero-subtitle-line {
-        font-size: 0.68em;
+        display: inline !important;
+        font-size: .72em !important;
+        line-height: 1.5 !important;
+        white-space: normal !important;
     }
 
     .experience-badge {
-        font-size: 13px;
+        display: inline-flex !important;
+        max-width: 100% !important;
+        margin: 8px auto 18px !important;
+        padding: 7px 13px !important;
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+        white-space: normal !important;
+        box-sizing: border-box !important;
+    }
+
+    .hero-description {
+        display: block !important;
+        width: 100% !important;
+        max-width: 640px !important;
+        margin: 0 auto 25px !important;
+        font-size: 15px !important;
+        line-height: 1.75 !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: normal !important;
+        box-sizing: border-box !important;
+    }
+
+    .hero-buttons {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 12px !important;
     }
 }
 
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+    .hero {
+        padding: 110px 15px 55px !important;
+    }
+
+    .hero-container {
+        gap: 32px !important;
+    }
+
+    .hero-image.rotating-profile {
+        width: min(90vw, 350px) !important;
+        height: min(90vw, 350px) !important;
+        max-width: 350px !important;
+        max-height: 350px !important;
+    }
+
+    .hero-image.rotating-profile .math-symbol {
+        width: 46px !important;
+        height: 46px !important;
+        font-size: 21px !important;
+        border-radius: 12px !important;
+    }
+
+    .hero-image.rotating-profile .symbol-one {
+        left: 8% !important;
+    }
+
+    .hero-image.rotating-profile .symbol-two {
+        right: 8% !important;
+    }
+
+    .hero-image.rotating-profile .symbol-three {
+        left: 8% !important;
+    }
+
+    .hero-image.rotating-profile .symbol-four {
+        right: 8% !important;
+    }
+
+    .hero-small-title {
+        font-size: 10px !important;
+        letter-spacing: 1px !important;
+    }
+
+    .hero h1 {
+        font-size: clamp(36px, 13vw, 50px) !important;
+    }
+
+    .hero h2 {
+        font-size: clamp(22px, 7.5vw, 29px) !important;
+    }
+
+    .hero-description {
+        font-size: 14px !important;
+        line-height: 1.7 !important;
+    }
+
+    .hero-buttons {
+        flex-direction: column !important;
+    }
+
+    .hero-buttons .btn {
+        width: min(100%, 280px) !important;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 380px) {
+
+    .hero {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    .hero-image.rotating-profile {
+        width: 92vw !important;
+        height: 92vw !important;
+    }
+
+    .hero-image.rotating-profile .math-symbol {
+        width: 42px !important;
+        height: 42px !important;
+        font-size: 19px !important;
+    }
+
+    .hero h1 {
+        font-size: 37px !important;
+    }
+
+    .hero h2 {
+        font-size: 22px !important;
+    }
+
+    .hero-small-title {
+        font-size: 9px !important;
+    }
+
+    .hero-description {
+        font-size: 13.5px !important;
+    }
+}
 </style>
 
 </head>
