@@ -2505,6 +2505,92 @@ img {
         0 10px 25px rgba(0,0,0,0.10);
 }
 
+/* =========================================================
+   ACADEMIC SVG ICONS
+   KSET • M.Sc. Mathematics • B.Sc. PME
+   ========================================================= */
+
+.academic-icon .academic-svg {
+    width: 44px;
+    height: 44px;
+    display: block;
+    overflow: visible;
+    flex-shrink: 0;
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.academic-item:hover .academic-svg {
+    transform: scale(1.08) translateY(-1px);
+    filter: drop-shadow(0 5px 8px rgba(0,0,0,0.16));
+}
+
+/* KSET — achievement / qualified */
+.kset-icon {
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.18), transparent 32%),
+        linear-gradient(145deg, #0b2d56, #164c8b);
+}
+
+/* M.Sc. Mathematics — academic / graduation */
+.msc-icon {
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.18), transparent 32%),
+        linear-gradient(145deg, #1f7a45, #3e9a5d);
+}
+
+/* B.Sc. PME — science / mathematics */
+.bsc-icon {
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.18), transparent 32%),
+        linear-gradient(145deg, #4b32a3, #6d4bd4);
+}
+
+/* Keep the icons balanced with the academic timeline on smaller screens */
+@media screen and (max-width: 700px) {
+    .academic-icon {
+        flex-basis: 58px;
+        width: 58px;
+        height: 58px;
+        border-radius: 16px;
+    }
+
+    .academic-icon .academic-svg {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .academic-item {
+        gap: 14px;
+        padding: 17px 16px;
+    }
+
+    .academic-icon {
+        flex-basis: 52px;
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+    }
+
+    .academic-icon .academic-svg {
+        width: 34px;
+        height: 34px;
+    }
+
+    .academic-info h3 {
+        font-size: 18px;
+    }
+
+    .academic-info h4 {
+        font-size: 13px;
+    }
+
+    .academic-info p {
+        font-size: 12.5px;
+    }
+}
+
 
 .kset-icon {
     color: #ffffff;
