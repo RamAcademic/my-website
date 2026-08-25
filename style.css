@@ -4452,8 +4452,8 @@ img {
     top: 8px;
     left: 50%;
     transform: translateX(-50%);
-    width: min(82%,430px);
-    height: 555px;
+    width: min(82%,500px);
+    height: 650px;
     margin: 0;
     border: 5px solid #d7a63a;
     border-radius: 220px 220px 205px 205px;
@@ -5294,10 +5294,7 @@ img {
     }
 
 
-#about .about-photo-circle {
-    width: 500px;
-    height: 700px;
-}
+
 
 
    
