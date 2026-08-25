@@ -5509,79 +5509,194 @@ img {
     }
 }
 /* =========================================================
-   CREATIVE ACADEMIC CERTIFICATE BUTTONS
+   CREATIVE VIEW CERTIFICATE BUTTONS
    KSET / M.Sc. / B.Sc.
    ========================================================= */
 
-.about-top-grid .academic-info {
-    flex: 1 1 auto;
-    min-width: 0;
-}
+/*
+   IMPORTANT:
+   This version targets the certificate links directly inside
+   .academic-item, so the design works even if the HTML uses
+   certificate-link / certificate-btn / view-certificate classes.
+*/
 
-.about-top-grid .certificate-button {
+.academic-item .certificate-button,
+.academic-item .certificate-link,
+.academic-item .certificate-btn,
+.academic-item .view-certificate,
+.academic-item a[href*="certificate"],
+.academic-item a[href$=".pdf"] {
     position: relative;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     gap: 10px;
+
+    width: fit-content;
+    max-width: 100%;
 
     margin-top: 14px;
     padding: 10px 16px;
 
-    border: 1px solid rgba(37, 99, 235, 0.16);
-    border-radius: 12px;
+    border: 1px solid rgba(23, 105, 224, 0.18);
+    border-radius: 14px;
 
-    background: #ffffff;
-    color: #174a86;
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #f7faff
+    );
+
+    color: #164c8b;
 
     font-size: 12px;
     font-weight: 800;
-    line-height: 1;
+    line-height: 1.2;
     letter-spacing: 0.2px;
 
     text-decoration: none;
     white-space: nowrap;
 
     box-shadow:
-        0 6px 18px rgba(20, 50, 90, 0.08);
+        0 7px 20px rgba(20, 50, 90, 0.09);
+
+    overflow: hidden;
 
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        color 0.3s ease,
-        background 0.3s ease,
-        border-color 0.3s ease;
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        color 0.28s ease,
+        background 0.28s ease,
+        border-color 0.28s ease;
 }
 
-.about-top-grid .certificate-button::after {
+/* Shine animation */
+.academic-item .certificate-button::before,
+.academic-item .certificate-link::before,
+.academic-item .certificate-btn::before,
+.academic-item .view-certificate::before,
+.academic-item a[href*="certificate"]::before,
+.academic-item a[href$=".pdf"]::before {
     content: "";
-    position: absolute;
-    inset: 0;
 
-    border-radius: inherit;
+    position: absolute;
+    top: 0;
+    left: -130%;
+
+    width: 70%;
+    height: 100%;
 
     background: linear-gradient(
-        120deg,
-        transparent 20%,
-        rgba(255,255,255,0.35) 50%,
-        transparent 80%
+        110deg,
+        transparent,
+        rgba(255,255,255,0.55),
+        transparent
     );
 
-    transform: translateX(-120%);
-    transition: transform 0.55s ease;
+    transform: skewX(-20deg);
+
+    transition: left 0.65s ease;
 
     pointer-events: none;
 }
 
-.about-top-grid .certificate-button:hover::after {
-    transform: translateX(120%);
+/* Icon / emoji at the beginning */
+.academic-item .certificate-button::after,
+.academic-item .certificate-link::after,
+.academic-item .certificate-btn::after,
+.academic-item .view-certificate::after {
+    content: "↗";
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    order: 3;
+
+    width: 25px;
+    height: 25px;
+
+    margin-left: 2px;
+
+    border-radius: 8px;
+
+    background: #eaf3ff;
+    color: #1769e0;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    transition:
+        transform 0.28s ease,
+        background 0.28s ease,
+        color 0.28s ease;
 }
 
-.about-top-grid .certificate-button span:first-child {
-    width: 30px;
-    height: 30px;
+/* Hover */
+.academic-item .certificate-button:hover,
+.academic-item .certificate-link:hover,
+.academic-item .certificate-btn:hover,
+.academic-item .view-certificate:hover,
+.academic-item a[href*="certificate"]:hover,
+.academic-item a[href$=".pdf"]:hover {
+    color: #ffffff;
 
-    flex: 0 0 30px;
+    background:
+        linear-gradient(
+            135deg,
+            #0b2d56,
+            #1769e0
+        );
+
+    border-color: transparent;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 13px 28px rgba(23, 105, 224, 0.24);
+}
+
+.academic-item .certificate-button:hover::before,
+.academic-item .certificate-link:hover::before,
+.academic-item .certificate-btn:hover::before,
+.academic-item .view-certificate:hover::before,
+.academic-item a[href*="certificate"]:hover::before,
+.academic-item a[href$=".pdf"]:hover::before {
+    left: 140%;
+}
+
+.academic-item .certificate-button:hover::after,
+.academic-item .certificate-link:hover::after,
+.academic-item .certificate-btn:hover::after,
+.academic-item .view-certificate:hover::after {
+    color: #ffffff;
+    background: rgba(255,255,255,0.18);
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   IF THE HTML ALREADY HAS AN ICON SPAN
+   ========================================================= */
+
+.academic-item .certificate-button span,
+.academic-item .certificate-link span,
+.academic-item .certificate-btn span,
+.academic-item .view-certificate span {
+    position: relative;
+    z-index: 2;
+}
+
+.academic-item .certificate-button span:first-child,
+.academic-item .certificate-link span:first-child,
+.academic-item .certificate-btn span:first-child,
+.academic-item .view-certificate span:first-child {
+    width: 28px;
+    height: 28px;
+
+    flex: 0 0 28px;
 
     display: inline-flex;
     align-items: center;
@@ -5592,57 +5707,25 @@ img {
     background: linear-gradient(
         135deg,
         #eaf3ff,
-        #d8e9ff
+        #d9e9ff
     );
 
-    font-size: 16px;
-    line-height: 1;
+    font-size: 15px;
 
     box-shadow:
-        0 4px 10px rgba(37, 99, 235, 0.12);
+        0 4px 10px rgba(37, 99, 235, 0.10);
 
     transition:
-        transform 0.3s ease,
-        background 0.3s ease;
+        transform 0.28s ease,
+        background 0.28s ease;
 }
 
-.about-top-grid .certificate-button span:last-child {
-    font-size: 17px;
-    line-height: 1;
-
-    transition: transform 0.3s ease;
-}
-
-.about-top-grid .certificate-button:hover {
-    color: #ffffff;
-
-    background:
-        linear-gradient(
-            135deg,
-            #1769e0,
-            #0b2d56
-        );
-
-    border-color: transparent;
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 28px rgba(23, 105, 224, 0.25);
-}
-
-.about-top-grid .certificate-button:hover span:first-child {
+.academic-item .certificate-button:hover span:first-child,
+.academic-item .certificate-link:hover span:first-child,
+.academic-item .certificate-btn:hover span:first-child,
+.academic-item .view-certificate:hover span:first-child {
     background: rgba(255,255,255,0.18);
     transform: scale(1.08);
-}
-
-.about-top-grid .certificate-button:hover span:last-child {
-    transform: translateX(5px);
-}
-
-.about-top-grid .certificate-button:focus-visible {
-    outline: 3px solid rgba(37, 99, 235, 0.22);
-    outline-offset: 3px;
 }
 
 
@@ -5650,33 +5733,51 @@ img {
    KSET — BLUE
    ========================================================= */
 
-.about-top-grid
 .academic-item:nth-child(1)
-.certificate-button {
+.certificate-button,
+.academic-item:nth-child(1)
+.certificate-link,
+.academic-item:nth-child(1)
+.certificate-btn,
+.academic-item:nth-child(1)
+.view-certificate,
+.academic-item:nth-child(1)
+a[href*="certificate"],
+.academic-item:nth-child(1)
+a[href$=".pdf"] {
     color: #164c8b;
     border-color: rgba(22, 76, 139, 0.18);
 }
 
-.about-top-grid
 .academic-item:nth-child(1)
-.certificate-button span:first-child {
-    background:
-        linear-gradient(
-            135deg,
-            #eaf3ff,
-            #d8e9ff
-        );
+.certificate-button::after,
+.academic-item:nth-child(1)
+.certificate-link::after,
+.academic-item:nth-child(1)
+.certificate-btn::after,
+.academic-item:nth-child(1)
+.view-certificate::after {
+    background: #eaf3ff;
+    color: #1769e0;
 }
 
-.about-top-grid
 .academic-item:nth-child(1)
-.certificate-button:hover {
-    background:
-        linear-gradient(
-            135deg,
-            #0b2d56,
-            #1769e0
-        );
+.certificate-button:hover,
+.academic-item:nth-child(1)
+.certificate-link:hover,
+.academic-item:nth-child(1)
+.certificate-btn:hover,
+.academic-item:nth-child(1)
+.view-certificate:hover,
+.academic-item:nth-child(1)
+a[href*="certificate"]:hover,
+.academic-item:nth-child(1)
+a[href$=".pdf"]:hover {
+    background: linear-gradient(
+        135deg,
+        #0b2d56,
+        #1769e0
+    );
 }
 
 
@@ -5684,33 +5785,51 @@ img {
    M.Sc. — GREEN
    ========================================================= */
 
-.about-top-grid
 .academic-item:nth-child(2)
-.certificate-button {
+.certificate-button,
+.academic-item:nth-child(2)
+.certificate-link,
+.academic-item:nth-child(2)
+.certificate-btn,
+.academic-item:nth-child(2)
+.view-certificate,
+.academic-item:nth-child(2)
+a[href*="certificate"],
+.academic-item:nth-child(2)
+a[href$=".pdf"] {
     color: #247a46;
     border-color: rgba(62, 154, 93, 0.20);
 }
 
-.about-top-grid
 .academic-item:nth-child(2)
-.certificate-button span:first-child {
-    background:
-        linear-gradient(
-            135deg,
-            #eaf9ef,
-            #d8f2e2
-        );
+.certificate-button::after,
+.academic-item:nth-child(2)
+.certificate-link::after,
+.academic-item:nth-child(2)
+.certificate-btn::after,
+.academic-item:nth-child(2)
+.view-certificate::after {
+    background: #eaf9ef;
+    color: #23834c;
 }
 
-.about-top-grid
 .academic-item:nth-child(2)
-.certificate-button:hover {
-    background:
-        linear-gradient(
-            135deg,
-            #1f7a45,
-            #3e9a5d
-        );
+.certificate-button:hover,
+.academic-item:nth-child(2)
+.certificate-link:hover,
+.academic-item:nth-child(2)
+.certificate-btn:hover,
+.academic-item:nth-child(2)
+.view-certificate:hover,
+.academic-item:nth-child(2)
+a[href*="certificate"]:hover,
+.academic-item:nth-child(2)
+a[href$=".pdf"]:hover {
+    background: linear-gradient(
+        135deg,
+        #1f7a45,
+        #3e9a5d
+    );
 }
 
 
@@ -5718,45 +5837,66 @@ img {
    B.Sc. — PURPLE
    ========================================================= */
 
-.about-top-grid
 .academic-item:nth-child(3)
-.certificate-button {
+.certificate-button,
+.academic-item:nth-child(3)
+.certificate-link,
+.academic-item:nth-child(3)
+.certificate-btn,
+.academic-item:nth-child(3)
+.view-certificate,
+.academic-item:nth-child(3)
+a[href*="certificate"],
+.academic-item:nth-child(3)
+a[href$=".pdf"] {
     color: #5639b0;
     border-color: rgba(109, 75, 212, 0.20);
 }
 
-.about-top-grid
 .academic-item:nth-child(3)
-.certificate-button span:first-child {
-    background:
-        linear-gradient(
-            135deg,
-            #f2edff,
-            #e5dcff
-        );
+.certificate-button::after,
+.academic-item:nth-child(3)
+.certificate-link::after,
+.academic-item:nth-child(3)
+.certificate-btn::after,
+.academic-item:nth-child(3)
+.view-certificate::after {
+    background: #f2edff;
+    color: #6d4bd4;
 }
 
-.about-top-grid
 .academic-item:nth-child(3)
-.certificate-button:hover {
-    background:
-        linear-gradient(
-            135deg,
-            #4b32a3,
-            #6d4bd4
-        );
+.certificate-button:hover,
+.academic-item:nth-child(3)
+.certificate-link:hover,
+.academic-item:nth-child(3)
+.certificate-btn:hover,
+.academic-item:nth-child(3)
+.view-certificate:hover,
+.academic-item:nth-child(3)
+a[href*="certificate"]:hover,
+.academic-item:nth-child(3)
+a[href$=".pdf"]:hover {
+    background: linear-gradient(
+        135deg,
+        #4b32a3,
+        #6d4bd4
+    );
 }
 
 
 /* =========================================================
-   DESKTOP
+   FOCUS / KEYBOARD
    ========================================================= */
 
-@media (min-width: 901px) {
-    .about-top-grid .certificate-button {
-        width: fit-content;
-        max-width: max-content;
-    }
+.academic-item .certificate-button:focus-visible,
+.academic-item .certificate-link:focus-visible,
+.academic-item .certificate-btn:focus-visible,
+.academic-item .view-certificate:focus-visible,
+.academic-item a[href*="certificate"]:focus-visible,
+.academic-item a[href$=".pdf"]:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.25);
+    outline-offset: 3px;
 }
 
 
@@ -5765,18 +5905,26 @@ img {
    ========================================================= */
 
 @media (max-width: 900px) {
-    .about-top-grid .certificate-button {
-        margin-top: 10px;
+    .academic-item .certificate-button,
+    .academic-item .certificate-link,
+    .academic-item .certificate-btn,
+    .academic-item .view-certificate,
+    .academic-item a[href*="certificate"],
+    .academic-item a[href$=".pdf"] {
+        margin-top: 11px;
         padding: 9px 14px;
-        gap: 9px;
+        gap: 8px;
         font-size: 11px;
+        border-radius: 12px;
     }
 
-    .about-top-grid .certificate-button span:first-child {
-        width: 28px;
-        height: 28px;
-        flex-basis: 28px;
-        font-size: 15px;
+    .academic-item .certificate-button span:first-child,
+    .academic-item .certificate-link span:first-child,
+    .academic-item .certificate-btn span:first-child,
+    .academic-item .view-certificate span:first-child {
+        width: 27px;
+        height: 27px;
+        flex-basis: 27px;
     }
 }
 
@@ -5786,47 +5934,53 @@ img {
    ========================================================= */
 
 @media (max-width: 600px) {
-    .about-top-grid .certificate-button {
+    .academic-item .certificate-button,
+    .academic-item .certificate-link,
+    .academic-item .certificate-btn,
+    .academic-item .view-certificate,
+    .academic-item a[href*="certificate"],
+    .academic-item a[href$=".pdf"] {
         margin-top: 9px;
         padding: 8px 12px;
-        gap: 8px;
+        gap: 7px;
         font-size: 10.5px;
-        border-radius: 10px;
+        border-radius: 11px;
     }
 
-    .about-top-grid .certificate-button span:first-child {
-        width: 26px;
-        height: 26px;
-        flex-basis: 26px;
-        font-size: 14px;
-        border-radius: 8px;
+    .academic-item .certificate-button span:first-child,
+    .academic-item .certificate-link span:first-child,
+    .academic-item .certificate-btn span:first-child,
+    .academic-item .view-certificate span:first-child {
+        width: 25px;
+        height: 25px;
+        flex-basis: 25px;
+        font-size: 13px;
     }
 
-    .about-top-grid .certificate-button span:last-child {
-        font-size: 15px;
+    .academic-item .certificate-button::after,
+    .academic-item .certificate-link::after,
+    .academic-item .certificate-btn::after,
+    .academic-item .view-certificate::after {
+        width: 23px;
+        height: 23px;
+        font-size: 13px;
     }
 }
 
 
 /* =========================================================
-   VERY SMALL SCREENS
+   VERY SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 380px) {
-    .about-top-grid .certificate-button {
+    .academic-item .certificate-button,
+    .academic-item .certificate-link,
+    .academic-item .certificate-btn,
+    .academic-item .view-certificate,
+    .academic-item a[href*="certificate"],
+    .academic-item a[href$=".pdf"] {
         padding: 7px 10px;
-        gap: 7px;
+        gap: 6px;
         font-size: 10px;
-    }
-
-    .about-top-grid .certificate-button span:first-child {
-        width: 24px;
-        height: 24px;
-        flex-basis: 24px;
-        font-size: 13px;
-    }
-
-    .about-top-grid .certificate-button span:last-child {
-        font-size: 14px;
     }
 }
