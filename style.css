@@ -5508,3 +5508,152 @@ img {
         padding: 12px;
     }
 }
+/* =========================================================
+   ACADEMIC CERTIFICATE BUTTONS
+   Premium compact design for KSET / M.Sc. / B.Sc. cards
+   ========================================================= */
+
+.about-top-grid .academic-info {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.about-top-grid .certificate-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 9px;
+    padding: 7px 12px;
+    border: 1px solid rgba(37, 99, 235, 0.16);
+    border-radius: 999px;
+    background: linear-gradient(135deg, #f7faff, #eef5ff);
+    color: #1769e0;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: .2px;
+    text-decoration: none;
+    box-shadow: 0 5px 14px rgba(37, 99, 235, .08);
+    transition: transform .25s ease, box-shadow .25s ease,
+                background .25s ease, border-color .25s ease,
+                color .25s ease;
+    white-space: nowrap;
+}
+
+.about-top-grid .certificate-button::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: inherit;
+    border: 1px solid rgba(37, 99, 235, 0);
+    transition: border-color .25s ease;
+    pointer-events: none;
+}
+
+.about-top-grid .certificate-button span:first-child {
+    font-size: 13px;
+    line-height: 1;
+}
+
+.about-top-grid .certificate-button span:last-child {
+    font-size: 14px;
+    line-height: 1;
+    transition: transform .25s ease;
+}
+
+.about-top-grid .certificate-button:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #1769e0, #0b2d56);
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 9px 20px rgba(23, 105, 224, .22);
+}
+
+.about-top-grid .certificate-button:hover::before {
+    border-color: rgba(37, 99, 235, .16);
+}
+
+.about-top-grid .certificate-button:hover span:last-child {
+    transform: translateX(3px);
+}
+
+.about-top-grid .certificate-button:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, .18);
+    outline-offset: 3px;
+}
+
+/* Individual certificate accents */
+.about-top-grid .academic-item:nth-child(1) .certificate-button {
+    color: #164c8b;
+}
+
+.about-top-grid .academic-item:nth-child(1) .certificate-button:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #0b2d56, #1769e0);
+}
+
+.about-top-grid .academic-item:nth-child(2) .certificate-button {
+    color: #247a46;
+    border-color: rgba(62, 154, 93, .18);
+    background: linear-gradient(135deg, #f3fbf5, #eaf8ee);
+}
+
+.about-top-grid .academic-item:nth-child(2) .certificate-button:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #1f7a45, #3e9a5d);
+}
+
+.about-top-grid .academic-item:nth-child(3) .certificate-button {
+    color: #5639b0;
+    border-color: rgba(109, 75, 212, .18);
+    background: linear-gradient(135deg, #f7f4ff, #f0ebff);
+}
+
+.about-top-grid .academic-item:nth-child(3) .certificate-button:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #4b32a3, #6d4bd4);
+}
+
+/* Keep the certificate action from stretching the cards */
+@media (min-width: 901px) {
+    .about-top-grid .certificate-button {
+        max-width: max-content;
+    }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .about-top-grid .certificate-button {
+        margin-top: 8px;
+        padding: 7px 11px;
+        font-size: 10.5px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .about-top-grid .certificate-button {
+        margin-top: 7px;
+        padding: 7px 10px;
+        gap: 6px;
+        font-size: 10px;
+    }
+
+    .about-top-grid .certificate-button span:first-child {
+        font-size: 12px;
+    }
+
+    .about-top-grid .certificate-button span:last-child {
+        font-size: 13px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 380px) {
+    .about-top-grid .certificate-button {
+        padding: 6px 9px;
+        font-size: 9.5px;
+    }
+}
