@@ -447,6 +447,45 @@
 }
 </style>
 
+
+<style id="about-reference-layout">
+/* =========================================================
+   ABOUT REFERENCE LAYOUT HELPERS
+   The main About design is in style.css.
+========================================================= */
+
+.about-top-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.18fr) minmax(230px, .72fr);
+    gap: 45px;
+    align-items: start;
+}
+
+.about-intro-column {
+    min-width: 0;
+}
+
+.intro-divider {
+    width: 100%;
+    height: 1px;
+    margin: 0 0 22px;
+    background: linear-gradient(90deg, #d7a63a, transparent);
+}
+
+@media screen and (max-width: 1100px) {
+    .about-top-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .about-top-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
 </head>
 
 
@@ -639,7 +678,7 @@
 
         <div class="about-profile">
 
-            <div class="about-math-bg">
+            <div class="about-math-bg" aria-hidden="true">
 
                 <span class="math-formula formula-one">
                     ∫ f(x) dx
@@ -663,42 +702,64 @@
 
             </div>
 
+
+            <!-- Profile Photo -->
+
             <div class="about-photo-circle">
 
-                <img src="assets/photo.jpeg"
-                     alt="Mr. Ramesh - Mathematics Educator">
+                <img
+                    src="assets/photo.jpeg"
+                    alt="Mr. Ramesh - Mathematics Educator"
+                >
 
             </div>
 
+
+            <!-- Profile Identity Card -->
+
             <div class="about-profile-card">
 
-                <h3>Mr. Ramesh</h3>
+                <h3>
+                    Mr. Ramesh
+                </h3>
 
-                <p>Mathematics Educator</p>
+                <p>
+                    Mathematics Educator
+                </p>
 
                 <span>
-                    Teaching • Learning • Inspiring
+                    Exploring • Teaching • Inspiring
                 </span>
 
             </div>
 
+
+            <!-- Quote -->
+
             <div class="about-quote">
 
-                <span class="quote-mark">“</span>
+                <span class="quote-mark">
+                    “
+                </span>
 
                 <p>
                     Mathematics is not about numbers,
                     equations or algorithms.
+
                     <strong>
-                        It is about understanding patterns and logic.
+                        It is about understanding
+                        patterns and logic.
                     </strong>
                 </p>
 
-                <span class="quote-mark quote-end">”</span>
+                <span class="quote-mark quote-end">
+                    ”
+                </span>
 
             </div>
 
         </div>
+
 
 
         <!-- =================================================
@@ -706,6 +767,9 @@
         ================================================== -->
 
         <div class="about-content">
+
+
+            <!-- About Header -->
 
             <div class="about-heading">
 
@@ -722,108 +786,148 @@
             </div>
 
 
-            <!-- INTRODUCTION -->
-
-            <div class="about-introduction">
-
-                <p>
-                    I am passionate about making mathematics
-                    simple, intuitive and engaging.
-                </p>
-
-                <p>
-                    My goal is to help students understand the
-                    <strong>“why”</strong> behind every concept
-                    and develop confidence in mathematical
-                    problem solving.
-                </p>
-
-            </div>
-
 
             <!-- =================================================
-                 ACADEMIC JOURNEY
+                 ACADEMIC + INTRODUCTION TWO COLUMN AREA
             ================================================== -->
 
-            <div class="academic-journey">
+            <div class="about-top-grid">
 
-                <!-- KSET -->
+                <!-- Academic Qualifications -->
 
-                <div class="academic-item">
+                <div class="academic-journey">
 
-                    <div class="academic-icon kset-icon">
-                        🏆
+                    <!-- KSET -->
+
+                    <div class="academic-item">
+
+                        <div class="academic-icon kset-icon">
+                            🏆
+                        </div>
+
+                        <div class="academic-info">
+
+                            <h3>
+                                KSET Qualified
+                            </h3>
+
+                            <h4>
+                                Mathematics
+                            </h4>
+
+                            <p>
+                                Karnataka State Eligibility Test
+                                qualified in Mathematics.
+                            </p>
+
+                        </div>
+
                     </div>
 
-                    <div class="academic-info">
 
-                        <h3>
-                            KSET Qualified
-                        </h3>
+                    <!-- M.Sc. Mathematics -->
 
-                        <h4>
-                            Mathematics
-                        </h4>
+                    <div class="academic-item">
 
-                        <p>
-                            Karnataka State Eligibility Test
-                            qualified in Mathematics.
-                        </p>
+                        <div class="academic-icon msc-icon">
+                            🎓
+                        </div>
+
+                        <div class="academic-info">
+
+                            <h3>
+                                M.Sc. Mathematics
+                            </h3>
+
+                            <h4>
+                                Postgraduate Qualification
+                            </h4>
+
+                            <p>
+                                Advanced study of mathematical
+                                concepts, theory and applications.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- B.Sc. PME -->
+
+                    <div class="academic-item">
+
+                        <div class="academic-icon bsc-icon">
+                            ∑
+                        </div>
+
+                        <div class="academic-info">
+
+                            <h3>
+                                B.Sc. in PME
+                            </h3>
+
+                            <h4>
+                                Physics • Mathematics • Electronics
+                            </h4>
+
+                            <p>
+                                A strong foundation across Physics,
+                                Mathematics and Electronics.
+                            </p>
+
+                        </div>
 
                     </div>
 
                 </div>
 
 
-                <!-- M.Sc. -->
 
-                <div class="academic-item">
+                <!-- Introduction + Teaching Approach -->
 
-                    <div class="academic-icon msc-icon">
-                        🎓
-                    </div>
+                <div class="about-intro-column">
 
-                    <div class="academic-info">
-
-                        <h3>
-                            M.Sc. Mathematics
-                        </h3>
-
-                        <h4>
-                            Postgraduate Qualification
-                        </h4>
+                    <div class="about-introduction">
 
                         <p>
-                            Advanced study of mathematical
-                            concepts, theory and applications.
+                            I am passionate about making mathematics
+                            simple, intuitive and engaging.
+                        </p>
+
+                        <div class="intro-divider"></div>
+
+                        <p>
+                            My goal is to help students understand the
+                            <strong>“why”</strong> behind every concept
+                            and develop confidence in mathematical
+                            problem solving.
                         </p>
 
                     </div>
 
-                </div>
 
+                    <!-- Teaching Approach -->
 
-                <!-- B.Sc. PME -->
+                    <div class="about-approach">
 
-                <div class="academic-item">
+                        <div class="approach-title">
 
-                    <div class="academic-icon bsc-icon">
-                        ∑
-                    </div>
+                            <span class="approach-icon">
+                                💡
+                            </span>
 
-                    <div class="academic-info">
+                            <h3>
+                                My Approach
+                            </h3>
 
-                        <h3>
-                            B.Sc. in PME
-                        </h3>
-
-                        <h4>
-                            Physics • Mathematics • Electronics
-                        </h4>
+                        </div>
 
                         <p>
-                            A strong foundation across Physics,
-                            Mathematics and Electronics.
+                            Concept-based learning, structured notes,
+                            real-life examples and step-by-step
+                            explanations to build strong mathematical
+                            foundations.
                         </p>
 
                     </div>
@@ -832,33 +936,6 @@
 
             </div>
 
-
-            <!-- =================================================
-                 TEACHING APPROACH
-            ================================================== -->
-
-            <div class="about-approach">
-
-                <div class="approach-title">
-
-                    <span class="approach-icon">
-                        💡
-                    </span>
-
-                    <h3>
-                        My Teaching Approach
-                    </h3>
-
-                </div>
-
-                <p>
-                    Concept-based learning, structured notes,
-                    real-life examples and step-by-step
-                    explanations to build strong mathematical
-                    foundations.
-                </p>
-
-            </div>
 
 
             <!-- =================================================
@@ -872,11 +949,16 @@
                     <span>📖</span>
 
                     <div>
-                        <h4>Concept Clarity</h4>
+
+                        <h4>
+                            Concept Clarity
+                        </h4>
+
                         <p>
                             Making complex concepts
-                            simple and understandable.
+                            simple and easy to understand.
                         </p>
+
                     </div>
 
                 </div>
@@ -884,14 +966,19 @@
 
                 <div class="about-highlight">
 
-                    <span>🧠</span>
+                    <span>🎯</span>
 
                     <div>
-                        <h4>Problem Solving</h4>
+
+                        <h4>
+                            Problem Solving
+                        </h4>
+
                         <p>
-                            Developing logical thinking
+                            Encouraging logical thinking
                             and mathematical reasoning.
                         </p>
+
                     </div>
 
                 </div>
@@ -899,14 +986,19 @@
 
                 <div class="about-highlight">
 
-                    <span>👨‍🎓</span>
+                    <span>👥</span>
 
                     <div>
-                        <h4>Student Focused</h4>
+
+                        <h4>
+                            Student Focused
+                        </h4>
+
                         <p>
                             Supporting student growth,
                             confidence and success.
                         </p>
+
                     </div>
 
                 </div>
@@ -917,16 +1009,22 @@
                     <span>📈</span>
 
                     <div>
-                        <h4>Continuous Learning</h4>
+
+                        <h4>
+                            Continuous Growth
+                        </h4>
+
                         <p>
-                            Learning, improving and
-                            sharing knowledge.
+                            Always learning and improving
+                            to deliver better.
                         </p>
+
                     </div>
 
                 </div>
 
             </div>
+
 
 
             <!-- =================================================
@@ -953,10 +1051,13 @@
 
                 </div>
 
-                <a href="assets/resume.pdf"
-                   class="resume-button"
-                   target="_blank"
-                   rel="noopener">
+                <a
+                    href="assets/resume.pdf"
+                    class="resume-button"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="View my resume"
+                >
 
                     <span>
                         📄
