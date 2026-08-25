@@ -5508,3 +5508,165 @@ img {
         padding: 12px;
     }
 }
+
+
+/* =========================================================
+   FINAL VISUAL BALANCE PATCH
+   - Wider, cleaner highlight cards
+   - Smaller / more elegant resume box
+   - Better desktop proportions
+   - Keeps mobile responsive
+========================================================= */
+
+/* Main About layout */
+@media (min-width: 1101px) {
+    .about-section {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .about-wrapper {
+        max-width: 1320px;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: 48px;
+    }
+}
+
+/* Four highlights: use a comfortable 2 × 2 layout
+   instead of squeezing four cards into one row */
+@media (min-width: 1101px) {
+    .about-highlights {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .about-highlight {
+        min-height: 145px;
+        padding: 20px 18px;
+        border-radius: 18px;
+    }
+
+    .about-highlight > span {
+        font-size: 27px;
+        margin-bottom: 9px;
+    }
+
+    .about-highlight h4 {
+        font-size: 15px;
+        margin-bottom: 6px;
+    }
+
+    .about-highlight p {
+        font-size: 12.5px;
+        line-height: 1.55;
+    }
+}
+
+/* Resume card — intentionally narrower and more compact */
+@media (min-width: 1101px) {
+    .about-resume {
+        width: min(100%, 760px);
+        max-width: 760px;
+        margin: 20px auto 0;
+        padding: 18px 20px;
+        gap: 15px;
+        border-radius: 18px;
+        min-height: 92px;
+    }
+
+    .resume-icon {
+        width: 50px;
+        height: 50px;
+        flex-basis: 50px;
+        font-size: 21px;
+    }
+
+    .resume-content h3 {
+        font-size: 19px;
+        margin-bottom: 3px;
+    }
+
+    .resume-content p {
+        font-size: 11.5px;
+        line-height: 1.5;
+    }
+
+    .resume-button {
+        padding: 12px 18px;
+        border-radius: 11px;
+        font-size: 11.5px;
+        white-space: nowrap;
+    }
+
+    .resume-button span {
+        font-size: 15px;
+    }
+}
+
+/* Keep the right content visually contained */
+@media (min-width: 1101px) {
+    .about-content {
+        max-width: 860px;
+        width: 100%;
+        margin-left: auto;
+    }
+
+    .about-top-grid {
+        width: 100%;
+    }
+}
+
+/* Tablet: keep highlights readable */
+@media (max-width: 1100px) and (min-width: 901px) {
+    .about-wrapper {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 32px;
+    }
+
+    .about-highlights {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+    }
+
+    .about-highlight {
+        min-height: 135px;
+    }
+
+    .about-resume {
+        width: 100%;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Mobile: one-column highlights and full-width resume */
+@media (max-width: 900px) {
+    .about-highlights {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .about-resume {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+    .about-highlights {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .about-highlight {
+        min-height: auto;
+        padding: 16px;
+    }
+
+    .about-resume {
+        width: 100%;
+        margin-top: 16px;
+    }
+}
+           
