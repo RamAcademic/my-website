@@ -1525,4 +1525,455 @@ img {
         padding: 5px;
     }
 
+
+
+   
+}
+
+/* =====================================================
+   PROFESSIONAL HERO / ROTATING PROFILE
+   ===================================================== */
+
+.hero-image.rotating-profile {
+    position: relative;
+    width: 520px;
+    height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.hero-image.rotating-profile .orbit-ring {
+    position: absolute;
+    width: 475px;
+    height: 475px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgba(37, 99, 235, 0.22);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-image.rotating-profile .image-circle {
+    position: relative;
+    width: 390px;
+    height: 390px;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #ffffff;
+    border: 0;
+    z-index: 5;
+    box-shadow: 0 25px 70px rgba(11,31,58,0.12);
+}
+
+.hero-image.rotating-profile .image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.hero-image.rotating-profile .symbol-orbit {
+    position: absolute;
+    width: 475px;
+    height: 475px;
+    left: 50%;
+    top: 50%;
+    margin-left: -237.5px;
+    margin-top: -237.5px;
+    border-radius: 50%;
+    animation: profileSymbolOrbit 16s linear infinite;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.hero-image.rotating-profile .math-symbol {
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.97);
+    border: 1px solid rgba(37,99,235,0.08);
+    box-shadow: 0 10px 30px rgba(11,31,58,0.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blue);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.hero-image.rotating-profile .symbol-one {
+    top: -5px;
+    left: 65px;
+}
+
+.hero-image.rotating-profile .symbol-two {
+    top: 0;
+    right: 65px;
+}
+
+.hero-image.rotating-profile .symbol-three {
+    bottom: -5px;
+    left: 65px;
+}
+
+.hero-image.rotating-profile .symbol-four {
+    bottom: -5px;
+    right: 65px;
+}
+
+.hero-image.rotating-profile .math-symbol span {
+    display: block;
+    animation: profileSymbolCounterRotate 16s linear infinite;
+}
+
+@keyframes profileSymbolOrbit {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes profileSymbolCounterRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.hero-subtitle-line {
+    display: inline;
+    font-size: 0.72em;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.experience-badge {
+    display: inline-flex;
+    align-items: center;
+    margin: 18px 0 4px;
+    padding: 8px 15px;
+    border-radius: 999px;
+    background: rgba(37,99,235,0.08);
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.hero-description strong {
+    color: #17365d;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .hero {
+        min-height: auto;
+        padding: 125px 20px 70px;
+        overflow: hidden;
+    }
+
+    .hero-container {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 45px;
+    }
+
+    .hero-image,
+    .hero-image.rotating-profile {
+        order: -1;
+        width: min(92vw, 420px);
+        height: min(92vw, 420px);
+        max-width: 420px;
+        max-height: 420px;
+        margin: 0 auto;
+    }
+
+    .hero-image.rotating-profile .orbit-ring {
+        width: 88%;
+        height: 88%;
+    }
+
+    .hero-image.rotating-profile .symbol-orbit {
+        width: 88%;
+        height: 88%;
+        margin-left: -44%;
+        margin-top: -44%;
+    }
+
+    .hero-image.rotating-profile .image-circle {
+        width: 72%;
+        height: 72%;
+        padding: 10px;
+    }
+
+    .hero-image.rotating-profile .math-symbol {
+        width: 54px;
+        height: 54px;
+        border-radius: 15px;
+        font-size: 25px;
+    }
+
+    .hero-image.rotating-profile .symbol-one {
+        top: -4px;
+        left: 12%;
+    }
+
+    .hero-image.rotating-profile .symbol-two {
+        top: -4px;
+        right: 12%;
+    }
+
+    .hero-image.rotating-profile .symbol-three {
+        bottom: -4px;
+        left: 12%;
+    }
+
+    .hero-image.rotating-profile .symbol-four {
+        bottom: -4px;
+        right: 12%;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 680px;
+        min-width: 0;
+        text-align: center;
+    }
+
+    .hero-small-title {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 18px;
+        font-size: 12px;
+        line-height: 1.7;
+        letter-spacing: 1.6px;
+        white-space: normal;
+        overflow-wrap: break-word;
+    }
+
+    .hero h1 {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(42px, 10vw, 68px);
+        line-height: 1.05;
+        margin-bottom: 16px;
+        white-space: normal;
+        overflow-wrap: break-word;
+    }
+
+    .hero h2 {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(25px, 5.5vw, 36px);
+        line-height: 1.3;
+        margin-bottom: 12px;
+        white-space: normal;
+        overflow-wrap: break-word;
+    }
+
+    .hero-subtitle-line {
+        display: inline;
+        font-size: 0.72em;
+        line-height: 1.5;
+    }
+
+    .experience-badge {
+        max-width: 100%;
+        margin: 10px auto 18px;
+        font-size: 13px;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .hero-description {
+        width: 100%;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16px;
+        line-height: 1.75;
+        overflow-wrap: break-word;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 115px 16px 60px;
+    }
+
+    .hero-container {
+        gap: 35px;
+    }
+
+    .hero-image,
+    .hero-image.rotating-profile {
+        width: min(94vw, 360px);
+        height: min(94vw, 360px);
+        max-width: 360px;
+        max-height: 360px;
+    }
+
+    .hero-image.rotating-profile .orbit-ring {
+        width: 88%;
+        height: 88%;
+    }
+
+    .hero-image.rotating-profile .symbol-orbit {
+        width: 88%;
+        height: 88%;
+        margin-left: -44%;
+        margin-top: -44%;
+    }
+
+    .hero-image.rotating-profile .image-circle {
+        width: 70%;
+        height: 70%;
+        padding: 8px;
+    }
+
+    .hero-image.rotating-profile .math-symbol {
+        width: 48px;
+        height: 48px;
+        border-radius: 13px;
+        font-size: 22px;
+    }
+
+    .hero-image.rotating-profile .symbol-one {
+        top: -4px;
+        left: 9%;
+    }
+
+    .hero-image.rotating-profile .symbol-two {
+        top: -4px;
+        right: 9%;
+    }
+
+    .hero-image.rotating-profile .symbol-three {
+        bottom: -4px;
+        left: 9%;
+    }
+
+    .hero-image.rotating-profile .symbol-four {
+        bottom: -4px;
+        right: 9%;
+    }
+
+    .hero-small-title {
+        font-size: 11px;
+        letter-spacing: 1.3px;
+        line-height: 1.7;
+    }
+
+    .hero h1 {
+        font-size: clamp(40px, 13vw, 54px);
+        line-height: 1.08;
+    }
+
+    .hero h2 {
+        font-size: clamp(24px, 7.2vw, 31px);
+        line-height: 1.28;
+    }
+
+    .hero-subtitle-line {
+        font-size: 0.68em;
+    }
+
+    .experience-badge {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: min(100%, 280px);
+    }
+}
+
+
+@media (max-width: 380px) {
+
+    .hero {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    .hero-image,
+    .hero-image.rotating-profile {
+        width: 94vw;
+        height: 94vw;
+        max-width: 340px;
+        max-height: 340px;
+    }
+
+    .hero-image.rotating-profile .math-symbol {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+        border-radius: 12px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero h2 {
+        font-size: 23px;
+    }
+
+    .hero-small-title {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+}
+
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-image.rotating-profile .symbol-orbit,
+    .hero-image.rotating-profile .math-symbol span {
+        animation: none;
+    }
 }
