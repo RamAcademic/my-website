@@ -486,6 +486,724 @@
 }
 </style>
 
+
+
+<style id="about-final-alignment">
+/* =========================================================
+   FINAL ABOUT SECTION — REFERENCE STYLE
+   Targets ONLY #about
+========================================================= */
+
+#about.about-section {
+    padding: 55px 4.5% 75px;
+    background:
+        radial-gradient(circle at 12% 38%, rgba(37,99,235,.045), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+    overflow: hidden;
+}
+
+#about .about-wrapper {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(430px, .92fr) minmax(680px, 1.58fr);
+    gap: 48px;
+    align-items: stretch;
+}
+
+/* ---------------- LEFT PROFILE ---------------- */
+
+#about .about-profile {
+    position: relative;
+    min-height: 835px;
+    height: 100%;
+    padding: 0;
+    overflow: visible;
+}
+
+#about .about-math-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#about .math-formula {
+    position: absolute;
+    color: rgba(37,99,235,.14);
+    font-family: Georgia, "Times New Roman", serif;
+    white-space: nowrap;
+}
+
+#about .formula-one {
+    top: 72px;
+    left: 8px;
+    font-size: 32px;
+}
+
+#about .formula-two {
+    top: 205px;
+    left: 5px;
+    font-size: 26px;
+}
+
+#about .formula-three {
+    top: 335px;
+    right: 8px;
+    font-size: 25px;
+}
+
+#about .formula-four {
+    top: 150px;
+    right: 22px;
+    font-size: 58px;
+}
+
+#about .formula-five {
+    bottom: 245px;
+    left: 22px;
+    font-size: 50px;
+}
+
+/* Photo sits near the top — no large empty area */
+
+#about .about-photo-circle {
+    position: absolute;
+    z-index: 2;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(78%, 430px);
+    height: 545px;
+    margin: 0;
+    border: 5px solid #d7a63a;
+    border-radius: 225px 225px 205px 205px;
+    background: #0a274b;
+    overflow: hidden;
+    box-shadow: 0 28px 65px rgba(5,32,70,.18);
+}
+
+#about .about-photo-circle::after {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+#about .about-photo-circle img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Profile card — above quote, never hidden behind it */
+
+#about .about-profile-card {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    bottom: 185px;
+    transform: translateX(-50%);
+    width: min(86%, 420px);
+    min-height: 145px;
+    margin: 0;
+    padding: 25px 28px;
+    text-align: center;
+    background: linear-gradient(145deg, #071f3c, #0d315b);
+    border: 1px solid rgba(215,166,58,.9);
+    border-radius: 22px;
+    box-shadow: 0 20px 45px rgba(3,26,55,.28);
+    box-sizing: border-box;
+}
+
+#about .about-profile-card h3 {
+    margin: 0 0 5px;
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 29px;
+    letter-spacing: 1px;
+}
+
+#about .about-profile-card p {
+    margin: 0 0 8px;
+    color: #d7a63a;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+#about .about-profile-card span {
+    color: rgba(255,255,255,.85);
+    font-size: 13px;
+}
+
+/* Quote is fully below profile card */
+
+#about .about-quote {
+    position: absolute;
+    z-index: 6;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 205px;
+    margin: 0;
+    padding: 38px 52px 32px 82px;
+    background: rgba(255,255,255,.98);
+    border: 1px solid rgba(37,99,235,.10);
+    border-radius: 25px;
+    box-shadow: 0 20px 48px rgba(20,50,90,.10);
+    box-sizing: border-box;
+}
+
+#about .about-quote p {
+    margin: 0;
+    padding: 0;
+    color: #122846;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    line-height: 1.55;
+}
+
+#about .about-quote strong {
+    display: block;
+    margin-top: 8px;
+    color: #bd8929;
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+#about .quote-mark {
+    position: absolute;
+    top: 17px;
+    left: 25px;
+    color: #d7a63a;
+    font-family: Georgia, serif;
+    font-size: 58px;
+    line-height: 1;
+}
+
+#about .quote-end {
+    left: auto;
+    top: auto;
+    right: 28px;
+    bottom: 8px;
+}
+
+/* ---------------- RIGHT ABOUT PANEL ---------------- */
+
+#about .about-content {
+    position: relative;
+    min-width: 0;
+    padding: 28px 34px 24px;
+    background: rgba(255,255,255,.97);
+    border: 1px solid rgba(37,99,235,.08);
+    border-radius: 27px;
+    box-shadow: 0 18px 55px rgba(20,50,90,.07);
+    box-sizing: border-box;
+}
+
+#about .about-heading {
+    margin: 0 0 30px;
+}
+
+#about .about-label {
+    margin: 0 0 18px;
+    color: #2364d9;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+}
+
+#about .about-heading h2 {
+    margin: 0;
+    color: #0a2242;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 4vw, 61px);
+    line-height: 1.02;
+    letter-spacing: -1.5px;
+}
+
+#about .about-heading h2 span {
+    color: #bd8929;
+}
+
+/* Academic cards + intro */
+
+#about .about-top-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.28fr) minmax(245px, .72fr);
+    gap: 38px;
+    align-items: start;
+}
+
+#about .academic-journey {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 28px;
+}
+
+#about .academic-journey::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 28px;
+    bottom: 28px;
+    width: 2px;
+    background: linear-gradient(to bottom, #0b376d, #2563eb, #32824a);
+}
+
+#about .academic-item {
+    position: relative;
+    min-height: 116px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 19px 22px;
+    background: #fff;
+    border: 1px solid rgba(37,99,235,.11);
+    border-radius: 20px;
+    box-shadow: 0 10px 28px rgba(20,50,90,.055);
+    box-sizing: border-box;
+}
+
+#about .academic-item::before {
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: #2563eb;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 1px rgba(37,99,235,.25);
+}
+
+#about .academic-icon {
+    width: 72px;
+    height: 72px;
+    flex: 0 0 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 30px;
+    box-shadow: 0 9px 22px rgba(0,0,0,.09);
+}
+
+#about .kset-icon {
+    background: linear-gradient(145deg,#0b376d,#174e8d);
+}
+
+#about .msc-icon {
+    background: linear-gradient(145deg,#1c7b44,#319452);
+}
+
+#about .bsc-icon {
+    background: linear-gradient(145deg,#5136a8,#6d4fd1);
+    color: #fff;
+}
+
+#about .academic-info {
+    min-width: 0;
+}
+
+#about .academic-info h3 {
+    margin: 0 0 5px;
+    color: #0a2547;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+#about .academic-info h4 {
+    margin: 0 0 7px;
+    color: #bd8929;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+#about .academic-info p {
+    margin: 0;
+    color: #5a7190;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Introduction */
+
+#about .about-intro-column {
+    min-width: 0;
+}
+
+#about .about-introduction p {
+    margin: 0 0 22px;
+    color: #506987;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+#about .about-introduction strong {
+    color: #0a2547;
+    font-weight: 800;
+}
+
+#about .intro-divider {
+    width: 100%;
+    height: 1px;
+    margin: 0 0 22px;
+    background: linear-gradient(90deg,#d7a63a,transparent);
+}
+
+/* Approach */
+
+#about .about-approach {
+    margin-top: 28px;
+    padding: 22px 22px 21px;
+    background: linear-gradient(135deg,#edf5ff,#f6f9fd);
+    border: 1px solid rgba(37,99,235,.08);
+    border-radius: 20px;
+}
+
+#about .approach-title {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 12px;
+}
+
+#about .approach-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: #fff;
+    font-size: 25px;
+}
+
+#about .approach-title h3 {
+    margin: 0;
+    color: #102b4d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+}
+
+#about .about-approach p {
+    margin: 0;
+    color: #536b86;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+/* ---------------- HIGHLIGHTS ---------------- */
+
+#about .about-highlights {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-top: 24px;
+    padding: 14px 4px;
+    background: #fff;
+    border: 1px solid rgba(37,99,235,.10);
+    border-radius: 18px;
+}
+
+#about .about-highlight {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 14px;
+    border-right: 1px solid rgba(37,99,235,.11);
+}
+
+#about .about-highlight:last-child {
+    border-right: 0;
+}
+
+#about .about-highlight > span {
+    flex: 0 0 auto;
+    font-size: 24px;
+}
+
+#about .about-highlight h4 {
+    margin: 2px 0 5px;
+    color: #0d2a4c;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+#about .about-highlight p {
+    margin: 0;
+    color: #637790;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* ---------------- RESUME ---------------- */
+
+#about .about-resume {
+    margin-top: 20px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    background: linear-gradient(135deg,#fafbfd,#fff);
+    border: 1px solid rgba(37,99,235,.12);
+    border-radius: 18px;
+    box-sizing: border-box;
+}
+
+#about .resume-icon {
+    width: 55px;
+    height: 55px;
+    flex: 0 0 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #092d56;
+    color: #fff;
+    font-size: 23px;
+}
+
+#about .resume-content {
+    flex: 1;
+    min-width: 0;
+}
+
+#about .resume-content h3 {
+    margin: 0 0 3px;
+    color: #102b4d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+}
+
+#about .resume-content p {
+    margin: 0;
+    color: #60758f;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+#about .resume-button {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    padding: 14px 23px;
+    border-radius: 12px;
+    color: #fff;
+    background: linear-gradient(135deg,#092d56,#154f8f);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .4px;
+    box-shadow: 0 9px 23px rgba(9,45,86,.18);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+#about .resume-button:hover {
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 13px 28px rgba(9,45,86,.25);
+}
+
+/* ---------------- TABLET ---------------- */
+
+@media screen and (max-width: 1200px) {
+    #about .about-wrapper {
+        grid-template-columns: minmax(360px,.82fr) minmax(600px,1.18fr);
+        gap: 30px;
+    }
+
+    #about .about-content {
+        padding: 26px 26px 22px;
+    }
+
+    #about .about-top-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    #about .about-photo-circle {
+        width: min(82%,400px);
+        height: 510px;
+    }
+
+    #about .about-profile-card {
+        width: 82%;
+    }
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media screen and (max-width: 850px) {
+    #about.about-section {
+        padding: 55px 18px 70px;
+    }
+
+    #about .about-wrapper {
+        grid-template-columns: 1fr;
+        gap: 42px;
+    }
+
+    #about .about-profile {
+        min-height: 690px;
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #about .about-photo-circle {
+        top: 5px;
+        width: min(78vw,360px);
+        height: 455px;
+    }
+
+    #about .about-profile-card {
+        bottom: 145px;
+        width: min(88%,390px);
+    }
+
+    #about .about-quote {
+        min-height: 185px;
+        padding: 32px 42px 28px 65px;
+    }
+
+    #about .about-content {
+        padding: 27px 20px 22px;
+    }
+
+    #about .about-heading h2 {
+        font-size: clamp(38px,8vw,52px);
+    }
+
+    #about .about-highlights {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    #about .about-highlight {
+        border-bottom: 1px solid rgba(37,99,235,.10);
+    }
+
+    #about .about-highlight:nth-child(2) {
+        border-right: 0;
+    }
+
+    #about .about-highlight:nth-child(3),
+    #about .about-highlight:nth-child(4) {
+        border-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    #about .about-profile {
+        min-height: 620px;
+    }
+
+    #about .about-photo-circle {
+        width: 275px;
+        height: 370px;
+    }
+
+    #about .about-profile-card {
+        bottom: 130px;
+        width: calc(100% - 20px);
+        padding: 20px 16px;
+    }
+
+    #about .about-profile-card h3 {
+        font-size: 23px;
+    }
+
+    #about .about-profile-card p {
+        font-size: 14px;
+    }
+
+    #about .about-profile-card span {
+        font-size: 11px;
+    }
+
+    #about .about-quote {
+        min-height: 165px;
+        padding: 28px 30px 24px 55px;
+    }
+
+    #about .about-quote p {
+        font-size: 14px;
+    }
+
+    #about .about-quote strong {
+        font-size: 16px;
+    }
+
+    #about .quote-mark {
+        left: 17px;
+        font-size: 44px;
+    }
+
+    #about .academic-item {
+        gap: 13px;
+        padding: 15px;
+    }
+
+    #about .academic-icon {
+        width: 55px;
+        height: 55px;
+        flex-basis: 55px;
+        font-size: 23px;
+    }
+
+    #about .academic-info h3 {
+        font-size: 18px;
+    }
+
+    #about .academic-info h4 {
+        font-size: 11px;
+    }
+
+    #about .academic-info p {
+        font-size: 11px;
+    }
+
+    #about .about-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    #about .about-highlight,
+    #about .about-highlight:nth-child(2),
+    #about .about-highlight:nth-child(3) {
+        border-right: 0;
+        border-bottom: 1px solid rgba(37,99,235,.10);
+    }
+
+    #about .about-highlight:last-child {
+        border-bottom: 0;
+    }
+
+    #about .about-resume {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about .resume-button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+</style>
+
 </head>
 
 
