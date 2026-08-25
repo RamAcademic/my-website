@@ -5292,4 +5292,13 @@ img {
     .academic-info p {
         font-size: 9px;
     }
+
+
+#about .about-photo-circle {
+    width: 410px;
+    height: 580px;
+}
+
+
+   
 }
