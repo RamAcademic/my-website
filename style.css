@@ -5669,4 +5669,171 @@ img {
         margin-top: 16px;
     }
 }
-           
+
+
+/* =========================================================
+   ABOUT — HIGHLIGHTS 65% | RESUME 35%
+   Keep both in ONE horizontal row on desktop
+========================================================= */
+
+@media screen and (min-width: 1101px) {
+
+    .about-content {
+        display: grid;
+        grid-template-columns: minmax(0, 65fr) minmax(280px, 35fr);
+        column-gap: 22px;
+        align-items: stretch;
+    }
+
+    .about-heading,
+    .academic-journey {
+        grid-column: 1 / -1;
+    }
+
+    .about-highlights {
+        grid-column: 1;
+        grid-row: 3;
+        width: 100%;
+        margin-bottom: 0;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        align-self: stretch;
+    }
+
+    .about-highlight {
+        min-width: 0;
+        padding: 16px 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .about-highlight > span {
+        font-size: 23px;
+        margin-bottom: 7px;
+    }
+
+    .about-highlight h4 {
+        font-size: 13px;
+        line-height: 1.25;
+        margin-bottom: 6px;
+    }
+
+    .about-highlight p {
+        font-size: 11.5px;
+        line-height: 1.5;
+    }
+
+    .about-resume {
+        grid-column: 2;
+        grid-row: 3;
+        width: 100%;
+        min-width: 0;
+        min-height: 100%;
+        margin: 0;
+        padding: 18px 18px;
+        gap: 12px;
+        border-radius: 18px;
+        align-self: stretch;
+    }
+
+    .resume-icon {
+        flex: 0 0 48px;
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+
+    .resume-content h3 {
+        font-size: 19px;
+    }
+
+    .resume-content p {
+        font-size: 12px;
+        line-height: 1.45;
+    }
+
+    .resume-button {
+        padding: 12px 15px;
+        gap: 7px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .resume-button span {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================================
+   TABLET / MOBILE — STACK CLEANLY
+========================================================= */
+
+@media screen and (max-width: 1100px) {
+
+    .about-content {
+        display: block;
+    }
+
+    .about-highlights,
+    .about-resume {
+        width: 100%;
+    }
+
+    .about-highlights {
+        margin-bottom: 20px;
+    }
+
+    .about-resume {
+        margin-bottom: 0;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+
+    .about-highlights {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .about-resume {
+        flex-wrap: wrap;
+    }
+
+    .resume-content {
+        flex: 1 1 calc(100% - 70px);
+    }
+
+    .resume-button {
+        width: 100%;
+        margin-left: 66px;
+        box-sizing: border-box;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .about-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .about-resume {
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        gap: 12px;
+    }
+
+    .resume-content {
+        min-width: 0;
+    }
+
+    .resume-button {
+        grid-column: 1 / -1;
+        width: 100%;
+        margin-left: 0;
+    }
+}
