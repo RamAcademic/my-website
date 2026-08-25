@@ -5299,3 +5299,212 @@ img {
 
    
 }
+
+
+/* =========================================================
+   FINAL ABOUT PATCH — KSET / M.Sc. / B.Sc. + LEFT APPROACH
+   Works with the updated About HTML
+   ========================================================= */
+
+/* Keep the right side focused on qualifications only */
+.about-top-grid {
+    display: block;
+    width: 100%;
+}
+
+/* Academic journey fills the right panel */
+.about-top-grid .academic-journey {
+    width: 100%;
+    margin: 0 0 24px;
+}
+
+/* Move "My Approach" below the profile identity card
+   on the LEFT side */
+.about-profile > .about-approach {
+    position: absolute;
+    z-index: 7;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: min(92%, 425px);
+    margin: 0;
+    padding: 21px 23px;
+    background:
+        linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+    border: 1px solid rgba(37,99,235,.14);
+    border-left: 4px solid #2563eb;
+    border-radius: 20px;
+    box-shadow: 0 16px 38px rgba(20,50,90,.10);
+    box-sizing: border-box;
+}
+
+/* Approach heading */
+.about-profile > .about-approach .approach-title {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin: 0 0 9px;
+}
+
+.about-profile > .about-approach .approach-icon {
+    width: 43px;
+    height: 43px;
+    flex: 0 0 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    background: #eaf2ff;
+    color: #1769e0;
+    box-shadow: none;
+    font-size: 21px;
+}
+
+.about-profile > .about-approach .approach-title h3 {
+    margin: 0;
+    color: #0b2547;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.about-profile > .about-approach > p {
+    margin: 0;
+    color: #536b86;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+/* Make the academic cards slightly more premium */
+.about-top-grid .academic-item {
+    min-height: 112px;
+    padding: 18px 22px;
+    border-radius: 19px;
+    box-shadow: 0 10px 28px rgba(20,50,90,.065);
+}
+
+.about-top-grid .academic-item:hover {
+    transform: translateX(6px);
+    box-shadow: 0 16px 34px rgba(20,50,90,.11);
+}
+
+/* Highlights and resume remain directly under qualifications */
+.about-content > .about-highlights {
+    margin-top: 4px;
+}
+
+.about-content > .about-resume {
+    margin-top: 18px;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 900px) {
+
+    .about-top-grid {
+        display: block;
+    }
+
+    .about-profile {
+        min-height: 700px;
+    }
+
+    .about-photo-circle {
+        height: 500px;
+        width: min(78%, 390px);
+    }
+
+    .about-profile-card {
+        bottom: 175px;
+    }
+
+    .about-profile > .about-approach {
+        width: min(92%, 390px);
+        bottom: 0;
+    }
+
+    .about-top-grid .academic-item {
+        min-height: 105px;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 600px) {
+
+    .about-profile {
+        min-height: 610px;
+    }
+
+    .about-photo-circle {
+        width: 275px;
+        height: 365px;
+    }
+
+    .about-profile-card {
+        bottom: 125px;
+        width: calc(100% - 30px);
+        padding: 18px 15px;
+    }
+
+    .about-profile > .about-approach {
+        bottom: 0;
+        width: calc(100% - 18px);
+        padding: 17px 18px;
+        border-radius: 17px;
+    }
+
+    .about-profile > .about-approach .approach-icon {
+        width: 39px;
+        height: 39px;
+        flex-basis: 39px;
+        font-size: 19px;
+    }
+
+    .about-profile > .about-approach .approach-title h3 {
+        font-size: 17px;
+    }
+
+    .about-profile > .about-approach > p {
+        font-size: 11.5px;
+        line-height: 1.6;
+    }
+
+    .about-top-grid .academic-item {
+        gap: 12px;
+        padding: 14px;
+        min-height: 100px;
+    }
+
+    .about-content > .about-highlights {
+        margin-top: 10px;
+    }
+}
+
+/* ================= VERY SMALL MOBILE ================= */
+@media (max-width: 380px) {
+
+    .about-profile {
+        min-height: 575px;
+    }
+
+    .about-photo-circle {
+        width: 245px;
+        height: 325px;
+    }
+
+    .about-profile-card {
+        bottom: 115px;
+    }
+
+    .about-profile > .about-approach {
+        width: calc(100% - 12px);
+        padding: 15px 14px;
+    }
+
+    .about-profile > .about-approach > p {
+        font-size: 10.5px;
+    }
+
+    .about-top-grid .academic-item {
+        padding: 12px;
+    }
+}
