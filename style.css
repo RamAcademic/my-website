@@ -5923,3 +5923,161 @@ img {
         margin-left: 0;
     }
 }
+
+
+/* =========================================================
+   ACADEMIC CARDS — WIDE HORIZONTAL FORMAT
+   KSET • M.Sc. Mathematics • B.Sc. in PME
+========================================================= */
+
+@media screen and (min-width: 701px) {
+
+    .academic-journey {
+        width: 100%;
+    }
+
+    .academic-item {
+        width: 100%;
+        min-height: 145px;
+        display: grid;
+        grid-template-columns: 82px minmax(0, 1fr);
+        align-items: center;
+        column-gap: 24px;
+        padding: 22px 28px;
+        box-sizing: border-box;
+    }
+
+    .academic-icon {
+        width: 68px;
+        height: 68px;
+        flex: 0 0 68px;
+        margin: 0;
+    }
+
+    .academic-icon .academic-svg {
+        width: 46px;
+        height: 46px;
+    }
+
+    .academic-info {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .academic-info h3 {
+        margin: 0 0 5px;
+        font-size: 27px;
+        line-height: 1.12;
+        white-space: normal;
+    }
+
+    .academic-info h4 {
+        margin: 0 0 8px;
+        font-size: 17px;
+        line-height: 1.25;
+    }
+
+    .academic-info p {
+        margin: 0;
+        max-width: none;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    /* Keep the timeline marker attached to the card */
+    .academic-item::before {
+        left: -35px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP — GIVE THE ACADEMIC COLUMN REAL WIDTH
+========================================================= */
+
+@media screen and (min-width: 1101px) {
+
+    .about-content {
+        grid-template-columns: minmax(0, 0.85fr) minmax(560px, 1.15fr);
+        column-gap: 42px;
+    }
+
+    .academic-journey {
+        width: 100%;
+        max-width: 760px;
+        justify-self: start;
+    }
+
+    .academic-item {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media screen and (max-width: 1100px) and (min-width: 701px) {
+
+    .academic-journey {
+        max-width: 100%;
+    }
+
+    .academic-item {
+        grid-template-columns: 74px minmax(0, 1fr);
+        column-gap: 20px;
+        padding: 20px 24px;
+    }
+
+    .academic-info h3 {
+        font-size: 24px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media screen and (max-width: 700px) {
+
+    .academic-item {
+        width: 100%;
+        min-height: 0;
+        display: grid;
+        grid-template-columns: 58px minmax(0, 1fr);
+        column-gap: 15px;
+        align-items: center;
+        padding: 17px 16px;
+        box-sizing: border-box;
+    }
+
+    .academic-icon {
+        width: 58px;
+        height: 58px;
+        flex-basis: 58px;
+    }
+
+    .academic-icon .academic-svg {
+        width: 38px;
+        height: 38px;
+    }
+
+    .academic-info h3 {
+        font-size: 20px;
+        line-height: 1.2;
+        margin-bottom: 4px;
+    }
+
+    .academic-info h4 {
+        font-size: 14px;
+        line-height: 1.3;
+        margin-bottom: 6px;
+    }
+
+    .academic-info p {
+        font-size: 13px;
+        line-height: 1.45;
+    }
+}
