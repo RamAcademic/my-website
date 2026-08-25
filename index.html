@@ -26,6 +26,199 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
+<style>
+/* =====================================================
+   ROTATING PROFILE PHOTO + MATHEMATICAL SYMBOLS
+   Added directly to index.html
+   ===================================================== */
+
+.hero-image.rotating-profile {
+    position: relative;
+    width: 520px;
+    height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Circular orbit line */
+.hero-image.rotating-profile .orbit-ring {
+    position: absolute;
+    width: 475px;
+    height: 475px;
+    border: 2px solid rgba(37, 99, 235, 0.22);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Profile image */
+.hero-image.rotating-profile .image-circle {
+    position: relative;
+    width: 390px;
+    height: 390px;
+    border-radius: 50%;
+    padding: 12px;
+    background: #ffffff;
+    z-index: 5;
+    box-shadow: 0 15px 40px rgba(0, 80, 180, 0.08);
+    overflow: hidden;
+}
+
+.hero-image.rotating-profile .image-circle img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* The entire symbol group rotates around the photo */
+.hero-image.rotating-profile .symbol-orbit {
+    position: absolute;
+    width: 475px;
+    height: 475px;
+    left: 50%;
+    top: 50%;
+    margin-left: -237.5px;
+    margin-top: -237.5px;
+    border-radius: 50%;
+    animation: profileSymbolOrbit 16s linear infinite;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Symbol cards */
+.hero-image.rotating-profile .math-symbol {
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid rgba(37, 99, 235, 0.08);
+    border-radius: 18px;
+
+    color: #1261df;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1;
+
+    box-shadow: 0 10px 30px rgba(0, 80, 180, 0.12);
+}
+
+/* Four starting positions */
+.hero-image.rotating-profile .symbol-one {
+    top: -5px;
+    left: 65px;
+}
+
+.hero-image.rotating-profile .symbol-two {
+    top: 0;
+    right: 65px;
+}
+
+.hero-image.rotating-profile .symbol-three {
+    bottom: -5px;
+    left: 65px;
+}
+
+.hero-image.rotating-profile .symbol-four {
+    bottom: -5px;
+    right: 65px;
+}
+
+/* Keep each mathematical symbol upright while its card orbits */
+.hero-image.rotating-profile .math-symbol span {
+    display: block;
+    animation: profileSymbolCounterRotate 16s linear infinite;
+}
+
+/* Orbit animation */
+@keyframes profileSymbolOrbit {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Counter rotation */
+@keyframes profileSymbolCounterRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+/* Pause animation when the user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .hero-image.rotating-profile .symbol-orbit,
+    .hero-image.rotating-profile .math-symbol span {
+        animation: none;
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .hero-image.rotating-profile {
+        width: 360px;
+        height: 360px;
+        max-width: 100%;
+    }
+
+    .hero-image.rotating-profile .orbit-ring,
+    .hero-image.rotating-profile .symbol-orbit {
+        width: 330px;
+        height: 330px;
+        margin-left: -165px;
+        margin-top: -165px;
+    }
+
+    .hero-image.rotating-profile .image-circle {
+        width: 270px;
+        height: 270px;
+        padding: 9px;
+    }
+
+    .hero-image.rotating-profile .math-symbol {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        font-size: 24px;
+    }
+
+    .hero-image.rotating-profile .symbol-one {
+        top: -5px;
+        left: 42px;
+    }
+
+    .hero-image.rotating-profile .symbol-two {
+        top: 0;
+        right: 42px;
+    }
+
+    .hero-image.rotating-profile .symbol-three {
+        bottom: -5px;
+        left: 42px;
+    }
+
+    .hero-image.rotating-profile .symbol-four {
+        bottom: -5px;
+        right: 42px;
+    }
+}
+
+</style>
+
 </head>
 
 
@@ -149,37 +342,36 @@
         </div>
 
 
-        <!-- RIGHT SIDE -->
+        <!-- RIGHT SIDE : PROFILE PHOTO + ROTATING MATH SYMBOLS -->
 
-        <div class="hero-image">
+        <div class="hero-image rotating-profile">
+
+            <div class="orbit-ring"></div>
 
             <div class="image-circle">
-
                 <img src="assets/photo.jpg"
                      alt="Mr. Ramesh Profile Photo">
-
             </div>
 
+            <!-- Mathematical symbols orbiting around the photo -->
+            <div class="symbol-orbit" aria-hidden="true">
 
-            <!-- Mathematical decoration -->
+                <div class="math-symbol symbol-one">
+                    <span>∑</span>
+                </div>
 
-            <div class="math-symbol symbol-one">
-                ∑
-            </div>
+                <div class="math-symbol symbol-two">
+                    <span>π</span>
+                </div>
 
+                <div class="math-symbol symbol-three">
+                    <span>∫</span>
+                </div>
 
-            <div class="math-symbol symbol-two">
-                π
-            </div>
+                <div class="math-symbol symbol-four">
+                    <span>∞</span>
+                </div>
 
-
-            <div class="math-symbol symbol-three">
-                ∫
-            </div>
-
-
-            <div class="math-symbol symbol-four">
-                ∞
             </div>
 
         </div>
