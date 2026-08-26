@@ -5685,14 +5685,14 @@
 
 
 <!-- =====================================================
-     CONTACT SECTION
+     CONTACT SECTION — PREMIUM HTML
 ===================================================== -->
 
 <section class="section contact-section" id="contact">
 
-    <div class="section-heading center">
+    <div class="section-heading center contact-heading">
 
-        <p>
+        <p class="contact-eyebrow">
             CONTACT
         </p>
 
@@ -5705,20 +5705,33 @@
             educational discussions and sharing of resources.
         </span>
 
+        <div class="contact-divider" aria-hidden="true">
+            <i></i>
+            <b>✦</b>
+            <i></i>
+        </div>
+
     </div>
 
 
     <div class="contact-container">
 
 
-        <!-- =================================================
-             EMAIL
-        ================================================== -->
+        <!-- EMAIL -->
 
         <article class="contact-card email-card">
 
             <div class="contact-icon" aria-hidden="true">
-                ✉
+                <svg viewBox="0 0 64 64" role="img">
+                    <rect x="10" y="16" width="44" height="32"
+                          rx="8" fill="none" stroke="currentColor"
+                          stroke-width="3.5"/>
+                    <path d="M13 20l19 15 19-15"
+                          fill="none" stroke="currentColor"
+                          stroke-width="3.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
             </div>
 
             <p class="contact-label">
@@ -5737,7 +5750,7 @@
                class="contact-button"
                aria-label="Send an email to Mr. Ramesh">
 
-                Send Email
+                <span>Send Email</span>
                 <span aria-hidden="true">→</span>
 
             </a>
@@ -5745,14 +5758,30 @@
         </article>
 
 
-        <!-- =================================================
-             WHATSAPP
-        ================================================== -->
+        <!-- WHATSAPP -->
 
         <article class="contact-card whatsapp-card">
 
             <div class="contact-icon" aria-hidden="true">
-                <span>☘</span>
+                <svg viewBox="0 0 64 64" role="img">
+                    <path d="M32 10c-12.15 0-22 9.55-22 21.34
+                             0 4.08 1.2 7.9 3.28 11.12L10 54l12.05-3.1
+                             A22.34 22.34 0 0 0 32 52.68c12.15 0
+                             22-9.55 22-21.34S44.15 10 32 10z"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="3.2"
+                          stroke-linejoin="round"/>
+                    <path d="M24.2 21.2c.8-1 1.7-.7 2.2.2l2.2 4
+                             c.35.7.28 1.3-.25 1.9l-1.35 1.45
+                             c1.45 2.9 3.7 5.1 6.55 6.6l1.45-1.4
+                             c.55-.55 1.2-.65 1.9-.3l4 2.15
+                             c.95.5 1.2 1.45.3 2.25
+                             -1.05.95-2.25 1.55-3.55 1.35
+                             -6.85-1.05-12.45-6.65-13.5-13.5
+                             -.2-1.3.4-2.5 1.4-3.7z"
+                          fill="currentColor"/>
+                </svg>
             </div>
 
             <p class="contact-label">
@@ -5773,7 +5802,7 @@
                rel="noopener noreferrer"
                aria-label="Message Mr. Ramesh on WhatsApp">
 
-                Message Me
+                <span>Message Me</span>
                 <span aria-hidden="true">↗</span>
 
             </a>
@@ -5781,14 +5810,23 @@
         </article>
 
 
-        <!-- =================================================
-             INSTAGRAM
-        ================================================== -->
+        <!-- INSTAGRAM -->
 
         <article class="contact-card instagram-card">
 
             <div class="contact-icon" aria-hidden="true">
-                ◎
+                <svg viewBox="0 0 64 64" role="img">
+                    <rect x="11" y="11" width="42" height="42"
+                          rx="12" fill="none"
+                          stroke="currentColor"
+                          stroke-width="3.5"/>
+                    <circle cx="32" cy="32" r="10"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="3.5"/>
+                    <circle cx="44" cy="20" r="2.8"
+                            fill="currentColor"/>
+                </svg>
             </div>
 
             <p class="contact-label">
@@ -5809,7 +5847,7 @@
                rel="noopener noreferrer"
                aria-label="Visit Mr. Ramesh on Instagram">
 
-                Follow Me
+                <span>Follow Me</span>
                 <span aria-hidden="true">↗</span>
 
             </a>
@@ -5820,9 +5858,7 @@
     </div>
 
 
-    <!-- =================================================
-         CONTACT NOTE
-    ================================================== -->
+    <!-- CONTACT NOTE -->
 
     <div class="contact-note">
 
@@ -6539,4 +6575,3 @@ pdfModal.addEventListener(
         transform: none;
     }
 }
-
