@@ -10695,3 +10695,180 @@ a[href$=".pdf"]:hover {
         position: relative;
     }
 }
+
+/* =====================================================
+   PHD RESEARCH HEADING — GOLD PREMIUM STYLE
+   Matches the Contact heading design
+===================================================== */
+
+#work.phd-research-section > .section-heading {
+    position: relative;
+    z-index: 5;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 1050px !important;
+    margin: 0 auto 64px !important;
+    padding: 0 !important;
+    text-align: center !important;
+}
+
+/* GOLD EYEBROW */
+
+#work.phd-research-section > .section-heading > p {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: fit-content !important;
+    margin: 0 auto 18px !important;
+    padding: 8px 17px !important;
+    border: 1px solid rgba(196,154,58,.28) !important;
+    border-radius: 999px !important;
+    background: rgba(255,255,255,.82) !important;
+    box-shadow:
+        0 8px 22px rgba(11,31,58,.045),
+        inset 0 1px 0 rgba(255,255,255,.95) !important;
+    color: #b1842d !important;
+    font-size: 11px !important;
+    font-weight: 900 !important;
+    letter-spacing: 3px !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase !important;
+}
+
+#work.phd-research-section > .section-heading > p::before {
+    content: "✦";
+    margin-right: 9px;
+    color: #c49a3a;
+    font-size: 10px;
+}
+
+/* MAIN TITLE */
+
+#work.phd-research-section > .section-heading > h2 {
+    position: relative;
+    display: block !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 0 22px !important;
+    color: #092d56 !important;
+    font-family: inherit !important;
+    font-size: clamp(40px, 4.4vw, 66px) !important;
+    font-weight: 800 !important;
+    line-height: 1.08 !important;
+    letter-spacing: -1.7px !important;
+    text-align: center !important;
+}
+
+/* GOLD + BLUE PREMIUM UNDERLINE */
+
+#work.phd-research-section > .section-heading > h2::after {
+    content: "";
+    position: absolute;
+    left: 50% !important;
+    bottom: 0 !important;
+    width: 155px !important;
+    height: 4px !important;
+    border-radius: 999px !important;
+    background: linear-gradient(
+        90deg,
+        #1769e0 0%,
+        #c49a3a 50%,
+        #1769e0 100%
+    ) !important;
+    transform: translateX(-50%) !important;
+    box-shadow:
+        0 3px 10px rgba(23,105,224,.14),
+        0 1px 5px rgba(196,154,58,.15) !important;
+}
+
+/* DESCRIPTION */
+
+#work.phd-research-section > .section-heading > span {
+    display: block !important;
+    width: 100% !important;
+    max-width: 760px !important;
+    margin: 27px auto 0 !important;
+    color: #61748d !important;
+    font-size: 15px !important;
+    line-height: 1.75 !important;
+    text-align: center !important;
+}
+
+/* GOLD TINT FOR THE RESEARCH SUPPORTING LINE */
+
+#work.phd-research-section > .section-heading > span strong,
+#work.phd-research-section > .section-heading > span em {
+    color: #b1842d;
+}
+
+/* ---------- DESKTOP ---------- */
+
+@media (min-width: 901px) {
+
+    #work.phd-research-section > .section-heading > h2 {
+        white-space: nowrap;
+    }
+
+}
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 1000px) and (min-width: 601px) {
+
+    #work.phd-research-section > .section-heading {
+        max-width: 900px !important;
+    }
+
+    #work.phd-research-section > .section-heading > h2 {
+        font-size: clamp(38px, 5vw, 54px) !important;
+        white-space: normal;
+    }
+
+}
+
+/* ---------- PHONE ---------- */
+
+@media (max-width: 600px) {
+
+    #work.phd-research-section {
+        padding-top: 88px;
+    }
+
+    #work.phd-research-section > .section-heading {
+        margin-bottom: 45px !important;
+    }
+
+    #work.phd-research-section > .section-heading > p {
+        margin-bottom: 14px !important;
+        padding: 7px 13px !important;
+        font-size: 9px !important;
+        letter-spacing: 2.2px !important;
+    }
+
+    #work.phd-research-section > .section-heading > h2 {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-bottom: 18px !important;
+        font-size: clamp(32px, 9.5vw, 46px) !important;
+        line-height: 1.1 !important;
+        letter-spacing: -1px !important;
+        white-space: normal !important;
+    }
+
+    #work.phd-research-section > .section-heading > h2::after {
+        width: 105px !important;
+        height: 3px !important;
+    }
+
+    #work.phd-research-section > .section-heading > span {
+        max-width: 520px !important;
+        margin-top: 22px !important;
+        font-size: 12.5px !important;
+        line-height: 1.7 !important;
+    }
+
+}
