@@ -1292,39 +1292,86 @@ img {
 }
 
 /* =====================================================
-   NOTES — BRANCH / SEMESTER / RESOURCE HUB
+   NOTES — MATHEMATICS RESOURCE HUB
 ===================================================== */
 
 .notes-section {
     position: relative;
+    isolation: isolate;
     width: 100%;
     max-width: none;
-    padding: 115px 25px 110px;
-    background:
-        radial-gradient(circle at 8% 10%, rgba(23,105,224,0.08), transparent 24%),
-        radial-gradient(circle at 92% 78%, rgba(124,58,237,0.07), transparent 26%),
-        linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+    padding: 110px 25px 105px;
     overflow: hidden;
+    background:
+        radial-gradient(circle at 7% 15%, rgba(23,105,224,.09), transparent 25%),
+        radial-gradient(circle at 94% 78%, rgba(124,58,237,.065), transparent 25%),
+        linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
 }
 
 .notes-section::before {
     content: "";
     position: absolute;
     inset: 0;
+    z-index: -2;
     pointer-events: none;
     background-image:
-        linear-gradient(rgba(23,105,224,0.028) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(23,105,224,0.028) 1px, transparent 1px);
-    background-size: 38px 38px;
-    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+        linear-gradient(rgba(23,105,224,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23,105,224,.025) 1px, transparent 1px);
+    background-size: 36px 36px;
+    mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
 }
+
+.notes-section::after {
+    content: "∫   Σ   π   √   ∞";
+    position: absolute;
+    right: 3%;
+    top: 135px;
+    z-index: -1;
+    color: rgba(23,105,224,.035);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 6vw, 88px);
+    letter-spacing: 13px;
+    transform: rotate(-7deg);
+    pointer-events: none;
+}
+
+/* Heading */
 
 .notes-heading {
     position: relative;
     z-index: 2;
-    max-width: 800px;
-    margin: 0 auto 58px;
+    max-width: 820px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.notes-heading > p {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    padding: 7px 13px;
+    border: 1px solid rgba(23,105,224,.14);
+    border-radius: 999px;
+    background: rgba(234,242,255,.78);
+    color: var(--blue);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.notes-heading > p::before {
+    content: "✦";
+}
+
+.notes-heading h2 {
+    margin-bottom: 13px;
+    color: var(--navy);
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.08;
+    letter-spacing: -1.7px;
 }
 
 .notes-heading h2 span {
@@ -1332,54 +1379,60 @@ img {
 }
 
 .notes-heading > span {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    display: block;
+    max-width: 690px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 14px;
     line-height: 1.8;
 }
 
-/* Branch accordion */
+/* Branches */
 
 .notes-branches {
     position: relative;
     z-index: 2;
-    width: min(1120px, 100%);
-    margin: 0 auto;
+    width: min(1160px, 100%);
+    margin: auto;
     display: grid;
-    gap: 18px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
 }
 
 .notes-branch {
-    border: 1px solid rgba(23,105,224,0.12);
-    border-radius: 22px;
-    background: rgba(255,255,255,0.92);
+    position: relative;
+    min-width: 0;
+    border: 1px solid rgba(23,105,224,.12);
+    border-radius: 20px;
+    background: rgba(255,255,255,.94);
     box-shadow:
-        0 12px 35px rgba(11,31,58,0.055),
-        inset 0 1px 0 rgba(255,255,255,0.95);
+        0 12px 30px rgba(11,31,58,.055),
+        inset 0 1px 0 rgba(255,255,255,.95);
     overflow: hidden;
-    transition:
-        border-color 0.3s ease,
-        box-shadow 0.3s ease,
-        transform 0.3s ease;
+    transition: .35s ease;
 }
 
 .notes-branch:hover {
-    border-color: rgba(23,105,224,0.25);
-    box-shadow: 0 18px 45px rgba(11,31,58,0.09);
+    transform: translateY(-4px);
+    border-color: rgba(23,105,224,.25);
+    box-shadow: 0 20px 42px rgba(11,31,58,.09);
 }
 
 .notes-branch[open] {
-    border-color: rgba(23,105,224,0.25);
+    grid-column: 1 / -1;
+    transform: none;
+    border-color: rgba(23,105,224,.25);
+    box-shadow: 0 20px 48px rgba(11,31,58,.09);
 }
 
 .notes-branch-header {
     position: relative;
-    min-height: 84px;
-    padding: 16px 22px;
+    min-height: 105px;
+    padding: 17px 18px;
     display: grid;
-    grid-template-columns: 58px minmax(0, 1fr) auto 32px;
+    grid-template-columns: 58px minmax(0,1fr) 30px;
     align-items: center;
-    gap: 15px;
+    gap: 13px;
     cursor: pointer;
     list-style: none;
     user-select: none;
@@ -1392,15 +1445,27 @@ img {
 
 .notes-branch-header::marker,
 .notes-semester-header::marker {
-    display: none;
     content: "";
 }
 
-.notes-branch-header:focus-visible,
-.notes-semester-header:focus-visible,
-.notes-resource-link:focus-visible {
-    outline: 3px solid rgba(23,105,224,0.22);
-    outline-offset: 3px;
+.notes-branch-header::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 0;
+    height: 3px;
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--blue), #7c3aed);
+    opacity: 0;
+    transform: scaleX(.25);
+    transform-origin: left;
+    transition: .35s ease;
+}
+
+.notes-branch[open] .notes-branch-header::after {
+    opacity: 1;
+    transform: scaleX(1);
 }
 
 .notes-branch-icon {
@@ -1409,177 +1474,204 @@ img {
     display: grid;
     place-items: center;
     border-radius: 17px;
-    background: linear-gradient(145deg, #ffffff, #eaf2ff);
-    border: 1px solid rgba(23,105,224,0.13);
+    background: linear-gradient(145deg,#fff,#eaf2ff);
+    border: 1px solid rgba(23,105,224,.12);
     color: var(--blue);
-    font-size: 25px;
+    font-size: 24px;
     font-weight: 800;
-    box-shadow: 0 9px 24px rgba(23,105,224,0.09);
-    transition: transform 0.35s ease, border-radius 0.35s ease;
+    box-shadow: 0 9px 23px rgba(23,105,224,.09);
+    transition: .35s ease;
 }
 
 .notes-branch[open] .notes-branch-icon {
     transform: rotate(-4deg) scale(1.05);
     border-radius: 20px;
+    background: linear-gradient(145deg,#1769e0,#4d8fee);
+    color: #fff;
 }
 
 .notes-branch-title {
     min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 3px;
 }
 
 .notes-branch-title strong {
     color: var(--navy);
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.2;
-    letter-spacing: -0.2px;
 }
 
 .notes-branch-title small {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1.45;
 }
 
 .notes-branch-meta {
-    padding: 7px 12px;
-    border: 1px solid rgba(23,105,224,0.12);
-    border-radius: 999px;
-    background: var(--blue-light);
-    color: var(--blue);
-    font-size: 11px;
-    font-weight: 800;
-    white-space: nowrap;
+    display: none;
 }
 
 .notes-branch-arrow,
 .notes-semester-arrow {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     display: grid;
     place-items: center;
     border-radius: 50%;
-    background: #f4f7fb;
+    background: #f3f6fa;
     color: var(--blue);
-    font-size: 20px;
+    font-size: 19px;
     line-height: 1;
-    font-weight: 400;
-    transition:
-        transform 0.35s ease,
-        background 0.3s ease,
-        color 0.3s ease;
+    transition: .3s ease;
 }
 
 .notes-branch[open] .notes-branch-arrow,
 .notes-semester[open] .notes-semester-arrow {
     transform: rotate(45deg);
     background: var(--blue);
-    color: #ffffff;
+    color: #fff;
 }
 
-/* Branch content */
+/* Branch body */
 
 .notes-branch-content {
-    padding: 0 22px 24px;
+    padding: 0 20px 23px;
+    border-top: 1px solid rgba(23,105,224,.08);
+    background: linear-gradient(180deg,rgba(247,250,255,.82),#fff);
 }
+
+.notes-branch-content::before {
+    content: "CHOOSE A SEMESTER";
+    display: block;
+    padding: 17px 3px 11px;
+    color: #62748d;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+/* Semesters */
 
 .notes-semester-list {
     display: grid;
-    gap: 12px;
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    gap: 10px;
 }
 
-/* Semester accordion */
-
 .notes-semester {
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    background: #ffffff;
+    min-width: 0;
+    border: 1px solid rgba(23,105,224,.12);
+    border-radius: 14px;
+    background: #fff;
     overflow: hidden;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: .3s ease;
 }
 
 .notes-semester:hover {
-    border-color: rgba(23,105,224,0.18);
+    transform: translateY(-2px);
+    border-color: rgba(23,105,224,.28);
+    box-shadow: 0 11px 25px rgba(11,31,58,.06);
 }
 
 .notes-semester[open] {
-    border-color: rgba(23,105,224,0.22);
-    box-shadow: 0 10px 30px rgba(11,31,58,0.055);
+    grid-column: 1 / -1;
+    border-color: rgba(23,105,224,.27);
+    box-shadow: 0 15px 34px rgba(11,31,58,.075);
 }
 
 .notes-semester-header {
-    min-height: 66px;
-    padding: 12px 15px;
+    min-height: 68px;
+    padding: 11px 13px;
     display: grid;
-    grid-template-columns: 42px minmax(0, 1fr) 32px;
+    grid-template-columns: 41px minmax(0,1fr) 29px;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     cursor: pointer;
     list-style: none;
     user-select: none;
 }
 
 .notes-semester-icon {
-    width: 42px;
-    height: 42px;
+    width: 41px;
+    height: 41px;
     display: grid;
     place-items: center;
-    border-radius: 13px;
-    background: #f1f6ff;
+    border-radius: 12px;
+    background: var(--blue-light);
+    border: 1px solid rgba(23,105,224,.10);
     color: var(--blue);
-    font-size: 18px;
-    border: 1px solid rgba(23,105,224,0.10);
+    font-size: 17px;
+    transition: .3s ease;
+}
+
+.notes-semester[open] .notes-semester-icon {
+    background: var(--blue);
+    color: #fff;
 }
 
 .notes-semester-title {
     min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    gap: 2px;
 }
 
 .notes-semester-title strong {
     color: var(--navy);
-    font-size: 15px;
-    line-height: 1.3;
+    font-size: 13px;
+    line-height: 1.25;
 }
 
 .notes-semester-title small {
     color: var(--muted);
-    font-size: 11px;
+    font-size: 9px;
 }
+
+.notes-semester[open] .notes-semester-header {
+    background: linear-gradient(135deg,#eef5ff,#fff);
+}
+
+/* Resource area */
 
 .notes-semester-content {
-    padding: 0 15px 17px;
+    padding: 0 13px 16px;
+    border-top: 1px solid rgba(23,105,224,.08);
 }
 
-/* Inner headings */
+.notes-semester[open] .notes-semester-content {
+    animation: notesContentIn .32s ease both;
+}
+
+@keyframes notesContentIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 .notes-subheading {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin: 5px 0 14px;
+    gap: 10px;
+    margin: 17px 0 12px;
 }
 
 .notes-subheading span {
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(23,105,224,0.18));
+    background: linear-gradient(90deg,transparent,rgba(23,105,224,.18));
 }
 
 .notes-subheading span:last-child {
-    background: linear-gradient(90deg, rgba(23,105,224,0.18), transparent);
+    background: linear-gradient(90deg,rgba(23,105,224,.18),transparent);
 }
 
 .notes-subheading h3 {
     margin: 0;
     color: #53677f;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 800;
-    letter-spacing: 1.7px;
+    letter-spacing: 1.6px;
     text-transform: uppercase;
     white-space: nowrap;
 }
@@ -1589,40 +1681,35 @@ img {
 .notes-resource-card {
     position: relative;
     display: grid;
-    grid-template-columns: 52px minmax(0, 1fr) auto;
+    grid-template-columns: 48px minmax(0,1fr) auto;
     align-items: center;
-    gap: 14px;
-    min-height: 76px;
-    padding: 12px 14px;
+    gap: 13px;
+    min-height: 70px;
+    padding: 11px 13px;
     border: 1px solid var(--border);
-    border-radius: 15px;
-    background: #ffffff;
+    border-radius: 14px;
+    background: #fff;
     overflow: hidden;
-    transition:
-        transform 0.3s cubic-bezier(.2,.75,.25,1),
-        border-color 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
+    transition: .28s ease;
 }
 
 .notes-resource-card::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 0;
-    bottom: 0;
+    top: 11px;
+    bottom: 11px;
     width: 3px;
+    border-radius: 0 6px 6px 0;
     background: var(--blue);
-    transform: scaleY(0.35);
-    transform-origin: center;
-    transition: transform 0.3s ease;
+    transform: scaleY(.25);
+    transition: .28s ease;
 }
 
 .notes-resource-card:hover {
     transform: translateY(-3px);
-    border-color: rgba(23,105,224,0.20);
-    background: #fbfdff;
-    box-shadow: 0 12px 28px rgba(11,31,58,0.07);
+    border-color: rgba(23,105,224,.22);
+    box-shadow: 0 12px 27px rgba(11,31,58,.065);
 }
 
 .notes-resource-card:hover::before {
@@ -1630,16 +1717,17 @@ img {
 }
 
 .notes-resource-icon {
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
     display: grid;
     place-items: center;
-    border-radius: 15px;
-    background: linear-gradient(145deg, #ffffff, #eaf2ff);
-    border: 1px solid rgba(23,105,224,0.11);
+    border-radius: 14px;
+    background: linear-gradient(145deg,#fff,#eaf2ff);
+    border: 1px solid rgba(23,105,224,.10);
     color: var(--blue);
+    font-family: Georgia,"Times New Roman",serif;
     font-size: 20px;
-    box-shadow: 0 7px 18px rgba(23,105,224,0.07);
+    box-shadow: 0 7px 17px rgba(23,105,224,.06);
 }
 
 .notes-resource-content {
@@ -1647,104 +1735,74 @@ img {
 }
 
 .notes-resource-content h4 {
-    margin: 0 0 3px;
+    margin: 0 0 2px;
     color: var(--navy);
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.35;
 }
 
 .notes-resource-content p {
     margin: 0;
     color: var(--muted);
-    font-size: 11px;
-    line-height: 1.5;
+    font-size: 10.5px;
+    line-height: 1.45;
 }
 
 .notes-resource-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 7px;
-    min-height: 38px;
-    padding: 8px 12px;
-    border: 1px solid rgba(23,105,224,0.14);
-    border-radius: 10px;
+    gap: 6px;
+    min-height: 34px;
+    padding: 7px 11px;
+    border: 1px solid rgba(23,105,224,.16);
+    border-radius: 9px;
     background: #f5f9ff;
     color: var(--blue);
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 800;
     white-space: nowrap;
-    transition:
-        color 0.25s ease,
-        background 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease;
+    transition: .25s ease;
 }
 
 .notes-resource-link span {
-    font-size: 15px;
-    line-height: 1;
-    transition: transform 0.25s ease;
+    font-size: 14px;
+    transition: .25s ease;
 }
 
 .notes-resource-link:hover {
+    color: #fff;
     background: var(--blue);
     border-color: var(--blue);
-    color: #ffffff;
-    transform: translateX(2px);
 }
 
 .notes-resource-link:hover span {
     transform: translateX(3px);
 }
 
-/* Syllabus and Question Bank identities */
+/* Syllabus */
 
 .notes-resource-card.syllabus-card {
-    margin-bottom: 18px;
-    border-color: rgba(23,105,224,0.17);
-    background:
-        linear-gradient(135deg, rgba(234,242,255,0.75), #ffffff 70%);
+    margin-bottom: 15px;
+    border-color: rgba(23,105,224,.18);
+    background: linear-gradient(110deg,#eef5ff 0%,#fff 72%);
+}
+
+.notes-resource-card.syllabus-card::before {
+    background: linear-gradient(180deg,#1769e0,#4f8ff0);
 }
 
 .notes-resource-card.syllabus-card .notes-resource-icon {
-    background: linear-gradient(145deg, #ffffff, #e4efff);
+    color: #fff;
+    background: linear-gradient(145deg,#1769e0,#4f8ff0);
+    border-color: transparent;
 }
 
-.notes-resource-card.question-bank-card {
-    margin-top: 18px;
-    border-color: rgba(124,58,237,0.15);
-    background:
-        linear-gradient(135deg, rgba(246,241,255,0.78), #ffffff 70%);
-}
-
-.notes-resource-card.question-bank-card::before {
-    background: linear-gradient(180deg, #7c3aed, #a855f7);
-}
-
-.notes-resource-card.question-bank-card .notes-resource-icon {
-    color: #7c3aed;
-    background: linear-gradient(145deg, #ffffff, #f1eaff);
-    border-color: rgba(124,58,237,0.12);
-}
-
-.notes-resource-card.question-bank-card .notes-resource-link {
-    color: #7c3aed;
-    background: #faf7ff;
-    border-color: rgba(124,58,237,0.15);
-}
-
-.notes-resource-card.question-bank-card .notes-resource-link:hover {
-    color: #ffffff;
-    background: #7c3aed;
-    border-color: #7c3aed;
-}
-
-/* Module grid */
+/* Modules */
 
 .notes-module-grid {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(5,minmax(0,1fr));
     gap: 10px;
 }
 
@@ -1752,17 +1810,15 @@ img {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    justify-content: flex-start;
-    min-height: 185px;
-    padding: 15px;
-    gap: 11px;
+    min-height: 168px;
+    padding: 14px;
+    gap: 9px;
 }
 
 .notes-module-grid .notes-resource-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 13px;
-    font-size: 17px;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
 }
 
 .notes-module-grid .notes-resource-content {
@@ -1770,213 +1826,217 @@ img {
 }
 
 .notes-module-grid .notes-resource-content h4 {
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .notes-module-grid .notes-resource-content p {
-    font-size: 10.5px;
+    font-size: 9.5px;
 }
 
 .notes-module-grid .notes-resource-link {
     width: 100%;
     margin-top: auto;
-    min-height: 34px;
-    padding: 7px 9px;
-    font-size: 10px;
+    min-height: 32px;
+    padding: 6px 8px;
 }
 
-/* Bottom information strip */
+/* Module accents */
+
+.notes-module-grid .notes-resource-card:nth-child(1)::before { background:#1769e0; }
+.notes-module-grid .notes-resource-card:nth-child(2)::before { background:#159a62; }
+.notes-module-grid .notes-resource-card:nth-child(3)::before { background:#f07924; }
+.notes-module-grid .notes-resource-card:nth-child(4)::before { background:#7047d8; }
+.notes-module-grid .notes-resource-card:nth-child(5)::before { background:#1599b5; }
+
+.notes-module-grid .notes-resource-card:nth-child(2) .notes-resource-icon {
+    color:#159a62;
+    background:#eefaf4;
+}
+
+.notes-module-grid .notes-resource-card:nth-child(3) .notes-resource-icon {
+    color:#f07924;
+    background:#fff5ed;
+}
+
+.notes-module-grid .notes-resource-card:nth-child(4) .notes-resource-icon {
+    color:#7047d8;
+    background:#f6f1ff;
+}
+
+.notes-module-grid .notes-resource-card:nth-child(5) .notes-resource-icon {
+    color:#1599b5;
+    background:#effbfe;
+}
+
+/* Question bank */
+
+.notes-resource-card.question-bank-card {
+    margin-top: 15px;
+    border-color: rgba(21,154,98,.20);
+    background: linear-gradient(110deg,#eefaf4 0%,#fff 72%);
+}
+
+.notes-resource-card.question-bank-card::before {
+    background: linear-gradient(180deg,#159a62,#36b77d);
+}
+
+.notes-resource-card.question-bank-card .notes-resource-icon {
+    color:#fff;
+    background:linear-gradient(145deg,#159a62,#36b77d);
+    border-color:transparent;
+}
+
+.notes-resource-card.question-bank-card .notes-resource-link {
+    color:#148457;
+    background:#f2fbf6;
+    border-color:rgba(21,154,98,.20);
+}
+
+.notes-resource-card.question-bank-card .notes-resource-link:hover {
+    color:#fff;
+    background:#159a62;
+    border-color:#159a62;
+}
+
+/* Bottom help strip */
 
 .notes-access-note {
     position: relative;
     z-index: 2;
-    width: min(1120px, 100%);
-    margin: 30px auto 0;
-    padding: 18px 22px;
+    width: min(1160px,100%);
+    margin: 27px auto 0;
+    padding: 15px 18px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    border: 1px solid rgba(23,105,224,0.12);
-    border-radius: 17px;
-    background: rgba(255,255,255,0.82);
-    box-shadow: 0 10px 30px rgba(11,31,58,0.045);
+    gap: 12px;
+    border: 1px solid rgba(23,105,224,.11);
+    border-radius: 15px;
+    background: rgba(255,255,255,.84);
+    box-shadow: 0 9px 25px rgba(11,31,58,.04);
 }
 
 .notes-access-icon {
-    flex: 0 0 38px;
-    width: 38px;
-    height: 38px;
+    flex: 0 0 35px;
+    width: 35px;
+    height: 35px;
     display: grid;
     place-items: center;
     border-radius: 50%;
-    background: #eaf7f1;
-    color: #16805d;
+    background: #eaf8f1;
+    color: #159a62;
     font-weight: 900;
 }
 
 .notes-access-note strong {
     display: block;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
     color: var(--navy);
-    font-size: 13px;
+    font-size: 11px;
 }
 
 .notes-access-note p {
     margin: 0;
     color: var(--muted);
-    font-size: 12px;
-    line-height: 1.5;
+    font-size: 10px;
+    line-height: 1.45;
 }
 
-/* Notes responsive */
+/* Responsive */
 
 @media (max-width: 1050px) {
-    .notes-module-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    .notes-branches {
+        grid-template-columns: repeat(2,minmax(0,1fr));
     }
 
-    .notes-module-grid .notes-resource-card {
-        min-height: 175px;
+    .notes-branch[open] {
+        grid-column: 1 / -1;
+    }
+
+    .notes-module-grid {
+        grid-template-columns: repeat(3,minmax(0,1fr));
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
     .notes-section {
-        padding: 90px 18px 85px;
+        padding: 85px 14px 78px;
+    }
+
+    .notes-section::after {
+        top: 150px;
+        right: -18px;
+        font-size: 45px;
+        letter-spacing: 7px;
     }
 
     .notes-heading {
-        margin-bottom: 42px;
-    }
-
-    .notes-branch-header {
-        grid-template-columns: 52px minmax(0, 1fr) 32px;
-        padding: 14px 16px;
-    }
-
-    .notes-branch-icon {
-        width: 52px;
-        height: 52px;
-    }
-
-    .notes-branch-meta {
-        display: none;
-    }
-
-    .notes-branch-content {
-        padding: 0 14px 17px;
-    }
-
-    .notes-module-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .notes-resource-card {
-        grid-template-columns: 48px minmax(0, 1fr);
-    }
-
-    .notes-resource-link {
-        grid-column: 2;
-        justify-self: start;
-    }
-
-    .notes-resource-card.syllabus-card,
-    .notes-resource-card.question-bank-card {
-        grid-template-columns: 48px minmax(0, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .notes-section {
-        padding: 80px 13px 75px;
+        margin-bottom: 38px;
     }
 
     .notes-heading h2 {
-        font-size: clamp(30px, 9vw, 42px);
+        font-size: clamp(31px,9vw,44px);
     }
 
     .notes-heading > span {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .notes-branches {
-        gap: 13px;
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
-    .notes-branch {
-        border-radius: 18px;
+    .notes-branch[open] {
+        grid-column: 1;
     }
 
     .notes-branch-header {
-        min-height: 72px;
-        grid-template-columns: 46px minmax(0, 1fr) 29px;
+        min-height: 76px;
+        padding: 11px 13px;
+        grid-template-columns: 46px minmax(0,1fr) 28px;
         gap: 10px;
-        padding: 12px;
     }
 
     .notes-branch-icon {
         width: 46px;
         height: 46px;
         border-radius: 14px;
-        font-size: 21px;
+        font-size: 20px;
     }
 
     .notes-branch-title strong {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .notes-branch-title small {
-        font-size: 10px;
-    }
-
-    .notes-branch-arrow,
-    .notes-semester-arrow {
-        width: 29px;
-        height: 29px;
-        font-size: 18px;
+        font-size: 9px;
     }
 
     .notes-branch-content {
-        padding: 0 9px 12px;
+        padding: 0 10px 15px;
     }
 
-    .notes-semester {
-        border-radius: 14px;
+    .notes-semester-list {
+        grid-template-columns: 1fr;
+    }
+
+    .notes-semester[open] {
+        grid-column: 1;
     }
 
     .notes-semester-header {
-        min-height: 59px;
-        grid-template-columns: 37px minmax(0, 1fr) 29px;
-        padding: 10px;
-        gap: 9px;
+        min-height: 60px;
+        grid-template-columns: 38px minmax(0,1fr) 27px;
+        padding: 9px 10px;
     }
 
     .notes-semester-icon {
-        width: 37px;
-        height: 37px;
-        border-radius: 11px;
-        font-size: 16px;
-    }
-
-    .notes-semester-title strong {
-        font-size: 13px;
-    }
-
-    .notes-semester-title small {
-        font-size: 9px;
+        width: 38px;
+        height: 38px;
     }
 
     .notes-semester-content {
-        padding: 0 9px 12px;
-    }
-
-    .notes-subheading {
-        margin-top: 2px;
-    }
-
-    .notes-subheading h3 {
-        font-size: 9px;
-        letter-spacing: 1.3px;
+        padding: 0 9px 13px;
     }
 
     .notes-module-grid {
@@ -1987,77 +2047,36 @@ img {
     .notes-module-grid .notes-resource-card {
         min-height: 0;
         display: grid;
-        grid-template-columns: 43px minmax(0, 1fr) auto;
+        grid-template-columns: 42px minmax(0,1fr) auto;
         align-items: center;
-        padding: 10px;
-        gap: 10px;
+        padding: 9px 10px;
     }
 
     .notes-module-grid .notes-resource-icon {
-        width: 43px;
-        height: 43px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .notes-module-grid .notes-resource-content h4,
+    .notes-module-grid .notes-resource-content p {
+        text-align: left;
     }
 
     .notes-module-grid .notes-resource-link {
-        grid-column: auto;
         width: auto;
         margin-top: 0;
-        min-height: 32px;
     }
 
     .notes-resource-card.syllabus-card,
     .notes-resource-card.question-bank-card {
-        grid-template-columns: 43px minmax(0, 1fr);
-        padding: 10px;
+        grid-template-columns: 42px minmax(0,1fr);
     }
 
     .notes-resource-card.syllabus-card .notes-resource-link,
     .notes-resource-card.question-bank-card .notes-resource-link {
         grid-column: 2;
+        justify-self: start;
         width: max-content;
-        max-width: 100%;
-    }
-
-    .notes-resource-icon {
-        width: 43px;
-        height: 43px;
-        border-radius: 12px;
-        font-size: 18px;
-    }
-
-    .notes-resource-content h4 {
-        font-size: 12px;
-    }
-
-    .notes-resource-content p {
-        font-size: 9.5px;
-    }
-
-    .notes-resource-link {
-        min-height: 32px;
-        padding: 6px 9px;
-        font-size: 9.5px;
-    }
-
-    .notes-access-note {
-        align-items: flex-start;
-        padding: 15px;
-        gap: 11px;
-        border-radius: 15px;
-    }
-
-    .notes-access-icon {
-        flex-basis: 34px;
-        width: 34px;
-        height: 34px;
-    }
-
-    .notes-access-note strong {
-        font-size: 12px;
-    }
-
-    .notes-access-note p {
-        font-size: 10.5px;
     }
 }
 
@@ -2067,25 +2086,17 @@ img {
         padding-right: 10px;
     }
 
-    .notes-branch-header {
-        padding: 10px;
-    }
-
-    .notes-branch-title strong {
-        font-size: 15px;
-    }
-
+    .notes-branch-content,
     .notes-semester-content {
         padding-left: 7px;
         padding-right: 7px;
     }
 
     .notes-module-grid .notes-resource-card {
-        grid-template-columns: 39px minmax(0, 1fr);
+        grid-template-columns: 39px minmax(0,1fr);
     }
 
-    .notes-module-grid .notes-resource-icon,
-    .notes-resource-icon {
+    .notes-module-grid .notes-resource-icon {
         width: 39px;
         height: 39px;
     }
@@ -2093,6 +2104,17 @@ img {
     .notes-module-grid .notes-resource-link {
         grid-column: 2;
         justify-self: start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .notes-section *,
+    .notes-section *::before,
+    .notes-section *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
     }
 }
 
