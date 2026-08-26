@@ -10497,3 +10497,201 @@ a[href$=".pdf"]:hover {
         transition: none;
     }
 }
+
+
+/* =========================================================
+   FINAL CONTACT HEADING ALIGNMENT OVERRIDE
+   CONTACT
+      ↓
+   LET'S CONNECT
+      ↓
+   UNDERLINE
+      ↓
+   DESCRIPTION
+========================================================= */
+
+#contact.contact-section .section-heading,
+.contact-section .section-heading {
+    position: relative !important;
+    z-index: 5 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: min(100%, 900px) !important;
+    max-width: 900px !important;
+    margin: 0 auto 66px !important;
+    padding: 0 !important;
+    text-align: center !important;
+}
+
+/* CONTACT label — always on its own line */
+#contact.contact-section .section-heading > p,
+.contact-section .section-heading > p {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin: 0 auto 18px !important;
+    padding: 8px 18px !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+    order: 1 !important;
+}
+
+/* Let's Connect — second line */
+#contact.contact-section .section-heading > h2,
+.contact-section .section-heading > h2 {
+    display: block !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 0 22px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    order: 2 !important;
+}
+
+/* Underline stays attached to Let's Connect */
+#contact.contact-section .section-heading > h2::after,
+.contact-section .section-heading > h2::after {
+    left: 50% !important;
+    right: auto !important;
+    bottom: 0 !important;
+    width: 190px !important;
+    height: 4px !important;
+    transform: translateX(-50%) !important;
+}
+
+/* Description — below underline */
+#contact.contact-section .section-heading > span,
+.contact-section .section-heading > span {
+    display: block !important;
+    flex: 0 0 auto !important;
+    width: min(100%, 720px) !important;
+    max-width: 720px !important;
+    margin: 29px auto 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    order: 3 !important;
+}
+
+/* Contact heading responsive */
+@media (max-width: 700px) {
+    #contact.contact-section .section-heading,
+    .contact-section .section-heading {
+        width: 100% !important;
+        margin-bottom: 45px !important;
+    }
+
+    #contact.contact-section .section-heading > p,
+    .contact-section .section-heading > p {
+        margin-bottom: 14px !important;
+        padding: 7px 13px !important;
+        font-size: 9px !important;
+        letter-spacing: 2px !important;
+    }
+
+    #contact.contact-section .section-heading > h2,
+    .contact-section .section-heading > h2 {
+        width: 100% !important;
+        font-size: clamp(34px, 10vw, 46px) !important;
+        line-height: 1.08 !important;
+        letter-spacing: -1px !important;
+        white-space: normal !important;
+    }
+
+    #contact.contact-section .section-heading > h2::after,
+    .contact-section .section-heading > h2::after {
+        width: 120px !important;
+        height: 3px !important;
+    }
+
+    #contact.contact-section .section-heading > span,
+    .contact-section .section-heading > span {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-top: 24px !important;
+        padding: 0 5px !important;
+        font-size: 12px !important;
+        line-height: 1.7 !important;
+    }
+}
+
+@media (max-width: 390px) {
+    #contact.contact-section .section-heading > p,
+    .contact-section .section-heading > p {
+        font-size: 8.5px !important;
+        letter-spacing: 1.6px !important;
+    }
+
+    #contact.contact-section .section-heading > h2,
+    .contact-section .section-heading > h2 {
+        font-size: 32px !important;
+    }
+
+    #contact.contact-section .section-heading > h2::after,
+    .contact-section .section-heading > h2::after {
+        width: 105px !important;
+    }
+}
+
+/* =====================================================
+   CONTACT — DESKTOP FINAL ALIGNMENT
+   Phone layout is already working; this fixes only desktop.
+===================================================== */
+
+@media (min-width: 901px) {
+
+    #contact .section-heading.contact-heading {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: 900px !important;
+        margin: 0 auto 66px !important;
+        text-align: center !important;
+    }
+
+    #contact .section-heading.contact-heading .contact-eyebrow {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: fit-content !important;
+        margin: 0 auto 18px !important;
+        order: 1 !important;
+    }
+
+    #contact .section-heading.contact-heading h2 {
+        display: block !important;
+        width: fit-content !important;
+        margin: 0 auto !important;
+        order: 2 !important;
+        text-align: center !important;
+    }
+
+    #contact .section-heading.contact-heading h2::after {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    #contact .section-heading.contact-heading > span {
+        display: block !important;
+        width: 100% !important;
+        max-width: 760px !important;
+        margin: 28px auto 0 !important;
+        order: 3 !important;
+        text-align: center !important;
+    }
+
+    /* Prevent any old global .center/.section-heading rule
+       from making the eyebrow and title sit in one row. */
+    #contact .section-heading.contact-heading > * {
+        float: none !important;
+        position: relative;
+    }
+}
