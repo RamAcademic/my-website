@@ -7285,3 +7285,443 @@ a[href$=".pdf"]:hover {
         font-size: 10px;
     }
 }
+
+
+/* =====================================================
+   NOTES — GOLD ACCENT + BRANCH VISUAL ENHANCEMENT
+   Premium academic / mathematics portal styling
+===================================================== */
+
+.notes-section {
+    background:
+        radial-gradient(circle at 7% 12%, rgba(23,105,224,.075), transparent 24%),
+        radial-gradient(circle at 90% 72%, rgba(190,151,62,.075), transparent 24%),
+        linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
+}
+
+.notes-heading > p {
+    border-color: rgba(190,151,62,.28);
+    background: linear-gradient(135deg, #fffdf7, #f7fbff);
+    color: #9b7626;
+    box-shadow: 0 8px 24px rgba(190,151,62,.08);
+}
+
+.notes-heading > p::before {
+    color: #c49a3a;
+}
+
+.notes-heading h2::after {
+    width: 72px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue), #c49a3a, var(--blue));
+}
+
+.notes-heading-flow b {
+    color: #9b7626;
+}
+
+.notes-heading-flow i {
+    color: #c7a75b;
+}
+
+/* Branch grid */
+
+.notes-branches {
+    gap: 18px;
+}
+
+/* Individual branch cards */
+
+.notes-branch {
+    border: 1px solid rgba(23,105,224,.13);
+    border-radius: 22px;
+    background:
+        linear-gradient(145deg, rgba(255,255,255,.98), rgba(248,251,255,.94));
+    box-shadow:
+        0 12px 30px rgba(11,31,58,.055),
+        0 1px 0 rgba(255,255,255,.95) inset;
+    transition:
+        transform .35s cubic-bezier(.2,.75,.25,1),
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+/* Gold hairline around branch cards */
+
+.notes-branch::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+        135deg,
+        rgba(196,154,58,.46),
+        transparent 28%,
+        transparent 70%,
+        rgba(196,154,58,.22)
+    );
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: .7;
+}
+
+.notes-branch:hover {
+    transform: translateY(-7px);
+    border-color: rgba(196,154,58,.36);
+    box-shadow:
+        0 22px 48px rgba(11,31,58,.10),
+        0 0 0 1px rgba(196,154,58,.06),
+        0 8px 24px rgba(196,154,58,.07);
+}
+
+/* Branch top accent */
+
+.notes-branch-header::after {
+    left: 16px;
+    right: 16px;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--blue),
+        #c49a3a 48%,
+        var(--blue)
+    );
+}
+
+/* Branch icons */
+
+.notes-branch-icon {
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(145deg, #ffffff 8%, #edf4ff 58%, #fff9e9 100%);
+    border-color: rgba(196,154,58,.24);
+    color: var(--blue);
+    box-shadow:
+        0 9px 23px rgba(23,105,224,.08),
+        0 2px 10px rgba(196,154,58,.08);
+}
+
+.notes-branch-icon::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 50%;
+    background: rgba(196,154,58,.15);
+    transition: transform .35s ease;
+}
+
+.notes-branch:hover .notes-branch-icon::after {
+    transform: scale(2.2);
+}
+
+.notes-branch[open] .notes-branch-icon {
+    background: linear-gradient(145deg, #1769e0, #3f82e7 62%, #c49a3a);
+    border-color: #c49a3a;
+    box-shadow:
+        0 12px 28px rgba(23,105,224,.18),
+        0 0 0 3px rgba(196,154,58,.09);
+}
+
+/* Branch title */
+
+.notes-branch-title strong {
+    position: relative;
+    width: fit-content;
+}
+
+.notes-branch-title strong::after {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin-top: 5px;
+    border-radius: 99px;
+    background: #c49a3a;
+    transition: width .3s ease;
+}
+
+.notes-branch:hover .notes-branch-title strong::after,
+.notes-branch[open] .notes-branch-title strong::after {
+    width: 42px;
+}
+
+/* Branch arrows */
+
+.notes-branch-arrow {
+    border: 1px solid rgba(196,154,58,.18);
+    background: linear-gradient(145deg,#f8fafc,#fffaf0);
+    color: #a37d2b;
+}
+
+.notes-branch[open] .notes-branch-arrow {
+    background: linear-gradient(145deg,#1769e0,#c49a3a);
+    border-color: #c49a3a;
+    color: #fff;
+}
+
+/* -----------------------------------------------------
+   Four branch identities
+----------------------------------------------------- */
+
+/* CSE */
+.notes-branch:nth-child(1) {
+    background:
+        linear-gradient(145deg, #ffffff 0%, #f6faff 72%, #fffaf0 100%);
+}
+
+.notes-branch:nth-child(1) .notes-branch-icon {
+    color: #1769e0;
+}
+
+/* ECE */
+.notes-branch:nth-child(2) {
+    background:
+        linear-gradient(145deg, #ffffff 0%, #f7fbff 68%, #fffaf2 100%);
+}
+
+.notes-branch:nth-child(2) .notes-branch-icon {
+    color: #0f766e;
+    border-color: rgba(196,154,58,.25);
+    background: linear-gradient(145deg,#ffffff,#eafaf7,#fffaf0);
+}
+
+/* CIVIL */
+.notes-branch:nth-child(3) {
+    background:
+        linear-gradient(145deg, #ffffff 0%, #faf9ff 68%, #fffaf2 100%);
+}
+
+.notes-branch:nth-child(3) .notes-branch-icon {
+    color: #7047d8;
+    border-color: rgba(196,154,58,.25);
+    background: linear-gradient(145deg,#ffffff,#f3efff,#fffaf0);
+}
+
+/* MECHANICAL */
+.notes-branch:nth-child(4) {
+    background:
+        linear-gradient(145deg, #ffffff 0%, #f8fbfc 68%, #fffaf2 100%);
+}
+
+.notes-branch:nth-child(4) .notes-branch-icon {
+    color: #b45309;
+    border-color: rgba(196,154,58,.28);
+    background: linear-gradient(145deg,#ffffff,#fff5e8,#fffaf0);
+}
+
+/* Open branch gets stronger identity */
+
+.notes-branch:nth-child(1)[open] .notes-branch-icon {
+    background: linear-gradient(145deg,#1769e0,#3f82e7,#c49a3a);
+}
+
+.notes-branch:nth-child(2)[open] .notes-branch-icon {
+    background: linear-gradient(145deg,#0f766e,#20a58e,#c49a3a);
+}
+
+.notes-branch:nth-child(3)[open] .notes-branch-icon {
+    background: linear-gradient(145deg,#7047d8,#8d69e7,#c49a3a);
+}
+
+.notes-branch:nth-child(4)[open] .notes-branch-icon {
+    background: linear-gradient(145deg,#b45309,#d88927,#c49a3a);
+}
+
+/* -----------------------------------------------------
+   Semester cards — subtle gold selection language
+----------------------------------------------------- */
+
+.notes-semester {
+    border-color: rgba(23,105,224,.11);
+    background: linear-gradient(145deg,#ffffff,#fbfcfe);
+}
+
+.notes-semester:hover {
+    border-color: rgba(196,154,58,.30);
+    box-shadow:
+        0 13px 28px rgba(11,31,58,.07),
+        0 5px 18px rgba(196,154,58,.055);
+}
+
+.notes-semester[open] {
+    border-color: rgba(196,154,58,.34);
+    box-shadow:
+        0 15px 34px rgba(11,31,58,.075),
+        0 4px 20px rgba(196,154,58,.06);
+}
+
+.notes-semester-icon {
+    border-color: rgba(196,154,58,.16);
+    background: linear-gradient(145deg,#edf4ff,#fffaf0);
+}
+
+.notes-semester[open] .notes-semester-icon {
+    background: linear-gradient(145deg,var(--blue),#c49a3a);
+    border-color: #c49a3a;
+}
+
+.notes-semester[open] .notes-semester-header {
+    background: linear-gradient(135deg,#eef5ff,#fffdf7);
+}
+
+.notes-semester-title strong::after {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 2px;
+    margin-top: 4px;
+    border-radius: 99px;
+    background: #c49a3a;
+}
+
+/* -----------------------------------------------------
+   Resource cards — gold micro accents
+----------------------------------------------------- */
+
+.notes-resource-card {
+    border-color: rgba(23,105,224,.10);
+    box-shadow: 0 5px 16px rgba(11,31,58,.025);
+}
+
+.notes-resource-card:hover {
+    border-color: rgba(196,154,58,.23);
+    box-shadow:
+        0 12px 27px rgba(11,31,58,.065),
+        0 4px 15px rgba(196,154,58,.045);
+}
+
+.notes-resource-card::before {
+    background: linear-gradient(180deg,var(--blue),#c49a3a);
+}
+
+.notes-resource-icon {
+    border-color: rgba(196,154,58,.17);
+    background: linear-gradient(145deg,#ffffff,#edf4ff,#fffaf0);
+}
+
+.notes-resource-link {
+    border-color: rgba(196,154,58,.20);
+    background: linear-gradient(145deg,#f5f9ff,#fffdf7);
+}
+
+.notes-resource-link:hover {
+    background: linear-gradient(135deg,var(--blue),#c49a3a);
+    border-color: #c49a3a;
+}
+
+/* Syllabus — blue + gold */
+
+.notes-resource-card.syllabus-card {
+    border-color: rgba(196,154,58,.22);
+    background:
+        linear-gradient(105deg,#eef5ff 0%,#ffffff 68%,#fffaf0 100%);
+}
+
+.notes-resource-card.syllabus-card::before {
+    background: linear-gradient(180deg,#1769e0,#c49a3a);
+}
+
+.notes-resource-card.syllabus-card .notes-resource-icon {
+    background: linear-gradient(145deg,#1769e0,#4f8ff0 65%,#c49a3a);
+    box-shadow: 0 8px 20px rgba(196,154,58,.10);
+}
+
+/* Question bank — green + gold */
+
+.notes-resource-card.question-bank-card {
+    border-color: rgba(196,154,58,.23);
+    background:
+        linear-gradient(105deg,#eefaf4 0%,#ffffff 68%,#fffaf0 100%);
+}
+
+.notes-resource-card.question-bank-card::before {
+    background: linear-gradient(180deg,#159a62,#c49a3a);
+}
+
+.notes-resource-card.question-bank-card .notes-resource-icon {
+    background: linear-gradient(145deg,#159a62,#36b77d 65%,#c49a3a);
+}
+
+.notes-resource-card.question-bank-card .notes-resource-link {
+    border-color: rgba(196,154,58,.22);
+    background: linear-gradient(145deg,#f2fbf6,#fffdf7);
+}
+
+.notes-resource-card.question-bank-card .notes-resource-link:hover {
+    background: linear-gradient(135deg,#159a62,#c49a3a);
+    border-color: #c49a3a;
+}
+
+/* Module cards get a tiny gold number ring */
+
+.notes-module-grid .notes-resource-icon {
+    box-shadow:
+        0 5px 15px rgba(11,31,58,.05),
+        0 0 0 2px rgba(196,154,58,.055);
+}
+
+.notes-module-grid .notes-resource-card:hover .notes-resource-icon {
+    transform: translateY(-2px) scale(1.04);
+    border-color: rgba(196,154,58,.28);
+}
+
+/* Bottom information strip */
+
+.notes-access-note {
+    border-color: rgba(196,154,58,.18);
+    background:
+        linear-gradient(105deg,rgba(255,255,255,.95),rgba(255,253,246,.92));
+    box-shadow:
+        0 9px 25px rgba(11,31,58,.04),
+        0 4px 15px rgba(196,154,58,.035);
+}
+
+.notes-access-icon {
+    background: linear-gradient(145deg,#eaf8f1,#fff8e8);
+    color: #a37d2b;
+    border: 1px solid rgba(196,154,58,.18);
+}
+
+/* Mobile polish */
+
+@media (max-width: 700px) {
+    .notes-branches {
+        gap: 12px;
+    }
+
+    .notes-branch {
+        border-radius: 18px;
+    }
+
+    .notes-branch-header {
+        min-height: 82px;
+    }
+
+    .notes-heading-flow {
+        padding: 0 5px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .notes-branch,
+    .notes-branch-icon,
+    .notes-semester,
+    .notes-resource-card,
+    .notes-resource-icon,
+    .notes-branch-title strong::after {
+        transition: none !important;
+    }
+}
+
+/* =====================================================
+   END GOLD NOTES VISUAL ENHANCEMENT
+===================================================== */
