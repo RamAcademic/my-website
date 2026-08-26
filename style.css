@@ -9376,3 +9376,564 @@ a[href$=".pdf"]:hover {
 
 }
 
+
+/* =====================================================
+   PHD RESEARCH — PREMIUM ACADEMIC SHOWCASE
+   Designed to match the existing Mathematics portfolio
+===================================================== */
+
+.phd-research-section {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    max-width: none;
+    padding: 120px 25px 125px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 7% 18%, rgba(23,105,224,.11), transparent 25%),
+        radial-gradient(circle at 94% 72%, rgba(196,154,58,.10), transparent 23%),
+        linear-gradient(180deg, #f8fbff 0%, #ffffff 52%, #f7faff 100%);
+}
+
+.phd-research-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(23,105,224,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23,105,224,.035) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+}
+
+.phd-research-section::after {
+    content: "∑   ∫   π   Δ   ∞";
+    position: absolute;
+    right: 2%;
+    top: 115px;
+    z-index: -2;
+    color: rgba(11,31,58,.035);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(45px, 6vw, 90px);
+    letter-spacing: 14px;
+    transform: rotate(-7deg);
+    pointer-events: none;
+}
+
+
+/* ---------- Research wrapper ---------- */
+
+.phd-research-wrapper {
+    width: min(1160px, 100%);
+    margin: 0 auto;
+}
+
+
+/* ---------- Premium intro panel ---------- */
+
+.phd-research-hero {
+    position: relative;
+    min-height: 245px;
+    margin-bottom: 25px;
+    padding: 45px 52px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+    border: 1px solid rgba(23,105,224,.16);
+    border-radius: 30px;
+    background:
+        radial-gradient(circle at 88% 20%, rgba(255,255,255,.22), transparent 24%),
+        linear-gradient(135deg, #071b35 0%, #0b2b55 52%, #1769e0 100%);
+    box-shadow:
+        0 30px 70px rgba(11,31,58,.18),
+        inset 0 1px 0 rgba(255,255,255,.12);
+}
+
+.phd-research-hero::before {
+    content: "";
+    position: absolute;
+    width: 390px;
+    height: 390px;
+    right: -135px;
+    top: -175px;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 38px rgba(255,255,255,.025),
+        0 0 0 76px rgba(255,255,255,.018);
+    pointer-events: none;
+}
+
+.phd-research-hero::after {
+    content: "";
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    left: -85px;
+    bottom: -95px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.07);
+    pointer-events: none;
+}
+
+.phd-research-intro {
+    position: relative;
+    z-index: 3;
+    max-width: 700px;
+}
+
+.phd-research-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 14px;
+    color: #d9b867;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2.6px;
+    text-transform: uppercase;
+}
+
+.phd-research-label::before {
+    content: "✦";
+    font-size: 10px;
+}
+
+.phd-research-intro h3 {
+    margin: 0 0 13px;
+    color: #ffffff;
+    font-size: clamp(31px, 4vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -1.3px;
+}
+
+.phd-research-intro > p:last-child {
+    max-width: 650px;
+    margin: 0;
+    color: rgba(255,255,255,.78);
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.phd-research-symbol {
+    position: absolute;
+    right: 190px;
+    bottom: 22px;
+    z-index: 1;
+    color: rgba(255,255,255,.10);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 100px;
+    line-height: 1;
+    transform: rotate(-12deg);
+}
+
+.phd-research-mark {
+    position: absolute;
+    right: 48px;
+    top: 50%;
+    z-index: 3;
+    width: 116px;
+    height: 116px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255,255,255,.27);
+    border-radius: 50%;
+    background: rgba(255,255,255,.08);
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 48px;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.18),
+        0 15px 40px rgba(0,0,0,.12);
+    transform: translateY(-50%);
+}
+
+.phd-research-mark::before,
+.phd-research-mark::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 50%;
+}
+
+.phd-research-mark::before {
+    inset: -13px;
+}
+
+.phd-research-mark::after {
+    inset: -27px;
+}
+
+
+/* ---------- Three research cards ---------- */
+
+.phd-research-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.phd-research-card {
+    position: relative;
+    min-height: 255px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    border: 1px solid rgba(23,105,224,.12);
+    border-radius: 24px;
+    background:
+        linear-gradient(145deg, rgba(255,255,255,.98), rgba(247,250,255,.95));
+    box-shadow:
+        0 15px 38px rgba(11,31,58,.065),
+        inset 0 1px 0 #fff;
+    transition:
+        transform .38s cubic-bezier(.2,.75,.25,1),
+        box-shadow .38s ease,
+        border-color .38s ease;
+}
+
+.phd-research-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--blue), #7c3aed);
+    transform: scaleX(.3);
+    transform-origin: left;
+    transition: transform .38s ease;
+}
+
+.phd-research-card::after {
+    content: "";
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    right: -90px;
+    bottom: -100px;
+    border-radius: 50%;
+    background: rgba(23,105,224,.055);
+    transition: transform .45s ease;
+}
+
+.phd-research-card:hover {
+    transform: translateY(-9px);
+    border-color: rgba(23,105,224,.27);
+    box-shadow:
+        0 25px 55px rgba(11,31,58,.12),
+        0 0 0 1px rgba(23,105,224,.035);
+}
+
+.phd-research-card:hover::before {
+    transform: scaleX(1);
+}
+
+.phd-research-card:hover::after {
+    transform: scale(1.45);
+}
+
+.phd-card-icon {
+    position: relative;
+    z-index: 2;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 25px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(23,105,224,.13);
+    border-radius: 19px;
+    background: linear-gradient(145deg, #ffffff, #eaf2ff);
+    color: var(--blue);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 29px;
+    font-weight: 700;
+    box-shadow:
+        0 10px 26px rgba(23,105,224,.10),
+        inset 0 1px 0 white;
+    transition: transform .35s ease, border-radius .35s ease;
+}
+
+.phd-research-card:hover .phd-card-icon {
+    transform: rotate(-6deg) scale(1.08);
+    border-radius: 23px;
+}
+
+.phd-card-label {
+    margin: 0 0 9px;
+    color: #a37d2b;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.9px;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.phd-research-card h4 {
+    position: relative;
+    z-index: 2;
+    margin: 0 0 12px;
+    color: var(--navy);
+    font-size: 22px;
+    line-height: 1.25;
+    letter-spacing: -.35px;
+}
+
+.phd-research-card h4::after {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 3px;
+    margin-top: 13px;
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--blue), #c49a3a);
+    transition: width .35s ease;
+}
+
+.phd-research-card:hover h4::after {
+    width: 78px;
+}
+
+.phd-research-card p:not(.phd-card-label) {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.75;
+}
+
+
+/* ---------- Final research journey panel ---------- */
+
+.phd-research-details {
+    position: relative;
+    margin-top: 20px;
+    padding: 34px 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    overflow: hidden;
+    border: 1px solid rgba(196,154,58,.20);
+    border-radius: 24px;
+    background:
+        linear-gradient(135deg, #fffdf7 0%, #ffffff 58%, #f6f9ff 100%);
+    box-shadow:
+        0 16px 40px rgba(11,31,58,.065),
+        inset 0 1px 0 #fff;
+}
+
+.phd-research-details::before {
+    content: "PhD";
+    position: absolute;
+    right: 210px;
+    bottom: -25px;
+    color: rgba(196,154,58,.055);
+    font-size: 100px;
+    font-weight: 900;
+    letter-spacing: -5px;
+    pointer-events: none;
+}
+
+.phd-details-content {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+}
+
+.phd-details-content h3 {
+    margin: 0 0 9px;
+    color: var(--navy);
+    font-size: 24px;
+    line-height: 1.3;
+}
+
+.phd-details-content > p:last-child {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.75;
+}
+
+.phd-research-button {
+    position: relative;
+    z-index: 3;
+    flex: 0 0 auto;
+    min-height: 50px;
+    padding: 0 21px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 1px solid rgba(23,105,224,.18);
+    border-radius: 13px;
+    background: linear-gradient(135deg, var(--blue), #4d8fee);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 11px 25px rgba(23,105,224,.20);
+    transition: .3s ease;
+}
+
+.phd-research-button span {
+    font-size: 19px;
+    line-height: 1;
+    transition: transform .3s ease;
+}
+
+.phd-research-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px rgba(23,105,224,.27);
+}
+
+.phd-research-button:hover span {
+    transform: translateX(4px);
+}
+
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+
+    .phd-research-hero {
+        padding: 38px;
+    }
+
+    .phd-research-mark {
+        right: 32px;
+        width: 95px;
+        height: 95px;
+        font-size: 40px;
+    }
+
+    .phd-research-symbol {
+        right: 125px;
+    }
+
+    .phd-research-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .phd-research-card {
+        min-height: auto;
+    }
+
+    .phd-research-details {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .phd-research-button {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .phd-research-section {
+        padding: 88px 16px 85px;
+    }
+
+    .phd-research-section::after {
+        top: 90px;
+        right: -30px;
+        font-size: 48px;
+        letter-spacing: 7px;
+    }
+
+    .phd-research-hero {
+        min-height: 285px;
+        padding: 32px 25px;
+        border-radius: 23px;
+    }
+
+    .phd-research-intro {
+        max-width: 100%;
+        padding-right: 25px;
+    }
+
+    .phd-research-intro h3 {
+        font-size: 34px;
+    }
+
+    .phd-research-intro > p:last-child {
+        font-size: 13px;
+    }
+
+    .phd-research-mark {
+        width: 70px;
+        height: 70px;
+        right: 20px;
+        top: auto;
+        bottom: 22px;
+        font-size: 31px;
+        transform: none;
+    }
+
+    .phd-research-mark::before {
+        inset: -8px;
+    }
+
+    .phd-research-mark::after {
+        inset: -16px;
+    }
+
+    .phd-research-symbol {
+        right: 70px;
+        bottom: 25px;
+        font-size: 65px;
+    }
+
+    .phd-research-card {
+        padding: 26px;
+        border-radius: 21px;
+    }
+
+    .phd-card-icon {
+        width: 57px;
+        height: 57px;
+        margin-bottom: 20px;
+        border-radius: 17px;
+    }
+
+    .phd-research-card h4 {
+        font-size: 21px;
+    }
+
+    .phd-research-details {
+        padding: 27px 24px;
+        border-radius: 21px;
+    }
+
+    .phd-details-content h3 {
+        font-size: 21px;
+    }
+
+    .phd-research-details::before {
+        right: -5px;
+        bottom: -20px;
+        font-size: 75px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .phd-research-card,
+    .phd-research-card::before,
+    .phd-research-card::after,
+    .phd-card-icon,
+    .phd-research-button,
+    .phd-research-button span,
+    .phd-research-card h4::after {
+        transition: none;
+    }
+}
