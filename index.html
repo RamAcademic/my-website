@@ -5690,9 +5690,9 @@
 
 <section class="section contact-section" id="contact">
 
-    <div class="section-heading center contact-heading">
+    <div class="section-heading center">
 
-        <p class="contact-eyebrow">
+        <p>
             CONTACT
         </p>
 
@@ -5700,31 +5700,28 @@
             Let's Connect
         </h2>
 
-        <span class="contact-subtitle">
+        <span>
             For academic collaboration, professional networking,
             educational discussions and sharing of resources.
         </span>
-
-        <div class="contact-heading-line" aria-hidden="true">
-            <span></span>
-            <strong>✦</strong>
-            <span></span>
-        </div>
 
     </div>
 
 
     <div class="contact-container">
 
-        <!-- EMAIL -->
+
+        <!-- =================================================
+             EMAIL
+        ================================================== -->
 
         <article class="contact-card email-card">
 
-            <div class="contact-icon email-icon" aria-hidden="true">
+            <div class="contact-icon" aria-hidden="true">
                 ✉
             </div>
 
-            <p class="contact-card-label">
+            <p class="contact-label">
                 GET IN TOUCH
             </p>
 
@@ -5737,7 +5734,8 @@
             </p>
 
             <a href="mailto:ramramesh135k@gmail.com"
-               aria-label="Send an email">
+               class="contact-button"
+               aria-label="Send an email to Mr. Ramesh">
 
                 Send Email
                 <span aria-hidden="true">→</span>
@@ -5747,15 +5745,17 @@
         </article>
 
 
-        <!-- WHATSAPP -->
+        <!-- =================================================
+             WHATSAPP
+        ================================================== -->
 
         <article class="contact-card whatsapp-card">
 
-            <div class="contact-icon whatsapp-icon" aria-hidden="true">
-                ◔
+            <div class="contact-icon" aria-hidden="true">
+                <span>☘</span>
             </div>
 
-            <p class="contact-card-label">
+            <p class="contact-label">
                 DIRECT MESSAGE
             </p>
 
@@ -5768,9 +5768,10 @@
             </p>
 
             <a href="https://wa.me/919741834513"
+               class="contact-button"
                target="_blank"
                rel="noopener noreferrer"
-               aria-label="Message on WhatsApp">
+               aria-label="Message Mr. Ramesh on WhatsApp">
 
                 Message Me
                 <span aria-hidden="true">↗</span>
@@ -5780,15 +5781,17 @@
         </article>
 
 
-        <!-- INSTAGRAM -->
+        <!-- =================================================
+             INSTAGRAM
+        ================================================== -->
 
         <article class="contact-card instagram-card">
 
-            <div class="contact-icon instagram-icon" aria-hidden="true">
+            <div class="contact-icon" aria-hidden="true">
                 ◎
             </div>
 
-            <p class="contact-card-label">
+            <p class="contact-label">
                 SOCIAL &amp; UPDATES
             </p>
 
@@ -5801,9 +5804,10 @@
             </p>
 
             <a href="https://www.instagram.com/iam._.ram_8/"
+               class="contact-button"
                target="_blank"
                rel="noopener noreferrer"
-               aria-label="Visit Instagram profile">
+               aria-label="Visit Mr. Ramesh on Instagram">
 
                 Follow Me
                 <span aria-hidden="true">↗</span>
@@ -5812,10 +5816,13 @@
 
         </article>
 
+
     </div>
 
 
-    <!-- PREMIUM CONTACT NOTE -->
+    <!-- =================================================
+         CONTACT NOTE
+    ================================================== -->
 
     <div class="contact-note">
 
@@ -6113,3 +6120,423 @@ pdfModal.addEventListener(
 
 </body>
 </html>
+
+
+/* =========================================================
+   FINAL CONTACT SECTION — PREMIUM GOLD / NAVY DESIGN
+   Added as the last CSS block so it overrides earlier rules.
+   ========================================================= */
+
+#contact.contact-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 92px 5% 85px;
+    background:
+        radial-gradient(circle at 12% 20%, rgba(215,166,58,.10), transparent 28%),
+        radial-gradient(circle at 88% 75%, rgba(37,99,235,.07), transparent 30%),
+        linear-gradient(145deg, #fbfcff 0%, #ffffff 48%, #f7f9fc 100%);
+}
+
+#contact.contact-section::before {
+    content: "";
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    top: -220px;
+    right: -120px;
+    border: 1px solid rgba(215,166,58,.18);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 35px rgba(215,166,58,.035),
+        0 0 0 70px rgba(215,166,58,.02);
+    pointer-events: none;
+    z-index: -1;
+}
+
+#contact.contact-section::after {
+    content: "∫   π   ∑   ∞";
+    position: absolute;
+    left: 4%;
+    bottom: 22px;
+    color: rgba(9,45,86,.035);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 46px;
+    letter-spacing: 22px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ---------------- HEADING ---------------- */
+
+#contact .contact-heading {
+    position: relative;
+    max-width: 850px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+#contact .contact-eyebrow {
+    margin: 0 0 12px;
+    color: #bd8929;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+}
+
+#contact .contact-heading h2 {
+    margin: 0;
+    color: #092d56;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -1px;
+}
+
+#contact .contact-subtitle {
+    display: block;
+    max-width: 680px;
+    margin: 17px auto 0;
+    color: #60758f;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+#contact .contact-heading-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    width: min(280px, 65%);
+    margin: 22px auto 0;
+}
+
+#contact .contact-heading-line span {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(215,166,58,.8)
+    );
+}
+
+#contact .contact-heading-line span:last-child {
+    background: linear-gradient(
+        90deg,
+        rgba(215,166,58,.8),
+        transparent
+    );
+}
+
+#contact .contact-heading-line strong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    color: #bd8929;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* ---------------- CONTACT CARDS ---------------- */
+
+#contact .contact-container {
+    position: relative;
+    z-index: 2;
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+#contact .contact-card {
+    position: relative;
+    min-height: 285px;
+    padding: 34px 30px 30px;
+    text-align: center;
+    background: rgba(255,255,255,.94);
+    border: 1px solid rgba(9,45,86,.09);
+    border-radius: 24px;
+    box-shadow: 0 18px 48px rgba(20,50,90,.075);
+    box-sizing: border-box;
+    overflow: hidden;
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+#contact .contact-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 12%;
+    right: 12%;
+    height: 3px;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #d7a63a,
+        transparent
+    );
+}
+
+#contact .contact-card::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    right: -90px;
+    bottom: -90px;
+    border-radius: 50%;
+    background: rgba(215,166,58,.055);
+    pointer-events: none;
+}
+
+#contact .contact-card:hover {
+    transform: translateY(-9px);
+    border-color: rgba(215,166,58,.42);
+    box-shadow: 0 25px 60px rgba(20,50,90,.13);
+}
+
+/* ICON */
+
+#contact .contact-icon {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    box-shadow: 0 12px 25px rgba(9,45,86,.15);
+    transition: transform .35s ease;
+}
+
+#contact .contact-card:hover .contact-icon {
+    transform: translateY(-3px) rotate(-3deg);
+}
+
+#contact .email-icon {
+    background: linear-gradient(145deg, #092d56, #174f8f);
+}
+
+#contact .whatsapp-icon {
+    background: linear-gradient(145deg, #176b43, #2d9a63);
+}
+
+#contact .instagram-icon {
+    background: linear-gradient(145deg, #5136a8, #b53d78);
+}
+
+#contact .contact-card-label {
+    margin: 0 0 7px;
+    color: #bd8929;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#contact .contact-card h3 {
+    margin: 0 0 11px;
+    color: #092d56;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    line-height: 1.2;
+}
+
+#contact .contact-card > p:not(.contact-card-label) {
+    min-height: 48px;
+    margin: 0 auto 22px;
+    max-width: 280px;
+    color: #60758f;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+#contact .contact-card a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-width: 145px;
+    padding: 11px 17px;
+    border: 1px solid rgba(9,45,86,.12);
+    border-radius: 11px;
+    color: #092d56;
+    background: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .3px;
+    box-shadow: 0 7px 18px rgba(20,50,90,.06);
+    transition:
+        color .25s ease,
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+}
+
+#contact .contact-card a span {
+    color: #bd8929;
+    font-size: 15px;
+    transition: transform .25s ease;
+}
+
+#contact .contact-card a:hover {
+    color: #fff;
+    background: linear-gradient(135deg, #092d56, #154f8f);
+    border-color: #092d56;
+    transform: translateY(-2px);
+}
+
+#contact .contact-card a:hover span {
+    color: #fff;
+    transform: translateX(3px);
+}
+
+/* ---------------- BOTTOM NOTE ---------------- */
+
+#contact .contact-note {
+    position: relative;
+    z-index: 2;
+    width: min(850px, 100%);
+    margin: 38px auto 0;
+    padding: 17px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-sizing: border-box;
+    border: 1px solid rgba(215,166,58,.20);
+    border-radius: 16px;
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,.9),
+        rgba(250,248,241,.9)
+    );
+    box-shadow: 0 10px 30px rgba(20,50,90,.05);
+}
+
+#contact .contact-note > span {
+    flex: 0 0 auto;
+    color: #d7a63a;
+    font-size: 17px;
+}
+
+#contact .contact-note p {
+    margin: 0;
+    color: #536b86;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* ---------------- TABLET ---------------- */
+
+@media screen and (max-width: 900px) {
+    #contact.contact-section {
+        padding: 75px 24px 70px;
+    }
+
+    #contact .contact-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 760px;
+    }
+
+    #contact .contact-card:last-child {
+        grid-column: 1 / -1;
+        width: min(365px, 100%);
+        justify-self: center;
+    }
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media screen and (max-width: 600px) {
+    #contact.contact-section {
+        padding: 65px 16px 60px;
+    }
+
+    #contact .contact-heading {
+        margin-bottom: 35px;
+    }
+
+    #contact .contact-eyebrow {
+        font-size: 11px;
+        letter-spacing: 2.5px;
+    }
+
+    #contact .contact-heading h2 {
+        font-size: clamp(35px, 11vw, 48px);
+    }
+
+    #contact .contact-subtitle {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    #contact .contact-heading-line {
+        width: 230px;
+    }
+
+    #contact .contact-container {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    #contact .contact-card,
+    #contact .contact-card:last-child {
+        width: 100%;
+        min-height: 260px;
+        grid-column: auto;
+        padding: 29px 22px 26px;
+    }
+
+    #contact .contact-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 16px;
+        border-radius: 17px;
+        font-size: 25px;
+    }
+
+    #contact .contact-card h3 {
+        font-size: 24px;
+    }
+
+    #contact .contact-note {
+        margin-top: 27px;
+        padding: 15px 17px;
+    }
+
+    #contact .contact-note p {
+        font-size: 12px;
+    }
+}
+
+/* ---------------- REDUCED MOTION ---------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    #contact .contact-card,
+    #contact .contact-icon,
+    #contact .contact-card a,
+    #contact .contact-card a span {
+        transition: none;
+    }
+
+    #contact .contact-card:hover,
+    #contact .contact-card:hover .contact-icon {
+        transform: none;
+    }
+}
+
