@@ -1403,7 +1403,7 @@ img {
     position: absolute;
     left: 50%;
     bottom: -16px;
-    width: 96px;
+    width: 180px;
     height: 4px;
     border-radius: 999px;
     background: linear-gradient(
@@ -1514,7 +1514,7 @@ img {
 
     .notes-heading h2::after {
         bottom: -12px;
-        width: 70px;
+        width: 100px;
         height: 3px;
     }
 
