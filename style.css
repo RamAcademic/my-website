@@ -7843,3 +7843,1004 @@ a[href$=".pdf"]:hover {
 /* =====================================================
    END GOLD NOTES VISUAL ENHANCEMENT
 ===================================================== */
+
+
+/* =========================================================
+   LATEST MATERIALS + MATHEMATICS QUESTION PAPERS
+   Premium resource hub
+   Added for the updated HTML structure
+========================================================= */
+
+.resource-list {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ---------------- RESOURCE ROW ---------------- */
+
+.resource-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 62px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 18px;
+    min-height: 88px;
+    padding: 13px 17px 13px 14px;
+    border: 1px solid rgba(23,105,224,.10);
+    border-radius: 18px;
+    background:
+        linear-gradient(135deg, rgba(255,255,255,.98), rgba(248,251,255,.96));
+    box-shadow:
+        0 8px 24px rgba(11,31,58,.045),
+        inset 0 1px 0 rgba(255,255,255,.95);
+    overflow: hidden;
+    transition:
+        transform .32s cubic-bezier(.2,.75,.25,1),
+        border-color .32s ease,
+        box-shadow .32s ease;
+}
+
+.resource-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 4px;
+    border-radius: 0 8px 8px 0;
+    background: linear-gradient(180deg, var(--blue), #c49a3a);
+    transform: scaleY(.25);
+    transform-origin: center;
+    transition: transform .32s ease;
+}
+
+.resource-item::after {
+    content: "∑";
+    position: absolute;
+    right: 18px;
+    bottom: -17px;
+    color: rgba(23,105,224,.045);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 76px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.resource-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(196,154,58,.30);
+    box-shadow:
+        0 17px 38px rgba(11,31,58,.085),
+        0 5px 18px rgba(196,154,58,.055);
+}
+
+.resource-item:hover::before {
+    transform: scaleY(1);
+}
+
+/* ---------------- RESOURCE ICON ---------------- */
+
+.resource-icon {
+    position: relative;
+    z-index: 2;
+    width: 62px;
+    height: 62px;
+    display: grid;
+    place-items: center;
+    border-radius: 17px;
+    border: 1px solid rgba(196,154,58,.20);
+    background:
+        linear-gradient(145deg, #1769e0 0%, #4d8fee 64%, #c49a3a 100%);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .8px;
+    box-shadow:
+        0 10px 24px rgba(23,105,224,.16),
+        0 3px 10px rgba(196,154,58,.08);
+    transition: transform .32s ease, border-radius .32s ease;
+}
+
+.resource-icon::before {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border: 1px solid rgba(255,255,255,.28);
+    border-radius: 11px;
+    pointer-events: none;
+}
+
+.resource-item:hover .resource-icon {
+    transform: rotate(-4deg) scale(1.06);
+    border-radius: 20px;
+}
+
+/* ---------------- RESOURCE TEXT ---------------- */
+
+.resource-info {
+    position: relative;
+    z-index: 2;
+    min-width: 0;
+}
+
+.resource-info h3 {
+    margin: 0 0 4px;
+    color: var(--navy);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    line-height: 1.3;
+}
+
+.resource-info p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* ---------------- VIEW BUTTON ---------------- */
+
+.resource-button {
+    position: relative;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 1px solid rgba(23,105,224,.16);
+    border-radius: 11px;
+    background: linear-gradient(145deg,#f5f9ff,#fffdf7);
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .2px;
+    white-space: nowrap;
+    box-shadow: 0 5px 15px rgba(11,31,58,.035);
+    transition:
+        transform .25s ease,
+        color .25s ease,
+        background .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.resource-button::after {
+    content: "↗";
+    font-size: 14px;
+    line-height: 1;
+    transition: transform .25s ease;
+}
+
+.resource-button:hover {
+    color: #fff;
+    background: linear-gradient(135deg,var(--blue),#c49a3a);
+    border-color: #c49a3a;
+    transform: translateY(-2px);
+    box-shadow: 0 9px 20px rgba(23,105,224,.15);
+}
+
+.resource-button:hover::after {
+    transform: translate(2px,-2px);
+}
+
+/* =========================================================
+   QUESTION PAPER AREA
+========================================================= */
+
+.resource-question-papers {
+    position: relative;
+    margin-top: 28px;
+    padding: 28px;
+    border: 1px solid rgba(196,154,58,.20);
+    border-radius: 25px;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(196,154,58,.075), transparent 28%),
+        radial-gradient(circle at 0% 100%, rgba(23,105,224,.055), transparent 28%),
+        linear-gradient(145deg,#ffffff 0%,#f8fbff 72%,#fffaf0 100%);
+    box-shadow:
+        0 18px 45px rgba(11,31,58,.065),
+        inset 0 1px 0 rgba(255,255,255,.95);
+    overflow: hidden;
+}
+
+.resource-question-papers::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(23,105,224,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23,105,224,.018) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
+}
+
+.resource-question-heading {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 25px;
+}
+
+.resource-kicker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-bottom: 9px;
+    color: #9b7626;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.resource-kicker::before,
+.resource-kicker::after {
+    content: "✦";
+    color: #c49a3a;
+    font-size: 9px;
+}
+
+.resource-question-heading h3 {
+    margin: 0 0 7px;
+    color: var(--navy);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(25px,3vw,34px);
+    line-height: 1.2;
+}
+
+.resource-question-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+/* ---------------- BRANCH ACCORDIONS ---------------- */
+
+.question-branch {
+    position: relative;
+    z-index: 2;
+    margin-top: 12px;
+    border: 1px solid rgba(23,105,224,.11);
+    border-radius: 18px;
+    background: rgba(255,255,255,.92);
+    overflow: hidden;
+    box-shadow: 0 7px 20px rgba(11,31,58,.035);
+    transition:
+        border-color .3s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+}
+
+.question-branch:hover {
+    border-color: rgba(196,154,58,.28);
+    box-shadow:
+        0 13px 28px rgba(11,31,58,.065),
+        0 4px 14px rgba(196,154,58,.035);
+}
+
+.question-branch[open] {
+    border-color: rgba(196,154,58,.35);
+    box-shadow:
+        0 16px 34px rgba(11,31,58,.075),
+        0 5px 18px rgba(196,154,58,.045);
+}
+
+/* ---------------- BRANCH HEADER ---------------- */
+
+.question-branch-header {
+    position: relative;
+    min-height: 82px;
+    padding: 12px 16px;
+    display: grid;
+    grid-template-columns: 52px minmax(0,1fr) 32px;
+    align-items: center;
+    gap: 13px;
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.question-branch-header::-webkit-details-marker {
+    display: none;
+}
+
+.question-branch-header::marker {
+    content: "";
+}
+
+.question-branch-header::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 0;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg,var(--blue),#c49a3a,var(--blue));
+    opacity: 0;
+    transform: scaleX(.18);
+    transform-origin: left;
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+.question-branch[open] .question-branch-header::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/* ---------------- BRANCH ICON ---------------- */
+
+.question-branch-icon {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    border: 1px solid rgba(196,154,58,.20);
+    background:
+        linear-gradient(145deg,#ffffff,#edf4ff 62%,#fff9e9);
+    color: var(--blue);
+    font-size: 21px;
+    font-weight: 900;
+    box-shadow:
+        0 8px 20px rgba(23,105,224,.07),
+        0 2px 9px rgba(196,154,58,.055);
+    overflow: hidden;
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease;
+}
+
+.question-branch-icon::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 50%;
+    background: rgba(196,154,58,.15);
+    transition: transform .35s ease;
+}
+
+.question-branch:hover .question-branch-icon::after {
+    transform: scale(2.1);
+}
+
+.question-branch[open] .question-branch-icon {
+    transform: rotate(-4deg) scale(1.04);
+    background: linear-gradient(145deg,var(--blue),#4d8fee 62%,#c49a3a);
+    color: #fff;
+    border-color: #c49a3a;
+}
+
+/* Branch-specific identities */
+
+.question-branch:nth-child(1) .question-branch-icon {
+    color: #1769e0;
+}
+
+.question-branch:nth-child(2) .question-branch-icon {
+    color: #0f766e;
+    background: linear-gradient(145deg,#fff,#eafaf7,#fffaf0);
+}
+
+.question-branch:nth-child(3) .question-branch-icon {
+    color: #7047d8;
+    background: linear-gradient(145deg,#fff,#f3efff,#fffaf0);
+}
+
+.question-branch:nth-child(4) .question-branch-icon {
+    color: #b45309;
+    background: linear-gradient(145deg,#fff,#fff5e8,#fffaf0);
+}
+
+.question-branch:nth-child(1)[open] .question-branch-icon {
+    background: linear-gradient(145deg,#1769e0,#4d8fee,#c49a3a);
+}
+
+.question-branch:nth-child(2)[open] .question-branch-icon {
+    background: linear-gradient(145deg,#0f766e,#20a58e,#c49a3a);
+}
+
+.question-branch:nth-child(3)[open] .question-branch-icon {
+    background: linear-gradient(145deg,#7047d8,#8d69e7,#c49a3a);
+}
+
+.question-branch:nth-child(4)[open] .question-branch-icon {
+    background: linear-gradient(145deg,#b45309,#d88927,#c49a3a);
+}
+
+/* ---------------- BRANCH TEXT ---------------- */
+
+.question-branch-info {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.question-branch-info strong {
+    width: fit-content;
+    color: var(--navy);
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.question-branch-info small {
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+.question-branch-info strong::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin-top: 5px;
+    border-radius: 99px;
+    background: #c49a3a;
+    transition: width .3s ease;
+}
+
+.question-branch:hover .question-branch-info strong::after,
+.question-branch[open] .question-branch-info strong::after {
+    width: 40px;
+}
+
+/* ---------------- BRANCH PLUS ---------------- */
+
+.question-arrow {
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(196,154,58,.18);
+    border-radius: 50%;
+    background: linear-gradient(145deg,#f8fafc,#fffaf0);
+    color: #a37d2b;
+    font-size: 19px;
+    line-height: 1;
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        color .3s ease;
+}
+
+.question-branch[open] .question-arrow {
+    transform: rotate(45deg);
+    background: linear-gradient(145deg,var(--blue),#c49a3a);
+    color: #fff;
+    border-color: #c49a3a;
+}
+
+/* ---------------- SEMESTER AREA ---------------- */
+
+.question-semesters {
+    padding: 0 16px 16px;
+    border-top: 1px solid rgba(23,105,224,.075);
+    background: linear-gradient(180deg,rgba(247,250,255,.76),#fff);
+    animation: questionPanelIn .28s ease both;
+}
+
+.question-semesters::before {
+    content: "SELECT SEMESTER";
+    display: block;
+    padding: 14px 2px 9px;
+    color: #62748d;
+    font-size: 8.5px;
+    font-weight: 900;
+    letter-spacing: 1.6px;
+}
+
+@keyframes questionPanelIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------------- SEMESTER ACCORDION ---------------- */
+
+.question-semester {
+    margin-top: 8px;
+    border: 1px solid rgba(23,105,224,.10);
+    border-radius: 13px;
+    background: #fff;
+    overflow: hidden;
+    transition:
+        border-color .28s ease,
+        box-shadow .28s ease,
+        transform .28s ease;
+}
+
+.question-semester:first-of-type {
+    margin-top: 0;
+}
+
+.question-semester:hover {
+    transform: translateY(-2px);
+    border-color: rgba(196,154,58,.25);
+    box-shadow: 0 9px 20px rgba(11,31,58,.055);
+}
+
+.question-semester[open] {
+    border-color: rgba(196,154,58,.32);
+    box-shadow:
+        0 11px 24px rgba(11,31,58,.065),
+        0 3px 12px rgba(196,154,58,.04);
+}
+
+.question-semester > summary {
+    min-height: 58px;
+    padding: 10px 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    cursor: pointer;
+    list-style: none;
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 800;
+    user-select: none;
+}
+
+.question-semester > summary::-webkit-details-marker {
+    display: none;
+}
+
+.question-semester > summary::marker {
+    content: "";
+}
+
+.question-semester > summary span {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.question-semester > summary span::before {
+    content: "01";
+    width: 29px;
+    height: 29px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: var(--blue-light);
+    color: var(--blue);
+    font-size: 9px;
+    font-weight: 900;
+}
+
+.question-semester:nth-child(2) > summary span::before {
+    content: "02";
+}
+
+.question-semester:nth-child(3) > summary span::before {
+    content: "03";
+}
+
+.question-semester:nth-child(4) > summary span::before {
+    content: "04";
+}
+
+.question-semester > summary b {
+    width: 27px;
+    height: 27px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(196,154,58,.16);
+    border-radius: 50%;
+    background: #f7f9fc;
+    color: #a37d2b;
+    font-size: 17px;
+    font-weight: 500;
+    transition:
+        transform .28s ease,
+        background .28s ease,
+        color .28s ease;
+}
+
+.question-semester[open] > summary {
+    background: linear-gradient(135deg,#eef5ff,#fffdf7);
+}
+
+.question-semester[open] > summary span::before {
+    background: linear-gradient(145deg,var(--blue),#c49a3a);
+    color: #fff;
+}
+
+.question-semester[open] > summary b {
+    transform: rotate(45deg);
+    background: linear-gradient(145deg,var(--blue),#c49a3a);
+    color: #fff;
+    border-color: #c49a3a;
+}
+
+/* ---------------- QUESTION PAPER CARD ---------------- */
+
+.question-paper-card {
+    position: relative;
+    margin: 0 11px 11px;
+    padding: 13px;
+    display: grid;
+    grid-template-columns: 48px minmax(0,1fr) auto;
+    align-items: center;
+    gap: 13px;
+    border: 1px solid rgba(23,105,224,.10);
+    border-radius: 13px;
+    background:
+        linear-gradient(135deg,#fff,#f7fbff 72%,#fffaf0);
+    overflow: hidden;
+    animation: questionCardIn .28s ease both;
+}
+
+.question-paper-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 3px;
+    border-radius: 0 6px 6px 0;
+    background: linear-gradient(180deg,var(--blue),#c49a3a);
+}
+
+@keyframes questionCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.question-paper-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: linear-gradient(145deg,#1769e0,#4d8fee 68%,#c49a3a);
+    color: #fff;
+    font-size: 19px;
+    box-shadow: 0 8px 18px rgba(23,105,224,.12);
+}
+
+.question-paper-info {
+    min-width: 0;
+}
+
+.question-paper-info h4 {
+    margin: 0 0 3px;
+    color: var(--navy);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+.question-paper-info p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+.question-paper-card .resource-button {
+    min-height: 36px;
+    padding: 7px 11px;
+    font-size: 10px;
+}
+
+/* =========================================================
+   RESOURCE SECTION RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .resource-list {
+        width: min(760px,100%);
+    }
+
+    .resource-question-papers {
+        padding: 22px;
+        border-radius: 21px;
+    }
+
+    .question-paper-card {
+        grid-template-columns: 46px minmax(0,1fr) auto;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .resource-list {
+        gap: 12px;
+    }
+
+    .resource-item {
+        grid-template-columns: 52px minmax(0,1fr);
+        gap: 13px;
+        min-height: 78px;
+        padding: 12px;
+        align-items: center;
+    }
+
+    .resource-item::after {
+        font-size: 58px;
+        right: 8px;
+        bottom: -11px;
+    }
+
+    .resource-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        font-size: 10px;
+    }
+
+    .resource-icon::before {
+        inset: 6px;
+        border-radius: 9px;
+    }
+
+    .resource-info h3 {
+        font-size: 16px;
+    }
+
+    .resource-info p {
+        font-size: 10.5px;
+    }
+
+    .resource-item > .resource-button {
+        grid-column: 2;
+        width: fit-content;
+        min-height: 36px;
+        padding: 7px 11px;
+        margin-top: -2px;
+    }
+
+    .resource-question-papers {
+        margin-top: 21px;
+        padding: 18px 13px;
+        border-radius: 19px;
+    }
+
+    .resource-question-heading {
+        margin-bottom: 19px;
+    }
+
+    .resource-kicker {
+        font-size: 8.5px;
+        letter-spacing: 1.5px;
+    }
+
+    .resource-question-heading h3 {
+        font-size: 24px;
+    }
+
+    .resource-question-heading p {
+        font-size: 10.5px;
+    }
+
+    .question-branch {
+        border-radius: 15px;
+    }
+
+    .question-branch-header {
+        min-height: 72px;
+        padding: 10px 11px;
+        grid-template-columns: 45px minmax(0,1fr) 29px;
+        gap: 10px;
+    }
+
+    .question-branch-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 13px;
+        font-size: 18px;
+    }
+
+    .question-branch-info strong {
+        font-size: 14px;
+    }
+
+    .question-branch-info small {
+        font-size: 9px;
+    }
+
+    .question-arrow {
+        width: 29px;
+        height: 29px;
+        font-size: 17px;
+    }
+
+    .question-semesters {
+        padding: 0 10px 11px;
+    }
+
+    .question-semesters::before {
+        padding: 12px 2px 7px;
+        font-size: 7.5px;
+    }
+
+    .question-semester {
+        border-radius: 12px;
+    }
+
+    .question-semester > summary {
+        min-height: 52px;
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .question-semester > summary span {
+        gap: 8px;
+    }
+
+    .question-semester > summary span::before {
+        width: 27px;
+        height: 27px;
+        border-radius: 8px;
+        font-size: 8px;
+    }
+
+    .question-semester > summary b {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+    }
+
+    .question-paper-card {
+        grid-template-columns: 43px minmax(0,1fr);
+        gap: 10px;
+        margin: 0 8px 8px;
+        padding: 10px;
+    }
+
+    .question-paper-icon {
+        width: 43px;
+        height: 43px;
+        border-radius: 12px;
+        font-size: 17px;
+    }
+
+    .question-paper-info h4 {
+        font-size: 12px;
+    }
+
+    .question-paper-info p {
+        font-size: 9px;
+    }
+
+    .question-paper-card .resource-button {
+        grid-column: 2;
+        width: fit-content;
+        min-height: 33px;
+        margin-top: 1px;
+        font-size: 9px;
+        padding: 6px 9px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .resource-item {
+        grid-template-columns: 47px minmax(0,1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .resource-icon {
+        width: 47px;
+        height: 47px;
+        font-size: 9px;
+        border-radius: 13px;
+    }
+
+    .resource-info h3 {
+        font-size: 14px;
+    }
+
+    .resource-info p {
+        font-size: 9.5px;
+    }
+
+    .resource-item > .resource-button {
+        grid-column: 2;
+        font-size: 9px;
+        min-height: 33px;
+        padding: 6px 9px;
+    }
+
+    .resource-question-papers {
+        padding: 16px 9px;
+    }
+
+    .resource-question-heading h3 {
+        font-size: 22px;
+    }
+
+    .question-branch-header {
+        grid-template-columns: 41px minmax(0,1fr) 27px;
+        gap: 8px;
+        padding: 9px;
+    }
+
+    .question-branch-icon {
+        width: 41px;
+        height: 41px;
+        border-radius: 12px;
+        font-size: 16px;
+    }
+
+    .question-branch-info strong {
+        font-size: 13px;
+    }
+
+    .question-branch-info small {
+        font-size: 8px;
+    }
+
+    .question-paper-card {
+        grid-template-columns: 40px minmax(0,1fr);
+    }
+
+    .question-paper-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .question-paper-info h4 {
+        font-size: 11px;
+    }
+
+    .question-paper-info p {
+        font-size: 8.5px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .resource-item,
+    .resource-icon,
+    .resource-button,
+    .question-branch,
+    .question-branch-icon,
+    .question-arrow,
+    .question-semester,
+    .question-semester > summary b {
+        transition: none !important;
+    }
+
+    .question-semesters,
+    .question-paper-card {
+        animation: none !important;
+    }
+}
+
+/* =========================================================
+   END LATEST MATERIALS RESOURCE STYLES
+========================================================= */
