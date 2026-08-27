@@ -10875,1584 +10875,251 @@ a[href$=".pdf"]:hover {
 
 
 /* =========================================================
-   COMPACT TEACHING PHILOSOPHY
-   Clean • Premium • No Numbering • No Overflow
+   MR. RAMESH — FINAL ABOUT PROFILE OVERRIDE
+   Photo + Name + Teaching Approach
+   Equal left/right panels • no unnecessary gap
 ========================================================= */
 
-.about-profile > .about-approach {
-    position: absolute;
-    z-index: 7;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-
-    width: min(92%, 425px);
-    margin: 0;
-    padding: 18px 20px;
-
-    background: linear-gradient(145deg, #f7fbff, #ffffff);
-    border: 1px solid rgba(37, 99, 235, 0.12);
-    border-radius: 20px;
-
-    box-shadow: 0 16px 38px rgba(20, 50, 90, 0.10);
-    box-sizing: border-box;
+#about .about-wrapper{
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important;
+    gap: 32px !important;
+    align-items: stretch !important;
 }
 
-.about-profile > .about-approach .approach-title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 0 0 12px;
+#about .about-profile,
+#about .about-content{
+    box-sizing: border-box !important;
+    min-height: 820px !important;
 }
 
-.about-profile > .about-approach .approach-icon {
-    width: 42px;
-    height: 42px;
-    flex: 0 0 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 13px;
-    background: #ffffff;
-    color: #bd8929;
-
-    box-shadow: 0 6px 16px rgba(20, 50, 90, 0.08);
-
-    font-family: Georgia, serif;
-    font-size: 23px;
-    font-weight: 700;
-}
-
-.about-profile > .about-approach .approach-label {
-    display: block;
-    margin-bottom: 2px;
-
-    color: #bd8929;
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 1.8px;
-}
-
-.about-profile > .about-approach .approach-title h3 {
-    margin: 0;
-
-    color: #102b4d;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 20px;
-    line-height: 1.15;
-}
-
-.about-profile > .about-approach .approach-method {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
-
-    margin: 0 0 12px;
-
-    color: #173f67;
-    font-family: Georgia, serif;
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.about-profile > .about-approach .approach-method b {
-    color: #bd8929;
-    font-size: 14px;
-}
-
-.about-profile > .about-approach .approach-statement {
-    margin: 0 0 14px;
-
-    color: #536b86;
-    font-size: 12px;
-    line-height: 1.55;
-    text-align: center;
-}
-
-.about-profile > .about-approach .approach-principles {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-}
-
-.about-profile > .about-approach .approach-principle {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-
-    min-width: 0;
-    padding: 10px;
-
-    background: rgba(255, 255, 255, 0.72);
-    border: 1px solid rgba(37, 99, 235, 0.08);
-    border-radius: 12px;
-
-    box-sizing: border-box;
-}
-
-.about-profile > .about-approach .approach-principle > span {
-    width: 28px;
-    height: 28px;
-    flex: 0 0 28px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 8px;
-    background: #f1f5f9;
-
-    color: #bd8929;
-    font-family: Georgia, serif;
-    font-size: 15px;
-}
-
-.about-profile > .about-approach .approach-principle h4 {
-    margin: 0 0 2px;
-
-    color: #173f67;
-    font-size: 11px;
-    line-height: 1.2;
-}
-
-.about-profile > .about-approach .approach-principle p {
-    margin: 0;
-
-    color: #71839a;
-    font-size: 10px;
-    line-height: 1.3;
-}
-
-/* Tablet */
-@media (max-width: 900px) {
-    .about-profile > .about-approach {
-        width: min(92%, 390px);
-        padding: 17px 18px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-    .about-profile > .about-approach {
-        width: calc(100% - 18px);
-        padding: 15px;
-        border-radius: 17px;
-    }
-
-    .about-profile > .about-approach .approach-icon {
-        width: 38px;
-        height: 38px;
-        flex-basis: 38px;
-        font-size: 20px;
-    }
-
-    .about-profile > .about-approach .approach-title h3 {
-        font-size: 17px;
-    }
-
-    .about-profile > .about-approach .approach-method {
-        gap: 5px;
-        font-size: 11px;
-    }
-
-    .about-profile > .about-approach .approach-statement {
-        font-size: 10.5px;
-        line-height: 1.45;
-    }
-
-    .about-profile > .about-approach .approach-principles {
-        gap: 6px;
-    }
-
-    .about-profile > .about-approach .approach-principle {
-        padding: 8px;
-        gap: 7px;
-    }
-
-    .about-profile > .about-approach .approach-principle > span {
-        width: 25px;
-        height: 25px;
-        flex-basis: 25px;
-        font-size: 13px;
-    }
-
-    .about-profile > .about-approach .approach-principle h4 {
-        font-size: 10px;
-    }
-
-    .about-profile > .about-approach .approach-principle p {
-        font-size: 9px;
-    }
-}
-
-/* Very Small Mobile */
-@media (max-width: 380px) {
-    .about-profile > .about-approach {
-        width: calc(100% - 12px);
-        padding: 13px;
-    }
-
-    .about-profile > .about-approach .approach-method {
-        font-size: 10px;
-    }
-
-    .about-profile > .about-approach .approach-principle p {
-        display: none;
-    }
-}
-
-/* =========================================================
-   FINAL PROFILE LAYOUT
-   Photo → Name → Teaching Approach
-   Prevents overlap
-========================================================= */
-
-.about-profile {
+/* LEFT PANEL */
+#about .about-profile{
+    position: relative !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    gap: 0 !important;
-    min-height: 900px !important;
-    padding: 20px 12px 40px !important;
-    overflow: visible !important;
+    padding: 12px 18px 24px !important;
+    overflow: hidden !important;
 }
 
-.about-profile .profile-visual {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 5;
-}
-
-/* Photo */
-.about-profile .about-photo-circle {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    bottom: auto !important;
-    margin: 0 auto !important;
-    z-index: 3 !important;
-}
-
-/* Name card — directly below photo */
-.about-profile .about-profile-card {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-
-    width: min(390px, 92%) !important;
-    margin: -42px auto 0 !important;
-    padding: 22px 25px !important;
-
-    z-index: 8 !important;
-}
-
-/* Teaching Approach — below name */
-.about-profile > .about-approach {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: none !important;
-
-    width: min(425px, 94%) !important;
-    margin: 18px auto 0 !important;
-
-    z-index: 7 !important;
-}
-
-/* Keep mathematical background behind everything */
-.about-profile .about-math-bg {
+/* Math decoration stays behind */
+#about .about-math-bg{
     z-index: 0 !important;
 }
 
-/* Prevent the quote from covering the approach */
-.about-profile .about-quote {
+/* PHOTO — deliberately large */
+#about .about-profile .about-photo-circle{
     position: relative !important;
+    top: auto !important;
     left: auto !important;
     right: auto !important;
     bottom: auto !important;
-    margin-top: 18px !important;
-    z-index: 4 !important;
+    transform: none !important;
+
+    width: 410px !important;
+    height: 515px !important;
+    max-width: 94% !important;
+
+    margin: 0 auto !important;
+    flex: 0 0 auto !important;
+
+    z-index: 3 !important;
+    border-radius: 210px 210px 52px 52px !important;
 }
 
-/* Tablet */
-@media (max-width: 900px) {
-    .about-profile {
-        min-height: 820px !important;
-    }
-
-    .about-profile .about-photo-circle {
-        width: 390px !important;
-        height: 475px !important;
-        max-width: 88vw;
-    }
-
-    .about-profile .about-profile-card {
-        margin-top: -38px !important;
-    }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-    .about-profile {
-        min-height: 0 !important;
-        padding: 10px 8px 30px !important;
-    }
-
-    .about-profile .about-photo-circle {
-        width: min(275px, 82vw) !important;
-        height: min(335px, 100vw) !important;
-    }
-
-    .about-profile .about-profile-card {
-        width: calc(100% - 24px) !important;
-        margin-top: -30px !important;
-        padding: 17px 15px !important;
-        border-radius: 18px !important;
-    }
-
-    .about-profile .about-profile-card h3 {
-        font-size: 23px !important;
-    }
-
-    .about-profile .about-profile-card p {
-        font-size: 15px !important;
-    }
-
-    .about-profile .about-profile-card span {
-        font-size: 11px !important;
-    }
-
-    .about-profile > .about-approach {
-        width: calc(100% - 20px) !important;
-        margin-top: 14px !important;
-        padding: 14px !important;
-    }
-}
-
-/* Small phones */
-@media (max-width: 380px) {
-    .about-profile .about-photo-circle {
-        width: 245px !important;
-        height: 300px !important;
-    }
-
-    .about-profile .about-profile-card {
-        margin-top: -25px !important;
-    }
-
-    .about-profile > .about-approach {
-        width: calc(100% - 10px) !important;
-    }
-}
-
-
-/* =========================================================
-   FINAL ALIGNMENT FIX
-   Photo → Name → Teaching Approach
-========================================================= */
-
-.about-profile > .about-approach {
-    position: relative !important;
+/* IMAGE FILLS PHOTO */
+#about .about-profile .about-photo-circle img{
+    width: 100% !important;
+    height: 100% !important;
     display: block !important;
-
-    width: 390px !important;
-    max-width: calc(100% - 24px) !important;
-
-    margin: 18px auto 0 !important;
-
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-
-    transform: none !important;
-}
-
-.about-profile .about-profile-card {
-    width: 390px !important;
-    max-width: calc(100% - 24px) !important;
-
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-@media (max-width: 600px) {
-
-    .about-profile > .about-approach {
-        width: calc(100% - 24px) !important;
-        margin: 14px auto 0 !important;
-    }
-
-    .about-profile .about-profile-card {
-        width: calc(100% - 24px) !important;
-    }
-
-}
-
-/* =========================================================
-   FINAL ABOUT LAYOUT — EQUAL MAIN BOXES
-========================================================= */
-
-#about .about-wrapper.equal-about-layout {
-    width: 100% !important;
-    max-width: 1400px !important;
-    margin: 0 auto !important;
-
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
-    gap: 40px !important;
-    align-items: stretch !important;
-}
-
-#about .about-wrapper.equal-about-layout > .about-profile,
-#about .about-wrapper.equal-about-layout > .about-content {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-    box-sizing: border-box !important;
-}
-
-#about .about-wrapper.equal-about-layout > .about-profile,
-#about .about-wrapper.equal-about-layout > .about-content {
-    min-height: 875px !important;
-    height: 100% !important;
-}
-
-@media (max-width: 900px) {
-    #about .about-wrapper.equal-about-layout {
-        grid-template-columns: 1fr !important;
-        gap: 35px !important;
-    }
-
-    #about .about-wrapper.equal-about-layout > .about-profile,
-    #about .about-wrapper.equal-about-layout > .about-content {
-        min-height: auto !important;
-        height: auto !important;
-    }
-}
-
-/* =========================================================
-   FINAL ABOUT SECTION
-   TWO EQUAL MAIN BOXES
-========================================================= */
-
-#about .about-wrapper.equal-about-layout {
-    width: min(1400px, calc(100% - 40px)) !important;
-    margin: 0 auto !important;
-
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
-    gap: 40px !important;
-
-    align-items: stretch !important;
-}
-
-/* LEFT BOX */
-#about .about-wrapper.equal-about-layout > .about-profile {
-    width: 100% !important;
-    min-width: 0 !important;
-    min-height: 875px !important;
-    height: 875px !important;
-
-    box-sizing: border-box !important;
-    position: relative !important;
-
-    display: flex !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
-
-    padding: 28px !important;
-    overflow: hidden !important;
-
-    border: 1px solid rgba(37, 99, 235, .10) !important;
-    border-radius: 28px !important;
-    background: linear-gradient(145deg, #f8fbff, #ffffff) !important;
-}
-
-/* RIGHT BOX */
-#about .about-wrapper.equal-about-layout > .about-content {
-    width: 100% !important;
-    min-width: 0 !important;
-    min-height: 875px !important;
-    height: 875px !important;
-
-    box-sizing: border-box !important;
-}
-
-/* PROFILE CONTENT STAYS INSIDE LEFT BOX */
-#about .equal-about-layout .profile-panel {
-    position: relative !important;
-    z-index: 3 !important;
-
-    width: 100% !important;
-    max-width: 520px !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-}
-
-/* PHOTO */
-#about .equal-about-layout .about-photo-circle {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-
-    margin: 0 auto !important;
-}
-
-/* NAME CARD */
-#about .equal-about-layout .about-profile-card {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-
-    width: min(390px, 92%) !important;
-    margin: -42px auto 0 !important;
-
-    z-index: 6 !important;
-}
-
-/* APPROACH CARD */
-#about .equal-about-layout .about-approach {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-
-    transform: none !important;
-
-    width: min(100%, 500px) !important;
-    margin: 20px auto 0 !important;
-
-    z-index: 5 !important;
-}
-
-/* MOBILE */
-@media (max-width: 900px) {
-
-    #about .about-wrapper.equal-about-layout {
-        width: calc(100% - 24px) !important;
-        grid-template-columns: 1fr !important;
-        gap: 30px !important;
-    }
-
-    #about .about-wrapper.equal-about-layout > .about-profile,
-    #about .about-wrapper.equal-about-layout > .about-content {
-        min-height: auto !important;
-        height: auto !important;
-    }
-
-    #about .equal-about-layout .about-approach {
-        width: 100% !important;
-    }
-}
-
-
-/* =========================================================
-   CLEAN FINAL FIX
-   Equal columns + centered left content + no clipping
-========================================================= */
-
-#about .about-wrapper.equal-about-layout {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
-    gap: 36px !important;
-    align-items: stretch !important;
-    width: min(1200px, calc(100% - 32px)) !important;
-    margin: 0 auto !important;
-}
-
-#about .about-wrapper.equal-about-layout > .about-profile,
-#about .about-wrapper.equal-about-layout > .about-content {
-    width: 100% !important;
-    min-width: 0 !important;
-    height: 820px !important;
-    min-height: 820px !important;
-    max-width: none !important;
-    box-sizing: border-box !important;
-}
-
-/* LEFT MAIN BOX */
-#about .about-wrapper.equal-about-layout > .about-profile {
-    position: relative !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
-    padding: 24px 22px !important;
-    overflow: hidden !important;
-}
-
-/* LEFT INNER CONTENT */
-#about .equal-about-layout .profile-panel {
-    position: relative !important;
-    width: 100% !important;
-    max-width: 430px !important;
-    margin: 0 auto !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-
-    transform: none !important;
-}
-
-/* PHOTO — centered, contained */
-#about .equal-about-layout .about-photo-circle {
-    position: relative !important;
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-
-    width: 250px !important;
-    height: 315px !important;
-    max-width: 100% !important;
-
-    margin: 0 auto !important;
-    transform: none !important;
-    flex: 0 0 auto !important;
-
-    z-index: 3 !important;
-}
-
-/* NAME CARD — centered under photo */
-#about .equal-about-layout .about-profile-card {
-    position: relative !important;
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-
-    width: 360px !important;
-    max-width: 100% !important;
-
-    margin: -34px auto 0 !important;
-    transform: none !important;
-
-    z-index: 6 !important;
-    box-sizing: border-box !important;
-}
-
-/* TEACHING APPROACH — centered below name */
-#about .equal-about-layout .about-approach {
-    position: relative !important;
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-
-    width: 390px !important;
-    max-width: 100% !important;
-
-    margin: 18px auto 0 !important;
-    transform: none !important;
-
-    box-sizing: border-box !important;
-    z-index: 5 !important;
-}
-
-/* Keep mathematical decoration behind content */
-#about .equal-about-layout .about-math-bg {
-    position: absolute !important;
-    inset: 0 !important;
-    z-index: 1 !important;
-    pointer-events: none !important;
-}
-
-/* RIGHT BOX */
-#about .equal-about-layout > .about-content {
-    overflow: hidden !important;
-}
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 1000px) and (min-width: 701px) {
-
-    #about .about-wrapper.equal-about-layout {
-        gap: 24px !important;
-        width: calc(100% - 24px) !important;
-    }
-
-    #about .about-wrapper.equal-about-layout > .about-profile,
-    #about .about-wrapper.equal-about-layout > .about-content {
-        height: 780px !important;
-        min-height: 780px !important;
-    }
-
-    #about .equal-about-layout .about-photo-circle {
-        width: 215px !important;
-        height: 275px !important;
-    }
-
-    #about .equal-about-layout .about-profile-card {
-        width: 330px !important;
-    }
-
-    #about .equal-about-layout .about-approach {
-        width: 350px !important;
-    }
-}
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 700px) {
-
-    #about .about-wrapper.equal-about-layout {
-        grid-template-columns: 1fr !important;
-        width: calc(100% - 20px) !important;
-        gap: 24px !important;
-    }
-
-    #about .about-wrapper.equal-about-layout > .about-profile,
-    #about .about-wrapper.equal-about-layout > .about-content {
-        height: auto !important;
-        min-height: 0 !important;
-    }
-
-    #about .about-wrapper.equal-about-layout > .about-profile {
-        padding: 20px 14px 28px !important;
-        overflow: hidden !important;
-    }
-
-    #about .equal-about-layout .about-photo-circle {
-        width: min(230px, 78vw) !important;
-        height: min(285px, 96vw) !important;
-    }
-
-    #about .equal-about-layout .about-profile-card {
-        width: min(350px, 94%) !important;
-        margin-top: -28px !important;
-    }
-
-    #about .equal-about-layout .about-approach {
-        width: min(390px, 96%) !important;
-        margin-top: 14px !important;
-    }
-
-    #about .equal-about-layout > .about-content {
-        overflow: visible !important;
-    }
-}
-
-
-/* =========================================================
-   FINAL USE THIS — PROFILE / ABOUT
-   Do not change HTML.
-   Left and right panels are equal.
-========================================================= */
-
-#about .about-wrapper.equal-about-layout {
-    width: min(1200px, calc(100% - 32px)) !important;
-    margin: 0 auto !important;
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
-    gap: 32px !important;
-    align-items: stretch !important;
-}
-
-/* TWO IDENTICAL MAIN BOXES */
-#about .about-wrapper.equal-about-layout > .about-profile,
-#about .about-wrapper.equal-about-layout > .about-content {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-    min-height: 780px !important;
-    height: 780px !important;
-    box-sizing: border-box !important;
-}
-
-/* LEFT MAIN BOX */
-#about .about-wrapper.equal-about-layout > .about-profile {
-    position: relative !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
-    padding: 18px !important;
-    overflow: hidden !important;
-    border: 1px solid rgba(37,99,235,.10) !important;
-    border-radius: 27px !important;
-    background: linear-gradient(145deg,#f8fbff,#ffffff) !important;
-}
-
-/* LEFT CONTENT — FULL WIDTH */
-#about .equal-about-layout .profile-panel {
-    position: relative !important;
-    z-index: 3 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: 100% !important;
-    margin: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-}
-
-/* PHOTO — LARGE AND CENTERED */
-#about .equal-about-layout .about-photo-circle {
-    position: relative !important;
-    inset: auto !important;
-    transform: none !important;
-
-    width: min(82%, 330px) !important;
-    height: 385px !important;
-
-    margin: 0 auto !important;
-    flex: 0 0 auto !important;
-    z-index: 4 !important;
-}
-
-/* NAME CARD — SAME WIDTH FAMILY */
-#about .equal-about-layout .about-profile-card {
-    position: relative !important;
-    inset: auto !important;
-    transform: none !important;
-
-    width: min(92%, 390px) !important;
-    min-height: 105px !important;
-
-    margin: -35px auto 0 !important;
-    padding: 18px 16px !important;
-
-    z-index: 8 !important;
-    box-sizing: border-box !important;
-}
-
-/* APPROACH — LARGE, NOT TINY */
-#about .equal-about-layout .about-approach {
-    position: relative !important;
-    inset: auto !important;
-    transform: none !important;
-
-    width: min(94%, 410px) !important;
-    margin: 16px auto 0 !important;
-    padding: 18px !important;
-
-    box-sizing: border-box !important;
-    z-index: 7 !important;
-}
-
-/* Approach content uses the available width */
-#about .equal-about-layout .approach-title {
-    width: 100% !important;
-}
-
-#about .equal-about-layout .approach-method {
-    width: 100% !important;
-}
-
-#about .equal-about-layout .approach-statement {
-    width: 100% !important;
-}
-
-#about .equal-about-layout .approach-principles {
-    width: 100% !important;
-    display: grid !important;
-    grid-template-columns: repeat(2,minmax(0,1fr)) !important;
-    gap: 8px !important;
-}
-
-/* RIGHT PANEL */
-#about .about-wrapper.equal-about-layout > .about-content {
-    position: relative !important;
-    overflow: hidden !important;
-}
-
-/* =========================================================
-   LARGE DESKTOP
-========================================================= */
-
-@media (min-width: 1201px) {
-
-    #about .about-wrapper.equal-about-layout {
-        gap: 40px !important;
-    }
-
-    #about .about-wrapper.equal-about-layout > .about-profile,
-    #about .about-wrapper.equal-about-layout > .about-content {
-        min-height: 820px !important;
-        height: 820px !important;
-    }
-
-    #about .equal-about-layout .about-photo-circle {
-        width: 350px !important;
-        height: 430px !important;
-    }
-
-    #about .equal-about-layout .about-profile-card {
-        width: 410px !important;
-        margin-top: -40px !important;
-    }
-
-    #about .equal-about-layout .about-approach {
-        width: 430px !important;
-    }
-}
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) and (min-width: 601px) {
-
-    #about .about-wrapper.equal-about-layout {
-        width: calc(100% - 24px) !important;
-        gap: 20px !important;
-    }
-
-    #about .about-wrapper.equal-about-layout > .about-profile,
-    #about .about-wrapper.equal-about-layout > .about-content {
-        height: 700px !important;
-        min-height: 700px !important;
-    }
-
-    #about .about-wrapper.equal-about-layout > .about-profile {
-        padding: 14px !important;
-    }
-
-    #about .equal-about-layout .about-photo-circle {
-        width: 78% !important;
-        height: 330px !important;
-    }
-
-    #about .equal-about-layout .about-profile-card {
-        width: 94% !important;
-        margin-top: -30px !important;
-    }
-
-    #about .equal-about-layout .about-approach {
-        width: 96% !important;
-        margin-top: 12px !important;
-        padding: 14px !important;
-    }
-}
-
-/* =========================================================
-   MOBILE — STACK THE TWO EQUAL PANELS
-========================================================= */
-
-@media (max-width: 600px) {
-
-    #about .about-wrapper.equal-about-layout {
-        width: calc(100% - 20px) !important;
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-    }
-
-    #about .about-wrapper.equal-about-layout > .about-profile,
-    #about .about-wrapper.equal-about-layout > .about-content {
-        height: auto !important;
-        min-height: 0 !important;
-    }
-
-    #about .about-wrapper.equal-about-layout > .about-profile {
-        padding: 18px 12px 25px !important;
-    }
-
-    #about .equal-about-layout .about-photo-circle {
-        width: min(270px,82vw) !important;
-        height: 330px !important;
-    }
-
-    #about .equal-about-layout .about-profile-card {
-        width: 94% !important;
-        margin-top: -30px !important;
-    }
-
-    #about .equal-about-layout .about-approach {
-        width: 96% !important;
-        margin-top: 14px !important;
-    }
-}
-
-
-/* =========================================================
-   PREMIUM LEFT PROFILE DESIGN
-   Larger photo + elegant approach card + no empty gap
-========================================================= */
-
-/* Give the left panel a tighter, intentional composition */
-#about .about-wrapper.equal-about-layout > .about-profile {
-    padding: 22px 24px 24px !important;
-    overflow: hidden !important;
-}
-
-/* Use the complete left panel vertically */
-#about .equal-about-layout .profile-panel {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 520px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-}
-
-/* Larger premium portrait */
-#about .equal-about-layout .about-photo-circle {
-    width: 340px !important;
-    height: 425px !important;
-    margin: 0 auto !important;
-    border-radius: 170px 170px 48px 48px !important;
-    overflow: hidden !important;
-}
-
-/* Make the actual image fill the portrait */
-#about .equal-about-layout .about-photo-circle img {
-    width: 100% !important;
-    height: 100% !important;
     object-fit: cover !important;
     object-position: center top !important;
 }
 
-/* Name card */
-#about .equal-about-layout .about-profile-card {
-    width: 410px !important;
-    max-width: 94% !important;
-    margin: -34px auto 0 !important;
-    padding: 20px 18px 18px !important;
-    border-radius: 20px !important;
+/* NAME CARD — overlaps bottom of photo elegantly */
+#about .about-profile .about-profile-card{
     position: relative !important;
-    z-index: 10 !important;
-}
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
 
-/* =========================================================
-   MY TEACHING APPROACH — PREMIUM CARD
-========================================================= */
-
-#about .equal-about-layout .about-approach {
-    width: 440px !important;
+    width: 430px !important;
     max-width: 96% !important;
 
-    margin: 18px auto 0 !important;
+    min-height: 112px !important;
+    margin: -43px auto 0 !important;
+    padding: 20px 18px !important;
+
+    box-sizing: border-box !important;
+    z-index: 8 !important;
+}
+
+/* NAME TYPOGRAPHY */
+#about .about-profile .about-profile-card h3{
+    margin: 0 0 5px !important;
+    font-size: 29px !important;
+}
+
+#about .about-profile .about-profile-card p{
+    margin: 0 0 7px !important;
+    font-size: 15px !important;
+}
+
+#about .about-profile .about-profile-card span{
+    font-size: 12px !important;
+}
+
+/* TEACHING APPROACH */
+#about .about-profile > .about-approach{
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+
+    width: 450px !important;
+    max-width: 97% !important;
+
+    min-height: 218px !important;
+    margin: 16px auto 0 !important;
     padding: 20px !important;
+
+    box-sizing: border-box !important;
 
     border-radius: 22px !important;
-    border: 1px solid rgba(37, 99, 235, .14) !important;
+    border: 1px solid rgba(37,99,235,.12) !important;
 
     background:
-        radial-gradient(circle at 100% 0%, rgba(218, 166, 45, .10), transparent 35%),
-        linear-gradient(145deg, #ffffff 0%, #f5f9ff 100%) !important;
+        radial-gradient(circle at 100% 0%,rgba(215,166,58,.10),transparent 35%),
+        linear-gradient(145deg,#ffffff,#f2f7ff) !important;
 
     box-shadow:
-        0 12px 30px rgba(15, 35, 65, .10),
-        inset 0 1px 0 rgba(255,255,255,.9) !important;
+        0 14px 34px rgba(20,50,90,.11),
+        inset 0 1px 0 rgba(255,255,255,.95) !important;
 
-    position: relative !important;
+    z-index: 7 !important;
     overflow: hidden !important;
 }
 
-/* Gold accent line */
-#about .equal-about-layout .about-approach::before {
-    content: "" !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 24px !important;
-    right: 24px !important;
-    height: 3px !important;
-    border-radius: 0 0 8px 8px !important;
-    background: linear-gradient(90deg, #c89522, #e6b84a, #c89522) !important;
+/* Gold accent */
+#about .about-profile > .about-approach::before{
+    content:"" !important;
+    position:absolute !important;
+    top:0 !important;
+    left:24px !important;
+    right:24px !important;
+    height:3px !important;
+    border-radius:0 0 8px 8px !important;
+    background:linear-gradient(90deg,#bd8929,#e6b64d,#bd8929) !important;
 }
 
-/* Approach heading */
-#about .equal-about-layout .approach-title {
-    display: flex !important;
-    align-items: center !important;
-    gap: 13px !important;
-    margin-bottom: 12px !important;
+/* APPROACH HEADER */
+#about .about-profile > .about-approach .approach-title{
+    display:flex !important;
+    align-items:center !important;
+    gap:12px !important;
+    margin-bottom:11px !important;
 }
 
-#about .equal-about-layout .approach-icon {
-    width: 42px !important;
-    height: 42px !important;
-    flex: 0 0 42px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    border-radius: 13px !important;
-    background: #ffffff !important;
-    color: #c89522 !important;
-    border: 1px solid rgba(200,149,34,.18) !important;
-    box-shadow: 0 5px 14px rgba(15,35,65,.08) !important;
-    font-size: 22px !important;
+#about .about-profile > .about-approach .approach-icon{
+    width:43px !important;
+    height:43px !important;
+    flex:0 0 43px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    border-radius:13px !important;
+    background:#fff !important;
+    color:#bd8929 !important;
+    border:1px solid rgba(189,137,41,.16) !important;
+    box-shadow:0 5px 14px rgba(20,50,90,.08) !important;
+    font-size:21px !important;
 }
 
-#about .equal-about-layout .approach-label {
-    display: block !important;
-    margin-bottom: 2px !important;
-    font-size: 8px !important;
-    letter-spacing: 1.6px !important;
-    font-weight: 800 !important;
-    color: #c28b19 !important;
+#about .about-profile > .about-approach .approach-title h3{
+    margin:0 !important;
+    color:#102b4d !important;
+    font-family:Georgia,"Times New Roman",serif !important;
+    font-size:21px !important;
+    line-height:1.15 !important;
 }
 
-#about .equal-about-layout .approach-title h3 {
-    margin: 0 !important;
-    font-size: 21px !important;
-    line-height: 1.15 !important;
+/* APPROACH TEXT */
+#about .about-profile > .about-approach > p{
+    margin:0 !important;
+    color:#536b86 !important;
+    font-size:11px !important;
+    line-height:1.55 !important;
 }
 
-/* Concept → Visualize → Apply → Master */
-#about .equal-about-layout .approach-method {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-wrap: wrap !important;
-    gap: 7px !important;
-
-    margin: 8px 0 12px !important;
-    padding: 9px 10px !important;
-
-    border-radius: 12px !important;
-    background: rgba(255,255,255,.72) !important;
-    border: 1px solid rgba(37,99,235,.08) !important;
-
-    font-weight: 700 !important;
-    font-size: 11px !important;
+/* If method/principle elements exist, style them cleanly */
+#about .about-profile > .about-approach .approach-method{
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+    flex-wrap:wrap !important;
+    gap:6px !important;
+    margin:7px 0 11px !important;
+    padding:9px 10px !important;
+    border-radius:11px !important;
+    background:rgba(255,255,255,.78) !important;
+    border:1px solid rgba(37,99,235,.08) !important;
+    font-size:10px !important;
 }
 
-#about .equal-about-layout .approach-method b {
-    color: #c89522 !important;
+#about .about-profile > .about-approach .approach-principles{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:8px !important;
+    margin-top:12px !important;
 }
 
-/* Short intro */
-#about .equal-about-layout .approach-statement {
-    margin: 0 2px 14px !important;
-    font-size: 11px !important;
-    line-height: 1.55 !important;
-    color: #496789 !important;
-    text-align: center !important;
+#about .about-profile > .about-approach .approach-principle{
+    min-height:55px !important;
+    padding:9px !important;
+    box-sizing:border-box !important;
+    border-radius:11px !important;
+    background:rgba(255,255,255,.84) !important;
+    border:1px solid rgba(37,99,235,.08) !important;
 }
 
-/* Four principles */
-#about .equal-about-layout .approach-principles {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
-    gap: 9px !important;
-}
-
-#about .equal-about-layout .approach-principle {
-    min-height: 58px !important;
-    padding: 10px !important;
-
-    display: flex !important;
-    align-items: flex-start !important;
-    gap: 8px !important;
-
-    border-radius: 13px !important;
-    background: rgba(255,255,255,.78) !important;
-    border: 1px solid rgba(37,99,235,.09) !important;
-
-    box-sizing: border-box !important;
-}
-
-#about .equal-about-layout .approach-principle > span {
-    width: 25px !important;
-    height: 25px !important;
-    flex: 0 0 25px !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    border-radius: 8px !important;
-    background: #f4f7fc !important;
-    color: #c89522 !important;
-    font-size: 12px !important;
-    font-weight: 700 !important;
-}
-
-#about .equal-about-layout .approach-principle h4 {
-    margin: 0 0 3px !important;
-    font-size: 10px !important;
-    line-height: 1.2 !important;
-}
-
-#about .equal-about-layout .approach-principle p {
-    margin: 0 !important;
-    font-size: 9px !important;
-    line-height: 1.35 !important;
-    color: #5b7390 !important;
-}
-
-/* Remove unnecessary vertical dead space */
-#about .equal-about-layout .about-approach + * {
-    margin-top: 0 !important;
-}
-
-/* =========================================================
-   DESKTOP — BALANCED VERTICAL SCALE
-========================================================= */
-
-@media (min-width: 901px) {
-
-    #about .about-wrapper.equal-about-layout > .about-profile {
-        justify-content: flex-start !important;
-    }
-
-    #about .equal-about-layout .about-photo-circle {
-        width: 350px !important;
-        height: 435px !important;
-    }
-
-    #about .equal-about-layout .about-profile-card {
-        margin-top: -38px !important;
-    }
-
-    #about .equal-about-layout .about-approach {
-        margin-top: 17px !important;
-    }
-}
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    #about .about-wrapper.equal-about-layout > .about-profile {
-        padding: 18px 12px 22px !important;
-    }
-
-    #about .equal-about-layout .about-photo-circle {
-        width: min(285px, 82vw) !important;
-        height: min(355px, 102vw) !important;
-    }
-
-    #about .equal-about-layout .about-profile-card {
-        width: min(390px, 95%) !important;
-        margin-top: -30px !important;
-    }
-
-    #about .equal-about-layout .about-approach {
-        width: 96% !important;
-        padding: 17px !important;
-        margin-top: 15px !important;
-    }
-
-    #about .equal-about-layout .approach-principles {
-        gap: 7px !important;
-    }
-}
-
-
-/* =========================================================
-   FINAL PHOTO SIZE + EQUAL CONTENT BALANCE
-========================================================= */
-
-/* Keep both main columns identical */
-#about .about-wrapper.equal-about-layout {
-    grid-template-columns: 1fr 1fr !important;
-    align-items: stretch !important;
-}
-
-/* LEFT PANEL */
-#about .about-wrapper.equal-about-layout > .about-profile {
-    display: flex !important;
-    align-items: flex-start !important;
-    justify-content: center !important;
-    padding: 18px 20px 22px !important;
-}
-
-/* Make the left content use the full available width */
-#about .equal-about-layout .profile-panel {
-    width: 100% !important;
-    max-width: 540px !important;
-}
-
-/* MUCH LARGER PHOTO */
-#about .equal-about-layout .about-photo-circle {
-    width: 390px !important;
-    height: 475px !important;
-    max-width: 92% !important;
-    margin: 0 auto !important;
-}
-
-/* Make image fill the enlarged frame */
-#about .equal-about-layout .about-photo-circle img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center top !important;
-}
-
-/* Name card follows photo */
-#about .equal-about-layout .about-profile-card {
-    width: 430px !important;
-    max-width: 94% !important;
-    margin: -42px auto 0 !important;
-    padding: 21px 18px !important;
-}
-
-/* Teaching approach gets matching width */
-#about .equal-about-layout .about-approach {
-    width: 450px !important;
-    max-width: 96% !important;
-    margin: 18px auto 0 !important;
-    padding: 20px !important;
-}
-
-/* Balanced approach typography */
-#about .equal-about-layout .approach-title h3 {
-    font-size: 22px !important;
-}
-
-#about .equal-about-layout .approach-method {
-    font-size: 11px !important;
-    padding: 10px 12px !important;
-}
-
-#about .equal-about-layout .approach-statement {
-    font-size: 11px !important;
-    line-height: 1.5 !important;
-}
-
-#about .equal-about-layout .approach-principles {
-    gap: 10px !important;
-}
-
-#about .equal-about-layout .approach-principle {
-    min-height: 62px !important;
-    padding: 10px !important;
-}
-
-/* =========================================================
-   DESKTOP
-========================================================= */
-
-@media (min-width: 1101px) {
-
-    #about .about-wrapper.equal-about-layout > .about-profile,
-    #about .about-wrapper.equal-about-layout > .about-content {
-        min-height: 820px !important;
-        height: 820px !important;
-    }
-
-    #about .equal-about-layout .about-photo-circle {
-        width: 400px !important;
-        height: 490px !important;
-    }
-
-    #about .equal-about-layout .about-profile-card {
-        width: 440px !important;
-        margin-top: -44px !important;
-    }
-
-    #about .equal-about-layout .about-approach {
-        width: 455px !important;
-        margin-top: 18px !important;
-    }
-}
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 1100px) and (min-width: 601px) {
-
-    #about .equal-about-layout .about-photo-circle {
-        width: 310px !important;
-        height: 390px !important;
-    }
-
-    #about .equal-about-layout .about-profile-card {
-        width: 360px !important;
-        margin-top: -34px !important;
-    }
-
-    #about .equal-about-layout .about-approach {
-        width: 390px !important;
-    }
-}
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    #about .about-wrapper.equal-about-layout {
-        grid-template-columns: 1fr !important;
-    }
-
-    #about .equal-about-layout .about-photo-circle {
-        width: min(320px, 88vw) !important;
-        height: min(400px, 110vw) !important;
-    }
-
-    #about .equal-about-layout .about-profile-card {
-        width: 94% !important;
-        margin-top: -32px !important;
-    }
-
-    #about .equal-about-layout .about-approach {
-        width: 96% !important;
-    }
-}
-
-
-/* =========================================================
-   FINAL VISUAL FIX — LARGE PHOTO / NO EMPTY GAP
-========================================================= */
-
-/* Keep the two main columns equal */
-#about .about-wrapper.equal-about-layout {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 32px !important;
-    align-items: stretch !important;
-}
-
-/* Left and right outer panels */
-#about .about-wrapper.equal-about-layout > .about-profile,
-#about .about-wrapper.equal-about-layout > .about-content {
-    height: 820px !important;
-    min-height: 820px !important;
-    box-sizing: border-box !important;
-}
-
-/* LEFT SIDE */
-#about .about-wrapper.equal-about-layout > .about-profile {
-    padding: 10px 18px 18px !important;
-    display: flex !important;
-    align-items: flex-start !important;
-    justify-content: center !important;
-}
-
-/* Make left content occupy the panel */
-#about .equal-about-layout .profile-panel {
-    width: 100% !important;
-    max-width: 560px !important;
-    height: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-}
-
-/* LARGE PHOTO */
-#about .equal-about-layout .about-photo-circle {
-    width: 430px !important;
-    height: 535px !important;
-    max-width: 94% !important;
-    margin: 0 auto !important;
-    flex-shrink: 0 !important;
-}
-
-/* IMAGE FULL FRAME */
-#about .equal-about-layout .about-photo-circle img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center top !important;
-}
-
-/* NAME CARD */
-#about .equal-about-layout .about-profile-card {
-    width: 455px !important;
-    max-width: 96% !important;
-    min-height: 105px !important;
-    margin: -45px auto 0 !important;
-    padding: 20px !important;
-    flex-shrink: 0 !important;
-    z-index: 20 !important;
-}
-
-/* TEACHING APPROACH — WIDER + TALLER */
-#about .equal-about-layout .about-approach {
-    width: 470px !important;
-    max-width: 98% !important;
-    min-height: 210px !important;
-    margin: 16px auto 0 !important;
-    padding: 22px !important;
-    flex-shrink: 0 !important;
-    z-index: 15 !important;
-}
-
-/* Make the approach content readable */
-#about .equal-about-layout .approach-title {
-    margin-bottom: 12px !important;
-}
-
-#about .equal-about-layout .approach-title h3 {
-    font-size: 22px !important;
-}
-
-#about .equal-about-layout .approach-method {
-    margin: 8px 0 12px !important;
-    padding: 10px !important;
-    font-size: 11px !important;
-}
-
-#about .equal-about-layout .approach-statement {
-    font-size: 11px !important;
-    line-height: 1.55 !important;
-    margin-bottom: 14px !important;
-}
-
-#about .equal-about-layout .approach-principles {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 10px !important;
-}
-
-#about .equal-about-layout .approach-principle {
-    min-height: 62px !important;
-    padding: 10px !important;
-}
-
-/* =========================================================
-   IMPORTANT: REMOVE THE OLD EMPTY LOWER SPACE
-   The visual group is intentionally packed toward the top.
-========================================================= */
-
-#about .equal-about-layout .profile-panel::after {
-    display: none !important;
+/* Hide quote only if an old quote element exists */
+#about .about-profile .about-quote{
+    display:none !important;
 }
 
 /* =========================================================
    LARGE DESKTOP
 ========================================================= */
 
-@media (min-width: 1201px) {
+@media (min-width:1200px){
 
-    #about .about-wrapper.equal-about-layout > .about-profile,
-    #about .about-wrapper.equal-about-layout > .about-content {
-        height: 850px !important;
-        min-height: 850px !important;
+    #about .about-wrapper{
+        gap:36px !important;
     }
 
-    #about .equal-about-layout .about-photo-circle {
-        width: 455px !important;
-        height: 560px !important;
+    #about .about-profile,
+    #about .about-content{
+        min-height:850px !important;
     }
 
-    #about .equal-about-layout .about-profile-card {
-        width: 475px !important;
-        margin-top: -48px !important;
+    #about .about-profile .about-photo-circle{
+        width:430px !important;
+        height:535px !important;
     }
 
-    #about .equal-about-layout .about-approach {
-        width: 485px !important;
-        min-height: 220px !important;
-        margin-top: 17px !important;
+    #about .about-profile .about-profile-card{
+        width:450px !important;
+        margin-top:-46px !important;
+    }
+
+    #about .about-profile > .about-approach{
+        width:470px !important;
+        min-height:225px !important;
     }
 }
 
@@ -12460,30 +11127,31 @@ a[href$=".pdf"]:hover {
    TABLET
 ========================================================= */
 
-@media (max-width: 1000px) and (min-width: 601px) {
+@media (max-width:1000px) and (min-width:601px){
 
-    #about .about-wrapper.equal-about-layout {
-        gap: 22px !important;
+    #about .about-wrapper{
+        grid-template-columns:1fr 1fr !important;
+        gap:22px !important;
     }
 
-    #about .about-wrapper.equal-about-layout > .about-profile,
-    #about .about-wrapper.equal-about-layout > .about-content {
-        height: 760px !important;
-        min-height: 760px !important;
+    #about .about-profile,
+    #about .about-content{
+        min-height:760px !important;
     }
 
-    #about .equal-about-layout .about-photo-circle {
-        width: 340px !important;
-        height: 425px !important;
+    #about .about-profile .about-photo-circle{
+        width:330px !important;
+        height:420px !important;
     }
 
-    #about .equal-about-layout .about-profile-card {
-        width: 390px !important;
-        margin-top: -38px !important;
+    #about .about-profile .about-profile-card{
+        width:380px !important;
+        margin-top:-36px !important;
     }
 
-    #about .equal-about-layout .about-approach {
-        width: 410px !important;
+    #about .about-profile > .about-approach{
+        width:405px !important;
+        min-height:205px !important;
     }
 }
 
@@ -12491,35 +11159,36 @@ a[href$=".pdf"]:hover {
    MOBILE
 ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width:600px){
 
-    #about .about-wrapper.equal-about-layout {
-        grid-template-columns: 1fr !important;
-        width: calc(100% - 18px) !important;
+    #about .about-wrapper{
+        grid-template-columns:1fr !important;
+        gap:24px !important;
     }
 
-    #about .about-wrapper.equal-about-layout > .about-profile,
-    #about .about-wrapper.equal-about-layout > .about-content {
-        height: auto !important;
-        min-height: 0 !important;
+    #about .about-profile,
+    #about .about-content{
+        min-height:0 !important;
+        height:auto !important;
     }
 
-    #about .about-wrapper.equal-about-layout > .about-profile {
-        padding: 15px 10px 22px !important;
+    #about .about-profile{
+        padding:14px 10px 24px !important;
     }
 
-    #about .equal-about-layout .about-photo-circle {
-        width: min(340px, 88vw) !important;
-        height: min(425px, 110vw) !important;
+    #about .about-profile .about-photo-circle{
+        width:min(330px,88vw) !important;
+        height:min(410px,108vw) !important;
     }
 
-    #about .equal-about-layout .about-profile-card {
-        width: 95% !important;
-        margin-top: -34px !important;
+    #about .about-profile .about-profile-card{
+        width:95% !important;
+        margin-top:-32px !important;
     }
 
-    #about .equal-about-layout .about-approach {
-        width: 97% !important;
-        min-height: 0 !important;
+    #about .about-profile > .about-approach{
+        width:97% !important;
+        min-height:0 !important;
+        margin-top:14px !important;
     }
 }
