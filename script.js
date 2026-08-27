@@ -9,81 +9,104 @@ document.addEventListener("DOMContentLoaded", function () {
     ===================================================== */
 
     const themeToggle = document.getElementById("themeToggle");
-    const root = document.documentElement;
+
+    const html = document.documentElement;
     const body = document.body;
 
+
     function applyTheme(theme) {
+
         const isDark = theme === "dark";
 
-        root.classList.toggle("dark-mode", isDark);
+        /* Apply class to both HTML and BODY */
+        html.classList.toggle("dark-mode", isDark);
         body.classList.toggle("dark-mode", isDark);
 
-        if (themeToggle) {
-            themeToggle.setAttribute(
-                "aria-label",
-                isDark ? "Switch to light mode" : "Switch to dark mode"
-            );
 
-            themeToggle.setAttribute(
-                "title",
-                isDark ? "Switch to light mode" : "Switch to dark mode"
-            );
+        /* Update theme button */
+        if (themeToggle) {
 
             themeToggle.setAttribute(
                 "aria-pressed",
                 isDark ? "true" : "false"
             );
+
+            themeToggle.setAttribute(
+                "aria-label",
+                isDark
+                    ? "Switch to light mode"
+                    : "Switch to dark mode"
+            );
+
+            themeToggle.setAttribute(
+                "title",
+                isDark
+                    ? "Switch to light mode"
+                    : "Switch to dark mode"
+            );
         }
     }
 
-    /* -----------------------------------------------------
-       Load saved theme
-       Default = LIGHT MODE
-    ----------------------------------------------------- */
 
-    const savedTheme = localStorage.getItem("theme");
+    /* =====================================================
+       LOAD SAVED THEME
+    ===================================================== */
+
+    const savedTheme =
+        localStorage.getItem("theme");
+
 
     if (savedTheme === "dark") {
+
         applyTheme("dark");
+
     } else {
+
+        /* Default = LIGHT MODE */
+
         applyTheme("light");
     }
 
-    /* -----------------------------------------------------
-       Theme button
-    ----------------------------------------------------- */
+
+    /* =====================================================
+       THEME BUTTON
+    ===================================================== */
 
     if (themeToggle) {
 
-        themeToggle.addEventListener("click", function () {
+        themeToggle.addEventListener(
+            "click",
+            function () {
 
-            const darkModeActive =
-                body.classList.contains("dark-mode");
+                const darkMode =
+                    body.classList.contains("dark-mode");
 
-            if (darkModeActive) {
 
-                /* DARK → LIGHT */
+                if (darkMode) {
 
-                applyTheme("light");
+                    /* DARK → LIGHT */
 
-                localStorage.setItem(
-                    "theme",
-                    "light"
-                );
+                    applyTheme("light");
 
-            } else {
+                    localStorage.setItem(
+                        "theme",
+                        "light"
+                    );
 
-                /* LIGHT → DARK */
+                } else {
 
-                applyTheme("dark");
+                    /* LIGHT → DARK */
 
-                localStorage.setItem(
-                    "theme",
-                    "dark"
-                );
+                    applyTheme("dark");
+
+                    localStorage.setItem(
+                        "theme",
+                        "dark"
+                    );
+                }
+
             }
-
-        });
+        );
 
     }
 
@@ -96,32 +119,60 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("menuToggle");
 
     const navLinks =
-        document.querySelector(".nav-links");
+        document.getElementById("navLinks");
+
 
     if (menuToggle && navLinks) {
 
-        menuToggle.addEventListener("click", function () {
+        menuToggle.addEventListener(
+            "click",
+            function () {
 
-            navLinks.classList.toggle("active");
+                navLinks.classList.toggle("active");
 
-            menuToggle.classList.toggle("active");
+                menuToggle.classList.toggle("active");
 
-        });
 
-        /* Close mobile menu after clicking a link */
+                const expanded =
+                    menuToggle.classList.contains("active");
 
-        const navigationLinks =
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    expanded ? "true" : "false"
+                );
+
+            }
+        );
+
+
+        /* Close menu after navigation click */
+
+        const links =
             navLinks.querySelectorAll("a");
 
-        navigationLinks.forEach(function (link) {
 
-            link.addEventListener("click", function () {
+        links.forEach(function (link) {
 
-                navLinks.classList.remove("active");
+            link.addEventListener(
+                "click",
+                function () {
 
-                menuToggle.classList.remove("active");
+                    navLinks.classList.remove(
+                        "active"
+                    );
 
-            });
+                    menuToggle.classList.remove(
+                        "active"
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+            );
 
         });
 
@@ -133,48 +184,56 @@ document.addEventListener("DOMContentLoaded", function () {
     ===================================================== */
 
     const header =
-        document.querySelector("header");
+        document.querySelector(".header");
 
-    if (header) {
 
-        function updateHeader() {
+    function updateHeader() {
 
-            if (window.scrollY > 30) {
-
-                header.classList.add("scrolled");
-
-            } else {
-
-                header.classList.remove("scrolled");
-
-            }
-
+        if (!header) {
+            return;
         }
 
-        window.addEventListener(
-            "scroll",
-            updateHeader,
-            { passive: true }
-        );
 
-        updateHeader();
+        if (window.scrollY > 30) {
+
+            header.classList.add("scrolled");
+
+        } else {
+
+            header.classList.remove("scrolled");
+
+        }
 
     }
 
 
+    window.addEventListener(
+        "scroll",
+        updateHeader,
+        { passive: true }
+    );
+
+
+    updateHeader();
+
+
     /* =====================================================
-       ACTIVE NAVIGATION LINK
+       ACTIVE NAVIGATION
     ===================================================== */
 
     const sections =
         document.querySelectorAll("section[id]");
 
-    const navItems =
-        document.querySelectorAll(".nav-links a");
+    const navigationLinks =
+        document.querySelectorAll(
+            ".nav-links a"
+        );
+
 
     function updateActiveNavigation() {
 
         let currentSection = "";
+
 
         sections.forEach(function (section) {
 
@@ -184,9 +243,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const sectionHeight =
                 section.offsetHeight;
 
+
             if (
                 window.scrollY >= sectionTop &&
-                window.scrollY < sectionTop + sectionHeight
+                window.scrollY <
+                sectionTop + sectionHeight
             ) {
 
                 currentSection =
@@ -196,30 +257,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-        navItems.forEach(function (link) {
 
-            link.classList.remove("active");
+        navigationLinks.forEach(
+            function (link) {
 
-            const target =
-                link.getAttribute("href");
+                link.classList.remove(
+                    "active"
+                );
 
-            if (
-                target === "#" + currentSection
-            ) {
 
-                link.classList.add("active");
+                const target =
+                    link.getAttribute("href");
+
+
+                if (
+                    target ===
+                    "#" + currentSection
+                ) {
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                }
 
             }
-
-        });
+        );
 
     }
+
 
     window.addEventListener(
         "scroll",
         updateActiveNavigation,
         { passive: true }
     );
+
 
     updateActiveNavigation();
 
@@ -228,77 +301,106 @@ document.addEventListener("DOMContentLoaded", function () {
        SMOOTH SCROLL
     ===================================================== */
 
-    navItems.forEach(function (link) {
+    navigationLinks.forEach(
+        function (link) {
 
-        link.addEventListener("click", function (event) {
+            link.addEventListener(
+                "click",
+                function (event) {
 
-            const target =
-                link.getAttribute("href");
+                    const target =
+                        link.getAttribute("href");
 
-            if (
-                target &&
-                target.startsWith("#")
-            ) {
 
-                const element =
-                    document.querySelector(target);
+                    if (
+                        target &&
+                        target.startsWith("#")
+                    ) {
 
-                if (element) {
+                        const element =
+                            document.querySelector(
+                                target
+                            );
 
-                    event.preventDefault();
 
-                    element.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
+                        if (element) {
+
+                            event.preventDefault();
+
+
+                            element.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start"
+                            });
+
+                        }
+
+                    }
 
                 }
+            );
 
-            }
-
-        });
-
-    });
+        }
+    );
 
 
     /* =====================================================
        CLOSE MOBILE MENU WHEN CLICKING OUTSIDE
     ===================================================== */
 
-    document.addEventListener("click", function (event) {
+    document.addEventListener(
+        "click",
+        function (event) {
 
-        if (!navLinks || !menuToggle) {
-            return;
+            if (!navLinks || !menuToggle) {
+                return;
+            }
+
+
+            const clickedMenu =
+                navLinks.contains(event.target);
+
+
+            const clickedButton =
+                menuToggle.contains(event.target);
+
+
+            if (
+                !clickedMenu &&
+                !clickedButton
+            ) {
+
+                navLinks.classList.remove(
+                    "active"
+                );
+
+                menuToggle.classList.remove(
+                    "active"
+                );
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
         }
-
-        const clickedInsideMenu =
-            navLinks.contains(event.target);
-
-        const clickedMenuButton =
-            menuToggle.contains(event.target);
-
-        if (
-            !clickedInsideMenu &&
-            !clickedMenuButton
-        ) {
-
-            navLinks.classList.remove("active");
-
-            menuToggle.classList.remove("active");
-
-        }
-
-    });
+    );
 
 
     /* =====================================================
-       PREVENT THEME FLASH
-       Keep theme state synchronized.
+       KEEP THEME SYNCHRONIZED BETWEEN TABS
     ===================================================== */
 
-    window.addEventListener("storage", function (event) {
+    window.addEventListener(
+        "storage",
+        function (event) {
 
-        if (event.key === "theme") {
+            if (event.key !== "theme") {
+                return;
+            }
+
 
             if (event.newValue === "dark") {
 
@@ -311,7 +413,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
         }
-
-    });
+    );
 
 });
