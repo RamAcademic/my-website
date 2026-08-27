@@ -11463,3 +11463,194 @@ a[href$=".pdf"]:hover {
         width: 100% !important;
     }
 }
+
+
+/* =========================================================
+   CLEAN FINAL FIX
+   Equal columns + centered left content + no clipping
+========================================================= */
+
+#about .about-wrapper.equal-about-layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 36px !important;
+    align-items: stretch !important;
+    width: min(1200px, calc(100% - 32px)) !important;
+    margin: 0 auto !important;
+}
+
+#about .about-wrapper.equal-about-layout > .about-profile,
+#about .about-wrapper.equal-about-layout > .about-content {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 820px !important;
+    min-height: 820px !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+}
+
+/* LEFT MAIN BOX */
+#about .about-wrapper.equal-about-layout > .about-profile {
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    padding: 24px 22px !important;
+    overflow: hidden !important;
+}
+
+/* LEFT INNER CONTENT */
+#about .equal-about-layout .profile-panel {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 430px !important;
+    margin: 0 auto !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+
+    transform: none !important;
+}
+
+/* PHOTO — centered, contained */
+#about .equal-about-layout .about-photo-circle {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: 250px !important;
+    height: 315px !important;
+    max-width: 100% !important;
+
+    margin: 0 auto !important;
+    transform: none !important;
+    flex: 0 0 auto !important;
+
+    z-index: 3 !important;
+}
+
+/* NAME CARD — centered under photo */
+#about .equal-about-layout .about-profile-card {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: 360px !important;
+    max-width: 100% !important;
+
+    margin: -34px auto 0 !important;
+    transform: none !important;
+
+    z-index: 6 !important;
+    box-sizing: border-box !important;
+}
+
+/* TEACHING APPROACH — centered below name */
+#about .equal-about-layout .about-approach {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: 390px !important;
+    max-width: 100% !important;
+
+    margin: 18px auto 0 !important;
+    transform: none !important;
+
+    box-sizing: border-box !important;
+    z-index: 5 !important;
+}
+
+/* Keep mathematical decoration behind content */
+#about .equal-about-layout .about-math-bg {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+/* RIGHT BOX */
+#about .equal-about-layout > .about-content {
+    overflow: hidden !important;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) and (min-width: 701px) {
+
+    #about .about-wrapper.equal-about-layout {
+        gap: 24px !important;
+        width: calc(100% - 24px) !important;
+    }
+
+    #about .about-wrapper.equal-about-layout > .about-profile,
+    #about .about-wrapper.equal-about-layout > .about-content {
+        height: 780px !important;
+        min-height: 780px !important;
+    }
+
+    #about .equal-about-layout .about-photo-circle {
+        width: 215px !important;
+        height: 275px !important;
+    }
+
+    #about .equal-about-layout .about-profile-card {
+        width: 330px !important;
+    }
+
+    #about .equal-about-layout .about-approach {
+        width: 350px !important;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    #about .about-wrapper.equal-about-layout {
+        grid-template-columns: 1fr !important;
+        width: calc(100% - 20px) !important;
+        gap: 24px !important;
+    }
+
+    #about .about-wrapper.equal-about-layout > .about-profile,
+    #about .about-wrapper.equal-about-layout > .about-content {
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    #about .about-wrapper.equal-about-layout > .about-profile {
+        padding: 20px 14px 28px !important;
+        overflow: hidden !important;
+    }
+
+    #about .equal-about-layout .about-photo-circle {
+        width: min(230px, 78vw) !important;
+        height: min(285px, 96vw) !important;
+    }
+
+    #about .equal-about-layout .about-profile-card {
+        width: min(350px, 94%) !important;
+        margin-top: -28px !important;
+    }
+
+    #about .equal-about-layout .about-approach {
+        width: min(390px, 96%) !important;
+        margin-top: 14px !important;
+    }
+
+    #about .equal-about-layout > .about-content {
+        overflow: visible !important;
+    }
+}
