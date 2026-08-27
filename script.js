@@ -9,42 +9,66 @@ document.addEventListener("DOMContentLoaded", function () {
     ===================================================== */
 
     const themeToggle = document.getElementById("themeToggle");
-
     const html = document.documentElement;
     const body = document.body;
 
 
-    function applyTheme(theme) {
+    /* -----------------------------------------------------
+       APPLY THEME
+    ----------------------------------------------------- */
 
-        const isDark = theme === "dark";
+    function setTheme(theme) {
 
-        /* Apply class to both HTML and BODY */
-        html.classList.toggle("dark-mode", isDark);
-        body.classList.toggle("dark-mode", isDark);
+        if (theme === "dark") {
 
+            html.classList.add("dark-mode");
+            body.classList.add("dark-mode");
 
-        /* Update theme button */
-        if (themeToggle) {
+            if (themeToggle) {
 
-            themeToggle.setAttribute(
-                "aria-pressed",
-                isDark ? "true" : "false"
-            );
+                themeToggle.setAttribute(
+                    "aria-pressed",
+                    "true"
+                );
 
-            themeToggle.setAttribute(
-                "aria-label",
-                isDark
-                    ? "Switch to light mode"
-                    : "Switch to dark mode"
-            );
+                themeToggle.setAttribute(
+                    "aria-label",
+                    "Switch to light mode"
+                );
 
-            themeToggle.setAttribute(
-                "title",
-                isDark
-                    ? "Switch to light mode"
-                    : "Switch to dark mode"
-            );
+                themeToggle.setAttribute(
+                    "title",
+                    "Switch to light mode"
+                );
+            }
+
+        } else {
+
+            /* LIGHT MODE */
+
+            html.classList.remove("dark-mode");
+            body.classList.remove("dark-mode");
+
+            if (themeToggle) {
+
+                themeToggle.setAttribute(
+                    "aria-pressed",
+                    "false"
+                );
+
+                themeToggle.setAttribute(
+                    "aria-label",
+                    "Switch to dark mode"
+                );
+
+                themeToggle.setAttribute(
+                    "title",
+                    "Switch to dark mode"
+                );
+            }
         }
+
+        localStorage.setItem("theme", theme);
     }
 
 
@@ -55,21 +79,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const savedTheme =
         localStorage.getItem("theme");
 
-
     if (savedTheme === "dark") {
 
-        applyTheme("dark");
+        setTheme("dark");
 
     } else {
 
-        /* Default = LIGHT MODE */
+        /* Always start with LIGHT MODE
+           if nothing is saved */
 
-        applyTheme("light");
+        setTheme("light");
     }
 
 
     /* =====================================================
-       THEME BUTTON
+       THEME TOGGLE BUTTON
     ===================================================== */
 
     if (themeToggle) {
@@ -78,36 +102,26 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function () {
 
-                const darkMode =
+                const isDark =
                     body.classList.contains("dark-mode");
 
 
-                if (darkMode) {
+                if (isDark) {
 
                     /* DARK → LIGHT */
 
-                    applyTheme("light");
-
-                    localStorage.setItem(
-                        "theme",
-                        "light"
-                    );
+                    setTheme("light");
 
                 } else {
 
                     /* LIGHT → DARK */
 
-                    applyTheme("dark");
+                    setTheme("dark");
 
-                    localStorage.setItem(
-                        "theme",
-                        "dark"
-                    );
                 }
 
             }
         );
-
     }
 
 
@@ -134,7 +148,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 const expanded =
-                    menuToggle.classList.contains("active");
+                    menuToggle.classList.contains(
+                        "active"
+                    );
 
 
                 menuToggle.setAttribute(
@@ -146,7 +162,9 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /* Close menu after navigation click */
+        /* -------------------------------------------------
+           CLOSE MENU AFTER CLICKING LINK
+        ------------------------------------------------- */
 
         const links =
             navLinks.querySelectorAll("a");
@@ -222,7 +240,10 @@ document.addEventListener("DOMContentLoaded", function () {
     ===================================================== */
 
     const sections =
-        document.querySelectorAll("section[id]");
+        document.querySelectorAll(
+            "section[id]"
+        );
+
 
     const navigationLinks =
         document.querySelectorAll(
@@ -239,6 +260,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const sectionTop =
                 section.offsetTop - 180;
+
 
             const sectionHeight =
                 section.offsetHeight;
@@ -357,17 +379,21 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            const clickedMenu =
-                navLinks.contains(event.target);
+            const clickedInsideMenu =
+                navLinks.contains(
+                    event.target
+                );
 
 
-            const clickedButton =
-                menuToggle.contains(event.target);
+            const clickedMenuButton =
+                menuToggle.contains(
+                    event.target
+                );
 
 
             if (
-                !clickedMenu &&
-                !clickedButton
+                !clickedInsideMenu &&
+                !clickedMenuButton
             ) {
 
                 navLinks.classList.remove(
@@ -390,7 +416,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       KEEP THEME SYNCHRONIZED BETWEEN TABS
+       SYNCHRONIZE THEME BETWEEN TABS
     ===================================================== */
 
     window.addEventListener(
@@ -404,11 +430,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (event.newValue === "dark") {
 
-                applyTheme("dark");
+                setTheme("dark");
 
             } else {
 
-                applyTheme("light");
+                setTheme("light");
 
             }
 
