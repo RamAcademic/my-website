@@ -26,6 +26,12 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <span class="theme-icon sun-icon">☀️</span>
+        <span class="theme-icon moon-icon">🌙</span>
+    </button>
+
 
 
 
@@ -6177,5 +6183,26 @@ pdfModal.addEventListener(
 </script>
 
 
+
+<script id="theme-switcher">
+(function () {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const themeToggle = document.getElementById("themeToggle");
+        if (!themeToggle) return;
+
+        themeToggle.addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
+            const isDark = document.body.classList.contains("dark-mode");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+        });
+    });
+})();
+</script>
 </body>
 </html>
