@@ -11657,90 +11657,167 @@ a[href$=".pdf"]:hover {
 
 
 /* =========================================================
-   FINAL BALANCED PROFILE + ABOUT LAYOUT
+   FINAL USE THIS — PROFILE / ABOUT
+   Do not change HTML.
+   Left and right panels are equal.
 ========================================================= */
 
-/* Equal outer columns */
 #about .about-wrapper.equal-about-layout {
     width: min(1200px, calc(100% - 32px)) !important;
+    margin: 0 auto !important;
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
     gap: 32px !important;
     align-items: stretch !important;
 }
 
-/* Exactly equal outer boxes */
+/* TWO IDENTICAL MAIN BOXES */
 #about .about-wrapper.equal-about-layout > .about-profile,
 #about .about-wrapper.equal-about-layout > .about-content {
     width: 100% !important;
-    height: 760px !important;
-    min-height: 760px !important;
+    min-width: 0 !important;
     max-width: none !important;
+    min-height: 780px !important;
+    height: 780px !important;
     box-sizing: border-box !important;
 }
 
-/* LEFT BOX */
+/* LEFT MAIN BOX */
 #about .about-wrapper.equal-about-layout > .about-profile {
-    padding: 28px !important;
+    position: relative !important;
     display: flex !important;
-    align-items: flex-start !important;
     justify-content: center !important;
-    overflow: hidden !important;
-}
-
-/* LEFT CONTENT — use the full half */
-#about .equal-about-layout .profile-panel {
-    width: 100% !important;
-    max-width: 500px !important;
-    margin: 0 auto !important;
-}
-
-/* PHOTO */
-#about .equal-about-layout .about-photo-circle {
-    width: 300px !important;
-    height: 375px !important;
-    margin: 0 auto !important;
-}
-
-/* NAME */
-#about .equal-about-layout .about-profile-card {
-    width: 410px !important;
-    max-width: 100% !important;
-    margin: -38px auto 0 !important;
-    padding: 22px 20px !important;
-}
-
-/* APPROACH */
-#about .equal-about-layout .about-approach {
-    width: 430px !important;
-    max-width: 100% !important;
-    margin: 20px auto 0 !important;
+    align-items: flex-start !important;
     padding: 18px !important;
-}
-
-/* Approach title */
-#about .equal-about-layout .approach-title h3 {
-    font-size: 20px !important;
-}
-
-/* Approach cards */
-#about .equal-about-layout .approach-principles {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-}
-
-/* RIGHT BOX */
-#about .equal-about-layout > .about-content {
     overflow: hidden !important;
+    border: 1px solid rgba(37,99,235,.10) !important;
+    border-radius: 27px !important;
+    background: linear-gradient(145deg,#f8fbff,#ffffff) !important;
+}
+
+/* LEFT CONTENT — FULL WIDTH */
+#about .equal-about-layout .profile-panel {
+    position: relative !important;
+    z-index: 3 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+/* PHOTO — LARGE AND CENTERED */
+#about .equal-about-layout .about-photo-circle {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+
+    width: min(82%, 330px) !important;
+    height: 385px !important;
+
+    margin: 0 auto !important;
+    flex: 0 0 auto !important;
+    z-index: 4 !important;
+}
+
+/* NAME CARD — SAME WIDTH FAMILY */
+#about .equal-about-layout .about-profile-card {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+
+    width: min(92%, 390px) !important;
+    min-height: 105px !important;
+
+    margin: -35px auto 0 !important;
+    padding: 18px 16px !important;
+
+    z-index: 8 !important;
+    box-sizing: border-box !important;
+}
+
+/* APPROACH — LARGE, NOT TINY */
+#about .equal-about-layout .about-approach {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+
+    width: min(94%, 410px) !important;
+    margin: 16px auto 0 !important;
+    padding: 18px !important;
+
+    box-sizing: border-box !important;
+    z-index: 7 !important;
+}
+
+/* Approach content uses the available width */
+#about .equal-about-layout .approach-title {
+    width: 100% !important;
+}
+
+#about .equal-about-layout .approach-method {
+    width: 100% !important;
+}
+
+#about .equal-about-layout .approach-statement {
+    width: 100% !important;
+}
+
+#about .equal-about-layout .approach-principles {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+    gap: 8px !important;
+}
+
+/* RIGHT PANEL */
+#about .about-wrapper.equal-about-layout > .about-content {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1201px) {
+
+    #about .about-wrapper.equal-about-layout {
+        gap: 40px !important;
+    }
+
+    #about .about-wrapper.equal-about-layout > .about-profile,
+    #about .about-wrapper.equal-about-layout > .about-content {
+        min-height: 820px !important;
+        height: 820px !important;
+    }
+
+    #about .equal-about-layout .about-photo-circle {
+        width: 350px !important;
+        height: 430px !important;
+    }
+
+    #about .equal-about-layout .about-profile-card {
+        width: 410px !important;
+        margin-top: -40px !important;
+    }
+
+    #about .equal-about-layout .about-approach {
+        width: 430px !important;
+    }
 }
 
 /* =========================================================
    TABLET
 ========================================================= */
 
-@media (max-width: 1000px) and (min-width: 701px) {
+@media (max-width: 900px) and (min-width: 601px) {
 
     #about .about-wrapper.equal-about-layout {
-        gap: 22px !important;
+        width: calc(100% - 24px) !important;
+        gap: 20px !important;
     }
 
     #about .about-wrapper.equal-about-layout > .about-profile,
@@ -11749,25 +11826,32 @@ a[href$=".pdf"]:hover {
         min-height: 700px !important;
     }
 
+    #about .about-wrapper.equal-about-layout > .about-profile {
+        padding: 14px !important;
+    }
+
     #about .equal-about-layout .about-photo-circle {
-        width: 245px !important;
-        height: 310px !important;
+        width: 78% !important;
+        height: 330px !important;
     }
 
     #about .equal-about-layout .about-profile-card {
-        width: 350px !important;
+        width: 94% !important;
+        margin-top: -30px !important;
     }
 
     #about .equal-about-layout .about-approach {
-        width: 370px !important;
+        width: 96% !important;
+        margin-top: 12px !important;
+        padding: 14px !important;
     }
 }
 
 /* =========================================================
-   MOBILE
+   MOBILE — STACK THE TWO EQUAL PANELS
 ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
     #about .about-wrapper.equal-about-layout {
         width: calc(100% - 20px) !important;
@@ -11782,20 +11866,21 @@ a[href$=".pdf"]:hover {
     }
 
     #about .about-wrapper.equal-about-layout > .about-profile {
-        padding: 20px 14px 28px !important;
+        padding: 18px 12px 25px !important;
     }
 
     #about .equal-about-layout .about-photo-circle {
-        width: min(250px, 75vw) !important;
-        height: min(315px, 94vw) !important;
+        width: min(270px,82vw) !important;
+        height: 330px !important;
     }
 
     #about .equal-about-layout .about-profile-card {
-        width: min(360px, 94%) !important;
+        width: 94% !important;
         margin-top: -30px !important;
     }
 
     #about .equal-about-layout .about-approach {
-        width: min(400px, 96%) !important;
+        width: 96% !important;
+        margin-top: 14px !important;
     }
 }
