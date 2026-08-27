@@ -13222,3 +13222,209 @@ html body.dark-mode #contact h3 {
     opacity: 1 !important;
     filter: none !important;
 }
+
+
+/* =========================================================
+   FINAL NAVBAR — ∑ Mr.Ramesh
+   Light + Dark Mode
+========================================================= */
+
+.logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+}
+
+.logo-sigma {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-family: "Times New Roman", Georgia, serif !important;
+    font-size: 34px !important;
+    line-height: 1 !important;
+    font-weight: 700 !important;
+    color: #c18a24 !important;
+    transform: translateY(-1px) !important;
+}
+
+.logo-title {
+    display: inline-block !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    letter-spacing: -.4px !important;
+}
+
+.logo-title > span {
+    color: #4d9cff !important;
+}
+
+/* Light mode logo */
+body:not(.dark-mode) .logo-title {
+    color: #0b1f3a !important;
+}
+
+body:not(.dark-mode) .logo-title > span {
+    color: #1769e0 !important;
+}
+
+body:not(.dark-mode) .logo-sigma {
+    color: #b77d19 !important;
+}
+
+/* Dark mode logo */
+body.dark-mode .logo-title {
+    color: #f7f9fc !important;
+}
+
+body.dark-mode .logo-title > span {
+    color: #61adff !important;
+}
+
+body.dark-mode .logo-sigma {
+    color: #e1b95f !important;
+}
+
+/* Navigation */
+.nav-links {
+    display: flex !important;
+    align-items: center !important;
+    gap: 28px !important;
+}
+
+.nav-links a {
+    position: relative !important;
+    white-space: nowrap !important;
+    transition: color .25s ease !important;
+}
+
+.nav-links a::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 50% !important;
+    bottom: -8px !important;
+    width: 0 !important;
+    height: 2px !important;
+    transform: translateX(-50%) !important;
+    background: #c18a24 !important;
+    border-radius: 99px !important;
+    transition: width .25s ease !important;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 70% !important;
+}
+
+body.dark-mode .nav-links a {
+    color: #d4deea !important;
+}
+
+body.dark-mode .nav-links a:hover,
+body.dark-mode .nav-links a.active {
+    color: #61adff !important;
+}
+
+body:not(.dark-mode) .nav-links a {
+    color: #334155 !important;
+}
+
+body:not(.dark-mode) .nav-links a:hover,
+body:not(.dark-mode) .nav-links a.active {
+    color: #1769e0 !important;
+}
+
+/* Theme button */
+.theme-toggle {
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px !important;
+    padding: 0 !important;
+    margin-left: 8px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(255,255,255,.16) !important;
+    cursor: pointer !important;
+    transition: transform .25s ease, background .25s ease,
+                border-color .25s ease, box-shadow .25s ease !important;
+    z-index: 20 !important;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px) rotate(5deg) !important;
+    box-shadow: 0 8px 22px rgba(0,0,0,.16) !important;
+}
+
+body:not(.dark-mode) .theme-toggle {
+    background: #ffffff !important;
+    color: #0b1f3a !important;
+    border-color: #d9e1eb !important;
+}
+
+body.dark-mode .theme-toggle {
+    background: #142a43 !important;
+    color: #f1c96b !important;
+    border-color: rgba(255,255,255,.14) !important;
+}
+
+.theme-icon {
+    position: absolute !important;
+    font-size: 20px !important;
+    line-height: 1 !important;
+    transition: opacity .2s ease, transform .3s ease !important;
+}
+
+body:not(.dark-mode) .moon-icon {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+body:not(.dark-mode) .sun-icon {
+    opacity: 0 !important;
+    transform: scale(.5) rotate(-90deg) !important;
+}
+
+body.dark-mode .moon-icon {
+    opacity: 0 !important;
+    transform: scale(.5) rotate(90deg) !important;
+}
+
+body.dark-mode .sun-icon {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+/* Mobile navbar */
+@media (max-width: 900px) {
+    .logo-sigma {
+        font-size: 30px !important;
+    }
+
+    .nav-links {
+        gap: 18px !important;
+    }
+
+    .theme-toggle {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo {
+        gap: 7px !important;
+    }
+
+    .logo-sigma {
+        font-size: 28px !important;
+    }
+
+    .logo-title {
+        font-size: 18px !important;
+    }
+}
