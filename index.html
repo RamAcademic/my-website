@@ -1357,14 +1357,17 @@
 
         <button class="menu-toggle"
                 id="menuToggle"
-                aria-label="Open Menu">
+                type="button"
+                aria-label="Open Menu"
+                aria-expanded="false"
+                aria-controls="navLinks">
 
             ☰
 
         </button>
 
 
-        <ul class="nav-links" id="navLinks">
+        <ul class="nav-links" id="navLinks" aria-hidden="true">
 
             <li>
                 <a href="#home">Home</a>
@@ -1395,7 +1398,8 @@
 
         <button class="theme-toggle" id="themeToggle" type="button"
                 aria-label="Switch to dark mode"
-                title="Switch to dark mode">
+                title="Switch to dark mode"
+                aria-pressed="false">
             <span class="theme-icon sun-icon" aria-hidden="true">☀️</span>
             <span class="theme-icon moon-icon" aria-hidden="true">☾</span>
         </button>
@@ -6178,5 +6182,27 @@ pdfModal.addEventListener(
 );
 
 </script>
+
+
+
+
+<script id="mobile-menu-initializer">
+document.addEventListener("DOMContentLoaded", function () {
+    const menu = document.getElementById("navLinks");
+    const button = document.getElementById("menuToggle");
+
+    if (menu) {
+        menu.classList.remove("active");
+        menu.setAttribute("aria-hidden", "true");
+    }
+
+    if (button) {
+        button.classList.remove("active");
+        button.setAttribute("aria-expanded", "false");
+        button.setAttribute("aria-label", "Open Menu");
+    }
+});
+</script>
+
 </body>
 </html>
