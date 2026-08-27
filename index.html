@@ -1349,8 +1349,9 @@
 
     <nav class="navbar">
 
-        <a href="#home" class="logo">
-            Mr.<span>Ramesh</span>
+        <a href="#home" class="logo" aria-label="Mr. Ramesh - Mathematics Educator">
+            <span class="logo-sigma" aria-hidden="true">∑</span>
+            <span class="logo-title">Mr.<span>Ramesh</span></span>
         </a>
 
 
@@ -1390,14 +1391,14 @@
             </li>
 
         </ul>
-                <!-- LIGHT / DARK MODE -->
-                <button class="theme-toggle" id="themeToggle" type="button"
-                        aria-label="Switch to dark mode"
-                        title="Switch to dark mode">
-                    <span class="theme-icon sun-icon" aria-hidden="true">☀️</span>
-                    <span class="theme-icon moon-icon" aria-hidden="true">🌙</span>
-                </button>
 
+
+        <button class="theme-toggle" id="themeToggle" type="button"
+                aria-label="Switch to dark mode"
+                title="Switch to dark mode">
+            <span class="theme-icon sun-icon" aria-hidden="true">☀️</span>
+            <span class="theme-icon moon-icon" aria-hidden="true">☾</span>
+        </button>
 
     </nav>
 
@@ -6200,55 +6201,5 @@ pdfModal.addEventListener(
     });
 })();
 </script>
-
-
-<script>
-/* =====================================================
-   LIGHT / DARK MODE
-===================================================== */
-(function () {
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme === "dark") {
-        document.documentElement.classList.add("dark-mode");
-        document.body.classList.add("dark-mode");
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const themeToggle = document.getElementById("themeToggle");
-        if (!themeToggle) return;
-
-        function updateThemeButton() {
-            const isDark = document.body.classList.contains("dark-mode");
-
-            themeToggle.setAttribute(
-                "aria-label",
-                isDark ? "Switch to light mode" : "Switch to dark mode"
-            );
-
-            themeToggle.setAttribute(
-                "title",
-                isDark ? "Switch to light mode" : "Switch to dark mode"
-            );
-        }
-
-        themeToggle.addEventListener("click", function () {
-            document.body.classList.toggle("dark-mode");
-            document.documentElement.classList.toggle(
-                "dark-mode",
-                document.body.classList.contains("dark-mode")
-            );
-
-            const isDark = document.body.classList.contains("dark-mode");
-            localStorage.setItem("theme", isDark ? "dark" : "light");
-
-            updateThemeButton();
-        });
-
-        updateThemeButton();
-    });
-})();
-</script>
-
 </body>
 </html>
