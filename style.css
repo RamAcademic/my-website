@@ -10873,75 +10873,103 @@ a[href$=".pdf"]:hover {
 
 }
 
+
 /* =========================================================
-   FINAL — CLEAN PREMIUM TEACHING PHILOSOPHY
-   ========================================================= */
+   COMPACT TEACHING PHILOSOPHY
+   Clean • Premium • No Numbering • No Overflow
+========================================================= */
 
 .about-profile > .about-approach {
+    position: absolute;
+    z-index: 7;
+    left: 50%;
     bottom: 0;
+    transform: translateX(-50%);
+
     width: min(92%, 425px);
-    padding: 20px 22px;
-    background: linear-gradient(145deg, #f8fbff, #ffffff);
-    border: 1px solid rgba(23,63,103,.12);
-    border-left: 3px solid #c49a3a;
+    margin: 0;
+    padding: 18px 20px;
+
+    background: linear-gradient(145deg, #f7fbff, #ffffff);
+    border: 1px solid rgba(37, 99, 235, 0.12);
     border-radius: 20px;
-    box-shadow: 0 14px 32px rgba(20,50,90,.09);
+
+    box-shadow: 0 16px 38px rgba(20, 50, 90, 0.10);
+    box-sizing: border-box;
 }
 
 .about-profile > .about-approach .approach-title {
-    gap: 11px;
-    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 12px;
 }
 
 .about-profile > .about-approach .approach-icon {
     width: 42px;
     height: 42px;
     flex: 0 0 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     border-radius: 13px;
-    background: #0b2d56;
-    color: #f2c45d;
+    background: #ffffff;
+    color: #bd8929;
+
+    box-shadow: 0 6px 16px rgba(20, 50, 90, 0.08);
+
     font-family: Georgia, serif;
-    font-size: 21px;
-    box-shadow: 0 7px 18px rgba(11,45,86,.16);
+    font-size: 23px;
+    font-weight: 700;
 }
 
 .about-profile > .about-approach .approach-label {
     display: block;
-    margin-bottom: 3px;
-    color: #b1842d;
+    margin-bottom: 2px;
+
+    color: #bd8929;
     font-size: 9px;
     font-weight: 800;
     letter-spacing: 1.8px;
 }
 
 .about-profile > .about-approach .approach-title h3 {
-    color: #0b2547;
-    font-size: 19px;
+    margin: 0;
+
+    color: #102b4d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    line-height: 1.15;
 }
 
 .about-profile > .about-approach .approach-method {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin: 2px 0 13px;
+    gap: 7px;
+
+    margin: 0 0 12px;
+
     color: #173f67;
     font-family: Georgia, serif;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
 }
 
 .about-profile > .about-approach .approach-method b {
-    color: #c49a3a;
-    font-size: 15px;
+    color: #bd8929;
+    font-size: 14px;
 }
 
 .about-profile > .about-approach .approach-statement {
-    margin: 0 0 15px;
+    margin: 0 0 14px;
+
     color: #536b86;
-    font-size: 12.5px;
+    font-size: 12px;
     line-height: 1.55;
+    text-align: center;
 }
 
 .about-profile > .about-approach .approach-principles {
@@ -10952,91 +10980,126 @@ a[href$=".pdf"]:hover {
 
 .about-profile > .about-approach .approach-principle {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 9px;
+
+    min-width: 0;
     padding: 10px;
-    background: rgba(245,248,252,.85);
-    border: 1px solid rgba(23,63,103,.07);
+
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(37, 99, 235, 0.08);
     border-radius: 12px;
+
+    box-sizing: border-box;
 }
 
-.about-profile > .about-approach .principle-icon {
+.about-profile > .about-approach .approach-principle > span {
+    width: 28px;
+    height: 28px;
+    flex: 0 0 28px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 27px;
-    height: 27px;
-    flex: 0 0 27px;
+
     border-radius: 8px;
-    background: #ffffff;
-    color: #b1842d;
+    background: #f1f5f9;
+
+    color: #bd8929;
     font-family: Georgia, serif;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .about-profile > .about-approach .approach-principle h4 {
     margin: 0 0 2px;
+
     color: #173f67;
     font-size: 11px;
-    font-weight: 800;
+    line-height: 1.2;
 }
 
 .about-profile > .about-approach .approach-principle p {
     margin: 0;
-    color: #6a7d91;
-    font-size: 9.5px;
-    line-height: 1.45;
+
+    color: #71839a;
+    font-size: 10px;
+    line-height: 1.3;
 }
 
-.about-profile > .about-approach .approach-belief {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-top: 14px;
-    padding-top: 11px;
-    border-top: 1px solid rgba(23,63,103,.09);
-    color: #61748d;
-    font-size: 9.5px;
+/* Tablet */
+@media (max-width: 900px) {
+    .about-profile > .about-approach {
+        width: min(92%, 390px);
+        padding: 17px 18px;
+    }
 }
 
-.about-profile > .about-approach .approach-belief b {
-    color: #c49a3a;
-}
-
-.about-profile > .about-approach .approach-belief strong {
-    color: #173f67;
-}
-
+/* Mobile */
 @media (max-width: 600px) {
     .about-profile > .about-approach {
         width: calc(100% - 18px);
-        padding: 16px;
+        padding: 15px;
         border-radius: 17px;
     }
 
+    .about-profile > .about-approach .approach-icon {
+        width: 38px;
+        height: 38px;
+        flex-basis: 38px;
+        font-size: 20px;
+    }
+
+    .about-profile > .about-approach .approach-title h3 {
+        font-size: 17px;
+    }
+
+    .about-profile > .about-approach .approach-method {
+        gap: 5px;
+        font-size: 11px;
+    }
+
+    .about-profile > .about-approach .approach-statement {
+        font-size: 10.5px;
+        line-height: 1.45;
+    }
+
     .about-profile > .about-approach .approach-principles {
-        grid-template-columns: 1fr 1fr;
         gap: 6px;
     }
 
     .about-profile > .about-approach .approach-principle {
         padding: 8px;
-        gap: 6px;
+        gap: 7px;
+    }
+
+    .about-profile > .about-approach .approach-principle > span {
+        width: 25px;
+        height: 25px;
+        flex-basis: 25px;
+        font-size: 13px;
+    }
+
+    .about-profile > .about-approach .approach-principle h4 {
+        font-size: 10px;
     }
 
     .about-profile > .about-approach .approach-principle p {
-        font-size: 8.5px;
-    }
-
-    .about-profile > .about-approach .approach-method {
-        font-size: 12px;
+        font-size: 9px;
     }
 }
 
+/* Very Small Mobile */
 @media (max-width: 380px) {
-    .about-profile > .about-approach .approach-principles {
-        grid-template-columns: 1fr;
+    .about-profile > .about-approach {
+        width: calc(100% - 12px);
+        padding: 13px;
+    }
+
+    .about-profile > .about-approach .approach-method {
+        font-size: 10px;
+    }
+
+    .about-profile > .about-approach .approach-principle p {
+        display: none;
     }
 }
