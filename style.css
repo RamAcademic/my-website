@@ -12264,3 +12264,263 @@ a[href$=".pdf"]:hover {
         padding: 15px 11px !important;
     }
 }
+
+
+
+/* =========================================================
+   LIGHT / DARK MODE — FINAL THEME OVERRIDES
+   Add this block after the existing website styles.
+========================================================= */
+
+:root {
+    --theme-bg: #f7f9fc;
+    --theme-surface: #ffffff;
+    --theme-surface-2: #eef4fb;
+    --theme-text: #09284d;
+    --theme-text-2: #506987;
+    --theme-muted: #718198;
+    --theme-blue: #1769e0;
+    --theme-gold: #b8892f;
+    --theme-border: rgba(9,40,77,.11);
+    --theme-shadow: 0 14px 40px rgba(9,40,77,.08);
+}
+
+body.dark-mode {
+    --theme-bg: #07111f;
+    --theme-surface: #0d1b2a;
+    --theme-surface-2: #12243a;
+    --theme-text: #f3f7fb;
+    --theme-text-2: #b5c4d5;
+    --theme-muted: #8da0b5;
+    --theme-blue: #59aaff;
+    --theme-gold: #e0bd69;
+    --theme-border: rgba(255,255,255,.10);
+    --theme-shadow: 0 18px 55px rgba(0,0,0,.36);
+}
+
+body {
+    background: var(--theme-bg) !important;
+    color: var(--theme-text-2);
+    transition: background-color .35s ease, color .35s ease;
+}
+
+body * {
+    transition:
+        background-color .3s ease,
+        border-color .3s ease,
+        color .3s ease,
+        box-shadow .3s ease;
+}
+
+/* Main surfaces */
+header,
+.site-header,
+.navbar,
+section,
+footer,
+.card,
+.profile-card,
+.about-profile-card,
+.notes-section,
+.notes-branch,
+.resource-question-papers,
+.question-branch,
+.resource-item,
+.notes-resource-card {
+    color: var(--theme-text-2);
+}
+
+body.dark-mode header,
+body.dark-mode .site-header,
+body.dark-mode .navbar,
+body.dark-mode footer,
+body.dark-mode .notes-section,
+body.dark-mode .resource-question-papers,
+body.dark-mode .notes-branch,
+body.dark-mode .question-branch,
+body.dark-mode .resource-item,
+body.dark-mode .notes-resource-card,
+body.dark-mode .card,
+body.dark-mode .profile-card,
+body.dark-mode .about-profile-card {
+    background-color: var(--theme-surface) !important;
+    border-color: var(--theme-border) !important;
+    box-shadow: var(--theme-shadow);
+}
+
+/* Text */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode strong,
+body.dark-mode summary {
+    color: var(--theme-text) !important;
+}
+
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode small,
+body.dark-mode li {
+    color: var(--theme-text-2);
+}
+
+body.dark-mode a {
+    color: var(--theme-blue);
+}
+
+/* Notes heading */
+.notes-heading h2 {
+    color: var(--theme-text) !important;
+}
+
+.notes-heading h2 span {
+    color: var(--theme-blue) !important;
+}
+
+.notes-heading > p,
+.resource-kicker {
+    color: var(--theme-gold) !important;
+}
+
+.notes-heading > span,
+.notes-heading-flow,
+.resource-question-heading p {
+    color: var(--theme-text-2) !important;
+}
+
+/* Notes cards */
+body.dark-mode .notes-branch {
+    background:
+        linear-gradient(145deg, rgba(255,255,255,.035), transparent),
+        var(--theme-surface) !important;
+}
+
+body.dark-mode .notes-resource-card {
+    background: var(--theme-surface-2) !important;
+    border-color: var(--theme-border) !important;
+}
+
+body.dark-mode .notes-resource-card h4,
+body.dark-mode .notes-resource-card strong {
+    color: var(--theme-text) !important;
+}
+
+body.dark-mode .notes-resource-card p {
+    color: var(--theme-text-2) !important;
+}
+
+/* Question papers */
+.resource-question-heading h3 {
+    color: var(--theme-text) !important;
+}
+
+body.dark-mode .question-branch {
+    background: var(--theme-surface-2) !important;
+}
+
+body.dark-mode .question-semester {
+    background: #172b42 !important;
+    border-color: var(--theme-border) !important;
+}
+
+body.dark-mode .question-paper-card {
+    background: var(--theme-surface) !important;
+    border-color: var(--theme-border) !important;
+}
+
+body.dark-mode .question-paper-info h4 {
+    color: var(--theme-text) !important;
+}
+
+body.dark-mode .question-paper-info p,
+body.dark-mode .question-branch-info small {
+    color: var(--theme-muted) !important;
+}
+
+.question-semester > summary b {
+    color: var(--theme-gold) !important;
+}
+
+/* Buttons and links */
+body.dark-mode button,
+body.dark-mode .btn,
+body.dark-mode .button {
+    color: var(--theme-text);
+    border-color: var(--theme-border);
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background: var(--theme-surface) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-border) !important;
+}
+
+/* =========================================================
+   THEME TOGGLE
+========================================================= */
+
+.theme-toggle {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid var(--theme-border);
+    border-radius: 50%;
+    background: var(--theme-surface);
+    color: var(--theme-text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--theme-shadow);
+    overflow: hidden;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    border-color: var(--theme-gold);
+}
+
+.theme-icon {
+    position: absolute;
+    font-size: 20px;
+    line-height: 1;
+    transition: opacity .25s ease, transform .3s ease;
+}
+
+.sun-icon {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+}
+
+.moon-icon {
+    opacity: 0;
+    transform: scale(.5) rotate(-90deg);
+}
+
+body.dark-mode .sun-icon {
+    opacity: 0;
+    transform: scale(.5) rotate(90deg);
+}
+
+body.dark-mode .moon-icon {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .theme-toggle {
+        width: 42px;
+        height: 42px;
+    }
+
+    .theme-icon {
+        font-size: 18px;
+    }
+}
