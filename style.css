@@ -13455,131 +13455,163 @@ body.dark-mode .header .navbar .sun-icon {
 
 /* =========================================================
    MR. RAMESH — PHONE MODE ONLY
-   ADDED TO THE CURRENT CSS — DESKTOP IS UNTOUCHED
+   FINAL MOBILE HEADER FIX
+   DESKTOP RULES ABOVE ARE NOT MODIFIED
 ========================================================= */
 
 @media screen and (max-width: 900px) {
 
+    /* Keep the original header fixed and full width */
     .header {
         width: 100% !important;
-        height: 76px !important;
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
         right: 0 !important;
+        height: 76px !important;
         z-index: 9999 !important;
     }
 
-    .navbar {
+    /* Three direct items:
+       logo | menu | theme */
+    .header .navbar {
         width: 100% !important;
         max-width: none !important;
         height: 76px !important;
+        margin: 0 !important;
         padding: 0 12px 0 18px !important;
         display: flex !important;
         align-items: center !important;
-        justify-content: space-between !important;
+        justify-content: flex-start !important;
         box-sizing: border-box !important;
     }
 
-    .logo {
-        margin: 0 !important;
-        padding: 0 !important;
-        flex-shrink: 0 !important;
-        white-space: nowrap !important;
-        line-height: 1 !important;
-    }
-
-    .header-actions {
-        display: flex !important;
+    /* Mr.Ramesh stays on the left */
+    .header .navbar > .logo {
+        display: inline-flex !important;
         align-items: center !important;
-        justify-content: flex-end !important;
-        gap: 3px !important;
-        margin-left: auto !important;
-        flex-shrink: 0 !important;
+        flex: 0 1 auto !important;
+        min-width: 0 !important;
+        margin: 0 auto 0 0 !important;
+        padding: 0 !important;
+        white-space: nowrap !important;
     }
 
-    .menu-toggle {
-        display: flex !important;
+    /* ☰ — ALWAYS VISIBLE ON PHONE */
+    .header .navbar > .menu-toggle {
+        display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
-        width: 44px !important;
-        height: 44px !important;
+        flex: 0 0 42px !important;
+        width: 42px !important;
+        height: 42px !important;
         margin: 0 !important;
         padding: 0 !important;
-        border: none !important;
-        outline: none !important;
+        border: 0 !important;
+        outline: 0 !important;
         background: transparent !important;
         color: #0b1f3a !important;
-        font-size: 29px !important;
+        font-size: 27px !important;
         font-weight: 700 !important;
         line-height: 1 !important;
         opacity: 1 !important;
         visibility: visible !important;
         cursor: pointer !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
     }
 
-    html.dark-mode .menu-toggle,
-    body.dark-mode .menu-toggle {
-        display: flex !important;
+    /* ☰ stays visible in DARK MODE */
+    body.dark-mode .header .navbar > .menu-toggle,
+    html.dark-mode .header .navbar > .menu-toggle {
+        display: inline-flex !important;
         color: #ffffff !important;
-        background: transparent !important;
         opacity: 1 !important;
         visibility: visible !important;
+        background: transparent !important;
     }
 
-    .theme-toggle {
-        display: flex !important;
+    /* ☾ / ☀️ — immediately beside ☰ */
+    .header .navbar > .theme-toggle {
+        display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
-        width: 44px !important;
-        height: 44px !important;
-        margin: 0 !important;
+        position: relative !important;
+        flex: 0 0 42px !important;
+        width: 42px !important;
+        height: 42px !important;
+        margin: 0 0 0 2px !important;
         padding: 0 !important;
-        flex-shrink: 0 !important;
-        border: none !important;
+        box-sizing: border-box !important;
     }
 
-    .nav-links {
+    /* Keep the navigation hidden until ☰ is pressed */
+    .header .navbar > .nav-links {
         position: absolute !important;
         top: 76px !important;
         left: 0 !important;
         right: 0 !important;
         width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
         display: none !important;
         flex-direction: column !important;
         align-items: stretch !important;
         gap: 0 !important;
         margin: 0 !important;
-        padding: 8px 0 12px !important;
+        padding: 10px 0 14px !important;
         box-sizing: border-box !important;
+        background: #ffffff !important;
+        border-bottom: 1px solid #e5eaf1 !important;
+        box-shadow: 0 14px 35px rgba(11,31,58,.10) !important;
         z-index: 9998 !important;
+        overflow: hidden !important;
     }
 
-    .nav-links.active {
+    .header .navbar > .nav-links.active {
         display: flex !important;
     }
 
-    html.dark-mode .nav-links,
-    body.dark-mode .nav-links {
+    .header .navbar > .nav-links li {
+        width: 100% !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .header .navbar > .nav-links a {
+        display: block !important;
+        width: 100% !important;
+        padding: 13px 22px !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+    }
+
+    /* DARK MOBILE MENU */
+    body.dark-mode .header .navbar > .nav-links,
+    html.dark-mode .header .navbar > .nav-links {
         background: #07111f !important;
-        border-color: rgba(255,255,255,.12) !important;
+        border-bottom-color: rgba(255,255,255,.12) !important;
+        box-shadow: 0 14px 35px rgba(0,0,0,.30) !important;
     }
 
-    html.dark-mode .nav-links a,
-    body.dark-mode .nav-links a {
-        color: #e7edf5 !important;
+    body.dark-mode .header .navbar > .nav-links a,
+    html.dark-mode .header .navbar > .nav-links a {
+        color: #d4deea !important;
     }
 
-    html.dark-mode .header,
-    body.dark-mode .header {
-        background: #07111f !important;
-    }
-
-    html:not(.dark-mode) .header,
+    /* Header colours */
     body:not(.dark-mode) .header {
-        background: #ffffff !important;
+        background: rgba(255,255,255,.96) !important;
     }
 
+    body.dark-mode .header,
+    html.dark-mode .header {
+        background: rgba(7,17,31,.97) !important;
+    }
+
+    /* No horizontal overflow on phones */
     html,
     body {
         max-width: 100% !important;
@@ -13587,24 +13619,37 @@ body.dark-mode .header .navbar .sun-icon {
     }
 }
 
-@media screen and (max-width: 390px) {
+/* =========================================================
+   SMALL PHONES
+========================================================= */
 
-    .navbar {
-        padding-left: 12px !important;
-        padding-right: 8px !important;
+@media screen and (max-width: 600px) {
+
+    .header .navbar {
+        padding-left: 14px !important;
+        padding-right: 10px !important;
     }
 
-    .logo {
-        font-size: 19px !important;
+    .header .navbar > .logo-title {
+        font-size: 18px !important;
     }
 
-    .menu-toggle,
-    .theme-toggle {
-        width: 42px !important;
-        height: 42px !important;
-    }
-
-    .menu-toggle {
+    .header .navbar > .logo-sigma {
         font-size: 28px !important;
+    }
+
+    .header .navbar > .menu-toggle,
+    .header .navbar > .theme-toggle {
+        width: 40px !important;
+        height: 40px !important;
+        flex-basis: 40px !important;
+    }
+
+    .header .navbar > .menu-toggle {
+        font-size: 26px !important;
+    }
+
+    .header .navbar > .theme-toggle {
+        margin-left: 1px !important;
     }
 }
