@@ -11942,3 +11942,222 @@ a[href$=".pdf"]:hover {
         grid-template-columns:1fr !important;
     }
 }
+
+
+
+/* =========================================================
+   FINAL UNIFIED RESOURCES SECTION
+   Notes + Mathematics Question Papers
+   One outer section, one visual container
+========================================================= */
+
+.notes-section {
+    position: relative !important;
+    isolation: isolate !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 58px 24px 70px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+/* Keep all resource content on the same centered width */
+.notes-section > .notes-heading,
+.notes-section > .notes-branches,
+.notes-section > .resource-question-papers {
+    width: min(1380px, 100%) !important;
+    max-width: 1380px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+}
+
+/* Main heading */
+.notes-section > .notes-heading {
+    margin-bottom: 34px !important;
+    padding: 0 12px !important;
+}
+
+/* Notes branch area */
+.notes-section > .notes-branches {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+    margin-bottom: 34px !important;
+}
+
+/* Keep closed branch cards compact and equal */
+.notes-section > .notes-branches > .notes-branch {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+}
+
+/* When a Notes branch opens, use full unified width */
+.notes-section > .notes-branches > .notes-branch[open] {
+    grid-column: 1 / -1 !important;
+}
+
+/* Question papers becomes the second block INSIDE the same section */
+.notes-section > .resource-question-papers {
+    width: min(1380px, 100%) !important;
+    max-width: 1380px !important;
+    margin: 8px auto 0 !important;
+    padding: 30px !important;
+    box-sizing: border-box !important;
+    border-radius: 26px !important;
+}
+
+/* Question paper heading */
+.notes-section > .resource-question-papers .resource-question-heading {
+    width: 100% !important;
+    max-width: 760px !important;
+    margin: 0 auto 24px !important;
+    text-align: center !important;
+}
+
+/* Question paper branches use full width */
+.notes-section > .resource-question-papers > .question-branch {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 10px 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* =========================================================
+   DESKTOP RESOURCE SCALE
+========================================================= */
+
+@media (min-width: 1101px) {
+
+    .notes-section > .notes-heading h2 {
+        font-size: clamp(42px, 4vw, 56px) !important;
+    }
+
+    .notes-section > .notes-branches {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    }
+
+    .notes-section > .resource-question-papers {
+        padding: 30px !important;
+    }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .notes-section {
+        padding: 50px 20px 60px !important;
+    }
+
+    .notes-section > .notes-branches {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+    }
+
+    .notes-section > .resource-question-papers {
+        padding: 24px !important;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .notes-section {
+        padding: 42px 12px 50px !important;
+    }
+
+    .notes-section > .notes-heading {
+        width: 100% !important;
+        margin-bottom: 26px !important;
+        padding: 0 4px !important;
+    }
+
+    .notes-section > .notes-heading h2 {
+        font-size: clamp(30px, 8vw, 42px) !important;
+        white-space: normal !important;
+        line-height: 1.12 !important;
+    }
+
+    .notes-section > .notes-heading > span {
+        width: 100% !important;
+        font-size: 12px !important;
+    }
+
+    .notes-section > .notes-heading-flow {
+        width: 100% !important;
+    }
+
+    .notes-section > .notes-branches {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+        margin-bottom: 24px !important;
+    }
+
+    .notes-section > .notes-branches > .notes-branch {
+        grid-column: 1 !important;
+    }
+
+    .notes-section > .notes-branches > .notes-branch[open] {
+        grid-column: 1 !important;
+    }
+
+    .notes-section > .resource-question-papers {
+        width: 100% !important;
+        margin-top: 0 !important;
+        padding: 18px !important;
+        border-radius: 20px !important;
+    }
+
+    .notes-section > .resource-question-papers .resource-question-heading {
+        margin-bottom: 18px !important;
+    }
+
+    .notes-section > .resource-question-papers .resource-question-heading h3 {
+        font-size: 25px !important;
+    }
+
+    .notes-section > .resource-question-papers > .question-branch {
+        margin: 8px 0 !important;
+        border-radius: 15px !important;
+    }
+
+    .notes-section > .resource-question-papers .question-branch-header {
+        min-height: 70px !important;
+        padding: 10px 12px !important;
+        grid-template-columns: 46px minmax(0,1fr) 30px !important;
+        gap: 10px !important;
+    }
+
+    .notes-section > .resource-question-papers .question-branch-icon {
+        width: 46px !important;
+        height: 46px !important;
+    }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .notes-section {
+        padding-left: 9px !important;
+        padding-right: 9px !important;
+    }
+
+    .notes-section > .resource-question-papers {
+        padding: 14px !important;
+    }
+
+    .notes-section > .notes-heading h2 {
+        font-size: 29px !important;
+    }
+}
