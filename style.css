@@ -12154,3 +12154,158 @@ a[href$=".pdf"]:hover {
         gap: 7px !important;
     }
 }
+
+
+/* =========================================================
+   FINAL PHOTO SIZE + EQUAL CONTENT BALANCE
+========================================================= */
+
+/* Keep both main columns identical */
+#about .about-wrapper.equal-about-layout {
+    grid-template-columns: 1fr 1fr !important;
+    align-items: stretch !important;
+}
+
+/* LEFT PANEL */
+#about .about-wrapper.equal-about-layout > .about-profile {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    padding: 18px 20px 22px !important;
+}
+
+/* Make the left content use the full available width */
+#about .equal-about-layout .profile-panel {
+    width: 100% !important;
+    max-width: 540px !important;
+}
+
+/* MUCH LARGER PHOTO */
+#about .equal-about-layout .about-photo-circle {
+    width: 390px !important;
+    height: 475px !important;
+    max-width: 92% !important;
+    margin: 0 auto !important;
+}
+
+/* Make image fill the enlarged frame */
+#about .equal-about-layout .about-photo-circle img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+}
+
+/* Name card follows photo */
+#about .equal-about-layout .about-profile-card {
+    width: 430px !important;
+    max-width: 94% !important;
+    margin: -42px auto 0 !important;
+    padding: 21px 18px !important;
+}
+
+/* Teaching approach gets matching width */
+#about .equal-about-layout .about-approach {
+    width: 450px !important;
+    max-width: 96% !important;
+    margin: 18px auto 0 !important;
+    padding: 20px !important;
+}
+
+/* Balanced approach typography */
+#about .equal-about-layout .approach-title h3 {
+    font-size: 22px !important;
+}
+
+#about .equal-about-layout .approach-method {
+    font-size: 11px !important;
+    padding: 10px 12px !important;
+}
+
+#about .equal-about-layout .approach-statement {
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+}
+
+#about .equal-about-layout .approach-principles {
+    gap: 10px !important;
+}
+
+#about .equal-about-layout .approach-principle {
+    min-height: 62px !important;
+    padding: 10px !important;
+}
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1101px) {
+
+    #about .about-wrapper.equal-about-layout > .about-profile,
+    #about .about-wrapper.equal-about-layout > .about-content {
+        min-height: 820px !important;
+        height: 820px !important;
+    }
+
+    #about .equal-about-layout .about-photo-circle {
+        width: 400px !important;
+        height: 490px !important;
+    }
+
+    #about .equal-about-layout .about-profile-card {
+        width: 440px !important;
+        margin-top: -44px !important;
+    }
+
+    #about .equal-about-layout .about-approach {
+        width: 455px !important;
+        margin-top: 18px !important;
+    }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) and (min-width: 601px) {
+
+    #about .equal-about-layout .about-photo-circle {
+        width: 310px !important;
+        height: 390px !important;
+    }
+
+    #about .equal-about-layout .about-profile-card {
+        width: 360px !important;
+        margin-top: -34px !important;
+    }
+
+    #about .equal-about-layout .about-approach {
+        width: 390px !important;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #about .about-wrapper.equal-about-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    #about .equal-about-layout .about-photo-circle {
+        width: min(320px, 88vw) !important;
+        height: min(400px, 110vw) !important;
+    }
+
+    #about .equal-about-layout .about-profile-card {
+        width: 94% !important;
+        margin-top: -32px !important;
+    }
+
+    #about .equal-about-layout .about-approach {
+        width: 96% !important;
+    }
+}
