@@ -12264,13 +12264,15 @@ a[href$=".pdf"]:hover {
         padding: 15px 11px !important;
     }
 }
+
+
 /* =========================================================
-   FINAL THEME + MOBILE HEADER FIX
-   Added without removing the original design
+   FINAL LIGHT / DARK MODE
+   IMPORTANT: Dark colours are applied ONLY inside
+   body.dark-mode, so Light Mode keeps the original design.
 ========================================================= */
 
-/* ---------- THEME VARIABLES ---------- */
-
+/* Theme variables */
 :root {
     --theme-bg: #ffffff;
     --theme-surface: #ffffff;
@@ -12278,524 +12280,1175 @@ a[href$=".pdf"]:hover {
     --theme-text: #172033;
     --theme-heading: #0b1f3a;
     --theme-muted: #667085;
+    --theme-blue: #1769e0;
+    --theme-gold: #b77d19;
     --theme-border: #e5eaf1;
 }
 
-
-/* =========================================================
-   DARK MODE
-========================================================= */
-
-html.dark-mode,
 body.dark-mode {
     --theme-bg: #07111f;
-    --theme-surface: #0d1b2d;
-    --theme-surface-soft: #101f33;
-    --theme-text: #e7edf5;
-    --theme-heading: #f5f8fc;
-    --theme-muted: #aebdce;
+    --theme-surface: #0d1b2a;
+    --theme-surface-soft: #102238;
+    --theme-text: #e8eef6;
+    --theme-heading: #f7f9fc;
+    --theme-muted: #aebdd0;
+    --theme-blue: #61adff;
+    --theme-gold: #e1b95f;
     --theme-border: rgba(255,255,255,.12);
-
-    background: #07111f !important;
-    color: #e7edf5 !important;
 }
 
-
-/* BODY */
-
+/* Base */
 body.dark-mode {
     background: var(--theme-bg) !important;
     color: var(--theme-text) !important;
 }
 
-
-/* HEADER */
-
+/* Header */
 body.dark-mode .header {
-    background: rgba(7,17,31,.97) !important;
+    background: rgba(7,17,31,.96) !important;
     border-bottom-color: var(--theme-border) !important;
 }
 
-
-/* LOGO */
-
 body.dark-mode .logo {
-    color: #ffffff !important;
+    color: var(--theme-heading) !important;
 }
 
 body.dark-mode .logo span {
-    color: #61adff !important;
+    color: var(--theme-blue) !important;
 }
-
-
-/* NAVIGATION */
 
 body.dark-mode .nav-links a {
-    color: #dbe5ef !important;
+    color: #c8d5e5 !important;
 }
 
-body.dark-mode .nav-links a:hover,
-body.dark-mode .nav-links a.active {
-    color: #61adff !important;
+body.dark-mode .nav-links a:hover {
+    color: var(--theme-blue) !important;
 }
 
-
-/* GENERAL SECTIONS */
-
-body.dark-mode .light-section,
-body.dark-mode .section,
-body.dark-mode .statistics,
-body.dark-mode .secondary-btn {
-    color: var(--theme-text);
-}
-
-
-/* HERO */
-
+/* Hero */
 body.dark-mode .hero {
     background:
-        radial-gradient(
-            circle at 85% 30%,
-            rgba(23,105,224,.16) 0,
-            transparent 35%
-        ),
+        radial-gradient(circle at 85% 30%, rgba(55,125,220,.18), transparent 35%),
         #07111f !important;
 }
 
-body.dark-mode .hero h1,
+body.dark-mode .hero-small-title {
+    color: var(--theme-blue) !important;
+}
+
+body.dark-mode .hero h1 {
+    color: var(--theme-heading) !important;
+}
+
 body.dark-mode .hero h2 {
-    color: #f5f8fc !important;
+    color: #d8e2ee !important;
 }
 
 body.dark-mode .hero-description {
-    color: #aebdce !important;
+    color: var(--theme-muted) !important;
 }
 
+body.dark-mode .secondary-btn {
+    background: var(--theme-surface) !important;
+    color: var(--theme-heading) !important;
+    border-color: var(--theme-border) !important;
+}
 
-/* STATISTICS */
+body.dark-mode .secondary-btn:hover {
+    color: var(--theme-blue) !important;
+    border-color: var(--theme-blue) !important;
+}
 
+body.dark-mode .image-circle {
+    background: var(--theme-surface-soft) !important;
+    border-color: #172b42 !important;
+}
+
+body.dark-mode .math-symbol {
+    background: var(--theme-surface) !important;
+    color: var(--theme-blue) !important;
+}
+
+/* Statistics */
 body.dark-mode .statistics {
-    background: #0d1b2d !important;
+    background: var(--theme-surface) !important;
     border-color: var(--theme-border) !important;
 }
 
 body.dark-mode .stat-box {
-    border-right-color: var(--theme-border) !important;
+    border-color: var(--theme-border) !important;
+}
+
+body.dark-mode .stat-box h3 {
+    color: var(--theme-blue) !important;
 }
 
 body.dark-mode .stat-box p {
-    color: #aebdce !important;
+    color: var(--theme-muted) !important;
 }
 
+/* General sections */
+body.dark-mode .light-section {
+    background: #091625 !important;
+}
 
-/* ABOUT */
+body.dark-mode .section-heading h2 {
+    color: var(--theme-heading) !important;
+}
 
+body.dark-mode .section-heading span,
 body.dark-mode .about-text {
-    color: #aebdce !important;
+    color: var(--theme-muted) !important;
 }
 
+/* About */
 body.dark-mode .about-card {
-    background: #10243b !important;
+    background: #10243a !important;
 }
 
+body.dark-mode .about-card p {
+    color: #c2cfdd !important;
+}
 
-/* SKILLS */
-
+/* Skills */
 body.dark-mode .skills-section {
     background:
-        radial-gradient(circle at 8% 12%, rgba(23,105,224,.14), transparent 24%),
+        radial-gradient(circle at 8% 12%, rgba(23,105,224,.15), transparent 24%),
         radial-gradient(circle at 92% 72%, rgba(124,58,237,.12), transparent 25%),
-        linear-gradient(180deg, #091728 0%, #07111f 100%) !important;
+        linear-gradient(180deg, #081522 0%, #07111f 100%) !important;
+}
+
+body.dark-mode .skills-formula {
+    color: rgba(190,215,245,.08) !important;
+}
+
+body.dark-mode .skills-label {
+    background: rgba(13,27,42,.9) !important;
+    border-color: rgba(97,173,255,.22) !important;
+    color: var(--theme-blue) !important;
+}
+
+body.dark-mode .skills-divider strong {
+    background: var(--theme-surface) !important;
+    border-color: var(--theme-border) !important;
+    color: var(--theme-blue) !important;
+}
+
+body.dark-mode .skills-intro {
+    color: var(--theme-muted) !important;
 }
 
 body.dark-mode .skill-card {
-    background: linear-gradient(
-        145deg,
-        #102238,
-        #0d1b2d
-    ) !important;
-
-    border-color: rgba(255,255,255,.10) !important;
-}
-
-body.dark-mode .skill-card h3,
-body.dark-mode .skills-impact-heading h3,
-body.dark-mode .impact-item h4 {
-    color: #f1f5f9 !important;
-}
-
-body.dark-mode .skill-card p,
-body.dark-mode .impact-item p,
-body.dark-mode .skills-intro {
-    color: #aebdce !important;
+    background: linear-gradient(145deg, #0d1b2a, #102238) !important;
+    border-color: var(--theme-border) !important;
+    box-shadow: 0 18px 45px rgba(0,0,0,.28) !important;
 }
 
 body.dark-mode .skill-icon {
-    background: linear-gradient(
-        145deg,
-        #172b43,
-        #102238
-    ) !important;
+    background: linear-gradient(145deg, #142a43, #0c1b2d) !important;
+    border-color: var(--theme-border) !important;
+    color: var(--theme-blue) !important;
 }
 
+body.dark-mode .skill-icon-label {
+    color: var(--theme-muted) !important;
+}
 
-/* NOTES */
+body.dark-mode .skill-card h3 {
+    color: var(--theme-heading) !important;
+}
+
+body.dark-mode .skill-card p {
+    color: var(--theme-muted) !important;
+}
+
+body.dark-mode .skill-tags span {
+    background: #142a43 !important;
+    border-color: var(--theme-border) !important;
+    color: #c4d2e1 !important;
+}
+
+/* =========================================================
+   NOTES + LEARNING RESOURCES
+========================================================= */
 
 body.dark-mode .notes-section {
     background:
-        radial-gradient(circle at 8% 15%, rgba(23,105,224,.13), transparent 24%),
-        radial-gradient(circle at 93% 76%, rgba(124,58,237,.10), transparent 25%),
-        linear-gradient(180deg, #081525 0%, #07111f 100%) !important;
+        radial-gradient(circle at 90% 8%, rgba(23,105,224,.10), transparent 30%),
+        #07111f !important;
+    color: var(--theme-text) !important;
 }
 
-body.dark-mode .notes-heading h2 {
-    color: #f5f8fc !important;
+body.dark-mode .notes-heading > p,
+body.dark-mode .resource-kicker {
+    color: var(--theme-gold) !important;
+}
+
+body.dark-mode .notes-heading > p::before,
+body.dark-mode .resource-kicker::before,
+body.dark-mode .resource-kicker::after {
+    color: #edcc7a !important;
+}
+
+body.dark-mode .notes-heading h2,
+body.dark-mode .resource-question-heading h3 {
+    color: var(--theme-heading) !important;
+}
+
+body.dark-mode .notes-heading h2 span {
+    color: var(--theme-blue) !important;
 }
 
 body.dark-mode .notes-heading > span,
 body.dark-mode .notes-heading-flow {
-    color: #aebdce !important;
+    color: var(--theme-muted) !important;
 }
 
-body.dark-mode .notes-branch,
-body.dark-mode .notes-semester,
-body.dark-mode .notes-resource-card,
+body.dark-mode .notes-heading-flow b {
+    color: var(--theme-gold) !important;
+}
+
+body.dark-mode .notes-heading-flow i {
+    color: #edcc7a !important;
+}
+
+/* Notes branch cards */
+body.dark-mode .notes-branch {
+    background: #0d1b2a !important;
+    border-color: var(--theme-border) !important;
+    color: var(--theme-text) !important;
+    box-shadow: 0 12px 35px rgba(0,0,0,.24) !important;
+}
+
+body.dark-mode .notes-branch summary,
+body.dark-mode .notes-branch h3,
+body.dark-mode .notes-branch strong {
+    color: var(--theme-heading) !important;
+}
+
+body.dark-mode .notes-branch small,
+body.dark-mode .notes-branch p {
+    color: var(--theme-muted) !important;
+}
+
+/* Question papers */
 body.dark-mode .resource-question-papers {
-    background: #0d1b2d !important;
-    border-color: rgba(255,255,255,.11) !important;
+    background: #0d1b2a !important;
+    border-color: var(--theme-border) !important;
+    color: var(--theme-text) !important;
+    box-shadow: 0 18px 50px rgba(0,0,0,.28) !important;
 }
 
-body.dark-mode .notes-branch-title strong,
-body.dark-mode .notes-semester-title strong,
-body.dark-mode .notes-resource-content h4,
+body.dark-mode .resource-question-heading p {
+    color: var(--theme-muted) !important;
+}
+
+body.dark-mode .question-branch {
+    background: #102238 !important;
+    border-color: var(--theme-border) !important;
+}
+
 body.dark-mode .question-branch-info strong,
 body.dark-mode .question-semester > summary,
 body.dark-mode .question-paper-info h4 {
-    color: #f1f5f9 !important;
+    color: var(--theme-heading) !important;
 }
 
-body.dark-mode .notes-branch-title small,
-body.dark-mode .notes-semester-title small,
-body.dark-mode .notes-resource-content p,
 body.dark-mode .question-branch-info small,
 body.dark-mode .question-paper-info p {
-    color: #aebdce !important;
+    color: var(--theme-muted) !important;
 }
 
-body.dark-mode .notes-branch-content,
-body.dark-mode .notes-semester-content {
-    background: #0b192b !important;
+body.dark-mode .question-semester {
+    background: #142a43 !important;
+    border-color: var(--theme-border) !important;
 }
 
-body.dark-mode .notes-semester-header,
-body.dark-mode .notes-semester[open] .notes-semester-header {
+body.dark-mode .question-semester > summary b {
+    color: var(--theme-gold) !important;
+}
+
+/* Approach box from About section */
+body.dark-mode #about .about-profile .about-approach .approach-principle {
     background: #102238 !important;
+    border-color: var(--theme-border) !important;
+    box-shadow: 0 7px 20px rgba(0,0,0,.20) !important;
 }
 
-body.dark-mode .notes-resource-link {
-    background: #132944 !important;
-    border-color: rgba(97,173,255,.25) !important;
+body.dark-mode #about .about-profile .about-approach .approach-principle > span {
+    background: #142a43 !important;
+    color: var(--theme-gold) !important;
+}
+
+body.dark-mode #about .about-profile .about-approach .approach-principle h4 {
+    color: var(--theme-heading) !important;
+}
+
+body.dark-mode #about .about-profile .about-approach .approach-principle p {
+    color: var(--theme-muted) !important;
+}
+
+/* Forms */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background: var(--theme-surface) !important;
+    color: var(--theme-heading) !important;
+    border-color: var(--theme-border) !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #7f92a8 !important;
+}
+
+/* Footer */
+body.dark-mode footer {
+    background: #050d18 !important;
+    color: var(--theme-muted) !important;
+}
+
+/* =========================================================
+   THEME TOGGLE
+========================================================= */
+
+.theme-toggle {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    margin-left: 18px;
+    flex: 0 0 48px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 50%;
+    background: #0d1b2a;
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0,0,0,.12);
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    border-color: var(--theme-gold);
+}
+
+.theme-icon {
+    position: absolute;
+    font-size: 20px;
+    line-height: 1;
+    transition: opacity .25s ease, transform .3s ease;
+}
+
+.sun-icon {
+    opacity: 0;
+    transform: scale(.5) rotate(-90deg);
+}
+
+.moon-icon {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+}
+
+/* In Light Mode show moon because clicking it enters Dark Mode */
+body:not(.dark-mode) .theme-toggle {
+    background: #ffffff;
+    color: #0b1f3a;
+    border-color: #dfe6ef;
+}
+
+body:not(.dark-mode) .sun-icon {
+    opacity: 0;
+    transform: scale(.5) rotate(-90deg);
+}
+
+body:not(.dark-mode) .moon-icon {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+}
+
+/* In Dark Mode show sun because clicking it returns to Light Mode */
+body.dark-mode .theme-toggle {
+    background: #142a43;
+    color: #f6cf70;
+    border-color: rgba(255,255,255,.14);
+}
+
+body.dark-mode .sun-icon {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+}
+
+body.dark-mode .moon-icon {
+    opacity: 0;
+    transform: scale(.5) rotate(90deg);
+}
+
+/* Mobile navigation */
+@media (max-width: 900px) {
+    .theme-toggle {
+        width: 44px;
+        height: 44px;
+        flex-basis: 44px;
+        margin-left: 10px;
+    }
+}
+
+
+/* =========================================================
+   DARK MODE — ABOUT + RESEARCH + CONTACT
+   Exact section selectors used by this website
+========================================================= */
+
+/* ---------- ABOUT ---------- */
+
+body.dark-mode .about-section {
+    background:
+        radial-gradient(circle at 8% 15%, rgba(37,99,235,.13), transparent 28%),
+        radial-gradient(circle at 92% 80%, rgba(192,139,39,.08), transparent 25%),
+        #07111f !important;
+}
+
+body.dark-mode .about-math-bg .math-formula {
+    color: rgba(97,173,255,.10) !important;
+}
+
+body.dark-mode .about-photo-circle {
+    background: #0d1b2a !important;
+    border-color: #d7a63a !important;
+}
+
+body.dark-mode .about-profile-card {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .about-profile-card h3 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .about-profile-card p {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .about-profile-card span {
+    color: #b9c7d7 !important;
+}
+
+body.dark-mode .about-quote {
+    background: #102238 !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .about-quote p {
+    color: #d5e0eb !important;
+}
+
+body.dark-mode .about-quote strong {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .about-content {
+    color: #c4d0dd !important;
+}
+
+body.dark-mode .about-label {
     color: #61adff !important;
 }
 
-body.dark-mode .notes-resource-link:hover {
+body.dark-mode .about-heading h2 {
+    color: #f5f8fc !important;
+}
+
+body.dark-mode .about-heading h2 span {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .about-introduction p {
+    color: #b4c3d3 !important;
+}
+
+body.dark-mode .about-introduction strong {
+    color: #edf3f9 !important;
+}
+
+body.dark-mode .academic-item {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .academic-info h3 {
+    color: #f3f7fb !important;
+}
+
+body.dark-mode .academic-info h4 {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .academic-info p {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .about-approach {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .approach-title h3 {
+    color: #f3f7fb !important;
+}
+
+body.dark-mode .about-approach > p {
+    color: #b4c3d3 !important;
+}
+
+body.dark-mode .about-highlight {
+    background: #102238 !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .about-highlight h4 {
+    color: #f3f7fb !important;
+}
+
+body.dark-mode .about-highlight p {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .about-resume {
+    background: #102238 !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+
+/* ---------- PhD RESEARCH ---------- */
+
+body.dark-mode .phd-research-section {
+    background:
+        radial-gradient(circle at 10% 12%, rgba(37,99,235,.14), transparent 30%),
+        radial-gradient(circle at 90% 85%, rgba(192,139,39,.07), transparent 28%),
+        #07111f !important;
+}
+
+body.dark-mode .phd-research-section::before,
+body.dark-mode .phd-research-section::after {
+    opacity: .25 !important;
+}
+
+body.dark-mode .phd-research-hero {
+    background: linear-gradient(135deg, #071f42 0%, #124b9a 100%) !important;
+    border-color: rgba(97,173,255,.25) !important;
+}
+
+body.dark-mode .phd-research-intro {
+    color: #ffffff !important;
+}
+
+body.dark-mode .phd-research-label {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .phd-research-intro h3 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .phd-research-intro > p:last-child {
+    color: #c7d5e4 !important;
+}
+
+body.dark-mode .phd-research-symbol {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .phd-research-mark {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.12) !important;
+    color: #61adff !important;
+}
+
+body.dark-mode .phd-research-card {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+    box-shadow: 0 14px 35px rgba(0,0,0,.25) !important;
+}
+
+body.dark-mode .phd-research-card::before {
+    background: #1769e0 !important;
+}
+
+body.dark-mode .phd-card-icon {
+    background: #142a43 !important;
+    border-color: rgba(97,173,255,.22) !important;
+    color: #61adff !important;
+}
+
+body.dark-mode .phd-card-label {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .phd-research-card h4 {
+    color: #f3f7fb !important;
+}
+
+body.dark-mode .phd-research-card h4::after {
+    background: #e1b95f !important;
+}
+
+body.dark-mode .phd-research-card p:not(.phd-card-label) {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .phd-research-details {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .phd-details-content h3 {
+    color: #f3f7fb !important;
+}
+
+body.dark-mode .phd-details-content > p:last-child {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .phd-research-button {
     background: #1769e0 !important;
     color: #ffffff !important;
 }
 
-
-/* =========================================================
-   MOBILE HEADER
-   Exact target:
-   ∑ Mr.Ramesh                 ☰  ☾
-========================================================= */
-
-@media screen and (max-width: 768px) {
-
-    .header {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-
-        width: 100% !important;
-        height: 76px !important;
-
-        z-index: 10000 !important;
-    }
-
-    .navbar {
-        width: 100% !important;
-        height: 76px !important;
-
-        padding: 0 14px 0 18px !important;
-
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-    }
-
-
-    /* LOGO */
-
-    .logo {
-        display: flex !important;
-        align-items: center !important;
-
-        flex-shrink: 0 !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        font-size: 20px !important;
-        line-height: 1 !important;
-
-        white-space: nowrap !important;
-    }
-
-
-    /* RIGHT SIDE */
-
-    .header-actions {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: flex-end !important;
-
-        gap: 4px !important;
-
-        margin-left: auto !important;
-    }
-
-
-    /* THREE LINES */
-
-    .menu-toggle {
-        display: flex !important;
-
-        align-items: center !important;
-        justify-content: center !important;
-
-        width: 44px !important;
-        height: 44px !important;
-
-        padding: 0 !important;
-        margin: 0 !important;
-
-        border: none !important;
-        background: transparent !important;
-
-        color: #0b1f3a !important;
-
-        font-size: 30px !important;
-        font-weight: 700 !important;
-        line-height: 1 !important;
-
-        opacity: 1 !important;
-        visibility: visible !important;
-
-        cursor: pointer !important;
-    }
-
-
-    /* DARK MODE — THREE LINES STAY VISIBLE */
-
-    html.dark-mode .menu-toggle,
-    body.dark-mode .menu-toggle {
-        display: flex !important;
-
-        color: #ffffff !important;
-
-        background: transparent !important;
-
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
-
-
-    /* THEME BUTTON */
-
-    .theme-toggle {
-        display: flex !important;
-
-        align-items: center !important;
-        justify-content: center !important;
-
-        width: 44px !important;
-        height: 44px !important;
-
-        padding: 0 !important;
-        margin: 0 !important;
-
-        flex-shrink: 0 !important;
-    }
-
-
-    /* MOBILE NAV */
-
-    .nav-links {
-        position: absolute !important;
-
-        top: 76px !important;
-        left: 0 !important;
-        right: 0 !important;
-
-        width: 100% !important;
-
-        display: none !important;
-
-        flex-direction: column !important;
-        align-items: stretch !important;
-
-        gap: 0 !important;
-
-        padding: 8px 0 12px !important;
-        margin: 0 !important;
-
-        background: #ffffff !important;
-
-        border-top: 1px solid #e5eaf1 !important;
-        border-bottom: 1px solid #e5eaf1 !important;
-
-        box-shadow: 0 12px 28px rgba(11,31,58,.14) !important;
-
-        z-index: 9999 !important;
-
-        list-style: none !important;
-    }
-
-    .nav-links.active {
-        display: flex !important;
-    }
-
-
-    /* MOBILE NAV ITEMS */
-
-    .nav-links li {
-        width: 100% !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    .nav-links a {
-        display: block !important;
-
-        width: 100% !important;
-
-        padding: 13px 20px !important;
-        margin: 0 !important;
-
-        text-align: center !important;
-
-        color: #172033 !important;
-
-        font-size: 16px !important;
-        font-weight: 600 !important;
-
-        line-height: 1.3 !important;
-    }
-
-
-    /* DARK MOBILE NAV */
-
-    html.dark-mode .nav-links,
-    body.dark-mode .nav-links {
-        background: #07111f !important;
-
-        border-top-color: rgba(255,255,255,.10) !important;
-        border-bottom-color: rgba(255,255,255,.10) !important;
-
-        box-shadow:
-            0 15px 35px rgba(0,0,0,.45) !important;
-    }
-
-    html.dark-mode .nav-links a,
-    body.dark-mode .nav-links a {
-        color: #e7edf5 !important;
-    }
-
-    html.dark-mode .nav-links a:hover,
-    html.dark-mode .nav-links a.active,
-    body.dark-mode .nav-links a:hover,
-    body.dark-mode .nav-links a.active {
-        color: #61adff !important;
-    }
-
-
-    /* PHONE CONTENT SHOULD START BELOW FIXED HEADER */
-
-    body {
-        overflow-x: hidden !important;
-    }
-
-    .hero {
-        padding-top: 125px !important;
-    }
-
+body.dark-mode .phd-research-button:hover {
+    background: #2b7bea !important;
+}
+
+
+/* ---------- CONTACT ---------- */
+
+body.dark-mode .contact-section {
+    background:
+        radial-gradient(circle at 8% 20%, rgba(37,99,235,.13), transparent 30%),
+        radial-gradient(circle at 92% 75%, rgba(192,139,39,.08), transparent 28%),
+        #07111f !important;
+}
+
+body.dark-mode .contact-section .section-heading p {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .contact-section .section-heading h2 {
+    color: #f5f8fc !important;
+}
+
+body.dark-mode .contact-section .section-heading > span {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .contact-card {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,.25) !important;
+}
+
+body.dark-mode .contact-card:hover {
+    background: #102238 !important;
+    border-color: rgba(97,173,255,.30) !important;
+}
+
+body.dark-mode .contact-label {
+    color: #8fa4ba !important;
+}
+
+body.dark-mode .contact-card h3 {
+    color: #f3f7fb !important;
+}
+
+body.dark-mode .contact-card > p:not(.contact-label) {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .contact-card a.contact-button {
+    background: #142a43 !important;
+    border-color: rgba(255,255,255,.12) !important;
+    color: #f3f7fb !important;
+}
+
+body.dark-mode .contact-card a.contact-button:hover {
+    background: #1769e0 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .contact-note {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .contact-note > span {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .contact-note p {
+    color: #aebdd0 !important;
 }
 
 
 /* =========================================================
-   SMALL PHONES
+   IMPORTANT: PREVENT LIGHT MODE FROM BEING WASHED OUT
+   These are deliberately scoped ONLY to dark mode.
 ========================================================= */
 
-@media screen and (max-width: 390px) {
-
-    .navbar {
-        padding-left: 13px !important;
-        padding-right: 10px !important;
-    }
-
-    .logo {
-        font-size: 19px !important;
-    }
-
-    .menu-toggle,
-    .theme-toggle {
-        width: 42px !important;
-        height: 42px !important;
-    }
-
-    .menu-toggle {
-        font-size: 28px !important;
-    }
+body:not(.dark-mode) .about-heading h2,
+body:not(.dark-mode) .about-introduction p,
+body:not(.dark-mode) .phd-research-intro h3,
+body:not(.dark-mode) .phd-research-card h4,
+body:not(.dark-mode) .contact-section .section-heading h2,
+body:not(.dark-mode) .contact-card h3 {
+    opacity: 1 !important;
+    filter: none !important;
 }
 
 
 /* =========================================================
-   FINAL LIGHT MODE RESET
-   Ensures returning from dark mode restores light colours
+   FINAL V2 — FORCE DARK MODE FOR ABOUT / RESEARCH / CONTACT
+   High-specificity ID selectors prevent older .section rules
+   from overriding the dark theme.
 ========================================================= */
 
-html:not(.dark-mode) body,
+/* ABOUT */
+html body.dark-mode #about.about-section {
+    background:
+        radial-gradient(circle at 8% 15%, rgba(37,99,235,.14), transparent 28%),
+        radial-gradient(circle at 92% 80%, rgba(192,139,39,.08), transparent 28%),
+        #07111f !important;
+    color: #c4d0dd !important;
+}
+
+html body.dark-mode #about .about-content,
+html body.dark-mode #about .about-profile {
+    background: transparent !important;
+    color: #c4d0dd !important;
+}
+
+html body.dark-mode #about .about-heading h2 {
+    color: #f7f9fc !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+html body.dark-mode #about .about-heading h2 span {
+    color: #e1b95f !important;
+}
+
+html body.dark-mode #about .about-label {
+    color: #61adff !important;
+}
+
+html body.dark-mode #about .about-introduction p {
+    color: #b8c7d7 !important;
+}
+
+html body.dark-mode #about .about-introduction strong {
+    color: #f1f5f9 !important;
+}
+
+html body.dark-mode #about .academic-item {
+    background: #0d1b2a !important;
+    color: #dbe6f1 !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+html body.dark-mode #about .academic-info h3,
+html body.dark-mode #about .academic-info h4 {
+    color: #f3f7fb !important;
+}
+
+html body.dark-mode #about .academic-info p {
+    color: #aebdd0 !important;
+}
+
+html body.dark-mode #about .about-approach {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+html body.dark-mode #about .about-approach h3 {
+    color: #f3f7fb !important;
+}
+
+html body.dark-mode #about .about-approach > p {
+    color: #aebdd0 !important;
+}
+
+html body.dark-mode #about .approach-principle {
+    background: #102238 !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+html body.dark-mode #about .approach-principle h4 {
+    color: #f3f7fb !important;
+}
+
+html body.dark-mode #about .approach-principle p {
+    color: #aebdd0 !important;
+}
+
+html body.dark-mode #about .about-resume {
+    background: #102238 !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+/* RESEARCH */
+html body.dark-mode #work.phd-research-section {
+    background:
+        radial-gradient(circle at 7% 18%, rgba(23,105,224,.14), transparent 28%),
+        radial-gradient(circle at 94% 72%, rgba(196,154,58,.08), transparent 25%),
+        #07111f !important;
+    color: #c4d0dd !important;
+}
+
+html body.dark-mode #work .phd-research-hero {
+    background: linear-gradient(135deg, #071b35, #124b9a) !important;
+}
+
+html body.dark-mode #work .phd-research-hero h3,
+html body.dark-mode #work .phd-research-hero p {
+    color: #ffffff !important;
+}
+
+html body.dark-mode #work .phd-research-label {
+    color: #e1b95f !important;
+}
+
+html body.dark-mode #work .phd-research-card {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+html body.dark-mode #work .phd-research-card h4 {
+    color: #f3f7fb !important;
+}
+
+html body.dark-mode #work .phd-research-card p {
+    color: #aebdd0 !important;
+}
+
+html body.dark-mode #work .phd-card-label {
+    color: #e1b95f !important;
+}
+
+html body.dark-mode #work .phd-research-details {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+html body.dark-mode #work .phd-details-content h3 {
+    color: #f3f7fb !important;
+}
+
+html body.dark-mode #work .phd-details-content p {
+    color: #aebdd0 !important;
+}
+
+/* CONTACT */
+html body.dark-mode #contact.contact-section {
+    background:
+        radial-gradient(circle at 7% 15%, rgba(23,105,224,.14), transparent 28%),
+        radial-gradient(circle at 94% 76%, rgba(196,139,58,.08), transparent 26%),
+        #07111f !important;
+    color: #c4d0dd !important;
+}
+
+html body.dark-mode #contact .section-heading h2 {
+    color: #f7f9fc !important;
+}
+
+html body.dark-mode #contact .section-heading p {
+    background: #102238 !important;
+    border-color: rgba(255,255,255,.10) !important;
+    color: #e1b95f !important;
+}
+
+html body.dark-mode #contact .section-heading > span {
+    color: #aebdd0 !important;
+}
+
+html body.dark-mode #contact .contact-card {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+html body.dark-mode #contact .contact-card h3 {
+    color: #f3f7fb !important;
+}
+
+html body.dark-mode #contact .contact-card p {
+    color: #aebdd0 !important;
+}
+
+html body.dark-mode #contact .contact-label {
+    color: #8fa4ba !important;
+}
+
+html body.dark-mode #contact .contact-button {
+    background: #142a43 !important;
+    color: #f3f7fb !important;
+    border-color: rgba(255,255,255,.12) !important;
+}
+
+html body.dark-mode #contact .contact-button:hover {
+    background: #1769e0 !important;
+    color: #ffffff !important;
+}
+
+html body.dark-mode #contact .contact-note {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+html body.dark-mode #contact .contact-note p {
+    color: #aebdd0 !important;
+}
+
+/* Make section headings readable everywhere in dark mode */
+html body.dark-mode #about h1,
+html body.dark-mode #about h2,
+html body.dark-mode #about h3,
+html body.dark-mode #work h1,
+html body.dark-mode #work h2,
+html body.dark-mode #work h3,
+html body.dark-mode #contact h1,
+html body.dark-mode #contact h2,
+html body.dark-mode #contact h3 {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+
+/* =========================================================
+   FINAL NAVBAR + LIGHT / DARK MODE OVERRIDES
+   Added last so these rules override earlier duplicates.
+========================================================= */
+
+.header .navbar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+}
+
+.header .navbar .logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+}
+
+.header .navbar .logo-sigma {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 31px !important;
+    line-height: 1 !important;
+    font-weight: 700 !important;
+    color: #b77d19 !important;
+}
+
+.header .navbar .logo-title {
+    color: #0b1f3a !important;
+    font-weight: 800 !important;
+    white-space: nowrap !important;
+}
+
+.header .navbar .logo-title > span {
+    color: #1769e0 !important;
+}
+
+.header .navbar .nav-links {
+    display: flex !important;
+    align-items: center !important;
+    margin-left: auto !important;
+}
+
+.header .navbar .nav-links ul {
+    display: flex !important;
+    align-items: center !important;
+    gap: 28px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.header .navbar .nav-links li {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.header .navbar .nav-links a {
+    white-space: nowrap !important;
+}
+
+.header .navbar .theme-toggle {
+    flex: 0 0 46px !important;
+    width: 46px !important;
+    height: 46px !important;
+    margin: 0 0 0 16px !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+}
+
+.header .navbar .theme-icon {
+    position: absolute !important;
+    transition: opacity .25s ease, transform .3s ease !important;
+}
+
+/* ---------- LIGHT MODE ---------- */
+
 body:not(.dark-mode) {
     background: #ffffff !important;
     color: #172033 !important;
 }
 
-html:not(.dark-mode) .header,
 body:not(.dark-mode) .header {
     background: rgba(255,255,255,.96) !important;
+    color: #0b1f3a !important;
+    border-bottom-color: #e5eaf1 !important;
 }
 
-html:not(.dark-mode) .menu-toggle,
-body:not(.dark-mode) .menu-toggle {
+body:not(.dark-mode) .header .navbar .logo-title {
     color: #0b1f3a !important;
 }
 
-html:not(.dark-mode) .nav-links,
-body:not(.dark-mode) .nav-links {
-    background: #ffffff !important;
-}
-
-html:not(.dark-mode) .nav-links a,
-body:not(.dark-mode) .nav-links a {
-    color: #172033 !important;
-}
-
-html:not(.dark-mode) .nav-links a:hover,
-html:not(.dark-mode) .nav-links a.active,
-body:not(.dark-mode) .nav-links a:hover,
-body:not(.dark-mode) .nav-links a.active {
+body:not(.dark-mode) .header .navbar .logo-title > span {
     color: #1769e0 !important;
+}
+
+body:not(.dark-mode) .header .navbar .logo-sigma {
+    color: #b77d19 !important;
+}
+
+body:not(.dark-mode) .header .navbar .nav-links a {
+    color: #334155 !important;
+}
+
+body:not(.dark-mode) .header .navbar .nav-links a:hover,
+body:not(.dark-mode) .header .navbar .nav-links a.active {
+    color: #1769e0 !important;
+}
+
+body:not(.dark-mode) .header .navbar .theme-toggle {
+    background: #f8fafc !important;
+    color: #0b1f3a !important;
+    border: 1px solid #d9e2ec !important;
+}
+
+body:not(.dark-mode) .header .navbar .moon-icon {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+body:not(.dark-mode) .header .navbar .sun-icon {
+    opacity: 0 !important;
+    transform: scale(.5) !important;
+}
+
+/* ---------- DARK MODE ---------- */
+
+body.dark-mode {
+    background: #07111f !important;
+    color: #e8eef6 !important;
+}
+
+body.dark-mode .header {
+    background: rgba(7,17,31,.97) !important;
+    color: #f7f9fc !important;
+    border-bottom-color: rgba(255,255,255,.12) !important;
+}
+
+body.dark-mode .header .navbar .logo-title {
+    color: #f7f9fc !important;
+}
+
+body.dark-mode .header .navbar .logo-title > span {
+    color: #61adff !important;
+}
+
+body.dark-mode .header .navbar .logo-sigma {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .header .navbar .nav-links a {
+    color: #d4deea !important;
+}
+
+body.dark-mode .header .navbar .nav-links a:hover,
+body.dark-mode .header .navbar .nav-links a.active {
+    color: #61adff !important;
+}
+
+body.dark-mode .header .navbar .theme-toggle {
+    background: #142a43 !important;
+    color: #f1c96b !important;
+    border: 1px solid rgba(255,255,255,.15) !important;
+}
+
+body.dark-mode .header .navbar .moon-icon {
+    opacity: 0 !important;
+    transform: scale(.5) !important;
+}
+
+body.dark-mode .header .navbar .sun-icon {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 900px) {
+    .header .navbar .nav-links ul {
+        gap: 18px !important;
+    }
+
+    .header .navbar .theme-toggle {
+        width: 44px !important;
+        height: 44px !important;
+        flex-basis: 44px !important;
+        margin-left: 12px !important;
+    }
+}
+
+@media (max-width: 700px) {
+    .header .navbar .nav-links ul {
+        gap: 14px !important;
+    }
+
+    .header .navbar .nav-links a {
+        font-size: 13px !important;
+    }
+
+    .header .navbar .logo-sigma {
+        font-size: 28px !important;
+    }
+
+    .header .navbar .logo-title {
+        font-size: 18px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .header .navbar .theme-toggle {
+        width: 40px !important;
+        height: 40px !important;
+        flex-basis: 40px !important;
+        margin-left: 8px !important;
+    }
 }
