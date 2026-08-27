@@ -11299,3 +11299,87 @@ a[href$=".pdf"]:hover {
     }
 
 }
+
+/* =========================================================
+   FINAL FIX — EQUAL MAIN BOXES
+   Left Profile = Right About Me
+========================================================= */
+
+.about-wrapper {
+    width: 100% !important;
+    max-width: 1500px !important;
+    margin: 0 auto !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 36px !important;
+
+    align-items: stretch !important;
+}
+
+.about-profile,
+.about-content {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Keep the left composition centered inside its equal column */
+.about-profile {
+    min-height: 875px !important;
+}
+
+/* Right box fills the same column cleanly */
+.about-content {
+    min-height: 875px !important;
+}
+
+/* Keep profile elements inside the left half */
+.about-profile .about-photo-circle {
+    width: min(82%, 500px) !important;
+}
+
+.about-profile .about-profile-card {
+    width: min(86%, 425px) !important;
+}
+
+.about-profile > .about-approach {
+    width: min(86%, 425px) !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+}
+
+/* Tablet */
+@media (max-width: 1100px) and (min-width: 901px) {
+    .about-wrapper {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        gap: 25px !important;
+    }
+
+    .about-profile,
+    .about-content {
+        min-height: 820px !important;
+    }
+
+    .about-profile .about-photo-circle {
+        width: min(88%, 390px) !important;
+    }
+}
+
+/* Mobile — one column */
+@media (max-width: 900px) {
+    .about-wrapper {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+
+    .about-profile,
+    .about-content {
+        min-height: auto !important;
+    }
+
+    .about-profile > .about-approach {
+        width: min(94%, 425px) !important;
+    }
+}
