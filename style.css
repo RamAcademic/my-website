@@ -11884,3 +11884,273 @@ a[href$=".pdf"]:hover {
         margin-top: 14px !important;
     }
 }
+
+
+/* =========================================================
+   PREMIUM LEFT PROFILE DESIGN
+   Larger photo + elegant approach card + no empty gap
+========================================================= */
+
+/* Give the left panel a tighter, intentional composition */
+#about .about-wrapper.equal-about-layout > .about-profile {
+    padding: 22px 24px 24px !important;
+    overflow: hidden !important;
+}
+
+/* Use the complete left panel vertically */
+#about .equal-about-layout .profile-panel {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 520px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+/* Larger premium portrait */
+#about .equal-about-layout .about-photo-circle {
+    width: 340px !important;
+    height: 425px !important;
+    margin: 0 auto !important;
+    border-radius: 170px 170px 48px 48px !important;
+    overflow: hidden !important;
+}
+
+/* Make the actual image fill the portrait */
+#about .equal-about-layout .about-photo-circle img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+}
+
+/* Name card */
+#about .equal-about-layout .about-profile-card {
+    width: 410px !important;
+    max-width: 94% !important;
+    margin: -34px auto 0 !important;
+    padding: 20px 18px 18px !important;
+    border-radius: 20px !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* =========================================================
+   MY TEACHING APPROACH — PREMIUM CARD
+========================================================= */
+
+#about .equal-about-layout .about-approach {
+    width: 440px !important;
+    max-width: 96% !important;
+
+    margin: 18px auto 0 !important;
+    padding: 20px !important;
+
+    border-radius: 22px !important;
+    border: 1px solid rgba(37, 99, 235, .14) !important;
+
+    background:
+        radial-gradient(circle at 100% 0%, rgba(218, 166, 45, .10), transparent 35%),
+        linear-gradient(145deg, #ffffff 0%, #f5f9ff 100%) !important;
+
+    box-shadow:
+        0 12px 30px rgba(15, 35, 65, .10),
+        inset 0 1px 0 rgba(255,255,255,.9) !important;
+
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Gold accent line */
+#about .equal-about-layout .about-approach::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 24px !important;
+    right: 24px !important;
+    height: 3px !important;
+    border-radius: 0 0 8px 8px !important;
+    background: linear-gradient(90deg, #c89522, #e6b84a, #c89522) !important;
+}
+
+/* Approach heading */
+#about .equal-about-layout .approach-title {
+    display: flex !important;
+    align-items: center !important;
+    gap: 13px !important;
+    margin-bottom: 12px !important;
+}
+
+#about .equal-about-layout .approach-icon {
+    width: 42px !important;
+    height: 42px !important;
+    flex: 0 0 42px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 13px !important;
+    background: #ffffff !important;
+    color: #c89522 !important;
+    border: 1px solid rgba(200,149,34,.18) !important;
+    box-shadow: 0 5px 14px rgba(15,35,65,.08) !important;
+    font-size: 22px !important;
+}
+
+#about .equal-about-layout .approach-label {
+    display: block !important;
+    margin-bottom: 2px !important;
+    font-size: 8px !important;
+    letter-spacing: 1.6px !important;
+    font-weight: 800 !important;
+    color: #c28b19 !important;
+}
+
+#about .equal-about-layout .approach-title h3 {
+    margin: 0 !important;
+    font-size: 21px !important;
+    line-height: 1.15 !important;
+}
+
+/* Concept → Visualize → Apply → Master */
+#about .equal-about-layout .approach-method {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 7px !important;
+
+    margin: 8px 0 12px !important;
+    padding: 9px 10px !important;
+
+    border-radius: 12px !important;
+    background: rgba(255,255,255,.72) !important;
+    border: 1px solid rgba(37,99,235,.08) !important;
+
+    font-weight: 700 !important;
+    font-size: 11px !important;
+}
+
+#about .equal-about-layout .approach-method b {
+    color: #c89522 !important;
+}
+
+/* Short intro */
+#about .equal-about-layout .approach-statement {
+    margin: 0 2px 14px !important;
+    font-size: 11px !important;
+    line-height: 1.55 !important;
+    color: #496789 !important;
+    text-align: center !important;
+}
+
+/* Four principles */
+#about .equal-about-layout .approach-principles {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+    gap: 9px !important;
+}
+
+#about .equal-about-layout .approach-principle {
+    min-height: 58px !important;
+    padding: 10px !important;
+
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+
+    border-radius: 13px !important;
+    background: rgba(255,255,255,.78) !important;
+    border: 1px solid rgba(37,99,235,.09) !important;
+
+    box-sizing: border-box !important;
+}
+
+#about .equal-about-layout .approach-principle > span {
+    width: 25px !important;
+    height: 25px !important;
+    flex: 0 0 25px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 8px !important;
+    background: #f4f7fc !important;
+    color: #c89522 !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+}
+
+#about .equal-about-layout .approach-principle h4 {
+    margin: 0 0 3px !important;
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+}
+
+#about .equal-about-layout .approach-principle p {
+    margin: 0 !important;
+    font-size: 9px !important;
+    line-height: 1.35 !important;
+    color: #5b7390 !important;
+}
+
+/* Remove unnecessary vertical dead space */
+#about .equal-about-layout .about-approach + * {
+    margin-top: 0 !important;
+}
+
+/* =========================================================
+   DESKTOP — BALANCED VERTICAL SCALE
+========================================================= */
+
+@media (min-width: 901px) {
+
+    #about .about-wrapper.equal-about-layout > .about-profile {
+        justify-content: flex-start !important;
+    }
+
+    #about .equal-about-layout .about-photo-circle {
+        width: 350px !important;
+        height: 435px !important;
+    }
+
+    #about .equal-about-layout .about-profile-card {
+        margin-top: -38px !important;
+    }
+
+    #about .equal-about-layout .about-approach {
+        margin-top: 17px !important;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #about .about-wrapper.equal-about-layout > .about-profile {
+        padding: 18px 12px 22px !important;
+    }
+
+    #about .equal-about-layout .about-photo-circle {
+        width: min(285px, 82vw) !important;
+        height: min(355px, 102vw) !important;
+    }
+
+    #about .equal-about-layout .about-profile-card {
+        width: min(390px, 95%) !important;
+        margin-top: -30px !important;
+    }
+
+    #about .equal-about-layout .about-approach {
+        width: 96% !important;
+        padding: 17px !important;
+        margin-top: 15px !important;
+    }
+
+    #about .equal-about-layout .approach-principles {
+        gap: 7px !important;
+    }
+}
