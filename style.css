@@ -11192,3 +11192,297 @@ a[href$=".pdf"]:hover {
         margin-top:14px !important;
     }
 }
+
+
+/* =========================================================
+   FINAL — PREMIUM "MY TEACHING APPROACH"
+========================================================= */
+
+#about .about-profile > .about-approach {
+    position: relative !important;
+    width: 470px !important;
+    max-width: 96% !important;
+    min-height: 300px !important;
+
+    margin: 18px auto 0 !important;
+    padding: 24px 22px 22px !important;
+
+    box-sizing: border-box !important;
+    border-radius: 24px !important;
+
+    background:
+        radial-gradient(circle at 92% 8%, rgba(197,139,32,.12), transparent 28%),
+        linear-gradient(145deg, #ffffff 0%, #f7faff 52%, #edf4ff 100%) !important;
+
+    border: 1px solid rgba(37,99,235,.15) !important;
+
+    box-shadow:
+        0 18px 38px rgba(24,52,88,.12),
+        0 3px 10px rgba(24,52,88,.05),
+        inset 0 1px 0 rgba(255,255,255,.95) !important;
+
+    overflow: hidden !important;
+    z-index: 10 !important;
+}
+
+/* Elegant gold accent */
+#about .about-profile > .about-approach::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 28px !important;
+    right: 28px !important;
+    height: 4px !important;
+    border-radius: 0 0 12px 12px !important;
+
+    background: linear-gradient(
+        90deg,
+        #b77c16,
+        #e8bd5b,
+        #b77c16
+    ) !important;
+}
+
+/* Decorative mathematics */
+#about .about-profile > .about-approach::after {
+    content: "∫   Σ   π   √x   f(x)" !important;
+    position: absolute !important;
+    right: 18px !important;
+    bottom: 8px !important;
+
+    font-family: Georgia, serif !important;
+    font-size: 13px !important;
+    letter-spacing: 4px !important;
+
+    color: rgba(37,99,235,.07) !important;
+    pointer-events: none !important;
+}
+
+/* Header */
+#about .about-profile > .about-approach .approach-title {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 13px !important;
+
+    margin: 0 0 12px !important;
+}
+
+#about .about-profile > .about-approach .approach-icon {
+    width: 48px !important;
+    height: 48px !important;
+    flex: 0 0 48px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 14px !important;
+
+    background: #fff !important;
+    color: #b77c16 !important;
+
+    border: 1px solid rgba(197,139,32,.18) !important;
+
+    box-shadow: 0 7px 18px rgba(24,52,88,.10) !important;
+
+    font-size: 23px !important;
+}
+
+/* Small label */
+#about .about-profile > .about-approach .approach-label {
+    display: block !important;
+
+    margin-bottom: 3px !important;
+
+    color: #b77c16 !important;
+
+    font-size: 8px !important;
+    font-weight: 800 !important;
+    letter-spacing: 1.8px !important;
+    text-transform: uppercase !important;
+}
+
+/* Main title */
+#about .about-profile > .about-approach .approach-title h3 {
+    margin: 0 !important;
+
+    color: #092b50 !important;
+
+    font-family: Georgia, "Times New Roman", serif !important;
+
+    font-size: 23px !important;
+    line-height: 1.08 !important;
+}
+
+/* Teaching philosophy line */
+#about .about-profile > .about-approach .approach-method {
+    position: relative !important;
+
+    width: 100% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+
+    gap: 7px !important;
+
+    margin: 8px 0 13px !important;
+    padding: 10px 12px !important;
+
+    box-sizing: border-box !important;
+
+    border-radius: 12px !important;
+
+    background: rgba(255,255,255,.88) !important;
+
+    border: 1px solid rgba(37,99,235,.10) !important;
+
+    color: #153b63 !important;
+
+    font-family: Georgia, "Times New Roman", serif !important;
+
+    font-size: 11px !important;
+    font-weight: 700 !important;
+
+    box-shadow: 0 4px 12px rgba(24,52,88,.04) !important;
+}
+
+/* Explanation paragraph */
+#about .about-profile > .about-approach .approach-statement {
+    margin: 0 4px 15px !important;
+
+    color: #506b89 !important;
+
+    font-size: 11px !important;
+    line-height: 1.62 !important;
+
+    text-align: left !important;
+}
+
+/* Add a concise explanation if the existing statement is very short */
+#about .about-profile > .about-approach .approach-statement::after {
+    content: " I focus on understanding the idea first, then connecting it to visuals, examples and step-by-step problem solving. This helps students think independently and use mathematics with confidence." !important;
+
+    color: #506b89 !important;
+}
+
+/* Four principle cards */
+#about .about-profile > .about-approach .approach-principles {
+    position: relative !important;
+
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+
+    gap: 9px !important;
+
+    margin-top: 4px !important;
+}
+
+#about .about-profile > .about-approach .approach-principle {
+    min-height: 62px !important;
+
+    padding: 11px !important;
+
+    display: flex !important;
+    align-items: flex-start !important;
+
+    gap: 8px !important;
+
+    box-sizing: border-box !important;
+
+    border-radius: 13px !important;
+
+    background: rgba(255,255,255,.82) !important;
+
+    border: 1px solid rgba(37,99,235,.10) !important;
+
+    box-shadow: 0 4px 12px rgba(24,52,88,.035) !important;
+
+    transition: transform .2s ease, box-shadow .2s ease !important;
+}
+
+#about .about-profile > .about-approach .approach-principle:hover {
+    transform: translateY(-2px) !important;
+
+    box-shadow: 0 8px 18px rgba(24,52,88,.09) !important;
+}
+
+#about .about-profile > .about-approach .approach-principle > span {
+    width: 25px !important;
+    height: 25px !important;
+    flex: 0 0 25px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 8px !important;
+
+    background: #f7f9fd !important;
+
+    color: #b77c16 !important;
+
+    font-size: 11px !important;
+}
+
+#about .about-profile > .about-approach .approach-principle h4 {
+    margin: 0 0 3px !important;
+
+    color: #0b3157 !important;
+
+    font-size: 9px !important;
+    line-height: 1.2 !important;
+}
+
+#about .about-profile > .about-approach .approach-principle p {
+    margin: 0 !important;
+
+    color: #607894 !important;
+
+    font-size: 8px !important;
+    line-height: 1.35 !important;
+}
+
+/* =========================================================
+   DESKTOP BALANCE
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    #about .about-profile > .about-approach {
+        width: 485px !important;
+        min-height: 310px !important;
+        padding: 25px 23px 23px !important;
+    }
+
+    #about .about-profile > .about-approach .approach-statement {
+        font-size: 11.5px !important;
+        line-height: 1.65 !important;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #about .about-profile > .about-approach {
+        width: 97% !important;
+        min-height: 0 !important;
+
+        padding: 20px 16px !important;
+
+        border-radius: 20px !important;
+    }
+
+    #about .about-profile > .about-approach .approach-title h3 {
+        font-size: 20px !important;
+    }
+
+    #about .about-profile > .about-approach .approach-principles {
+        grid-template-columns: 1fr !important;
+    }
+}
