@@ -13006,3 +13006,219 @@ body:not(.dark-mode) .contact-card h3 {
     opacity: 1 !important;
     filter: none !important;
 }
+
+
+/* =========================================================
+   FINAL V2 — FORCE DARK MODE FOR ABOUT / RESEARCH / CONTACT
+   High-specificity ID selectors prevent older .section rules
+   from overriding the dark theme.
+========================================================= */
+
+/* ABOUT */
+html body.dark-mode #about.about-section {
+    background:
+        radial-gradient(circle at 8% 15%, rgba(37,99,235,.14), transparent 28%),
+        radial-gradient(circle at 92% 80%, rgba(192,139,39,.08), transparent 28%),
+        #07111f !important;
+    color: #c4d0dd !important;
+}
+
+html body.dark-mode #about .about-content,
+html body.dark-mode #about .about-profile {
+    background: transparent !important;
+    color: #c4d0dd !important;
+}
+
+html body.dark-mode #about .about-heading h2 {
+    color: #f7f9fc !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+html body.dark-mode #about .about-heading h2 span {
+    color: #e1b95f !important;
+}
+
+html body.dark-mode #about .about-label {
+    color: #61adff !important;
+}
+
+html body.dark-mode #about .about-introduction p {
+    color: #b8c7d7 !important;
+}
+
+html body.dark-mode #about .about-introduction strong {
+    color: #f1f5f9 !important;
+}
+
+html body.dark-mode #about .academic-item {
+    background: #0d1b2a !important;
+    color: #dbe6f1 !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+html body.dark-mode #about .academic-info h3,
+html body.dark-mode #about .academic-info h4 {
+    color: #f3f7fb !important;
+}
+
+html body.dark-mode #about .academic-info p {
+    color: #aebdd0 !important;
+}
+
+html body.dark-mode #about .about-approach {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+html body.dark-mode #about .about-approach h3 {
+    color: #f3f7fb !important;
+}
+
+html body.dark-mode #about .about-approach > p {
+    color: #aebdd0 !important;
+}
+
+html body.dark-mode #about .approach-principle {
+    background: #102238 !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+html body.dark-mode #about .approach-principle h4 {
+    color: #f3f7fb !important;
+}
+
+html body.dark-mode #about .approach-principle p {
+    color: #aebdd0 !important;
+}
+
+html body.dark-mode #about .about-resume {
+    background: #102238 !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+/* RESEARCH */
+html body.dark-mode #work.phd-research-section {
+    background:
+        radial-gradient(circle at 7% 18%, rgba(23,105,224,.14), transparent 28%),
+        radial-gradient(circle at 94% 72%, rgba(196,154,58,.08), transparent 25%),
+        #07111f !important;
+    color: #c4d0dd !important;
+}
+
+html body.dark-mode #work .phd-research-hero {
+    background: linear-gradient(135deg, #071b35, #124b9a) !important;
+}
+
+html body.dark-mode #work .phd-research-hero h3,
+html body.dark-mode #work .phd-research-hero p {
+    color: #ffffff !important;
+}
+
+html body.dark-mode #work .phd-research-label {
+    color: #e1b95f !important;
+}
+
+html body.dark-mode #work .phd-research-card {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+html body.dark-mode #work .phd-research-card h4 {
+    color: #f3f7fb !important;
+}
+
+html body.dark-mode #work .phd-research-card p {
+    color: #aebdd0 !important;
+}
+
+html body.dark-mode #work .phd-card-label {
+    color: #e1b95f !important;
+}
+
+html body.dark-mode #work .phd-research-details {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+html body.dark-mode #work .phd-details-content h3 {
+    color: #f3f7fb !important;
+}
+
+html body.dark-mode #work .phd-details-content p {
+    color: #aebdd0 !important;
+}
+
+/* CONTACT */
+html body.dark-mode #contact.contact-section {
+    background:
+        radial-gradient(circle at 7% 15%, rgba(23,105,224,.14), transparent 28%),
+        radial-gradient(circle at 94% 76%, rgba(196,139,58,.08), transparent 26%),
+        #07111f !important;
+    color: #c4d0dd !important;
+}
+
+html body.dark-mode #contact .section-heading h2 {
+    color: #f7f9fc !important;
+}
+
+html body.dark-mode #contact .section-heading p {
+    background: #102238 !important;
+    border-color: rgba(255,255,255,.10) !important;
+    color: #e1b95f !important;
+}
+
+html body.dark-mode #contact .section-heading > span {
+    color: #aebdd0 !important;
+}
+
+html body.dark-mode #contact .contact-card {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+html body.dark-mode #contact .contact-card h3 {
+    color: #f3f7fb !important;
+}
+
+html body.dark-mode #contact .contact-card p {
+    color: #aebdd0 !important;
+}
+
+html body.dark-mode #contact .contact-label {
+    color: #8fa4ba !important;
+}
+
+html body.dark-mode #contact .contact-button {
+    background: #142a43 !important;
+    color: #f3f7fb !important;
+    border-color: rgba(255,255,255,.12) !important;
+}
+
+html body.dark-mode #contact .contact-button:hover {
+    background: #1769e0 !important;
+    color: #ffffff !important;
+}
+
+html body.dark-mode #contact .contact-note {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+html body.dark-mode #contact .contact-note p {
+    color: #aebdd0 !important;
+}
+
+/* Make section headings readable everywhere in dark mode */
+html body.dark-mode #about h1,
+html body.dark-mode #about h2,
+html body.dark-mode #about h3,
+html body.dark-mode #work h1,
+html body.dark-mode #work h2,
+html body.dark-mode #work h3,
+html body.dark-mode #contact h1,
+html body.dark-mode #contact h2,
+html body.dark-mode #contact h3 {
+    opacity: 1 !important;
+    filter: none !important;
+}
