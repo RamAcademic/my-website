@@ -12695,3 +12695,314 @@ body.dark-mode .moon-icon {
         margin-left: 10px;
     }
 }
+
+
+/* =========================================================
+   DARK MODE — ABOUT + RESEARCH + CONTACT
+   Exact section selectors used by this website
+========================================================= */
+
+/* ---------- ABOUT ---------- */
+
+body.dark-mode .about-section {
+    background:
+        radial-gradient(circle at 8% 15%, rgba(37,99,235,.13), transparent 28%),
+        radial-gradient(circle at 92% 80%, rgba(192,139,39,.08), transparent 25%),
+        #07111f !important;
+}
+
+body.dark-mode .about-math-bg .math-formula {
+    color: rgba(97,173,255,.10) !important;
+}
+
+body.dark-mode .about-photo-circle {
+    background: #0d1b2a !important;
+    border-color: #d7a63a !important;
+}
+
+body.dark-mode .about-profile-card {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .about-profile-card h3 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .about-profile-card p {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .about-profile-card span {
+    color: #b9c7d7 !important;
+}
+
+body.dark-mode .about-quote {
+    background: #102238 !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .about-quote p {
+    color: #d5e0eb !important;
+}
+
+body.dark-mode .about-quote strong {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .about-content {
+    color: #c4d0dd !important;
+}
+
+body.dark-mode .about-label {
+    color: #61adff !important;
+}
+
+body.dark-mode .about-heading h2 {
+    color: #f5f8fc !important;
+}
+
+body.dark-mode .about-heading h2 span {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .about-introduction p {
+    color: #b4c3d3 !important;
+}
+
+body.dark-mode .about-introduction strong {
+    color: #edf3f9 !important;
+}
+
+body.dark-mode .academic-item {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .academic-info h3 {
+    color: #f3f7fb !important;
+}
+
+body.dark-mode .academic-info h4 {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .academic-info p {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .about-approach {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .approach-title h3 {
+    color: #f3f7fb !important;
+}
+
+body.dark-mode .about-approach > p {
+    color: #b4c3d3 !important;
+}
+
+body.dark-mode .about-highlight {
+    background: #102238 !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .about-highlight h4 {
+    color: #f3f7fb !important;
+}
+
+body.dark-mode .about-highlight p {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .about-resume {
+    background: #102238 !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+
+/* ---------- PhD RESEARCH ---------- */
+
+body.dark-mode .phd-research-section {
+    background:
+        radial-gradient(circle at 10% 12%, rgba(37,99,235,.14), transparent 30%),
+        radial-gradient(circle at 90% 85%, rgba(192,139,39,.07), transparent 28%),
+        #07111f !important;
+}
+
+body.dark-mode .phd-research-section::before,
+body.dark-mode .phd-research-section::after {
+    opacity: .25 !important;
+}
+
+body.dark-mode .phd-research-hero {
+    background: linear-gradient(135deg, #071f42 0%, #124b9a 100%) !important;
+    border-color: rgba(97,173,255,.25) !important;
+}
+
+body.dark-mode .phd-research-intro {
+    color: #ffffff !important;
+}
+
+body.dark-mode .phd-research-label {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .phd-research-intro h3 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .phd-research-intro > p:last-child {
+    color: #c7d5e4 !important;
+}
+
+body.dark-mode .phd-research-symbol {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .phd-research-mark {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.12) !important;
+    color: #61adff !important;
+}
+
+body.dark-mode .phd-research-card {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+    box-shadow: 0 14px 35px rgba(0,0,0,.25) !important;
+}
+
+body.dark-mode .phd-research-card::before {
+    background: #1769e0 !important;
+}
+
+body.dark-mode .phd-card-icon {
+    background: #142a43 !important;
+    border-color: rgba(97,173,255,.22) !important;
+    color: #61adff !important;
+}
+
+body.dark-mode .phd-card-label {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .phd-research-card h4 {
+    color: #f3f7fb !important;
+}
+
+body.dark-mode .phd-research-card h4::after {
+    background: #e1b95f !important;
+}
+
+body.dark-mode .phd-research-card p:not(.phd-card-label) {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .phd-research-details {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .phd-details-content h3 {
+    color: #f3f7fb !important;
+}
+
+body.dark-mode .phd-details-content > p:last-child {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .phd-research-button {
+    background: #1769e0 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .phd-research-button:hover {
+    background: #2b7bea !important;
+}
+
+
+/* ---------- CONTACT ---------- */
+
+body.dark-mode .contact-section {
+    background:
+        radial-gradient(circle at 8% 20%, rgba(37,99,235,.13), transparent 30%),
+        radial-gradient(circle at 92% 75%, rgba(192,139,39,.08), transparent 28%),
+        #07111f !important;
+}
+
+body.dark-mode .contact-section .section-heading p {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .contact-section .section-heading h2 {
+    color: #f5f8fc !important;
+}
+
+body.dark-mode .contact-section .section-heading > span {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .contact-card {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,.25) !important;
+}
+
+body.dark-mode .contact-card:hover {
+    background: #102238 !important;
+    border-color: rgba(97,173,255,.30) !important;
+}
+
+body.dark-mode .contact-label {
+    color: #8fa4ba !important;
+}
+
+body.dark-mode .contact-card h3 {
+    color: #f3f7fb !important;
+}
+
+body.dark-mode .contact-card > p:not(.contact-label) {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .contact-card a.contact-button {
+    background: #142a43 !important;
+    border-color: rgba(255,255,255,.12) !important;
+    color: #f3f7fb !important;
+}
+
+body.dark-mode .contact-card a.contact-button:hover {
+    background: #1769e0 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .contact-note {
+    background: #0d1b2a !important;
+    border-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .contact-note > span {
+    color: #e1b95f !important;
+}
+
+body.dark-mode .contact-note p {
+    color: #aebdd0 !important;
+}
+
+
+/* =========================================================
+   IMPORTANT: PREVENT LIGHT MODE FROM BEING WASHED OUT
+   These are deliberately scoped ONLY to dark mode.
+========================================================= */
+
+body:not(.dark-mode) .about-heading h2,
+body:not(.dark-mode) .about-introduction p,
+body:not(.dark-mode) .phd-research-intro h3,
+body:not(.dark-mode) .phd-research-card h4,
+body:not(.dark-mode) .contact-section .section-heading h2,
+body:not(.dark-mode) .contact-card h3 {
+    opacity: 1 !important;
+    filter: none !important;
+}
