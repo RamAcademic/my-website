@@ -12309,3 +12309,217 @@ a[href$=".pdf"]:hover {
         width: 96% !important;
     }
 }
+
+
+/* =========================================================
+   FINAL VISUAL FIX — LARGE PHOTO / NO EMPTY GAP
+========================================================= */
+
+/* Keep the two main columns equal */
+#about .about-wrapper.equal-about-layout {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+    align-items: stretch !important;
+}
+
+/* Left and right outer panels */
+#about .about-wrapper.equal-about-layout > .about-profile,
+#about .about-wrapper.equal-about-layout > .about-content {
+    height: 820px !important;
+    min-height: 820px !important;
+    box-sizing: border-box !important;
+}
+
+/* LEFT SIDE */
+#about .about-wrapper.equal-about-layout > .about-profile {
+    padding: 10px 18px 18px !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+}
+
+/* Make left content occupy the panel */
+#about .equal-about-layout .profile-panel {
+    width: 100% !important;
+    max-width: 560px !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+/* LARGE PHOTO */
+#about .equal-about-layout .about-photo-circle {
+    width: 430px !important;
+    height: 535px !important;
+    max-width: 94% !important;
+    margin: 0 auto !important;
+    flex-shrink: 0 !important;
+}
+
+/* IMAGE FULL FRAME */
+#about .equal-about-layout .about-photo-circle img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+}
+
+/* NAME CARD */
+#about .equal-about-layout .about-profile-card {
+    width: 455px !important;
+    max-width: 96% !important;
+    min-height: 105px !important;
+    margin: -45px auto 0 !important;
+    padding: 20px !important;
+    flex-shrink: 0 !important;
+    z-index: 20 !important;
+}
+
+/* TEACHING APPROACH — WIDER + TALLER */
+#about .equal-about-layout .about-approach {
+    width: 470px !important;
+    max-width: 98% !important;
+    min-height: 210px !important;
+    margin: 16px auto 0 !important;
+    padding: 22px !important;
+    flex-shrink: 0 !important;
+    z-index: 15 !important;
+}
+
+/* Make the approach content readable */
+#about .equal-about-layout .approach-title {
+    margin-bottom: 12px !important;
+}
+
+#about .equal-about-layout .approach-title h3 {
+    font-size: 22px !important;
+}
+
+#about .equal-about-layout .approach-method {
+    margin: 8px 0 12px !important;
+    padding: 10px !important;
+    font-size: 11px !important;
+}
+
+#about .equal-about-layout .approach-statement {
+    font-size: 11px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 14px !important;
+}
+
+#about .equal-about-layout .approach-principles {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+}
+
+#about .equal-about-layout .approach-principle {
+    min-height: 62px !important;
+    padding: 10px !important;
+}
+
+/* =========================================================
+   IMPORTANT: REMOVE THE OLD EMPTY LOWER SPACE
+   The visual group is intentionally packed toward the top.
+========================================================= */
+
+#about .equal-about-layout .profile-panel::after {
+    display: none !important;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1201px) {
+
+    #about .about-wrapper.equal-about-layout > .about-profile,
+    #about .about-wrapper.equal-about-layout > .about-content {
+        height: 850px !important;
+        min-height: 850px !important;
+    }
+
+    #about .equal-about-layout .about-photo-circle {
+        width: 455px !important;
+        height: 560px !important;
+    }
+
+    #about .equal-about-layout .about-profile-card {
+        width: 475px !important;
+        margin-top: -48px !important;
+    }
+
+    #about .equal-about-layout .about-approach {
+        width: 485px !important;
+        min-height: 220px !important;
+        margin-top: 17px !important;
+    }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) and (min-width: 601px) {
+
+    #about .about-wrapper.equal-about-layout {
+        gap: 22px !important;
+    }
+
+    #about .about-wrapper.equal-about-layout > .about-profile,
+    #about .about-wrapper.equal-about-layout > .about-content {
+        height: 760px !important;
+        min-height: 760px !important;
+    }
+
+    #about .equal-about-layout .about-photo-circle {
+        width: 340px !important;
+        height: 425px !important;
+    }
+
+    #about .equal-about-layout .about-profile-card {
+        width: 390px !important;
+        margin-top: -38px !important;
+    }
+
+    #about .equal-about-layout .about-approach {
+        width: 410px !important;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #about .about-wrapper.equal-about-layout {
+        grid-template-columns: 1fr !important;
+        width: calc(100% - 18px) !important;
+    }
+
+    #about .about-wrapper.equal-about-layout > .about-profile,
+    #about .about-wrapper.equal-about-layout > .about-content {
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    #about .about-wrapper.equal-about-layout > .about-profile {
+        padding: 15px 10px 22px !important;
+    }
+
+    #about .equal-about-layout .about-photo-circle {
+        width: min(340px, 88vw) !important;
+        height: min(425px, 110vw) !important;
+    }
+
+    #about .equal-about-layout .about-profile-card {
+        width: 95% !important;
+        margin-top: -34px !important;
+    }
+
+    #about .equal-about-layout .about-approach {
+        width: 97% !important;
+        min-height: 0 !important;
+    }
+}
