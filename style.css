@@ -11341,3 +11341,125 @@ a[href$=".pdf"]:hover {
         height: auto !important;
     }
 }
+
+/* =========================================================
+   FINAL ABOUT SECTION
+   TWO EQUAL MAIN BOXES
+========================================================= */
+
+#about .about-wrapper.equal-about-layout {
+    width: min(1400px, calc(100% - 40px)) !important;
+    margin: 0 auto !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 40px !important;
+
+    align-items: stretch !important;
+}
+
+/* LEFT BOX */
+#about .about-wrapper.equal-about-layout > .about-profile {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 875px !important;
+    height: 875px !important;
+
+    box-sizing: border-box !important;
+    position: relative !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+
+    padding: 28px !important;
+    overflow: hidden !important;
+
+    border: 1px solid rgba(37, 99, 235, .10) !important;
+    border-radius: 28px !important;
+    background: linear-gradient(145deg, #f8fbff, #ffffff) !important;
+}
+
+/* RIGHT BOX */
+#about .about-wrapper.equal-about-layout > .about-content {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 875px !important;
+    height: 875px !important;
+
+    box-sizing: border-box !important;
+}
+
+/* PROFILE CONTENT STAYS INSIDE LEFT BOX */
+#about .equal-about-layout .profile-panel {
+    position: relative !important;
+    z-index: 3 !important;
+
+    width: 100% !important;
+    max-width: 520px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+/* PHOTO */
+#about .equal-about-layout .about-photo-circle {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    margin: 0 auto !important;
+}
+
+/* NAME CARD */
+#about .equal-about-layout .about-profile-card {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    width: min(390px, 92%) !important;
+    margin: -42px auto 0 !important;
+
+    z-index: 6 !important;
+}
+
+/* APPROACH CARD */
+#about .equal-about-layout .about-approach {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+
+    width: min(100%, 500px) !important;
+    margin: 20px auto 0 !important;
+
+    z-index: 5 !important;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+    #about .about-wrapper.equal-about-layout {
+        width: calc(100% - 24px) !important;
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    #about .about-wrapper.equal-about-layout > .about-profile,
+    #about .about-wrapper.equal-about-layout > .about-content {
+        min-height: auto !important;
+        height: auto !important;
+    }
+
+    #about .equal-about-layout .about-approach {
+        width: 100% !important;
+    }
+}
