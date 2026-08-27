@@ -11103,3 +11103,155 @@ a[href$=".pdf"]:hover {
         display: none;
     }
 }
+
+/* =========================================================
+   FINAL PROFILE LAYOUT
+   Photo → Name → Teaching Approach
+   Prevents overlap
+========================================================= */
+
+.about-profile {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    min-height: 900px !important;
+    padding: 20px 12px 40px !important;
+    overflow: visible !important;
+}
+
+.about-profile .profile-visual {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+}
+
+/* Photo */
+.about-profile .about-photo-circle {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    bottom: auto !important;
+    margin: 0 auto !important;
+    z-index: 3 !important;
+}
+
+/* Name card — directly below photo */
+.about-profile .about-profile-card {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    width: min(390px, 92%) !important;
+    margin: -42px auto 0 !important;
+    padding: 22px 25px !important;
+
+    z-index: 8 !important;
+}
+
+/* Teaching Approach — below name */
+.about-profile > .about-approach {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+
+    width: min(425px, 94%) !important;
+    margin: 18px auto 0 !important;
+
+    z-index: 7 !important;
+}
+
+/* Keep mathematical background behind everything */
+.about-profile .about-math-bg {
+    z-index: 0 !important;
+}
+
+/* Prevent the quote from covering the approach */
+.about-profile .about-quote {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin-top: 18px !important;
+    z-index: 4 !important;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .about-profile {
+        min-height: 820px !important;
+    }
+
+    .about-profile .about-photo-circle {
+        width: 390px !important;
+        height: 475px !important;
+        max-width: 88vw;
+    }
+
+    .about-profile .about-profile-card {
+        margin-top: -38px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .about-profile {
+        min-height: 0 !important;
+        padding: 10px 8px 30px !important;
+    }
+
+    .about-profile .about-photo-circle {
+        width: min(275px, 82vw) !important;
+        height: min(335px, 100vw) !important;
+    }
+
+    .about-profile .about-profile-card {
+        width: calc(100% - 24px) !important;
+        margin-top: -30px !important;
+        padding: 17px 15px !important;
+        border-radius: 18px !important;
+    }
+
+    .about-profile .about-profile-card h3 {
+        font-size: 23px !important;
+    }
+
+    .about-profile .about-profile-card p {
+        font-size: 15px !important;
+    }
+
+    .about-profile .about-profile-card span {
+        font-size: 11px !important;
+    }
+
+    .about-profile > .about-approach {
+        width: calc(100% - 20px) !important;
+        margin-top: 14px !important;
+        padding: 14px !important;
+    }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+    .about-profile .about-photo-circle {
+        width: 245px !important;
+        height: 300px !important;
+    }
+
+    .about-profile .about-profile-card {
+        margin-top: -25px !important;
+    }
+
+    .about-profile > .about-approach {
+        width: calc(100% - 10px) !important;
+    }
+}
