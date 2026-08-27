@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const isDark = theme === "dark";
 
+        /* Apply theme */
         html.classList.toggle(
             "dark-mode",
             isDark
@@ -43,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
+        /* Update theme button */
         if (themeToggle) {
 
             themeToggle.setAttribute(
@@ -80,15 +82,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const savedTheme =
         localStorage.getItem("theme");
 
-    setTheme(
-        savedTheme === "dark"
-            ? "dark"
-            : "light"
-    );
+    if (savedTheme === "dark") {
+
+        setTheme("dark");
+
+    } else {
+
+        setTheme("light");
+    }
 
 
     /* =====================================================
-       THEME TOGGLE
+       THEME BUTTON
     ===================================================== */
 
     if (themeToggle) {
@@ -97,6 +102,8 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function (event) {
 
+                event.preventDefault();
+
                 event.stopPropagation();
 
                 const isDark =
@@ -104,36 +111,23 @@ document.addEventListener("DOMContentLoaded", function () {
                         "dark-mode"
                     );
 
-                setTheme(
-                    isDark
-                        ? "light"
-                        : "dark"
-                );
+                if (isDark) {
+
+                    setTheme("light");
+
+                } else {
+
+                    setTheme("dark");
+                }
+
             }
         );
     }
 
 
     /* =====================================================
-       MOBILE MENU FUNCTIONS
+       MOBILE MENU
     ===================================================== */
-
-    function openMobileMenu() {
-
-        if (!navLinks || !menuToggle) {
-            return;
-        }
-
-        navLinks.classList.add("active");
-
-        menuToggle.classList.add("active");
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "true"
-        );
-    }
-
 
     function closeMobileMenu() {
 
@@ -149,21 +143,63 @@ document.addEventListener("DOMContentLoaded", function () {
             "aria-expanded",
             "false"
         );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Open Menu"
+        );
+
+        navLinks.setAttribute(
+            "aria-hidden",
+            "true"
+        );
     }
 
 
-    function toggleMobileMenu() {
+    function openMobileMenu() {
 
         if (!navLinks || !menuToggle) {
             return;
         }
 
-        const isOpen =
+        navLinks.classList.add("active");
+
+        menuToggle.classList.add("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Close Menu"
+        );
+
+        navLinks.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+    }
+
+
+    function toggleMobileMenu(event) {
+
+        if (!navLinks || !menuToggle) {
+            return;
+        }
+
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        const menuIsOpen =
             navLinks.classList.contains(
                 "active"
             );
 
-        if (isOpen) {
+        if (menuIsOpen) {
 
             closeMobileMenu();
 
@@ -175,23 +211,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
+       MOBILE MENU INITIAL STATE
+       
        IMPORTANT:
-       ALWAYS START MOBILE MENU CLOSED
+       MENU MUST BE CLOSED WHEN PAGE LOADS
     ===================================================== */
 
-    if (navLinks) {
-        navLinks.classList.remove("active");
-    }
-
-    if (menuToggle) {
-
-        menuToggle.classList.remove("active");
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-    }
+    closeMobileMenu();
 
 
     /* =====================================================
@@ -202,14 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         menuToggle.addEventListener(
             "click",
-            function (event) {
-
-                event.preventDefault();
-
-                event.stopPropagation();
-
-                toggleMobileMenu();
-            }
+            toggleMobileMenu
         );
     }
 
@@ -223,19 +242,18 @@ document.addEventListener("DOMContentLoaded", function () {
         const links =
             navLinks.querySelectorAll("a");
 
-        links.forEach(
-            function (link) {
+        links.forEach(function (link) {
 
-                link.addEventListener(
-                    "click",
-                    function () {
+            link.addEventListener(
+                "click",
+                function () {
 
-                        closeMobileMenu();
-                    }
-                );
+                    closeMobileMenu();
 
-            }
-        );
+                }
+            );
+
+        });
     }
 
 
@@ -296,30 +314,28 @@ document.addEventListener("DOMContentLoaded", function () {
         let currentSection = "";
 
 
-        sections.forEach(
-            function (section) {
+        sections.forEach(function (section) {
 
-                const sectionTop =
-                    section.offsetTop - 180;
+            const sectionTop =
+                section.offsetTop - 180;
 
-                const sectionBottom =
-                    sectionTop +
-                    section.offsetHeight;
+            const sectionBottom =
+                sectionTop +
+                section.offsetHeight;
 
 
-                if (
-                    window.scrollY >= sectionTop &&
-                    window.scrollY < sectionBottom
-                ) {
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionBottom
+            ) {
 
-                    currentSection =
-                        section.getAttribute(
-                            "id"
-                        );
-                }
-
+                currentSection =
+                    section.getAttribute(
+                        "id"
+                    );
             }
-        );
+
+        });
 
 
         navigationLinks.forEach(
@@ -418,7 +434,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       CLOSE MENU WHEN CLICKING OUTSIDE
+       CLOSE MOBILE MENU OUTSIDE
     ===================================================== */
 
     document.addEventListener(
@@ -436,7 +452,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
 
-            const clickedToggle =
+            const clickedMenuButton =
                 menuToggle.contains(
                     event.target
                 );
@@ -444,7 +460,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (
                 !clickedInsideNav &&
-                !clickedToggle
+                !clickedMenuButton
             ) {
 
                 closeMobileMenu();
@@ -455,20 +471,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       CLOSE MENU WITH ESCAPE KEY
+       ESCAPE KEY
     ===================================================== */
 
     document.addEventListener(
         "keydown",
         function (event) {
 
-            if (
-                event.key === "Escape" &&
-                navLinks &&
-                navLinks.classList.contains(
-                    "active"
-                )
-            ) {
+            if (event.key === "Escape") {
 
                 closeMobileMenu();
             }
@@ -490,11 +500,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            setTheme(
-                event.newValue === "dark"
-                    ? "dark"
-                    : "light"
-            );
+            if (event.newValue === "dark") {
+
+                setTheme("dark");
+
+            } else {
+
+                setTheme("light");
+            }
 
         }
     );
