@@ -1216,6 +1216,61 @@
 }
 </style>
 
+
+<style id="equal-about-layout-final">
+/* FINAL ABOUT LAYOUT — EXACTLY EQUAL COLUMNS */
+#about .about-wrapper.equal-about-layout {
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 40px !important;
+    align-items: stretch !important;
+}
+
+#about .about-wrapper.equal-about-layout > .about-profile,
+#about .about-wrapper.equal-about-layout > .about-content {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+}
+
+/* Left side */
+#about .about-wrapper.equal-about-layout > .about-profile {
+    min-height: 875px !important;
+    height: 100% !important;
+}
+
+/* Right side */
+#about .about-wrapper.equal-about-layout > .about-content {
+    min-height: 875px !important;
+    height: 100% !important;
+}
+
+/* Keep the profile composition centered inside the left half */
+#about .equal-about-layout .about-profile-card,
+#about .equal-about-layout > .about-approach {
+    max-width: 425px !important;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    #about .about-wrapper.equal-about-layout {
+        grid-template-columns: 1fr !important;
+        gap: 35px !important;
+    }
+
+    #about .about-wrapper.equal-about-layout > .about-profile,
+    #about .about-wrapper.equal-about-layout > .about-content {
+        min-height: auto !important;
+        height: auto !important;
+    }
+}
+</style>
+
 </head>
 
 
@@ -1400,7 +1455,7 @@
 
 <section class="about-section" id="about">
 
-    <div class="about-wrapper">
+    <div class="about-wrapper equal-about-layout">
 
         <!-- =================================================
              LEFT : PROFILE / PHOTO
