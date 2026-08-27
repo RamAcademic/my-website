@@ -11255,3 +11255,47 @@ a[href$=".pdf"]:hover {
         width: calc(100% - 10px) !important;
     }
 }
+
+
+/* =========================================================
+   FINAL ALIGNMENT FIX
+   Photo → Name → Teaching Approach
+========================================================= */
+
+.about-profile > .about-approach {
+    position: relative !important;
+    display: block !important;
+
+    width: 390px !important;
+    max-width: calc(100% - 24px) !important;
+
+    margin: 18px auto 0 !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    transform: none !important;
+}
+
+.about-profile .about-profile-card {
+    width: 390px !important;
+    max-width: calc(100% - 24px) !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+@media (max-width: 600px) {
+
+    .about-profile > .about-approach {
+        width: calc(100% - 24px) !important;
+        margin: 14px auto 0 !important;
+    }
+
+    .about-profile .about-profile-card {
+        width: calc(100% - 24px) !important;
+    }
+
+}
