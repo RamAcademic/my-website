@@ -13655,269 +13655,165 @@ body.dark-mode .header .navbar .sun-icon {
 }
 
 
-
 /* =========================================================
-   MR. RAMESH — FINAL DARK MODE VISIBILITY PATCH
-   Fixes inner Notes cards + remaining low-contrast text.
-   Light mode is NOT changed.
+   FINAL FIX — MATHEMATICS QUESTION PAPERS DARK MODE
+   IMPORTANT: placed at the END so it overrides earlier
+   light-mode Question Paper rules.
    ========================================================= */
 
-/* ---------------- NOTES: INNER SEMESTER CARDS ---------------- */
-html body.dark-mode .notes-branch-content {
-    background: linear-gradient(180deg, #0b1828, #0d1b2a) !important;
-    color: #e8eef6 !important;
-}
-
-html body.dark-mode .notes-semester {
-    background: #102238 !important;
+html body.dark-mode .resource-question-papers {
+    background: #0b1a2a !important;
     color: #e8eef6 !important;
     border-color: rgba(255,255,255,.14) !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,.20) !important;
+    box-shadow: 0 18px 50px rgba(0,0,0,.28) !important;
 }
 
-html body.dark-mode .notes-semester:hover {
-    background: #142a43 !important;
-    border-color: rgba(97,173,255,.35) !important;
-}
-
-html body.dark-mode .notes-semester[open] {
-    background: #102238 !important;
-    border-color: rgba(97,173,255,.35) !important;
-}
-
-html body.dark-mode .notes-semester-header {
+/* Heading */
+html body.dark-mode .resource-question-papers .resource-question-heading h3,
+html body.dark-mode .resource-question-papers .question-paper-heading h3 {
     color: #f7f9fc !important;
 }
 
-html body.dark-mode .notes-semester-title,
-html body.dark-mode .notes-semester-title strong {
-    color: #f7f9fc !important;
-}
-
-html body.dark-mode .notes-semester-title small {
+html body.dark-mode .resource-question-papers .resource-question-heading p,
+html body.dark-mode .resource-question-papers .question-paper-heading p {
     color: #aebdd0 !important;
 }
 
-html body.dark-mode .notes-semester-icon {
-    background: #142a43 !important;
+/* Department / branch outer cards */
+html body.dark-mode .resource-question-papers .question-branch {
+    background: #102238 !important;
+    color: #e8eef6 !important;
+    border-color: rgba(255,255,255,.14) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,.22) !important;
+}
+
+html body.dark-mode .resource-question-papers .question-branch-header {
+    background: #102238 !important;
+    color: #f7f9fc !important;
+}
+
+html body.dark-mode .resource-question-papers .question-branch-info strong {
+    color: #f7f9fc !important;
+}
+
+html body.dark-mode .resource-question-papers .question-branch-info small {
+    color: #aebdd0 !important;
+}
+
+html body.dark-mode .resource-question-papers .question-arrow {
+    background: #172d46 !important;
+    color: #e1b95f !important;
+    border-color: rgba(255,255,255,.14) !important;
+}
+
+html body.dark-mode .resource-question-papers .question-branch-icon {
+    background: #172d46 !important;
     color: #61adff !important;
-    border-color: rgba(255,255,255,.12) !important;
+    border-color: rgba(255,255,255,.14) !important;
 }
 
-html body.dark-mode .notes-semester[open] .notes-semester-icon {
-    background: #1769e0 !important;
-    color: #ffffff !important;
-}
-
-html body.dark-mode .notes-semester[open] .notes-semester-header {
-    background: linear-gradient(135deg, #102a46, #102238) !important;
-}
-
-html body.dark-mode .notes-semester-content {
+/* This is the GREY/WHITE "SELECT SEMESTER" area */
+html body.dark-mode .resource-question-papers .question-semesters {
     background: #0d1b2a !important;
     color: #e8eef6 !important;
     border-top-color: rgba(255,255,255,.10) !important;
 }
 
-html body.dark-mode .notes-subheading h3 {
-    color: #b9c8d9 !important;
+html body.dark-mode .resource-question-papers .question-semesters::before {
+    color: #8fa4ba !important;
 }
 
-html body.dark-mode .notes-resource-card,
-html body.dark-mode .notes-resource-card.syllabus-card,
-html body.dark-mode .notes-resource-card.question-bank-card {
-    background: #102238 !important;
-    color: #e8eef6 !important;
-    border-color: rgba(255,255,255,.12) !important;
+/* Semester rows — the WHITE rows visible in the screenshot */
+html body.dark-mode .resource-question-papers .question-semester {
+    background: #132943 !important;
+    color: #f3f7fb !important;
+    border-color: rgba(255,255,255,.14) !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,.20) !important;
 }
 
-html body.dark-mode .notes-resource-content h4 {
+html body.dark-mode .resource-question-papers .question-semester > summary {
+    background: #132943 !important;
     color: #f3f7fb !important;
 }
 
-html body.dark-mode .notes-resource-content p {
-    color: #aebdd0 !important;
+html body.dark-mode .resource-question-papers .question-semester > summary span {
+    color: #f3f7fb !important;
 }
 
-html body.dark-mode .notes-resource-link {
-    background: #142a43 !important;
+html body.dark-mode .resource-question-papers .question-semester > summary span:first-child {
+    background: #1b3654 !important;
     color: #61adff !important;
-    border-color: rgba(97,173,255,.22) !important;
+    border-color: rgba(97,173,255,.20) !important;
 }
 
-html body.dark-mode .notes-module-grid .notes-resource-content h4 {
-    color: #f3f7fb !important;
+html body.dark-mode .resource-question-papers .question-semester > summary span::before {
+    background: #1b3654 !important;
+    color: #61adff !important;
 }
 
-html body.dark-mode .notes-module-grid .notes-resource-content p {
-    color: #aebdd0 !important;
+html body.dark-mode .resource-question-papers .question-semester > summary b {
+    background: #172d46 !important;
+    color: #e1b95f !important;
+    border-color: rgba(255,255,255,.15) !important;
 }
 
-html body.dark-mode .notes-access-note {
-    background: #0d1b2a !important;
+/* Open semester */
+html body.dark-mode .resource-question-papers .question-semester[open] > summary {
+    background: #18334f !important;
+    color: #ffffff !important;
+}
+
+html body.dark-mode .resource-question-papers .question-semester[open] > summary span,
+html body.dark-mode .resource-question-papers .question-semester[open] > summary b {
+    color: #ffffff !important;
+}
+
+/* Actual question-paper rows */
+html body.dark-mode .resource-question-papers .question-paper-card {
+    background: #132943 !important;
     color: #e8eef6 !important;
-    border-color: rgba(255,255,255,.12) !important;
+    border-color: rgba(255,255,255,.13) !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,.20) !important;
 }
 
-html body.dark-mode .notes-access-note strong {
-    color: #f3f7fb !important;
+html body.dark-mode .resource-question-papers .question-paper-card:hover {
+    background: #18334f !important;
+    border-color: rgba(97,173,255,.30) !important;
 }
 
-html body.dark-mode .notes-access-note p {
-    color: #aebdd0 !important;
-}
-
-/* ---------------- QUESTION PAPERS ---------------- */
-html body.dark-mode .resource-question-heading h3,
-html body.dark-mode .resource-question-heading p {
-    color: #f3f7fb !important;
-}
-
-html body.dark-mode .question-branch {
-    background: #102238 !important;
-    color: #e8eef6 !important;
-}
-
-html body.dark-mode .question-semester {
-    background: #142a43 !important;
-    color: #e8eef6 !important;
-}
-
-html body.dark-mode .question-paper-info h4 {
-    color: #f3f7fb !important;
-}
-
-html body.dark-mode .question-paper-info p,
-html body.dark-mode .question-branch-info small {
-    color: #aebdd0 !important;
-}
-
-/* ---------------- SKILLS ---------------- */
-html body.dark-mode .skills-section .section-heading h2,
-html body.dark-mode .skills-section .section-heading p,
-html body.dark-mode .skills-section .skill-card h3 {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-html body.dark-mode .skill-card p,
-html body.dark-mode .skill-card .skill-tags span {
-    color: #c4d2e1 !important;
-}
-
-html body.dark-mode .skill-icon-label {
-    color: #aebdd0 !important;
-}
-
-/* ---------------- ABOUT ---------------- */
-html body.dark-mode #about .about-profile-card h3,
-html body.dark-mode #about .about-profile-card p,
-html body.dark-mode #about .about-profile-card span,
-html body.dark-mode #about .about-quote p,
-html body.dark-mode #about .academic-info h3,
-html body.dark-mode #about .academic-info h4,
-html body.dark-mode #about .academic-info p,
-html body.dark-mode #about .about-approach h3,
-html body.dark-mode #about .about-approach > p,
-html body.dark-mode #about .approach-principle h4,
-html body.dark-mode #about .approach-principle p {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-html body.dark-mode #about .about-profile-card p,
-html body.dark-mode #about .about-profile-card span,
-html body.dark-mode #about .about-quote p,
-html body.dark-mode #about .academic-info p,
-html body.dark-mode #about .about-approach > p,
-html body.dark-mode #about .approach-principle p {
-    color: #aebdd0 !important;
-}
-
-html body.dark-mode #about .about-profile-card h3,
-html body.dark-mode #about .academic-info h3,
-html body.dark-mode #about .academic-info h4,
-html body.dark-mode #about .about-approach h3,
-html body.dark-mode #about .approach-principle h4 {
-    color: #f3f7fb !important;
-}
-
-/* ---------------- RESEARCH ---------------- */
-html body.dark-mode #work .phd-research-intro h3,
-html body.dark-mode #work .phd-research-intro p,
-html body.dark-mode #work .phd-research-card h4,
-html body.dark-mode #work .phd-research-card p,
-html body.dark-mode #work .phd-details-content h3,
-html body.dark-mode #work .phd-details-content p {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-html body.dark-mode #work .phd-research-intro p,
-html body.dark-mode #work .phd-research-card p,
-html body.dark-mode #work .phd-details-content p {
-    color: #aebdd0 !important;
-}
-
-html body.dark-mode #work .phd-research-card h4,
-html body.dark-mode #work .phd-details-content h3 {
-    color: #f3f7fb !important;
-}
-
-/* ---------------- CONTACT ---------------- */
-html body.dark-mode #contact .section-heading h2,
-html body.dark-mode #contact .section-heading p,
-html body.dark-mode #contact .section-heading > span,
-html body.dark-mode #contact .contact-card h3,
-html body.dark-mode #contact .contact-card p,
-html body.dark-mode #contact .contact-note p {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-html body.dark-mode #contact .contact-card p,
-html body.dark-mode #contact .contact-note p,
-html body.dark-mode #contact .section-heading > span {
-    color: #aebdd0 !important;
-}
-
-html body.dark-mode #contact .contact-card h3 {
-    color: #f3f7fb !important;
-}
-
-/* ---------------- GENERAL DARK-MODE TEXT SAFETY ---------------- */
-html body.dark-mode .light-section .section-heading h2,
-html body.dark-mode .light-section .section-heading p,
-html body.dark-mode .light-section .about-text,
-html body.dark-mode .light-section p,
-html body.dark-mode .light-section li {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-html body.dark-mode .light-section .section-heading h2 {
+html body.dark-mode .resource-question-papers .question-paper-info h4 {
     color: #f7f9fc !important;
 }
 
-html body.dark-mode .light-section .section-heading p,
-html body.dark-mode .light-section .about-text,
-html body.dark-mode .light-section p,
-html body.dark-mode .light-section li {
+html body.dark-mode .resource-question-papers .question-paper-info p {
     color: #aebdd0 !important;
 }
 
-/* Do not let inherited light-mode text colors win inside dark sections. */
-html body.dark-mode .notes-section *,
-html body.dark-mode #about *,
-html body.dark-mode #work *,
-html body.dark-mode #contact * {
-    text-decoration-color: currentColor;
+/* Buttons */
+html body.dark-mode .resource-question-papers .resource-button,
+html body.dark-mode .resource-question-papers .question-paper-card .resource-button {
+    background: #173452 !important;
+    color: #61adff !important;
+    border-color: rgba(97,173,255,.25) !important;
 }
 
-/* Keep icons visible without forcing all SVG internals to white. */
-html body.dark-mode .notes-section i,
-html body.dark-mode #about i,
-html body.dark-mode #work i,
-html body.dark-mode #contact i {
+html body.dark-mode .resource-question-papers .resource-button:hover,
+html body.dark-mode .resource-question-papers .question-paper-card .resource-button:hover {
+    background: #1769e0 !important;
+    color: #ffffff !important;
+    border-color: #1769e0 !important;
+}
+
+/* Icons stay visible */
+html body.dark-mode .resource-question-papers .question-paper-icon {
+    color: #ffffff !important;
+}
+
+/* Final text-visibility safety inside Question Papers */
+html body.dark-mode .resource-question-papers .question-branch *,
+html body.dark-mode .resource-question-papers .question-semesters *,
+html body.dark-mode .resource-question-papers .question-semester *,
+html body.dark-mode .resource-question-papers .question-paper-card * {
     opacity: 1 !important;
+    visibility: visible !important;
 }
