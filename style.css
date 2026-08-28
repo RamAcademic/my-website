@@ -13655,165 +13655,273 @@ body.dark-mode .header .navbar .sun-icon {
 }
 
 
-/* =========================================================
-   FINAL FIX — MATHEMATICS QUESTION PAPERS DARK MODE
-   IMPORTANT: placed at the END so it overrides earlier
-   light-mode Question Paper rules.
-   ========================================================= */
+/* ================================================================
+   MR. RAMESH — FINAL DARK MODE COMBINED FIX
+   NOTES + MATHEMATICS QUESTION PAPERS
+   This block is intentionally LAST so it overrides earlier
+   light-mode rules without removing any existing section code.
+   ================================================================ */
 
-html body.dark-mode .resource-question-papers {
+/* ===================== NOTES SECTION ===================== */
+
+body.dark-mode .notes-branch {
+    background: #0d1b2a !important;
+    color: #e8eef6 !important;
+    border-color: rgba(255,255,255,.14) !important;
+    box-shadow: 0 10px 28px rgba(0,0,0,.22) !important;
+}
+
+body.dark-mode .notes-branch summary,
+body.dark-mode .notes-branch h3,
+body.dark-mode .notes-branch strong {
+    color: #f7f9fc !important;
+}
+
+body.dark-mode .notes-branch small,
+body.dark-mode .notes-branch p {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .notes-branch-content {
+    background: #0b1828 !important;
+    color: #e8eef6 !important;
+    border-top-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .notes-semester {
+    background: #102238 !important;
+    color: #e8eef6 !important;
+    border-color: rgba(255,255,255,.14) !important;
+    box-shadow: 0 7px 20px rgba(0,0,0,.20) !important;
+}
+
+body.dark-mode .notes-semester:hover {
+    background: #142a43 !important;
+    border-color: rgba(97,173,255,.30) !important;
+}
+
+body.dark-mode .notes-semester-header,
+body.dark-mode .notes-semester-title,
+body.dark-mode .notes-semester-title strong {
+    color: #f7f9fc !important;
+}
+
+body.dark-mode .notes-semester-title small {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .notes-semester-icon {
+    background: #142a43 !important;
+    color: #61adff !important;
+    border-color: rgba(255,255,255,.12) !important;
+}
+
+body.dark-mode .notes-semester-content {
+    background: #0d1b2a !important;
+    color: #e8eef6 !important;
+    border-top-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .notes-subheading h3 {
+    color: #b9c8d9 !important;
+}
+
+body.dark-mode .notes-resource-card,
+body.dark-mode .notes-resource-card.syllabus-card,
+body.dark-mode .notes-resource-card.question-bank-card {
+    background: #102238 !important;
+    color: #e8eef6 !important;
+    border-color: rgba(255,255,255,.13) !important;
+    box-shadow: 0 7px 20px rgba(0,0,0,.18) !important;
+}
+
+body.dark-mode .notes-resource-card:hover {
+    background: #142a43 !important;
+}
+
+body.dark-mode .notes-resource-content h4 {
+    color: #f7f9fc !important;
+}
+
+body.dark-mode .notes-resource-content p {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .notes-resource-link {
+    background: #142a43 !important;
+    color: #61adff !important;
+    border-color: rgba(97,173,255,.25) !important;
+}
+
+body.dark-mode .notes-resource-link:hover {
+    background: #1769e0 !important;
+    color: #fff !important;
+}
+
+body.dark-mode .notes-access-note {
+    background: #0d1b2a !important;
+    color: #e8eef6 !important;
+    border-color: rgba(255,255,255,.12) !important;
+}
+
+body.dark-mode .notes-access-note strong {
+    color: #f3f7fb !important;
+}
+
+body.dark-mode .notes-access-note p {
+    color: #aebdd0 !important;
+}
+
+/* ================= QUESTION PAPERS ================= */
+
+/* Main Question Papers container */
+body.dark-mode .resource-question-papers {
     background: #0b1a2a !important;
     color: #e8eef6 !important;
     border-color: rgba(255,255,255,.14) !important;
     box-shadow: 0 18px 50px rgba(0,0,0,.28) !important;
 }
 
-/* Heading */
-html body.dark-mode .resource-question-papers .resource-question-heading h3,
-html body.dark-mode .resource-question-papers .question-paper-heading h3 {
+body.dark-mode .resource-question-heading h3 {
     color: #f7f9fc !important;
 }
 
-html body.dark-mode .resource-question-papers .resource-question-heading p,
-html body.dark-mode .resource-question-papers .question-paper-heading p {
+body.dark-mode .resource-question-heading p {
     color: #aebdd0 !important;
 }
 
-/* Department / branch outer cards */
-html body.dark-mode .resource-question-papers .question-branch {
+body.dark-mode .resource-kicker {
+    color: #e1b95f !important;
+}
+
+/* Department cards */
+body.dark-mode .question-branch {
     background: #102238 !important;
     color: #e8eef6 !important;
     border-color: rgba(255,255,255,.14) !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,.22) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,.20) !important;
 }
 
-html body.dark-mode .resource-question-papers .question-branch-header {
+body.dark-mode .question-branch-header {
     background: #102238 !important;
     color: #f7f9fc !important;
 }
 
-html body.dark-mode .resource-question-papers .question-branch-info strong {
+body.dark-mode .question-branch-info strong {
     color: #f7f9fc !important;
 }
 
-html body.dark-mode .resource-question-papers .question-branch-info small {
+body.dark-mode .question-branch-info small {
     color: #aebdd0 !important;
 }
 
-html body.dark-mode .resource-question-papers .question-arrow {
+body.dark-mode .question-branch-icon {
+    background: #172d46 !important;
+    color: #61adff !important;
+    border-color: rgba(255,255,255,.14) !important;
+}
+
+body.dark-mode .question-arrow {
     background: #172d46 !important;
     color: #e1b95f !important;
     border-color: rgba(255,255,255,.14) !important;
 }
 
-html body.dark-mode .resource-question-papers .question-branch-icon {
-    background: #172d46 !important;
-    color: #61adff !important;
-    border-color: rgba(255,255,255,.14) !important;
-}
-
-/* This is the GREY/WHITE "SELECT SEMESTER" area */
-html body.dark-mode .resource-question-papers .question-semesters {
-    background: #0d1b2a !important;
+/* Select-semester panel */
+body.dark-mode .question-semesters {
+    background: #0b1828 !important;
     color: #e8eef6 !important;
-    border-top-color: rgba(255,255,255,.10) !important;
+    border-top-color: rgba(255,255,255,.12) !important;
 }
 
-html body.dark-mode .resource-question-papers .question-semesters::before {
-    color: #8fa4ba !important;
+body.dark-mode .question-semesters::before {
+    color: #9fb2c8 !important;
 }
 
-/* Semester rows — the WHITE rows visible in the screenshot */
-html body.dark-mode .resource-question-papers .question-semester {
-    background: #132943 !important;
+/* Semester rows — removes the white boxes */
+body.dark-mode .question-semester {
+    background: #102238 !important;
     color: #f3f7fb !important;
     border-color: rgba(255,255,255,.14) !important;
-    box-shadow: 0 6px 18px rgba(0,0,0,.20) !important;
+    box-shadow: 0 7px 20px rgba(0,0,0,.22) !important;
 }
 
-html body.dark-mode .resource-question-papers .question-semester > summary {
-    background: #132943 !important;
-    color: #f3f7fb !important;
+body.dark-mode .question-semester > summary {
+    background: #102238 !important;
+    color: #f7f9fc !important;
 }
 
-html body.dark-mode .resource-question-papers .question-semester > summary span {
-    color: #f3f7fb !important;
+body.dark-mode .question-semester > summary span {
+    color: #f7f9fc !important;
 }
 
-html body.dark-mode .resource-question-papers .question-semester > summary span:first-child {
-    background: #1b3654 !important;
-    color: #61adff !important;
-    border-color: rgba(97,173,255,.20) !important;
-}
-
-html body.dark-mode .resource-question-papers .question-semester > summary span::before {
+body.dark-mode .question-semester > summary span::before {
     background: #1b3654 !important;
     color: #61adff !important;
 }
 
-html body.dark-mode .resource-question-papers .question-semester > summary b {
+body.dark-mode .question-semester > summary b {
     background: #172d46 !important;
     color: #e1b95f !important;
-    border-color: rgba(255,255,255,.15) !important;
+    border-color: rgba(255,255,255,.16) !important;
 }
 
 /* Open semester */
-html body.dark-mode .resource-question-papers .question-semester[open] > summary {
+body.dark-mode .question-semester[open] > summary {
     background: #18334f !important;
-    color: #ffffff !important;
+    color: #fff !important;
 }
 
-html body.dark-mode .resource-question-papers .question-semester[open] > summary span,
-html body.dark-mode .resource-question-papers .question-semester[open] > summary b {
-    color: #ffffff !important;
+body.dark-mode .question-semester[open] > summary span,
+body.dark-mode .question-semester[open] > summary b {
+    color: #fff !important;
 }
 
-/* Actual question-paper rows */
-html body.dark-mode .resource-question-papers .question-paper-card {
+body.dark-mode .question-semester[open] > summary span::before,
+body.dark-mode .question-semester[open] > summary b {
+    background: #1769e0 !important;
+    color: #fff !important;
+}
+
+body.dark-mode .question-semester[open] > summary b {
+    border-color: #c49a3a !important;
+}
+
+/* Actual question-paper cards */
+body.dark-mode .question-paper-card {
     background: #132943 !important;
     color: #e8eef6 !important;
-    border-color: rgba(255,255,255,.13) !important;
-    box-shadow: 0 6px 18px rgba(0,0,0,.20) !important;
+    border-color: rgba(255,255,255,.14) !important;
+    box-shadow: 0 7px 20px rgba(0,0,0,.22) !important;
 }
 
-html body.dark-mode .resource-question-papers .question-paper-card:hover {
+body.dark-mode .question-paper-card:hover {
     background: #18334f !important;
-    border-color: rgba(97,173,255,.30) !important;
 }
 
-html body.dark-mode .resource-question-papers .question-paper-info h4 {
+body.dark-mode .question-paper-info h4 {
     color: #f7f9fc !important;
 }
 
-html body.dark-mode .resource-question-papers .question-paper-info p {
+body.dark-mode .question-paper-info p {
     color: #aebdd0 !important;
 }
 
-/* Buttons */
-html body.dark-mode .resource-question-papers .resource-button,
-html body.dark-mode .resource-question-papers .question-paper-card .resource-button {
+body.dark-mode .question-paper-card .resource-button {
     background: #173452 !important;
     color: #61adff !important;
-    border-color: rgba(97,173,255,.25) !important;
+    border-color: rgba(97,173,255,.28) !important;
 }
 
-html body.dark-mode .resource-question-papers .resource-button:hover,
-html body.dark-mode .resource-question-papers .question-paper-card .resource-button:hover {
+body.dark-mode .question-paper-card .resource-button:hover {
     background: #1769e0 !important;
-    color: #ffffff !important;
-    border-color: #1769e0 !important;
+    color: #fff !important;
 }
 
-/* Icons stay visible */
-html body.dark-mode .resource-question-papers .question-paper-icon {
-    color: #ffffff !important;
-}
+/* ================= GENERAL TEXT VISIBILITY ================= */
 
-/* Final text-visibility safety inside Question Papers */
-html body.dark-mode .resource-question-papers .question-branch *,
-html body.dark-mode .resource-question-papers .question-semesters *,
-html body.dark-mode .resource-question-papers .question-semester *,
-html body.dark-mode .resource-question-papers .question-paper-card * {
-    opacity: 1 !important;
-    visibility: visible !important;
+body.dark-mode .notes-section *,
+body.dark-mode .resource-question-papers * {
+    opacity: 1;
+    visibility: visible;
 }
