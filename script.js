@@ -89,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
 
         setTheme("light");
+
     }
 
 
@@ -103,7 +104,6 @@ document.addEventListener("DOMContentLoaded", function () {
             function (event) {
 
                 event.preventDefault();
-
                 event.stopPropagation();
 
                 const isDark =
@@ -118,10 +118,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 } else {
 
                     setTheme("dark");
+
                 }
 
             }
         );
+
     }
 
 
@@ -190,8 +192,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (event) {
+
             event.preventDefault();
             event.stopPropagation();
+
         }
 
         const menuIsOpen =
@@ -206,13 +210,14 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
 
             openMobileMenu();
+
         }
     }
 
 
     /* =====================================================
        MOBILE MENU INITIAL STATE
-       
+
        IMPORTANT:
        MENU MUST BE CLOSED WHEN PAGE LOADS
     ===================================================== */
@@ -230,6 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             toggleMobileMenu
         );
+
     }
 
 
@@ -254,6 +260,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
         });
+
     }
 
 
@@ -278,6 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
             header.classList.remove(
                 "scrolled"
             );
+
         }
     }
 
@@ -333,6 +341,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     section.getAttribute(
                         "id"
                     );
+
             }
 
         });
@@ -360,6 +369,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     link.classList.add(
                         "active"
                     );
+
                 }
 
             }
@@ -400,7 +410,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         !target ||
                         !target.startsWith("#")
                     ) {
+
                         return;
+
                     }
 
 
@@ -411,7 +423,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                     if (!element) {
+
                         return;
+
                     }
 
 
@@ -464,6 +478,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ) {
 
                 closeMobileMenu();
+
             }
 
         }
@@ -481,6 +496,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (event.key === "Escape") {
 
                 closeMobileMenu();
+
             }
 
         }
@@ -507,7 +523,75 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
 
                 setTheme("light");
+
             }
+
+        }
+    );
+
+
+    /* =====================================================
+       QUESTION PAPERS
+       ONLY ONE BRANCH OPEN AT A TIME
+
+       CSE → ECE
+       CSE closes automatically
+
+       ECE → CIVIL
+       ECE closes automatically
+
+       CIVIL → MECHANICAL
+       CIVIL closes automatically
+
+       This affects ONLY Question Papers.
+       Notes & Learning Resources are untouched.
+    ===================================================== */
+
+    const questionPaperBranches =
+        document.querySelectorAll(
+            ".resource-question-papers .question-branch"
+        );
+
+
+    questionPaperBranches.forEach(
+        function (branch) {
+
+            branch.addEventListener(
+                "toggle",
+                function () {
+
+                    /* -------------------------------------
+                       If branch is closed, do nothing
+                    ------------------------------------- */
+
+                    if (!this.open) {
+                        return;
+                    }
+
+
+                    /* -------------------------------------
+                       Close every other branch
+                    ------------------------------------- */
+
+                    questionPaperBranches.forEach(
+                        function (otherBranch) {
+
+                            if (
+                                otherBranch !== branch &&
+                                otherBranch.open
+                            ) {
+
+                                otherBranch.removeAttribute(
+                                    "open"
+                                );
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
 
         }
     );
