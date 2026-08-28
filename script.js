@@ -1,7 +1,3 @@
-/* =========================================================
-   MR. RAMESH — WEBSITE JAVASCRIPT
-========================================================= */
-
 document.addEventListener("DOMContentLoaded", function () {
 
     /* =====================================================
@@ -30,72 +26,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function setTheme(theme) {
 
-        const isDark = theme === "dark";
+        const dark = theme === "dark";
 
-        /* Apply theme */
-        html.classList.toggle(
-            "dark-mode",
-            isDark
-        );
+        html.classList.toggle("dark-mode", dark);
+        body.classList.toggle("dark-mode", dark);
 
-        body.classList.toggle(
-            "dark-mode",
-            isDark
-        );
-
-
-        /* Update theme button */
         if (themeToggle) {
 
             themeToggle.setAttribute(
                 "aria-pressed",
-                isDark ? "true" : "false"
+                dark ? "true" : "false"
             );
 
             themeToggle.setAttribute(
                 "aria-label",
-                isDark
+                dark
                     ? "Switch to light mode"
                     : "Switch to dark mode"
             );
 
             themeToggle.setAttribute(
                 "title",
-                isDark
+                dark
                     ? "Switch to light mode"
                     : "Switch to dark mode"
             );
         }
 
-
-        localStorage.setItem(
-            "theme",
-            theme
-        );
+        localStorage.setItem("theme", theme);
     }
 
-
-    /* =====================================================
-       LOAD SAVED THEME
-    ===================================================== */
 
     const savedTheme =
         localStorage.getItem("theme");
 
-    if (savedTheme === "dark") {
+    setTheme(
+        savedTheme === "dark"
+            ? "dark"
+            : "light"
+    );
 
-        setTheme("dark");
-
-    } else {
-
-        setTheme("light");
-
-    }
-
-
-    /* =====================================================
-       THEME BUTTON
-    ===================================================== */
 
     if (themeToggle) {
 
@@ -106,20 +76,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 event.preventDefault();
                 event.stopPropagation();
 
-                const isDark =
+                const dark =
                     html.classList.contains(
                         "dark-mode"
                     );
 
-                if (isDark) {
-
-                    setTheme("light");
-
-                } else {
-
-                    setTheme("dark");
-
-                }
+                setTheme(
+                    dark
+                        ? "light"
+                        : "dark"
+                );
 
             }
         );
@@ -138,7 +104,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         navLinks.classList.remove("active");
-
         menuToggle.classList.remove("active");
 
         menuToggle.setAttribute(
@@ -165,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         navLinks.classList.add("active");
-
         menuToggle.classList.add("active");
 
         menuToggle.setAttribute(
@@ -185,87 +149,59 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    function toggleMobileMenu(event) {
-
-        if (!navLinks || !menuToggle) {
-            return;
-        }
-
-        if (event) {
-
-            event.preventDefault();
-            event.stopPropagation();
-
-        }
-
-        const menuIsOpen =
-            navLinks.classList.contains(
-                "active"
-            );
-
-        if (menuIsOpen) {
-
-            closeMobileMenu();
-
-        } else {
-
-            openMobileMenu();
-
-        }
-    }
-
-
-    /* =====================================================
-       MOBILE MENU INITIAL STATE
-
-       IMPORTANT:
-       MENU MUST BE CLOSED WHEN PAGE LOADS
-    ===================================================== */
-
-    closeMobileMenu();
-
-
-    /* =====================================================
-       MOBILE MENU BUTTON
-    ===================================================== */
-
-    if (menuToggle && navLinks) {
+    if (menuToggle) {
 
         menuToggle.addEventListener(
             "click",
-            toggleMobileMenu
+            function (event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                if (
+                    navLinks &&
+                    navLinks.classList.contains(
+                        "active"
+                    )
+                ) {
+
+                    closeMobileMenu();
+
+                } else {
+
+                    openMobileMenu();
+
+                }
+
+            }
         );
 
     }
 
 
-    /* =====================================================
-       MOBILE NAVIGATION LINKS
-    ===================================================== */
+    closeMobileMenu();
+
 
     if (navLinks) {
 
-        const links =
-            navLinks.querySelectorAll("a");
+        navLinks
+            .querySelectorAll("a")
+            .forEach(function (link) {
 
-        links.forEach(function (link) {
+                link.addEventListener(
+                    "click",
+                    function () {
+                        closeMobileMenu();
+                    }
+                );
 
-            link.addEventListener(
-                "click",
-                function () {
-
-                    closeMobileMenu();
-
-                }
-            );
-
-        });
+            });
 
     }
 
 
     /* =====================================================
-       HEADER SCROLL EFFECT
+       HEADER SCROLL
     ===================================================== */
 
     function updateHeader() {
@@ -274,19 +210,10 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        if (window.scrollY > 30) {
-
-            header.classList.add(
-                "scrolled"
-            );
-
-        } else {
-
-            header.classList.remove(
-                "scrolled"
-            );
-
-        }
+        header.classList.toggle(
+            "scrolled",
+            window.scrollY > 30
+        );
     }
 
 
@@ -297,7 +224,6 @@ document.addEventListener("DOMContentLoaded", function () {
             passive: true
         }
     );
-
 
     updateHeader();
 
@@ -319,25 +245,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateActiveNavigation() {
 
-        let currentSection = "";
-
+        let current = "";
 
         sections.forEach(function (section) {
 
-            const sectionTop =
+            const top =
                 section.offsetTop - 180;
 
-            const sectionBottom =
-                sectionTop +
-                section.offsetHeight;
-
+            const bottom =
+                top + section.offsetHeight;
 
             if (
-                window.scrollY >= sectionTop &&
-                window.scrollY < sectionBottom
+                window.scrollY >= top &&
+                window.scrollY < bottom
             ) {
 
-                currentSection =
+                current =
                     section.getAttribute(
                         "id"
                     );
@@ -354,16 +277,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     "active"
                 );
 
-
-                const target =
-                    link.getAttribute(
-                        "href"
-                    );
-
-
                 if (
-                    target ===
-                    "#" + currentSection
+                    link.getAttribute("href") ===
+                    "#" + current
                 ) {
 
                     link.classList.add(
@@ -385,7 +301,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
-
     updateActiveNavigation();
 
 
@@ -405,35 +320,25 @@ document.addEventListener("DOMContentLoaded", function () {
                             "href"
                         );
 
-
                     if (
                         !target ||
                         !target.startsWith("#")
                     ) {
-
                         return;
-
                     }
-
 
                     const element =
                         document.querySelector(
                             target
                         );
 
-
                     if (!element) {
-
                         return;
-
                     }
-
 
                     event.preventDefault();
 
-
                     closeMobileMenu();
-
 
                     element.scrollIntoView({
                         behavior: "smooth",
@@ -448,44 +353,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       CLOSE MOBILE MENU OUTSIDE
-    ===================================================== */
-
-    document.addEventListener(
-        "click",
-        function (event) {
-
-            if (!navLinks || !menuToggle) {
-                return;
-            }
-
-
-            const clickedInsideNav =
-                navLinks.contains(
-                    event.target
-                );
-
-
-            const clickedMenuButton =
-                menuToggle.contains(
-                    event.target
-                );
-
-
-            if (
-                !clickedInsideNav &&
-                !clickedMenuButton
-            ) {
-
-                closeMobileMenu();
-
-            }
-
-        }
-    );
-
-
-    /* =====================================================
        ESCAPE KEY
     ===================================================== */
 
@@ -494,9 +361,7 @@ document.addEventListener("DOMContentLoaded", function () {
         function (event) {
 
             if (event.key === "Escape") {
-
                 closeMobileMenu();
-
             }
 
         }
@@ -504,7 +369,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       SYNCHRONIZE THEME BETWEEN TABS
+       THEME SYNC BETWEEN TABS
     ===================================================== */
 
     window.addEventListener(
@@ -515,115 +380,66 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-
-            if (event.newValue === "dark") {
-
-                setTheme("dark");
-
-            } else {
-
-                setTheme("light");
-
-            }
+            setTheme(
+                event.newValue === "dark"
+                    ? "dark"
+                    : "light"
+            );
 
         }
     );
 
 
     /* =====================================================
-       MATHEMATICS QUESTION PAPERS
-       EXCLUSIVE BRANCH ACCORDION
-
-       RULE:
-       Only ONE branch can be open at a time.
-
-       CSE OPEN
-       ↓
-       Click ECE
-       ↓
-       CSE CLOSE
-       ECE OPEN
-
-       Click CIVIL
-       ↓
-       ECE CLOSE
-       CIVIL OPEN
-
-       Click MECHANICAL
-       ↓
-       CIVIL CLOSE
-       MECHANICAL OPEN
-
-       NOTES SECTION IS NOT AFFECTED.
+       NOTES & LEARNING RESOURCES
+       
+       ONLY ONE BRANCH OPEN
+       ONLY ONE SEMESTER OPEN
     ===================================================== */
 
-
-    const questionPaperBranches =
+    const notesBranches =
         document.querySelectorAll(
-            ".resource-question-papers .question-branch"
+            ".notes-branches .notes-branch"
         );
 
 
-    /* =====================================================
-       INITIAL STATE
+    /* -----------------------------------------------------
+       CLOSE ALL NOTES BRANCHES AT START
+    ----------------------------------------------------- */
 
-       IMPORTANT:
-       CLOSE ALL QUESTION PAPER BRANCHES
-       WHEN PAGE LOADS.
-
-       This fixes the problem where CSE,
-       ECE, CIVIL and MECHANICAL were all
-       opening automatically.
-    ===================================================== */
-
-    questionPaperBranches.forEach(
+    notesBranches.forEach(
         function (branch) {
 
-            branch.removeAttribute("open");
+            branch.open = false;
 
         }
     );
 
 
-    /* =====================================================
-       QUESTION PAPER BRANCH CLICK
+    /* -----------------------------------------------------
+       NOTES BRANCH ACCORDION
+    ----------------------------------------------------- */
 
-       When one branch opens:
-       automatically close every other branch.
-    ===================================================== */
-
-    questionPaperBranches.forEach(
+    notesBranches.forEach(
         function (branch) {
 
             branch.addEventListener(
                 "toggle",
                 function () {
 
-                    /* -------------------------------------
-                       If this branch is closed,
-                       do nothing.
-                    ------------------------------------- */
-
-                    if (!this.open) {
+                    if (!branch.open) {
                         return;
                     }
 
-
-                    /* -------------------------------------
-                       Close every other branch.
-                    ------------------------------------- */
-
-                    questionPaperBranches.forEach(
+                    notesBranches.forEach(
                         function (otherBranch) {
 
                             if (
-                                otherBranch !== branch &&
-                                otherBranch.open
+                                otherBranch !== branch
                             ) {
 
-                                otherBranch.removeAttribute(
-                                    "open"
-                                );
+                                otherBranch.open =
+                                    false;
 
                             }
 
@@ -632,6 +448,216 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
             );
+
+        }
+    );
+
+
+    /* -----------------------------------------------------
+       NOTES SEMESTER ACCORDION
+    ----------------------------------------------------- */
+
+    notesBranches.forEach(
+        function (branch) {
+
+            const semesters =
+                branch.querySelectorAll(
+                    ".notes-semester"
+                );
+
+
+            semesters.forEach(
+                function (semester) {
+
+                    semester.open = false;
+
+                }
+            );
+
+
+            semesters.forEach(
+                function (semester) {
+
+                    semester.addEventListener(
+                        "toggle",
+                        function () {
+
+                            if (!semester.open) {
+                                return;
+                            }
+
+                            semesters.forEach(
+                                function (
+                                    otherSemester
+                                ) {
+
+                                    if (
+                                        otherSemester !==
+                                        semester
+                                    ) {
+
+                                        otherSemester.open =
+                                            false;
+
+                                    }
+
+                                }
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       MATHEMATICS QUESTION PAPERS
+       
+       ONLY ONE BRANCH OPEN
+       ONLY ONE SEMESTER OPEN
+    ===================================================== */
+
+    const questionBranches =
+        document.querySelectorAll(
+            ".resource-question-papers .question-branch"
+        );
+
+
+    /* -----------------------------------------------------
+       CLOSE ALL QUESTION PAPER BRANCHES
+    ----------------------------------------------------- */
+
+    questionBranches.forEach(
+        function (branch) {
+
+            branch.open = false;
+
+        }
+    );
+
+
+    /* -----------------------------------------------------
+       QUESTION PAPER BRANCH ACCORDION
+    ----------------------------------------------------- */
+
+    questionBranches.forEach(
+        function (branch) {
+
+            branch.addEventListener(
+                "toggle",
+                function () {
+
+                    if (!branch.open) {
+                        return;
+                    }
+
+                    questionBranches.forEach(
+                        function (otherBranch) {
+
+                            if (
+                                otherBranch !== branch
+                            ) {
+
+                                otherBranch.open =
+                                    false;
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    /* -----------------------------------------------------
+       QUESTION PAPER SEMESTER ACCORDION
+    ----------------------------------------------------- */
+
+    questionBranches.forEach(
+        function (branch) {
+
+            const semesters =
+                branch.querySelectorAll(
+                    ".question-semester"
+                );
+
+
+            semesters.forEach(
+                function (semester) {
+
+                    semester.open = false;
+
+                }
+            );
+
+
+            semesters.forEach(
+                function (semester) {
+
+                    semester.addEventListener(
+                        "toggle",
+                        function () {
+
+                            if (!semester.open) {
+                                return;
+                            }
+
+                            semesters.forEach(
+                                function (
+                                    otherSemester
+                                ) {
+
+                                    if (
+                                        otherSemester !==
+                                        semester
+                                    ) {
+
+                                        otherSemester.open =
+                                            false;
+
+                                    }
+
+                                }
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       CLOSE MOBILE MENU WHEN CLICKING OUTSIDE
+    ===================================================== */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (!navLinks || !menuToggle) {
+                return;
+            }
+
+            if (
+                !navLinks.contains(event.target) &&
+                !menuToggle.contains(event.target)
+            ) {
+
+                closeMobileMenu();
+
+            }
 
         }
     );
