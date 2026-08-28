@@ -13453,57 +13453,243 @@ body.dark-mode .header .navbar .sun-icon {
     }
 }
 
+/* =========================================================
+   MR. RAMESH — PHONE MODE ONLY
+   FINAL MOBILE HEADER FIX
+   DESKTOP RULES ABOVE ARE NOT MODIFIED
+========================================================= */
+
+@media screen and (max-width: 900px) {
+
+    /* Keep the original header fixed and full width */
+    .header {
+        width: 100% !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 76px !important;
+        z-index: 9999 !important;
+    }
+
+    /* Three direct items:
+       logo | menu | theme */
+    .header .navbar {
+        width: 100% !important;
+        max-width: none !important;
+        height: 76px !important;
+        margin: 0 !important;
+        padding: 0 12px 0 18px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Mr.Ramesh stays on the left */
+    .header .navbar > .logo {
+        display: inline-flex !important;
+        align-items: center !important;
+        flex: 0 1 auto !important;
+        min-width: 0 !important;
+        margin: 0 auto 0 0 !important;
+        padding: 0 !important;
+        white-space: nowrap !important;
+    }
+
+    /* ☰ — ALWAYS VISIBLE ON PHONE */
+    .header .navbar > .menu-toggle {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex: 0 0 42px !important;
+        width: 42px !important;
+        height: 42px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        outline: 0 !important;
+        background: transparent !important;
+        color: #0b1f3a !important;
+        font-size: 27px !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        cursor: pointer !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
+    }
+
+    /* ☰ stays visible in DARK MODE */
+    body.dark-mode .header .navbar > .menu-toggle,
+    html.dark-mode .header .navbar > .menu-toggle {
+        display: inline-flex !important;
+        color: #ffffff !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        background: transparent !important;
+    }
+
+    /* ☾ / ☀️ — immediately beside ☰ */
+    .header .navbar > .theme-toggle {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+        flex: 0 0 42px !important;
+        width: 42px !important;
+        height: 42px !important;
+        margin: 0 0 0 2px !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Keep the navigation hidden until ☰ is pressed */
+    .header .navbar > .nav-links {
+        position: absolute !important;
+        top: 76px !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        display: none !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0 !important;
+        margin: 0 !important;
+        padding: 10px 0 14px !important;
+        box-sizing: border-box !important;
+        background: #ffffff !important;
+        border-bottom: 1px solid #e5eaf1 !important;
+        box-shadow: 0 14px 35px rgba(11,31,58,.10) !important;
+        z-index: 9998 !important;
+        overflow: hidden !important;
+    }
+
+    .header .navbar > .nav-links.active {
+        display: flex !important;
+    }
+
+    .header .navbar > .nav-links li {
+        width: 100% !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .header .navbar > .nav-links a {
+        display: block !important;
+        width: 100% !important;
+        padding: 13px 22px !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+    }
+
+    /* DARK MOBILE MENU */
+    body.dark-mode .header .navbar > .nav-links,
+    html.dark-mode .header .navbar > .nav-links {
+        background: #07111f !important;
+        border-bottom-color: rgba(255,255,255,.12) !important;
+        box-shadow: 0 14px 35px rgba(0,0,0,.30) !important;
+    }
+
+    body.dark-mode .header .navbar > .nav-links a,
+    html.dark-mode .header .navbar > .nav-links a {
+        color: #d4deea !important;
+    }
+
+    /* Header colours */
+    body:not(.dark-mode) .header {
+        background: rgba(255,255,255,.96) !important;
+    }
+
+    body.dark-mode .header,
+    html.dark-mode .header {
+        background: rgba(7,17,31,.97) !important;
+    }
+
+    /* No horizontal overflow on phones */
+    html,
+    body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+}
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media screen and (max-width: 600px) {
+
+    .header .navbar {
+        padding-left: 14px !important;
+        padding-right: 10px !important;
+    }
+
+    .header .navbar > .logo-title {
+        font-size: 18px !important;
+    }
+
+    .header .navbar > .logo-sigma {
+        font-size: 28px !important;
+    }
+
+    .header .navbar > .menu-toggle,
+    .header .navbar > .theme-toggle {
+        width: 40px !important;
+        height: 40px !important;
+        flex-basis: 40px !important;
+    }
+
+    .header .navbar > .menu-toggle {
+        font-size: 26px !important;
+    }
+
+    .header .navbar > .theme-toggle {
+        margin-left: 1px !important;
+    }
+}
+
 
 
 /* =========================================================
-   FINAL DARK MODE VISIBILITY FIX — NOTES + ALL SECTIONS
-   Added without changing the existing light-mode design.
+   MR. RAMESH — FINAL DARK MODE VISIBILITY PATCH
+   Fixes inner Notes cards + remaining low-contrast text.
+   Light mode is NOT changed.
    ========================================================= */
 
-/* ---------- NOTES: branch / semester cards ---------- */
+/* ---------------- NOTES: INNER SEMESTER CARDS ---------------- */
 html body.dark-mode .notes-branch-content {
-    background: linear-gradient(180deg, #0b1828 0%, #0d1b2a 100%) !important;
-    border-top-color: rgba(255,255,255,.10) !important;
+    background: linear-gradient(180deg, #0b1828, #0d1b2a) !important;
     color: #e8eef6 !important;
-}
-
-html body.dark-mode .notes-branch-content::before {
-    color: #9fb2c8 !important;
-}
-
-html body.dark-mode .notes-branch-icon {
-    background: linear-gradient(145deg, #142a43, #102238) !important;
-    border-color: rgba(97,173,255,.20) !important;
-    color: #61adff !important;
-    box-shadow: 0 9px 23px rgba(0,0,0,.22) !important;
-}
-
-html body.dark-mode .notes-branch-title strong {
-    color: #f7f9fc !important;
-}
-
-html body.dark-mode .notes-branch-title small {
-    color: #aebdd0 !important;
-}
-
-html body.dark-mode .notes-branch-arrow,
-html body.dark-mode .notes-semester-arrow {
-    background: #142a43 !important;
-    color: #61adff !important;
-    border: 1px solid rgba(255,255,255,.10) !important;
 }
 
 html body.dark-mode .notes-semester {
-    background: #0d1b2a !important;
-    border-color: rgba(255,255,255,.12) !important;
+    background: #102238 !important;
     color: #e8eef6 !important;
-    box-shadow: 0 10px 28px rgba(0,0,0,.18) !important;
+    border-color: rgba(255,255,255,.14) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,.20) !important;
+}
+
+html body.dark-mode .notes-semester:hover {
+    background: #142a43 !important;
+    border-color: rgba(97,173,255,.35) !important;
+}
+
+html body.dark-mode .notes-semester[open] {
+    background: #102238 !important;
+    border-color: rgba(97,173,255,.35) !important;
 }
 
 html body.dark-mode .notes-semester-header {
     color: #f7f9fc !important;
 }
 
+html body.dark-mode .notes-semester-title,
 html body.dark-mode .notes-semester-title strong {
     color: #f7f9fc !important;
 }
@@ -13512,55 +13698,37 @@ html body.dark-mode .notes-semester-title small {
     color: #aebdd0 !important;
 }
 
-html body.dark-mode .notes-semester[open] .notes-semester-header {
-    background: linear-gradient(135deg, #102a46, #0d1b2a) !important;
-}
-
 html body.dark-mode .notes-semester-icon {
     background: #142a43 !important;
-    border-color: rgba(97,173,255,.18) !important;
     color: #61adff !important;
+    border-color: rgba(255,255,255,.12) !important;
+}
+
+html body.dark-mode .notes-semester[open] .notes-semester-icon {
+    background: #1769e0 !important;
+    color: #ffffff !important;
+}
+
+html body.dark-mode .notes-semester[open] .notes-semester-header {
+    background: linear-gradient(135deg, #102a46, #102238) !important;
 }
 
 html body.dark-mode .notes-semester-content {
     background: #0d1b2a !important;
-    border-top-color: rgba(255,255,255,.10) !important;
     color: #e8eef6 !important;
+    border-top-color: rgba(255,255,255,.10) !important;
 }
 
 html body.dark-mode .notes-subheading h3 {
-    color: #b8c7d7 !important;
+    color: #b9c8d9 !important;
 }
 
-html body.dark-mode .notes-subheading span {
-    background: linear-gradient(90deg, transparent, rgba(97,173,255,.22)) !important;
-}
-
-html body.dark-mode .notes-subheading span:last-child {
-    background: linear-gradient(90deg, rgba(97,173,255,.22), transparent) !important;
-}
-
-/* ---------- NOTES: resource cards ---------- */
 html body.dark-mode .notes-resource-card,
 html body.dark-mode .notes-resource-card.syllabus-card,
 html body.dark-mode .notes-resource-card.question-bank-card {
-    background: linear-gradient(145deg, #102238, #0d1b2a) !important;
-    border-color: rgba(255,255,255,.12) !important;
+    background: #102238 !important;
     color: #e8eef6 !important;
-    box-shadow: 0 10px 28px rgba(0,0,0,.18) !important;
-}
-
-html body.dark-mode .notes-resource-card:hover {
-    background: #142a43 !important;
-    border-color: rgba(97,173,255,.30) !important;
-}
-
-html body.dark-mode .notes-resource-icon,
-html body.dark-mode .notes-module-grid .notes-resource-icon {
-    background: #142a43 !important;
     border-color: rgba(255,255,255,.12) !important;
-    color: #61adff !important;
-    box-shadow: 0 7px 17px rgba(0,0,0,.20) !important;
 }
 
 html body.dark-mode .notes-resource-content h4 {
@@ -13573,20 +13741,22 @@ html body.dark-mode .notes-resource-content p {
 
 html body.dark-mode .notes-resource-link {
     background: #142a43 !important;
-    border-color: rgba(97,173,255,.22) !important;
     color: #61adff !important;
+    border-color: rgba(97,173,255,.22) !important;
 }
 
-html body.dark-mode .notes-resource-link:hover {
-    background: #1769e0 !important;
-    border-color: #1769e0 !important;
-    color: #ffffff !important;
+html body.dark-mode .notes-module-grid .notes-resource-content h4 {
+    color: #f3f7fb !important;
+}
+
+html body.dark-mode .notes-module-grid .notes-resource-content p {
+    color: #aebdd0 !important;
 }
 
 html body.dark-mode .notes-access-note {
     background: #0d1b2a !important;
-    border-color: rgba(255,255,255,.12) !important;
     color: #e8eef6 !important;
+    border-color: rgba(255,255,255,.12) !important;
 }
 
 html body.dark-mode .notes-access-note strong {
@@ -13597,96 +13767,157 @@ html body.dark-mode .notes-access-note p {
     color: #aebdd0 !important;
 }
 
-html body.dark-mode .notes-access-icon {
+/* ---------------- QUESTION PAPERS ---------------- */
+html body.dark-mode .resource-question-heading h3,
+html body.dark-mode .resource-question-heading p {
+    color: #f3f7fb !important;
+}
+
+html body.dark-mode .question-branch {
+    background: #102238 !important;
+    color: #e8eef6 !important;
+}
+
+html body.dark-mode .question-semester {
     background: #142a43 !important;
-    color: #61d49a !important;
+    color: #e8eef6 !important;
 }
 
-/* ---------- COMMON TEXT VISIBILITY ---------- */
-/* Fix dark text that remains hidden against dark backgrounds. */
-html body.dark-mode section,
-html body.dark-mode article,
-html body.dark-mode .card,
-html body.dark-mode .content {
-    color: var(--theme-text);
-}
-
-html body.dark-mode section h1,
-html body.dark-mode section h2,
-html body.dark-mode section h3,
-html body.dark-mode section h4,
-html body.dark-mode section h5,
-html body.dark-mode section h6 {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-html body.dark-mode section p,
-html body.dark-mode section li,
-html body.dark-mode section label {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-/* ---------- LINKS / BUTTON TEXT ---------- */
-html body.dark-mode a {
-    opacity: 1;
-}
-
-html body.dark-mode button {
-    color: #f3f7fb;
-}
-
-/* ---------- DETAILS / SUMMARY ---------- */
-html body.dark-mode details > summary {
+html body.dark-mode .question-paper-info h4 {
     color: #f3f7fb !important;
 }
 
-html body.dark-mode details > summary * {
-    color: inherit !important;
-}
-
-/* ---------- FORM TEXT ---------- */
-html body.dark-mode input,
-html body.dark-mode textarea,
-html body.dark-mode select {
-    color: #f3f7fb !important;
-    caret-color: #ffffff !important;
-}
-
-html body.dark-mode input::placeholder,
-html body.dark-mode textarea::placeholder {
-    color: #8fa4ba !important;
-    opacity: 1 !important;
-}
-
-/* ---------- FOOTER TEXT ---------- */
-html body.dark-mode footer,
-html body.dark-mode footer p,
-html body.dark-mode footer span,
-html body.dark-mode footer small {
+html body.dark-mode .question-paper-info p,
+html body.dark-mode .question-branch-info small {
     color: #aebdd0 !important;
 }
 
-html body.dark-mode footer h3,
-html body.dark-mode footer h4,
-html body.dark-mode footer strong {
+/* ---------------- SKILLS ---------------- */
+html body.dark-mode .skills-section .section-heading h2,
+html body.dark-mode .skills-section .section-heading p,
+html body.dark-mode .skills-section .skill-card h3 {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+html body.dark-mode .skill-card p,
+html body.dark-mode .skill-card .skill-tags span {
+    color: #c4d2e1 !important;
+}
+
+html body.dark-mode .skill-icon-label {
+    color: #aebdd0 !important;
+}
+
+/* ---------------- ABOUT ---------------- */
+html body.dark-mode #about .about-profile-card h3,
+html body.dark-mode #about .about-profile-card p,
+html body.dark-mode #about .about-profile-card span,
+html body.dark-mode #about .about-quote p,
+html body.dark-mode #about .academic-info h3,
+html body.dark-mode #about .academic-info h4,
+html body.dark-mode #about .academic-info p,
+html body.dark-mode #about .about-approach h3,
+html body.dark-mode #about .about-approach > p,
+html body.dark-mode #about .approach-principle h4,
+html body.dark-mode #about .approach-principle p {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+html body.dark-mode #about .about-profile-card p,
+html body.dark-mode #about .about-profile-card span,
+html body.dark-mode #about .about-quote p,
+html body.dark-mode #about .academic-info p,
+html body.dark-mode #about .about-approach > p,
+html body.dark-mode #about .approach-principle p {
+    color: #aebdd0 !important;
+}
+
+html body.dark-mode #about .about-profile-card h3,
+html body.dark-mode #about .academic-info h3,
+html body.dark-mode #about .academic-info h4,
+html body.dark-mode #about .about-approach h3,
+html body.dark-mode #about .approach-principle h4 {
     color: #f3f7fb !important;
 }
 
-/* ---------- PREVENT INVISIBLE TEXT EFFECTS ---------- */
-html body.dark-mode .notes-section *,
-html body.dark-mode .about-section *,
-html body.dark-mode .skills-section *,
-html body.dark-mode .phd-research-section *,
-html body.dark-mode .contact-section * {
-    text-shadow: none;
+/* ---------------- RESEARCH ---------------- */
+html body.dark-mode #work .phd-research-intro h3,
+html body.dark-mode #work .phd-research-intro p,
+html body.dark-mode #work .phd-research-card h4,
+html body.dark-mode #work .phd-research-card p,
+html body.dark-mode #work .phd-details-content h3,
+html body.dark-mode #work .phd-details-content p {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
-html body.dark-mode .notes-section [hidden],
-html body.dark-mode .about-section [hidden],
-html body.dark-mode .skills-section [hidden],
-html body.dark-mode .phd-research-section [hidden],
-html body.dark-mode .contact-section [hidden] {
-    display: none !important;
+html body.dark-mode #work .phd-research-intro p,
+html body.dark-mode #work .phd-research-card p,
+html body.dark-mode #work .phd-details-content p {
+    color: #aebdd0 !important;
+}
+
+html body.dark-mode #work .phd-research-card h4,
+html body.dark-mode #work .phd-details-content h3 {
+    color: #f3f7fb !important;
+}
+
+/* ---------------- CONTACT ---------------- */
+html body.dark-mode #contact .section-heading h2,
+html body.dark-mode #contact .section-heading p,
+html body.dark-mode #contact .section-heading > span,
+html body.dark-mode #contact .contact-card h3,
+html body.dark-mode #contact .contact-card p,
+html body.dark-mode #contact .contact-note p {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+html body.dark-mode #contact .contact-card p,
+html body.dark-mode #contact .contact-note p,
+html body.dark-mode #contact .section-heading > span {
+    color: #aebdd0 !important;
+}
+
+html body.dark-mode #contact .contact-card h3 {
+    color: #f3f7fb !important;
+}
+
+/* ---------------- GENERAL DARK-MODE TEXT SAFETY ---------------- */
+html body.dark-mode .light-section .section-heading h2,
+html body.dark-mode .light-section .section-heading p,
+html body.dark-mode .light-section .about-text,
+html body.dark-mode .light-section p,
+html body.dark-mode .light-section li {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+html body.dark-mode .light-section .section-heading h2 {
+    color: #f7f9fc !important;
+}
+
+html body.dark-mode .light-section .section-heading p,
+html body.dark-mode .light-section .about-text,
+html body.dark-mode .light-section p,
+html body.dark-mode .light-section li {
+    color: #aebdd0 !important;
+}
+
+/* Do not let inherited light-mode text colors win inside dark sections. */
+html body.dark-mode .notes-section *,
+html body.dark-mode #about *,
+html body.dark-mode #work *,
+html body.dark-mode #contact * {
+    text-decoration-color: currentColor;
+}
+
+/* Keep icons visible without forcing all SVG internals to white. */
+html body.dark-mode .notes-section i,
+html body.dark-mode #about i,
+html body.dark-mode #work i,
+html body.dark-mode #contact i {
+    opacity: 1 !important;
 }
