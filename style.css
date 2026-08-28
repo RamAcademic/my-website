@@ -13453,143 +13453,475 @@ body.dark-mode .header .navbar .sun-icon {
     }
 }
 
-
 /* =========================================================
-   VTU 2025 SCHEME INFORMATION BOX
-   Notes & Learning Resources — scoped only to new box
+   MR. RAMESH — PHONE MODE ONLY
+   FINAL MOBILE HEADER FIX
+   DESKTOP RULES ABOVE ARE NOT MODIFIED
 ========================================================= */
 
-.vtu-2025-info-box {
-    width: min(760px, 92%);
-    margin: 18px auto 28px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 13px 17px;
-    box-sizing: border-box;
-    border: 1px solid rgba(215,166,58,.38);
-    border-radius: 14px;
-    background: linear-gradient(135deg, rgba(215,166,58,.08), rgba(37,99,235,.06));
-    box-shadow: 0 8px 25px rgba(0,0,0,.12);
-    overflow: hidden;
-    position: relative;
+@media screen and (max-width: 900px) {
+
+    /* Keep the original header fixed and full width */
+    .header {
+        width: 100% !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 76px !important;
+        z-index: 9999 !important;
+    }
+
+    /* Three direct items:
+       logo | menu | theme */
+    .header .navbar {
+        width: 100% !important;
+        max-width: none !important;
+        height: 76px !important;
+        margin: 0 !important;
+        padding: 0 12px 0 18px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Mr.Ramesh stays on the left */
+    .header .navbar > .logo {
+        display: inline-flex !important;
+        align-items: center !important;
+        flex: 0 1 auto !important;
+        min-width: 0 !important;
+        margin: 0 auto 0 0 !important;
+        padding: 0 !important;
+        white-space: nowrap !important;
+    }
+
+    /* ☰ — ALWAYS VISIBLE ON PHONE */
+    .header .navbar > .menu-toggle {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex: 0 0 42px !important;
+        width: 42px !important;
+        height: 42px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        outline: 0 !important;
+        background: transparent !important;
+        color: #0b1f3a !important;
+        font-size: 27px !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        cursor: pointer !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
+    }
+
+    /* ☰ stays visible in DARK MODE */
+    body.dark-mode .header .navbar > .menu-toggle,
+    html.dark-mode .header .navbar > .menu-toggle {
+        display: inline-flex !important;
+        color: #ffffff !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        background: transparent !important;
+    }
+
+    /* ☾ / ☀️ — immediately beside ☰ */
+    .header .navbar > .theme-toggle {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+        flex: 0 0 42px !important;
+        width: 42px !important;
+        height: 42px !important;
+        margin: 0 0 0 2px !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Keep the navigation hidden until ☰ is pressed */
+    .header .navbar > .nav-links {
+        position: absolute !important;
+        top: 76px !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        display: none !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0 !important;
+        margin: 0 !important;
+        padding: 10px 0 14px !important;
+        box-sizing: border-box !important;
+        background: #ffffff !important;
+        border-bottom: 1px solid #e5eaf1 !important;
+        box-shadow: 0 14px 35px rgba(11,31,58,.10) !important;
+        z-index: 9998 !important;
+        overflow: hidden !important;
+    }
+
+    .header .navbar > .nav-links.active {
+        display: flex !important;
+    }
+
+    .header .navbar > .nav-links li {
+        width: 100% !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .header .navbar > .nav-links a {
+        display: block !important;
+        width: 100% !important;
+        padding: 13px 22px !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+    }
+
+    /* DARK MOBILE MENU */
+    body.dark-mode .header .navbar > .nav-links,
+    html.dark-mode .header .navbar > .nav-links {
+        background: #07111f !important;
+        border-bottom-color: rgba(255,255,255,.12) !important;
+        box-shadow: 0 14px 35px rgba(0,0,0,.30) !important;
+    }
+
+    body.dark-mode .header .navbar > .nav-links a,
+    html.dark-mode .header .navbar > .nav-links a {
+        color: #d4deea !important;
+    }
+
+    /* Header colours */
+    body:not(.dark-mode) .header {
+        background: rgba(255,255,255,.96) !important;
+    }
+
+    body.dark-mode .header,
+    html.dark-mode .header {
+        background: rgba(7,17,31,.97) !important;
+    }
+
+    /* No horizontal overflow on phones */
+    html,
+    body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
 }
 
-.vtu-2025-info-box::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #d7a63a, transparent);
-}
-
-.vtu-2025-icon {
-    width: 42px;
-    height: 42px;
-    flex: 0 0 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 11px;
-    background: linear-gradient(145deg, #fff8df, #fff);
-    border: 1px solid rgba(215,166,58,.35);
-    font-size: 20px;
-}
-
-.vtu-2025-content {
-    flex: 1;
-    min-width: 0;
-    overflow: hidden;
-}
-
-.vtu-2025-content > strong {
-    display: block;
-    margin-bottom: 3px;
-    color: #d7a63a;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1.2px;
-}
-
-.vtu-moving-text {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.vtu-moving-text span {
-    display: inline-block;
-    padding-left: 100%;
-    color: #aebbd0;
-    font-size: 10px;
-    line-height: 1.5;
-    animation: vtu2025Move 13s linear infinite;
-}
-
-@keyframes vtu2025Move {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-.vtu-2025-badge {
-    flex: 0 0 auto;
-    padding: 6px 11px;
-    border-radius: 20px;
-    background: #d7a63a;
-    color: #071a30;
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: .6px;
-}
-
-html:not(.dark-mode) .vtu-2025-info-box,
-body:not(.dark-mode) .vtu-2025-info-box {
-    background: linear-gradient(135deg, rgba(215,166,58,.07), rgba(37,99,235,.035));
-    border-color: rgba(37,99,235,.16);
-}
-
-html:not(.dark-mode) .vtu-moving-text span,
-body:not(.dark-mode) .vtu-moving-text span {
-    color: #526174;
-}
+/* =========================================================
+   SMALL PHONES
+========================================================= */
 
 @media screen and (max-width: 600px) {
-    .vtu-2025-info-box {
-        width: calc(100% - 24px);
-        margin: 14px auto 22px;
-        padding: 11px 12px;
-        gap: 9px;
-        border-radius: 12px;
+
+    .header .navbar {
+        padding-left: 14px !important;
+        padding-right: 10px !important;
     }
 
-    .vtu-2025-icon {
-        width: 35px;
-        height: 35px;
-        flex-basis: 35px;
-        font-size: 17px;
+    .header .navbar > .logo-title {
+        font-size: 18px !important;
     }
 
-    .vtu-2025-content > strong {
-        font-size: 9px;
-        letter-spacing: .9px;
+    .header .navbar > .logo-sigma {
+        font-size: 28px !important;
     }
 
-    .vtu-moving-text span {
-        font-size: 8px;
-        animation-duration: 10s;
+    .header .navbar > .menu-toggle,
+    .header .navbar > .theme-toggle {
+        width: 40px !important;
+        height: 40px !important;
+        flex-basis: 40px !important;
     }
 
-    .vtu-2025-badge {
-        padding: 5px 8px;
-        font-size: 8px;
+    .header .navbar > .menu-toggle {
+        font-size: 26px !important;
+    }
+
+    .header .navbar > .theme-toggle {
+        margin-left: 1px !important;
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .vtu-moving-text span {
-        animation: none;
-        padding-left: 0;
-    }
+
+/* ================================================================
+   MR. RAMESH — FINAL DARK MODE COMBINED FIX
+   NOTES + MATHEMATICS QUESTION PAPERS
+   This block is intentionally LAST so it overrides earlier
+   light-mode rules without removing any existing section code.
+   ================================================================ */
+
+/* ===================== NOTES SECTION ===================== */
+
+body.dark-mode .notes-branch {
+    background: #0d1b2a !important;
+    color: #e8eef6 !important;
+    border-color: rgba(255,255,255,.14) !important;
+    box-shadow: 0 10px 28px rgba(0,0,0,.22) !important;
+}
+
+body.dark-mode .notes-branch summary,
+body.dark-mode .notes-branch h3,
+body.dark-mode .notes-branch strong {
+    color: #f7f9fc !important;
+}
+
+body.dark-mode .notes-branch small,
+body.dark-mode .notes-branch p {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .notes-branch-content {
+    background: #0b1828 !important;
+    color: #e8eef6 !important;
+    border-top-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .notes-semester {
+    background: #102238 !important;
+    color: #e8eef6 !important;
+    border-color: rgba(255,255,255,.14) !important;
+    box-shadow: 0 7px 20px rgba(0,0,0,.20) !important;
+}
+
+body.dark-mode .notes-semester:hover {
+    background: #142a43 !important;
+    border-color: rgba(97,173,255,.30) !important;
+}
+
+body.dark-mode .notes-semester-header,
+body.dark-mode .notes-semester-title,
+body.dark-mode .notes-semester-title strong {
+    color: #f7f9fc !important;
+}
+
+body.dark-mode .notes-semester-title small {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .notes-semester-icon {
+    background: #142a43 !important;
+    color: #61adff !important;
+    border-color: rgba(255,255,255,.12) !important;
+}
+
+body.dark-mode .notes-semester-content {
+    background: #0d1b2a !important;
+    color: #e8eef6 !important;
+    border-top-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .notes-subheading h3 {
+    color: #b9c8d9 !important;
+}
+
+body.dark-mode .notes-resource-card,
+body.dark-mode .notes-resource-card.syllabus-card,
+body.dark-mode .notes-resource-card.question-bank-card {
+    background: #102238 !important;
+    color: #e8eef6 !important;
+    border-color: rgba(255,255,255,.13) !important;
+    box-shadow: 0 7px 20px rgba(0,0,0,.18) !important;
+}
+
+body.dark-mode .notes-resource-card:hover {
+    background: #142a43 !important;
+}
+
+body.dark-mode .notes-resource-content h4 {
+    color: #f7f9fc !important;
+}
+
+body.dark-mode .notes-resource-content p {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .notes-resource-link {
+    background: #142a43 !important;
+    color: #61adff !important;
+    border-color: rgba(97,173,255,.25) !important;
+}
+
+body.dark-mode .notes-resource-link:hover {
+    background: #1769e0 !important;
+    color: #fff !important;
+}
+
+body.dark-mode .notes-access-note {
+    background: #0d1b2a !important;
+    color: #e8eef6 !important;
+    border-color: rgba(255,255,255,.12) !important;
+}
+
+body.dark-mode .notes-access-note strong {
+    color: #f3f7fb !important;
+}
+
+body.dark-mode .notes-access-note p {
+    color: #aebdd0 !important;
+}
+
+/* ================= QUESTION PAPERS ================= */
+
+/* Main Question Papers container */
+body.dark-mode .resource-question-papers {
+    background: #0b1a2a !important;
+    color: #e8eef6 !important;
+    border-color: rgba(255,255,255,.14) !important;
+    box-shadow: 0 18px 50px rgba(0,0,0,.28) !important;
+}
+
+body.dark-mode .resource-question-heading h3 {
+    color: #f7f9fc !important;
+}
+
+body.dark-mode .resource-question-heading p {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .resource-kicker {
+    color: #e1b95f !important;
+}
+
+/* Department cards */
+body.dark-mode .question-branch {
+    background: #102238 !important;
+    color: #e8eef6 !important;
+    border-color: rgba(255,255,255,.14) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,.20) !important;
+}
+
+body.dark-mode .question-branch-header {
+    background: #102238 !important;
+    color: #f7f9fc !important;
+}
+
+body.dark-mode .question-branch-info strong {
+    color: #f7f9fc !important;
+}
+
+body.dark-mode .question-branch-info small {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .question-branch-icon {
+    background: #172d46 !important;
+    color: #61adff !important;
+    border-color: rgba(255,255,255,.14) !important;
+}
+
+body.dark-mode .question-arrow {
+    background: #172d46 !important;
+    color: #e1b95f !important;
+    border-color: rgba(255,255,255,.14) !important;
+}
+
+/* Select-semester panel */
+body.dark-mode .question-semesters {
+    background: #0b1828 !important;
+    color: #e8eef6 !important;
+    border-top-color: rgba(255,255,255,.12) !important;
+}
+
+body.dark-mode .question-semesters::before {
+    color: #9fb2c8 !important;
+}
+
+/* Semester rows — removes the white boxes */
+body.dark-mode .question-semester {
+    background: #102238 !important;
+    color: #f3f7fb !important;
+    border-color: rgba(255,255,255,.14) !important;
+    box-shadow: 0 7px 20px rgba(0,0,0,.22) !important;
+}
+
+body.dark-mode .question-semester > summary {
+    background: #102238 !important;
+    color: #f7f9fc !important;
+}
+
+body.dark-mode .question-semester > summary span {
+    color: #f7f9fc !important;
+}
+
+body.dark-mode .question-semester > summary span::before {
+    background: #1b3654 !important;
+    color: #61adff !important;
+}
+
+body.dark-mode .question-semester > summary b {
+    background: #172d46 !important;
+    color: #e1b95f !important;
+    border-color: rgba(255,255,255,.16) !important;
+}
+
+/* Open semester */
+body.dark-mode .question-semester[open] > summary {
+    background: #18334f !important;
+    color: #fff !important;
+}
+
+body.dark-mode .question-semester[open] > summary span,
+body.dark-mode .question-semester[open] > summary b {
+    color: #fff !important;
+}
+
+body.dark-mode .question-semester[open] > summary span::before,
+body.dark-mode .question-semester[open] > summary b {
+    background: #1769e0 !important;
+    color: #fff !important;
+}
+
+body.dark-mode .question-semester[open] > summary b {
+    border-color: #c49a3a !important;
+}
+
+/* Actual question-paper cards */
+body.dark-mode .question-paper-card {
+    background: #132943 !important;
+    color: #e8eef6 !important;
+    border-color: rgba(255,255,255,.14) !important;
+    box-shadow: 0 7px 20px rgba(0,0,0,.22) !important;
+}
+
+body.dark-mode .question-paper-card:hover {
+    background: #18334f !important;
+}
+
+body.dark-mode .question-paper-info h4 {
+    color: #f7f9fc !important;
+}
+
+body.dark-mode .question-paper-info p {
+    color: #aebdd0 !important;
+}
+
+body.dark-mode .question-paper-card .resource-button {
+    background: #173452 !important;
+    color: #61adff !important;
+    border-color: rgba(97,173,255,.28) !important;
+}
+
+body.dark-mode .question-paper-card .resource-button:hover {
+    background: #1769e0 !important;
+    color: #fff !important;
+}
+
+/* ================= GENERAL TEXT VISIBILITY ================= */
+
+body.dark-mode .notes-section *,
+body.dark-mode .resource-question-papers * {
+    opacity: 1;
+    visibility: visible;
 }
