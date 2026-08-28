@@ -1335,6 +1335,81 @@
 }
 </style>
 
+
+<style id="vtu-2025-scheme-box">
+/* =====================================================
+   VTU 2025 SCHEME INFO BOX
+   Scoped only to the new Notes-section box.
+===================================================== */
+.vtu-2025-info-box {
+    width: min(760px, 92%);
+    margin: 18px auto 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 17px;
+    box-sizing: border-box;
+    border: 1px solid rgba(215, 166, 58, 0.38);
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(215, 166, 58, 0.08), rgba(37, 99, 235, 0.06));
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    position: relative;
+}
+.vtu-2025-info-box::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, #d7a63a, transparent);
+}
+.vtu-2025-icon {
+    width: 42px; height: 42px; flex: 0 0 42px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 11px;
+    background: linear-gradient(145deg, #fff8df, #ffffff);
+    border: 1px solid rgba(215, 166, 58, 0.35);
+    font-size: 20px;
+}
+.vtu-2025-content { flex: 1; min-width: 0; overflow: hidden; }
+.vtu-2025-content > strong {
+    display: block; margin-bottom: 3px; color: #d7a63a;
+    font-size: 11px; font-weight: 800; letter-spacing: 1.2px;
+}
+.vtu-moving-text { width: 100%; overflow: hidden; white-space: nowrap; }
+.vtu-moving-text span {
+    display: inline-block; padding-left: 100%; color: #aebbd0;
+    font-size: 10px; line-height: 1.5;
+    animation: vtu2025Move 13s linear infinite;
+}
+@keyframes vtu2025Move {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+.vtu-2025-badge {
+    flex: 0 0 auto; padding: 6px 11px; border-radius: 20px;
+    background: #d7a63a; color: #071a30; font-size: 9px;
+    font-weight: 800; letter-spacing: 0.6px;
+}
+html:not(.dark-mode) .vtu-2025-info-box,
+body:not(.dark-mode) .vtu-2025-info-box {
+    background: linear-gradient(135deg, rgba(215, 166, 58, 0.07), rgba(37, 99, 235, 0.035));
+    border-color: rgba(37, 99, 235, 0.16);
+}
+html:not(.dark-mode) .vtu-moving-text span,
+body:not(.dark-mode) .vtu-moving-text span { color: #526174; }
+@media screen and (max-width: 600px) {
+    .vtu-2025-info-box {
+        width: calc(100% - 24px); margin: 14px auto 22px;
+        padding: 11px 12px; gap: 9px; border-radius: 12px;
+    }
+    .vtu-2025-icon { width: 35px; height: 35px; flex-basis: 35px; font-size: 17px; }
+    .vtu-2025-content > strong { font-size: 9px; letter-spacing: 0.9px; }
+    .vtu-moving-text span { font-size: 8px; animation-duration: 10s; }
+    .vtu-2025-badge { padding: 5px 8px; font-size: 8px; }
+}
+</style>
+
 </head>
 
 
@@ -2270,6 +2345,22 @@
             <b>SEMESTER</b>
             <i>→</i>
             <b>RESOURCES</b>
+        </div>
+
+        <!-- =================================================
+             VTU 2025 SCHEME INFORMATION
+        ================================================== -->
+        <div class="vtu-2025-info-box">
+            <div class="vtu-2025-icon" aria-hidden="true">🎓</div>
+
+            <div class="vtu-2025-content">
+                <strong>VTU 2025 SCHEME</strong>
+                <div class="vtu-moving-text">
+                    <span>Notes &amp; learning resources based on VTU 2025 Scheme for Mathematics</span>
+                </div>
+            </div>
+
+            <div class="vtu-2025-badge">2025</div>
         </div>
 
     </div>
