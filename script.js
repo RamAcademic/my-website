@@ -531,27 +531,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       QUESTION PAPERS
-       ONLY ONE BRANCH OPEN AT A TIME
+       MATHEMATICS QUESTION PAPERS
+       EXCLUSIVE BRANCH ACCORDION
 
-       CSE → ECE
-       CSE closes automatically
+       RULE:
+       Only ONE branch can be open at a time.
 
-       ECE → CIVIL
-       ECE closes automatically
+       CSE OPEN
+       ↓
+       Click ECE
+       ↓
+       CSE CLOSE
+       ECE OPEN
 
-       CIVIL → MECHANICAL
-       CIVIL closes automatically
+       Click CIVIL
+       ↓
+       ECE CLOSE
+       CIVIL OPEN
 
-       This affects ONLY Question Papers.
-       Notes & Learning Resources are untouched.
+       Click MECHANICAL
+       ↓
+       CIVIL CLOSE
+       MECHANICAL OPEN
+
+       NOTES SECTION IS NOT AFFECTED.
     ===================================================== */
+
 
     const questionPaperBranches =
         document.querySelectorAll(
             ".resource-question-papers .question-branch"
         );
 
+
+    /* =====================================================
+       INITIAL STATE
+
+       IMPORTANT:
+       CLOSE ALL QUESTION PAPER BRANCHES
+       WHEN PAGE LOADS.
+
+       This fixes the problem where CSE,
+       ECE, CIVIL and MECHANICAL were all
+       opening automatically.
+    ===================================================== */
+
+    questionPaperBranches.forEach(
+        function (branch) {
+
+            branch.removeAttribute("open");
+
+        }
+    );
+
+
+    /* =====================================================
+       QUESTION PAPER BRANCH CLICK
+
+       When one branch opens:
+       automatically close every other branch.
+    ===================================================== */
 
     questionPaperBranches.forEach(
         function (branch) {
@@ -561,7 +600,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 function () {
 
                     /* -------------------------------------
-                       If branch is closed, do nothing
+                       If this branch is closed,
+                       do nothing.
                     ------------------------------------- */
 
                     if (!this.open) {
@@ -570,7 +610,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                     /* -------------------------------------
-                       Close every other branch
+                       Close every other branch.
                     ------------------------------------- */
 
                     questionPaperBranches.forEach(
