@@ -1410,6 +1410,95 @@ body:not(.dark-mode) .vtu-moving-text span { color: #526174; }
 }
 </style>
 
+
+<style id="skills-impact-dark-mode-fix">
+/* =========================================================
+   SKILLS — "HOW I MAKE AN IMPACT" DARK MODE FIX
+   Light mode remains completely unchanged.
+   ========================================================= */
+
+html.dark-mode #skills .skills-impact,
+body.dark-mode #skills .skills-impact,
+html[data-theme="dark"] #skills .skills-impact,
+body[data-theme="dark"] #skills .skills-impact {
+    background:
+        radial-gradient(circle at 8% 50%, rgba(37,99,235,.13), transparent 24%),
+        linear-gradient(135deg, #0b1d35 0%, #0a2748 55%, #081a31 100%) !important;
+    border: 1px solid rgba(120,170,235,.24) !important;
+    box-shadow: 0 18px 45px rgba(0,0,0,.28) !important;
+}
+
+html.dark-mode #skills .skills-impact-heading h3,
+body.dark-mode #skills .skills-impact-heading h3,
+html[data-theme="dark"] #skills .skills-impact-heading h3,
+body[data-theme="dark"] #skills .skills-impact-heading h3 {
+    color: #f4f8ff !important;
+}
+
+html.dark-mode #skills .skills-impact-heading > span,
+body.dark-mode #skills .skills-impact-heading > span,
+html[data-theme="dark"] #skills .skills-impact-heading > span,
+body[data-theme="dark"] #skills .skills-impact-heading > span {
+    background: linear-gradient(90deg, transparent, rgba(120,170,235,.45)) !important;
+}
+
+html.dark-mode #skills .skills-impact-heading > span:last-child,
+body.dark-mode #skills .skills-impact-heading > span:last-child,
+html[data-theme="dark"] #skills .skills-impact-heading > span:last-child,
+body[data-theme="dark"] #skills .skills-impact-heading > span:last-child {
+    background: linear-gradient(90deg, rgba(120,170,235,.45), transparent) !important;
+}
+
+html.dark-mode #skills .impact-item,
+body.dark-mode #skills .impact-item,
+html[data-theme="dark"] #skills .impact-item,
+body[data-theme="dark"] #skills .impact-item {
+    color: #eaf2ff !important;
+}
+
+html.dark-mode #skills .impact-item h4,
+body.dark-mode #skills .impact-item h4,
+html[data-theme="dark"] #skills .impact-item h4,
+body[data-theme="dark"] #skills .impact-item h4 {
+    color: #f5f8ff !important;
+}
+
+html.dark-mode #skills .impact-item p,
+body.dark-mode #skills .impact-item p,
+html[data-theme="dark"] #skills .impact-item p,
+body[data-theme="dark"] #skills .impact-item p {
+    color: #b8c9df !important;
+}
+
+html.dark-mode #skills .impact-icon,
+body.dark-mode #skills .impact-icon,
+html[data-theme="dark"] #skills .impact-icon,
+body[data-theme="dark"] #skills .impact-icon {
+    background: rgba(37,99,235,.13) !important;
+    border: 1px solid rgba(125,177,255,.18) !important;
+    color: #5da0ff !important;
+    box-shadow: 0 8px 22px rgba(0,0,0,.18) !important;
+}
+
+html.dark-mode #skills .impact-arrow,
+body.dark-mode #skills .impact-arrow,
+html[data-theme="dark"] #skills .impact-arrow,
+body[data-theme="dark"] #skills .impact-arrow {
+    color: #6ea8ff !important;
+}
+
+/* Mobile: keep the dark card visually balanced */
+@media screen and (max-width: 700px) {
+    html.dark-mode #skills .skills-impact,
+    body.dark-mode #skills .skills-impact,
+    html[data-theme="dark"] #skills .skills-impact,
+    body[data-theme="dark"] #skills .skills-impact {
+        background:
+            linear-gradient(145deg, #0b1d35, #0a2748) !important;
+    }
+}
+</style>
+
 </head>
 
 
