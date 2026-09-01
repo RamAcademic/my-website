@@ -14444,3 +14444,331 @@ html body:not(.dark-mode) .section-heading h2 {
     opacity: 1 !important;
     filter: none !important;
 }
+
+
+/* =========================================================
+   FINAL WEBSITE POLISH V3
+   ---------------------------------------------------------
+   1. Stronger Light/Dark text contrast
+   2. Clearer icons (no accidental fading)
+   3. Cleaner visual hierarchy
+   4. More consistent controls/cards
+   5. Mobile spacing and typography polish
+   6. No structural/layout redesign
+========================================================= */
+
+/* =========================================================
+   1. GLOBAL CONTRAST + RENDERING
+========================================================= */
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+button,
+a,
+input,
+textarea,
+select {
+    text-rendering: optimizeLegibility;
+}
+
+/* Never allow accidental opacity/filter to make core UI fuzzy */
+html body:not(.dark-mode) .section-heading,
+html body:not(.dark-mode) .section-heading *,
+html body:not(.dark-mode) .hero,
+html body:not(.dark-mode) .hero *,
+html body:not(.dark-mode) .about-section,
+html body:not(.dark-mode) .phd-research-section,
+html body:not(.dark-mode) .contact-section {
+    -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================================
+   2. LIGHT MODE — STRONG, CLEAN HIERARCHY
+========================================================= */
+
+html body:not(.dark-mode) .section-heading h2 {
+    color: #09284d !important;
+    opacity: 1 !important;
+    filter: none !important;
+    text-shadow: none !important;
+}
+
+html body:not(.dark-mode) .section-heading > span,
+html body:not(.dark-mode) .section-heading > p {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+html body:not(.dark-mode) .hero-description,
+html body:not(.dark-mode) .about-introduction p,
+html body:not(.dark-mode) .about-profile p,
+html body:not(.dark-mode) .phd-research-intro > p,
+html body:not(.dark-mode) .phd-research-card p,
+html body:not(.dark-mode) .contact-card > p,
+html body:not(.dark-mode) .notes-resource-content p {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Important words should not disappear into navy backgrounds */
+html body:not(.dark-mode) .hero-description strong,
+html body:not(.dark-mode) .about-introduction strong {
+    color: #0b3157 !important;
+    font-weight: 700 !important;
+}
+
+/* =========================================================
+   3. ALL IMPORTANT ICONS — LIGHT MODE
+========================================================= */
+
+html body:not(.dark-mode) .about-section svg,
+html body:not(.dark-mode) .about-section i,
+html body:not(.dark-mode) .phd-research-section svg,
+html body:not(.dark-mode) .phd-research-section i,
+html body:not(.dark-mode) .contact-section svg,
+html body:not(.dark-mode) .contact-section i,
+html body:not(.dark-mode) .notes-section svg,
+html body:not(.dark-mode) .notes-section i,
+html body:not(.dark-mode) .resource-question-papers svg,
+html body:not(.dark-mode) .resource-question-papers i {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* SVG strokes/fills must remain visible */
+html body:not(.dark-mode) svg[stroke],
+html body:not(.dark-mode) svg path[stroke],
+html body:not(.dark-mode) svg circle[stroke],
+html body:not(.dark-mode) svg rect[stroke] {
+    opacity: 1 !important;
+}
+
+/* =========================================================
+   4. DARK MODE — KEEP THE SAME DESIGN, IMPROVE CLARITY
+========================================================= */
+
+html body.dark-mode .section-heading h2,
+html body.dark-mode .section-heading > span,
+html body.dark-mode .section-heading > p,
+html body.dark-mode .hero-description,
+html body.dark-mode .about-introduction p,
+html body.dark-mode .about-profile p,
+html body.dark-mode .phd-research-intro > p,
+html body.dark-mode .phd-research-card p,
+html body.dark-mode .contact-card > p,
+html body.dark-mode .notes-resource-content p {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Core dark-mode headings */
+html body.dark-mode .section-heading h2,
+html body.dark-mode #about h2,
+html body.dark-mode #work h2,
+html body.dark-mode #contact h2 {
+    color: #f7f9fc !important;
+}
+
+/* Dark-mode body copy */
+html body.dark-mode .hero-description,
+html body.dark-mode #about .about-introduction p,
+html body.dark-mode .phd-research-intro > p:last-child,
+html body.dark-mode .phd-research-card p:not(.phd-card-label),
+html body.dark-mode .contact-card > p:not(.contact-label) {
+    color: #cbd7e4 !important;
+}
+
+/* =========================================================
+   5. VISUAL HIERARCHY — CARDS
+========================================================= */
+
+html body:not(.dark-mode) .academic-card,
+html body:not(.dark-mode) .about-card,
+html body:not(.dark-mode) .approach-principle,
+html body:not(.dark-mode) .phd-research-card,
+html body:not(.dark-mode) .contact-card {
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+html body:not(.dark-mode) .academic-card:hover,
+html body:not(.dark-mode) .about-card:hover,
+html body:not(.dark-mode) .approach-principle:hover,
+html body:not(.dark-mode) .phd-research-card:hover,
+html body:not(.dark-mode) .contact-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Keep dark cards equally crisp */
+html body.dark-mode .academic-card,
+html body.dark-mode .about-card,
+html body.dark-mode .approach-principle,
+html body.dark-mode .phd-research-card,
+html body.dark-mode .contact-card {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* =========================================================
+   6. BUTTONS / INTERACTIVE ELEMENTS
+========================================================= */
+
+html body:not(.dark-mode) button,
+html body:not(.dark-mode) .btn,
+html body:not(.dark-mode) a[class*="button"],
+html body:not(.dark-mode) .resume-button,
+html body:not(.dark-mode) .phd-research-button,
+html body:not(.dark-mode) .contact-button {
+    opacity: 1 !important;
+    filter: none !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+html body:not(.dark-mode) button svg,
+html body:not(.dark-mode) .btn svg,
+html body:not(.dark-mode) a[class*="button"] svg {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* =========================================================
+   7. THEME TOGGLE — CRISP ICONS
+========================================================= */
+
+html body:not(.dark-mode) .theme-toggle,
+html body.dark-mode .theme-toggle,
+html body:not(.dark-mode) .theme-icon,
+html body.dark-mode .theme-icon {
+    filter: none !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+html body:not(.dark-mode) .theme-toggle .moon-icon {
+    color: #0b1f3a !important;
+    opacity: 1 !important;
+}
+
+html body.dark-mode .theme-toggle .sun-icon {
+    color: #f1c96b !important;
+    opacity: 1 !important;
+}
+
+/* =========================================================
+   8. RESEARCH LABEL + HEADING
+========================================================= */
+
+html body:not(.dark-mode) #work.phd-research-section > .section-heading > p {
+    color: #a06f18 !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+html body.dark-mode #work.phd-research-section > .section-heading > p {
+    background: #102238 !important;
+    color: #e1b95f !important;
+    border: 1px solid rgba(225,185,95,.35) !important;
+    box-shadow: 0 8px 22px rgba(0,0,0,.25) !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* =========================================================
+   9. MOBILE POLISH
+   ---------------------------------------------------------
+   Only changes spacing/typography at small widths.
+   Desktop remains untouched.
+========================================================= */
+
+@media screen and (max-width: 900px) {
+
+    .section-heading h2 {
+        line-height: 1.15 !important;
+    }
+
+    .hero-description {
+        line-height: 1.7 !important;
+    }
+
+    .about-introduction p,
+    .phd-research-intro > p,
+    .contact-card > p {
+        line-height: 1.65 !important;
+    }
+
+    .approach-principle,
+    .phd-research-card,
+    .contact-card {
+        min-height: 0 !important;
+    }
+
+    .theme-toggle {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .section-heading h2 {
+        font-size: clamp(28px, 7vw, 42px) !important;
+    }
+
+    .section-heading > span,
+    .section-heading > p {
+        letter-spacing: .12em;
+    }
+
+    .hero-description {
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+    }
+
+    .about-introduction p,
+    .phd-research-intro > p,
+    .phd-research-card p,
+    .contact-card > p {
+        font-size: 15px !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .section-heading h2 {
+        line-height: 1.18 !important;
+    }
+
+    .hero-description {
+        font-size: 15.5px !important;
+    }
+
+    .theme-toggle {
+        flex-shrink: 0 !important;
+    }
+}
+
+/* =========================================================
+   10. ACCESSIBILITY — NO LOW-CONTRAST DISABLED LOOK
+========================================================= */
+
+html body:not(.dark-mode) .about-section a,
+html body:not(.dark-mode) .phd-research-section a,
+html body:not(.dark-mode) .contact-section a,
+html body:not(.dark-mode) .notes-section a {
+    text-decoration-thickness: 1px;
+}
+
+html body:not(.dark-mode) .about-section *,
+html body:not(.dark-mode) .phd-research-section *,
+html body:not(.dark-mode) .contact-section *,
+html body:not(.dark-mode) .notes-section * {
+    /* Do not use opacity/filter here: individual existing colors remain intact. */
+}
+
+/* =========================================================
+   END FINAL WEBSITE POLISH V3
+========================================================= */
