@@ -14772,3 +14772,400 @@ html body:not(.dark-mode) .notes-section * {
 /* =========================================================
    END FINAL WEBSITE POLISH V3
 ========================================================= */
+
+
+/* =========================================================
+   MR. RAMESH — WARM CREAM & GOLD LIGHT MODE
+   ---------------------------------------------------------
+   Final theme override:
+   - Warm cream background
+   - Elegant gold accents
+   - Deep warm text
+   - Keeps existing layout and responsive structure
+   - Dark Mode remains unchanged
+   ========================================================= */
+
+:root {
+    --warm-bg: #fffaf2;
+    --warm-bg-soft: #fffdf8;
+    --warm-surface: #ffffff;
+    --warm-gold: #c98712;
+    --warm-gold-light: #e5b45a;
+    --warm-gold-soft: #fff0cf;
+    --warm-gold-border: #efd39a;
+    --warm-text: #17130e;
+    --warm-text-secondary: #604d36;
+    --warm-text-muted: #7b6a55;
+}
+
+/* ---------- LIGHT MODE BASE ---------- */
+
+html body:not(.dark-mode) {
+    background:
+        radial-gradient(
+            circle at 85% 12%,
+            rgba(229, 180, 90, 0.14),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #fffdf9 0%,
+            #fffaf2 52%,
+            #fff7ea 100%
+        ) !important;
+
+    color: var(--warm-text) !important;
+}
+
+/* ---------- HEADER ---------- */
+
+html body:not(.dark-mode) .header {
+    background: rgba(255, 253, 248, 0.96) !important;
+    border-bottom-color: rgba(201, 135, 18, 0.14) !important;
+    box-shadow: 0 8px 30px rgba(120, 82, 20, 0.04) !important;
+}
+
+html body:not(.dark-mode) .header .navbar .logo-title,
+html body:not(.dark-mode) .header .navbar .logo {
+    color: var(--warm-text) !important;
+}
+
+html body:not(.dark-mode) .header .navbar .logo-title > span {
+    color: var(--warm-gold) !important;
+}
+
+html body:not(.dark-mode) .header .navbar .logo-sigma {
+    color: var(--warm-gold) !important;
+}
+
+html body:not(.dark-mode) .header .navbar .nav-links a {
+    color: #302a23 !important;
+}
+
+html body:not(.dark-mode) .header .navbar .nav-links a:hover,
+html body:not(.dark-mode) .header .navbar .nav-links a.active {
+    color: var(--warm-gold) !important;
+}
+
+/* ---------- THEME TOGGLE ---------- */
+
+html body:not(.dark-mode) .header .navbar .theme-toggle {
+    background: #fffdf8 !important;
+    color: #302a23 !important;
+    border-color: rgba(201, 135, 18, 0.20) !important;
+    box-shadow: 0 8px 24px rgba(120, 82, 20, 0.08) !important;
+}
+
+html body:not(.dark-mode) .header .navbar .theme-toggle:hover {
+    color: var(--warm-gold) !important;
+    border-color: var(--warm-gold) !important;
+}
+
+/* ---------- HERO ---------- */
+
+html body:not(.dark-mode) .hero {
+    background:
+        radial-gradient(
+            circle at 82% 34%,
+            rgba(229, 180, 90, 0.14),
+            transparent 31%
+        ),
+        linear-gradient(
+            135deg,
+            #fffdf9 0%,
+            #fffaf2 56%,
+            #fff7ea 100%
+        ) !important;
+}
+
+html body:not(.dark-mode) .hero-small-title {
+    color: var(--warm-gold) !important;
+}
+
+html body:not(.dark-mode) .hero h1 {
+    color: var(--warm-text) !important;
+}
+
+html body:not(.dark-mode) .hero h1 span {
+    color: var(--warm-gold) !important;
+}
+
+html body:not(.dark-mode) .hero h2 {
+    color: var(--warm-text-secondary) !important;
+}
+
+html body:not(.dark-mode) .hero-description {
+    color: #4e4132 !important;
+}
+
+html body:not(.dark-mode) .hero-description strong {
+    color: #754b0d !important;
+}
+
+/* ---------- HERO DECORATIVE CIRCLES ---------- */
+
+html body:not(.dark-mode) .hero::before {
+    border-color: rgba(201, 135, 18, 0.20) !important;
+}
+
+html body:not(.dark-mode) .hero::after {
+    border-color: rgba(201, 135, 18, 0.10) !important;
+}
+
+/* ---------- EXPERIENCE / HIGHLIGHT PILL ---------- */
+
+html body:not(.dark-mode) .experience-badge,
+html body:not(.dark-mode) .hero-badge {
+    background: linear-gradient(
+        135deg,
+        #fff3d9,
+        #ffe9bd
+    ) !important;
+
+    color: #754b0d !important;
+    border-color: rgba(201, 135, 18, 0.14) !important;
+
+    box-shadow:
+        0 6px 20px rgba(201, 135, 18, 0.08) !important;
+}
+
+/* ---------- PROFILE CIRCLE ---------- */
+
+html body:not(.dark-mode) .image-circle,
+html body:not(.dark-mode) .about-photo-circle {
+    background: #fffdf8 !important;
+    border-color: rgba(201, 135, 18, 0.28) !important;
+    box-shadow: 0 18px 50px rgba(93, 65, 25, 0.12) !important;
+}
+
+/* ---------- MATH FLOATING ICONS ---------- */
+
+html body:not(.dark-mode) .math-icon,
+html body:not(.dark-mode) .floating-math-icon,
+html body:not(.dark-mode) .hero-math-icon {
+    background: rgba(255, 255, 255, 0.96) !important;
+    color: var(--warm-gold) !important;
+    border-color: rgba(201, 135, 18, 0.12) !important;
+    box-shadow: 0 14px 32px rgba(111, 77, 24, 0.10) !important;
+}
+
+/* ---------- GENERAL SECTIONS ---------- */
+
+html body:not(.dark-mode) .about-section,
+html body:not(.dark-mode) .phd-research-section,
+html body:not(.dark-mode) .contact-section,
+html body:not(.dark-mode) .notes-section {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 253, 249, 0.96),
+            rgba(255, 248, 237, 0.96)
+        ) !important;
+}
+
+/* ---------- SECTION HEADINGS ---------- */
+
+html body:not(.dark-mode) .section-heading h2,
+html body:not(.dark-mode) .about-heading h2,
+html body:not(.dark-mode) .notes-heading h2 {
+    color: var(--warm-text) !important;
+}
+
+html body:not(.dark-mode) .section-heading h2 span,
+html body:not(.dark-mode) .notes-heading h2 span {
+    color: var(--warm-gold) !important;
+}
+
+html body:not(.dark-mode) .section-heading > span,
+html body:not(.dark-mode) .about-label,
+html body:not(.dark-mode) .hero-small-title {
+    color: var(--warm-gold) !important;
+}
+
+/* ---------- CARDS ---------- */
+
+html body:not(.dark-mode) .about-profile-card,
+html body:not(.dark-mode) .about-quote,
+html body:not(.dark-mode) .phd-research-card,
+html body:not(.dark-mode) .notes-branch,
+html body:not(.dark-mode) .notes-semester,
+html body:not(.dark-mode) .resource-question-papers,
+html body:not(.dark-mode) .contact-card {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border-color: rgba(201, 135, 18, 0.13) !important;
+
+    box-shadow:
+        0 12px 35px rgba(120, 82, 20, 0.07) !important;
+}
+
+html body:not(.dark-mode) .about-profile-card:hover,
+html body:not(.dark-mode) .phd-research-card:hover,
+html body:not(.dark-mode) .notes-branch:hover,
+html body:not(.dark-mode) .notes-semester:hover {
+    border-color: rgba(201, 135, 18, 0.26) !important;
+
+    box-shadow:
+        0 18px 42px rgba(120, 82, 20, 0.11) !important;
+}
+
+/* ---------- CARD TEXT ---------- */
+
+html body:not(.dark-mode) .about-profile-card h3,
+html body:not(.dark-mode) .phd-research-card h4,
+html body:not(.dark-mode) .notes-branch h3,
+html body:not(.dark-mode) .notes-semester-title,
+html body:not(.dark-mode) .notes-semester-title strong,
+html body:not(.dark-mode) .contact-card h3 {
+    color: var(--warm-text) !important;
+}
+
+html body:not(.dark-mode) .about-profile-card p,
+html body:not(.dark-mode) .about-quote strong,
+html body:not(.dark-mode) .notes-semester-icon,
+html body:not(.dark-mode) .resource-icon,
+html body:not(.dark-mode) .question-paper-icon {
+    color: var(--warm-gold) !important;
+}
+
+/* ---------- NOTES SECTION ---------- */
+
+html body:not(.dark-mode) .notes-branch summary,
+html body:not(.dark-mode) .notes-semester > summary,
+html body:not(.dark-mode) .question-semester > summary {
+    color: #4a3417 !important;
+}
+
+html body:not(.dark-mode) .notes-branch-content {
+    background: #fffdf8 !important;
+    border-top-color: rgba(201, 135, 18, 0.10) !important;
+}
+
+html body:not(.dark-mode) .notes-semester {
+    background: #fffaf1 !important;
+}
+
+html body:not(.dark-mode) .notes-semester:hover {
+    background: #fff5e3 !important;
+    border-color: rgba(201, 135, 18, 0.24) !important;
+}
+
+/* ---------- QUESTION PAPERS ---------- */
+
+html body:not(.dark-mode) .resource-question-papers {
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf9,
+            #fff7e9
+        ) !important;
+}
+
+html body:not(.dark-mode) .resource-question-heading h3,
+html body:not(.dark-mode) .question-branch-info strong,
+html body:not(.dark-mode) .question-paper-info h4 {
+    color: #4a3417 !important;
+}
+
+html body:not(.dark-mode) .resource-question-heading p,
+html body:not(.dark-mode) .question-branch-info small {
+    color: var(--warm-text-muted) !important;
+}
+
+/* ---------- ICONS ---------- */
+
+html body:not(.dark-mode) .notes-branch-icon,
+html body:not(.dark-mode) .notes-semester-icon,
+html body:not(.dark-mode) .notes-resource-icon,
+html body:not(.dark-mode) .notes-access-icon,
+html body:not(.dark-mode) .resource-icon,
+html body:not(.dark-mode) .question-branch-icon,
+html body:not(.dark-mode) .question-paper-icon {
+    color: var(--warm-gold) !important;
+}
+
+/* ---------- BUTTONS ---------- */
+
+html body:not(.dark-mode) .primary-btn,
+html body:not(.dark-mode) .cta-button {
+    background:
+        linear-gradient(
+            135deg,
+            #c98712,
+            #d99d2d
+        ) !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 10px 25px rgba(201, 135, 18, 0.20) !important;
+}
+
+html body:not(.dark-mode) .secondary-btn {
+    background: #ffffff !important;
+    color: #8a5b0d !important;
+    border-color: #efd39a !important;
+}
+
+html body:not(.dark-mode) .secondary-btn:hover {
+    background: #fff4dc !important;
+    color: #754b0d !important;
+    border-color: var(--warm-gold) !important;
+}
+
+/* ---------- FORMS ---------- */
+
+html body:not(.dark-mode) input,
+html body:not(.dark-mode) textarea,
+html body:not(.dark-mode) select {
+    background: #fffdf9 !important;
+    color: var(--warm-text) !important;
+    border-color: rgba(125, 91, 43, 0.20) !important;
+}
+
+html body:not(.dark-mode) input:focus,
+html body:not(.dark-mode) textarea:focus,
+html body:not(.dark-mode) select:focus {
+    border-color: var(--warm-gold) !important;
+    box-shadow:
+        0 0 0 4px rgba(201, 135, 18, 0.10) !important;
+}
+
+html body:not(.dark-mode) input::placeholder,
+html body:not(.dark-mode) textarea::placeholder {
+    color: #9b8b76 !important;
+}
+
+/* ---------- FOOTER ---------- */
+
+html body:not(.dark-mode) footer {
+    background: #fff7e9 !important;
+    color: var(--warm-text-secondary) !important;
+    border-top-color: rgba(201, 135, 18, 0.14) !important;
+}
+
+html body:not(.dark-mode) footer a {
+    color: var(--warm-text-secondary) !important;
+}
+
+html body:not(.dark-mode) footer a:hover {
+    color: var(--warm-gold) !important;
+}
+
+/* ---------- SCROLLBAR ---------- */
+
+html body:not(.dark-mode) ::-webkit-scrollbar-track {
+    background: #fff8ed;
+}
+
+html body:not(.dark-mode) ::-webkit-scrollbar-thumb {
+    background: #d6a143;
+}
+
+html body:not(.dark-mode) ::-webkit-scrollbar-thumb:hover {
+    background: #c98712;
+}
+
+/* ---------- DARK MODE SAFETY ----------
+   Do not alter the existing dark-mode design.
+   The theme above is explicitly scoped to light mode.
+   ---------- */
