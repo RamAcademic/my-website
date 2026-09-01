@@ -13925,3 +13925,77 @@ body.dark-mode .resource-question-papers * {
     opacity: 1;
     visibility: visible;
 }
+
+
+/* =========================================================
+   FINAL DARK MODE — TEXT CONTRAST FIX
+   Only fixes low-contrast text in the About section.
+   Light Mode is NOT affected.
+========================================================= */
+
+html body.dark-mode #about .about-profile .about-approach .approach-title h3,
+html body.dark-mode #about .about-profile .about-approach h3 {
+    color: #f7f9fc !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+html body.dark-mode #about .about-profile .about-approach > p {
+    color: #d0dbe7 !important;
+    opacity: 1 !important;
+}
+
+html body.dark-mode #about .about-profile .about-approach .approach-principle h4 {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+html body.dark-mode #about .about-profile .about-approach .approach-principle p {
+    color: #c4d2e1 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+html body.dark-mode #about .about-introduction p {
+    color: #cbd7e4 !important;
+    opacity: 1 !important;
+}
+
+html body.dark-mode #about .about-introduction strong {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+html body.dark-mode #about .about-resume .resume-content h3,
+html body.dark-mode #about .about-resume .resume-text h3,
+html body.dark-mode #about .about-resume h3 {
+    color: #f7f9fc !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+html body.dark-mode #about .about-resume .resume-content p,
+html body.dark-mode #about .about-resume .resume-text p,
+html body.dark-mode #about .about-resume > p {
+    color: #c4d2e1 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+html body.dark-mode #about .about-resume .resume-button {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+html body.dark-mode #about .about-resume .resume-button span,
+html body.dark-mode #about .about-resume .resume-button strong {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+/* Prevent accidental dimming/filtering of these text blocks */
+html body.dark-mode #about .about-approach *,
+html body.dark-mode #about .about-resume * {
+    filter: none !important;
+}
