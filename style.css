@@ -15456,3 +15456,340 @@ html body:not(.dark-mode) .impact-item p {
 html body:not(.dark-mode) .impact-arrow {
     color: rgba(201, 135, 18, 0.48) !important;
 }
+
+
+/* =========================================================
+   MR. RAMESH — ABOUT SECTION
+   WARM CREAM & GOLD FINAL OVERRIDE
+   ---------------------------------------------------------
+   The original About section contains its own navy/blue
+   palette, so these selectors explicitly convert the whole
+   Light Mode About area to the Warm Cream & Gold theme.
+   Dark Mode remains untouched.
+   ========================================================= */
+
+html body:not(.dark-mode) .about-section {
+    background:
+        radial-gradient(
+            circle at 8% 18%,
+            rgba(229, 180, 90, 0.12),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 92% 76%,
+            rgba(201, 135, 18, 0.08),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #fffdf9 0%,
+            #fffaf2 55%,
+            #fff7ea 100%
+        ) !important;
+}
+
+/* Subtle mathematical background */
+html body:not(.dark-mode) .about-math-bg .math-formula {
+    color: rgba(139, 91, 13, 0.09) !important;
+}
+
+/* Main About content panel */
+html body:not(.dark-mode) .about-content {
+    background:
+        rgba(255, 255, 255, 0.78) !important;
+
+    border-color:
+        rgba(201, 135, 18, 0.12) !important;
+
+    box-shadow:
+        0 15px 45px rgba(120, 82, 20, 0.06) !important;
+}
+
+/* About label */
+html body:not(.dark-mode) .about-label {
+    color: #a36a0b !important;
+}
+
+/* About title */
+html body:not(.dark-mode) .about-heading h2,
+html body:not(.dark-mode) .about-title {
+    color: #17130e !important;
+}
+
+html body:not(.dark-mode) .about-heading h2 span,
+html body:not(.dark-mode) .about-title span {
+    color: #c98712 !important;
+}
+
+/* Introduction */
+html body:not(.dark-mode) .about-introduction p,
+html body:not(.dark-mode) .about-intro p {
+    color: #604d36 !important;
+}
+
+html body:not(.dark-mode) .about-introduction strong,
+html body:not(.dark-mode) .about-intro strong {
+    color: #2a2117 !important;
+}
+
+/* Academic journey line */
+html body:not(.dark-mode) .academic-journey::before {
+    background:
+        linear-gradient(
+            180deg,
+            #e5b45a,
+            rgba(201, 135, 18, 0.18)
+        ) !important;
+}
+
+/* Academic cards */
+html body:not(.dark-mode) .academic-item,
+html body:not(.dark-mode) .academic-card {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fffaf1
+        ) !important;
+
+    border-color:
+        rgba(201, 135, 18, 0.14) !important;
+
+    box-shadow:
+        0 10px 28px rgba(120, 82, 20, 0.06) !important;
+}
+
+html body:not(.dark-mode) .academic-item:hover,
+html body:not(.dark-mode) .academic-card:hover {
+    border-color:
+        rgba(201, 135, 18, 0.28) !important;
+
+    box-shadow:
+        0 16px 35px rgba(120, 82, 20, 0.10) !important;
+}
+
+/* Academic icons */
+html body:not(.dark-mode) .academic-icon {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fff0cf
+        ) !important;
+
+    color: #b9780b !important;
+
+    border-color:
+        rgba(201, 135, 18, 0.16) !important;
+}
+
+/* Academic text */
+html body:not(.dark-mode) .academic-info h3,
+html body:not(.dark-mode) .academic-text h3 {
+    color: #241c13 !important;
+}
+
+html body:not(.dark-mode) .academic-info h4,
+html body:not(.dark-mode) .academic-text h4 {
+    color: #a66b0c !important;
+}
+
+html body:not(.dark-mode) .academic-info p,
+html body:not(.dark-mode) .academic-text p {
+    color: #7b6a55 !important;
+}
+
+/* Right-side approach card */
+html body:not(.dark-mode) .about-approach {
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf8,
+            #fff6e6
+        ) !important;
+
+    border-color:
+        rgba(201, 135, 18, 0.16) !important;
+
+    border-left-color:
+        #c98712 !important;
+
+    box-shadow:
+        0 16px 38px rgba(120, 82, 20, 0.08) !important;
+}
+
+html body:not(.dark-mode) .approach-title h3 {
+    color: #241c13 !important;
+}
+
+html body:not(.dark-mode) .approach-icon {
+    background:
+        #fff0cf !important;
+
+    color:
+        #b9780b !important;
+}
+
+html body:not(.dark-mode) .about-approach > p {
+    color: #6b5943 !important;
+}
+
+/* Highlight cards */
+html body:not(.dark-mode) .about-highlight,
+html body:not(.dark-mode) .highlight-item {
+    background:
+        rgba(255, 255, 255, 0.92) !important;
+
+    border-color:
+        rgba(201, 135, 18, 0.13) !important;
+
+    box-shadow:
+        0 8px 24px rgba(120, 82, 20, 0.045) !important;
+}
+
+html body:not(.dark-mode) .about-highlight:hover,
+html body:not(.dark-mode) .highlight-item:hover {
+    border-color:
+        rgba(201, 135, 18, 0.25) !important;
+}
+
+html body:not(.dark-mode) .about-highlight h4,
+html body:not(.dark-mode) .highlight-item h4 {
+    color: #2a2117 !important;
+}
+
+html body:not(.dark-mode) .about-highlight p,
+html body:not(.dark-mode) .highlight-item p {
+    color: #7b6a55 !important;
+}
+
+/* Resume area */
+html body:not(.dark-mode) .about-resume,
+html body:not(.dark-mode) .resume-box {
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf8,
+            #fff4dc
+        ) !important;
+
+    border-color:
+        rgba(201, 135, 18, 0.14) !important;
+}
+
+html body:not(.dark-mode) .resume-text h3,
+html body:not(.dark-mode) .resume-text strong {
+    color: #2a2117 !important;
+}
+
+html body:not(.dark-mode) .resume-text p {
+    color: #7b6a55 !important;
+}
+
+html body:not(.dark-mode) .resume-button {
+    background:
+        linear-gradient(
+            135deg,
+            #c98712,
+            #d99d2d
+        ) !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 9px 22px rgba(201, 135, 18, 0.18) !important;
+}
+
+/* Left profile photo */
+html body:not(.dark-mode) .about-photo-circle,
+html body:not(.dark-mode) .about-photo {
+    background: #fffaf1 !important;
+
+    border-color:
+        #d7a63a !important;
+
+    box-shadow:
+        0 26px 65px
+        rgba(93, 65, 25, 0.13) !important;
+}
+
+/* Inner photo border */
+html body:not(.dark-mode) .about-photo-circle::before {
+    border-color:
+        rgba(201, 135, 18, 0.22) !important;
+}
+
+/* Profile identity card */
+html body:not(.dark-mode) .about-profile-card,
+html body:not(.dark-mode) .profile-identity {
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf8,
+            #fff1d2
+        ) !important;
+
+    border-color:
+        rgba(201, 135, 18, 0.65) !important;
+
+    box-shadow:
+        0 20px 45px
+        rgba(93, 65, 25, 0.14) !important;
+}
+
+html body:not(.dark-mode) .about-profile-card h3,
+html body:not(.dark-mode) .profile-identity h3 {
+    color: #241c13 !important;
+}
+
+html body:not(.dark-mode) .about-profile-card p,
+html body:not(.dark-mode) .profile-identity p {
+    color: #a66b0c !important;
+}
+
+html body:not(.dark-mode) .about-profile-card span,
+html body:not(.dark-mode) .profile-identity span {
+    color: #6b5943 !important;
+}
+
+/* Quote card */
+html body:not(.dark-mode) .about-quote {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff8ec
+        ) !important;
+
+    border-color:
+        rgba(201, 135, 18, 0.14) !important;
+
+    box-shadow:
+        0 16px 38px
+        rgba(120, 82, 20, 0.08) !important;
+}
+
+html body:not(.dark-mode) .about-quote p {
+    color: #604d36 !important;
+}
+
+html body:not(.dark-mode) .about-quote strong {
+    color: #a66b0c !important;
+}
+
+html body:not(.dark-mode) .quote-mark,
+html body:not(.dark-mode) .quote-symbol,
+html body:not(.dark-mode) .quote-end {
+    color: #c98712 !important;
+}
+
+/* About decorative math symbols */
+html body:not(.dark-mode) .about-math-bg .math-formula {
+    color: rgba(201, 135, 18, 0.10) !important;
+}
+
+/* Mobile/tablet About borders that were still blue */
+html body:not(.dark-mode) .about-highlight {
+    border-color:
+        rgba(201, 135, 18, 0.13) !important;
+}
