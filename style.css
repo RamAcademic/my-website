@@ -15169,3 +15169,290 @@ html body:not(.dark-mode) ::-webkit-scrollbar-thumb:hover {
    Do not alter the existing dark-mode design.
    The theme above is explicitly scoped to light mode.
    ---------- */
+
+
+/* =========================================================
+   MR. RAMESH — SKILLS SECTION
+   WARM CREAM & GOLD FINAL OVERRIDE
+   ---------------------------------------------------------
+   Fixes the Skills section so it matches the new
+   Warm Cream & Gold Light Mode.
+   Dark Mode is intentionally untouched.
+   ========================================================= */
+
+html body:not(.dark-mode) .skills-section {
+    background:
+        radial-gradient(
+            circle at 8% 12%,
+            rgba(201, 135, 18, 0.10),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 92% 72%,
+            rgba(229, 180, 90, 0.12),
+            transparent 27%
+        ),
+        linear-gradient(
+            180deg,
+            #fffdf8 0%,
+            #fffaf2 55%,
+            #fff7ea 100%
+        ) !important;
+}
+
+html body:not(.dark-mode) .skills-section::before {
+    background-image:
+        linear-gradient(
+            rgba(201, 135, 18, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(201, 135, 18, 0.035) 1px,
+            transparent 1px
+        ) !important;
+}
+
+html body:not(.dark-mode) .skills-section::after {
+    background: rgba(201, 135, 18, 0.055) !important;
+}
+
+/* Mathematical formulas */
+html body:not(.dark-mode) .skills-formula {
+    color: rgba(139, 91, 13, 0.075) !important;
+}
+
+html body:not(.dark-mode) .skills-grid-dots {
+    background-image:
+        radial-gradient(
+            #c98712 1.4px,
+            transparent 1.4px
+        ) !important;
+    opacity: 0.30 !important;
+}
+
+/* Skills heading label */
+html body:not(.dark-mode) .skills-label {
+    background: rgba(255, 253, 248, 0.90) !important;
+    border-color: rgba(201, 135, 18, 0.20) !important;
+    color: #9a650d !important;
+
+    box-shadow:
+        0 7px 22px rgba(120, 82, 20, 0.06) !important;
+}
+
+html body:not(.dark-mode) .skills-label::before {
+    color: #c98712 !important;
+}
+
+/* Skills main heading */
+html body:not(.dark-mode) .skills-heading h2 {
+    color: #17130e !important;
+}
+
+html body:not(.dark-mode) .skills-heading h2 span {
+    color: #c98712 !important;
+}
+
+/* Divider */
+html body:not(.dark-mode) .skills-divider span {
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(201, 135, 18, 0.45)
+        ) !important;
+}
+
+html body:not(.dark-mode) .skills-divider span:last-child {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(201, 135, 18, 0.45),
+            transparent
+        ) !important;
+}
+
+html body:not(.dark-mode) .skills-divider strong {
+    background: #ffffff !important;
+    border-color: rgba(201, 135, 18, 0.22) !important;
+    color: #c98712 !important;
+
+    box-shadow:
+        0 7px 18px rgba(120, 82, 20, 0.07) !important;
+}
+
+/* Intro paragraph */
+html body:not(.dark-mode) .skills-intro {
+    color: #6b5943 !important;
+}
+
+/* All skill cards */
+html body:not(.dark-mode) .skill-card {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #fffaf1 100%
+        ) !important;
+
+    border-color:
+        rgba(201, 135, 18, 0.14) !important;
+
+    box-shadow:
+        0 18px 45px
+        rgba(120, 82, 20, 0.075) !important;
+}
+
+html body:not(.dark-mode) .skill-card:hover {
+    border-color:
+        rgba(201, 135, 18, 0.30) !important;
+
+    box-shadow:
+        0 22px 50px
+        rgba(120, 82, 20, 0.12) !important;
+}
+
+/* Gold top borders on every skill card */
+html body:not(.dark-mode) .skill-card-mathematics::before,
+html body:not(.dark-mode) .skill-card-teaching::before,
+html body:not(.dark-mode) .skill-card-problem-solving::before,
+html body:not(.dark-mode) .skill-card-latex::before,
+html body:not(.dark-mode) .skill-card-visualization::before,
+html body:not(.dark-mode) .skill-card-content-development::before {
+    background:
+        linear-gradient(
+            90deg,
+            #b9780b,
+            #e5b45a,
+            #c98712
+        ) !important;
+}
+
+/* Skill icons — one unified academic gold style */
+html body:not(.dark-mode) .skill-card .skill-icon {
+    color: #b9780b !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fff0cf
+        ) !important;
+
+    border-color:
+        rgba(201, 135, 18, 0.16) !important;
+}
+
+/* Override the original individual card colors */
+html body:not(.dark-mode) .skill-card-teaching .skill-icon,
+html body:not(.dark-mode) .skill-card-problem-solving .skill-icon,
+html body:not(.dark-mode) .skill-card-latex .skill-icon,
+html body:not(.dark-mode) .skill-card-visualization .skill-icon,
+html body:not(.dark-mode) .skill-card-content-development .skill-icon {
+    color: #b9780b !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fff0cf
+        ) !important;
+}
+
+/* Skill icon labels */
+html body:not(.dark-mode) .skill-icon-label {
+    color: #8b7559 !important;
+}
+
+/* Card titles */
+html body:not(.dark-mode) .skill-card h3 {
+    color: #241c13 !important;
+}
+
+/* Card descriptions */
+html body:not(.dark-mode) .skill-card p {
+    color: #6b5943 !important;
+}
+
+/* Skill tags */
+html body:not(.dark-mode) .skill-tags span {
+    background: #fff4dc !important;
+    border-color: rgba(201, 135, 18, 0.16) !important;
+    color: #79531c !important;
+}
+
+html body:not(.dark-mode) .skill-card:hover .skill-tags span {
+    background: #ffffff !important;
+    border-color: rgba(201, 135, 18, 0.25) !important;
+    color: #754b0d !important;
+}
+
+/* Decorative symbols inside cards */
+html body:not(.dark-mode) .skill-card-decoration {
+    color: rgba(201, 135, 18, 0.09) !important;
+}
+
+html body:not(.dark-mode) .skill-card:hover .skill-card-decoration {
+    color: rgba(201, 135, 18, 0.16) !important;
+}
+
+/* Skills impact strip */
+html body:not(.dark-mode) .skills-impact {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.97),
+            rgba(255, 247, 231, 0.97)
+        ) !important;
+
+    border-color:
+        rgba(201, 135, 18, 0.15) !important;
+
+    box-shadow:
+        0 18px 45px
+        rgba(120, 82, 20, 0.075) !important;
+}
+
+/* Impact heading lines */
+html body:not(.dark-mode) .skills-impact-heading span {
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(201, 135, 18, 0.24)
+        ) !important;
+}
+
+html body:not(.dark-mode) .skills-impact-heading span:last-child {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(201, 135, 18, 0.24),
+            transparent
+        ) !important;
+}
+
+html body:not(.dark-mode) .skills-impact-heading h3 {
+    color: #604d36 !important;
+}
+
+/* Impact icons */
+html body:not(.dark-mode) .impact-icon {
+    background: #fff0cf !important;
+    color: #b9780b !important;
+}
+
+/* Impact text */
+html body:not(.dark-mode) .impact-item h4 {
+    color: #241c13 !important;
+}
+
+html body:not(.dark-mode) .impact-item p {
+    color: #7b6a55 !important;
+}
+
+/* Impact arrows */
+html body:not(.dark-mode) .impact-arrow {
+    color: rgba(201, 135, 18, 0.48) !important;
+}
