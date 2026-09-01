@@ -13999,3 +13999,26 @@ html body.dark-mode #about .about-approach *,
 html body.dark-mode #about .about-resume * {
     filter: none !important;
 }
+
+
+/* =========================================================
+   FINAL HOME / HERO DARK MODE TEXT FIX
+   Fixes bold text inside the Home hero description.
+   Light Mode is NOT affected.
+========================================================= */
+
+html body.dark-mode .hero-description,
+html body.dark-mode .hero-description strong {
+    opacity: 1 !important;
+    filter: none !important;
+    visibility: visible !important;
+}
+
+html body.dark-mode .hero-description {
+    color: #d5e0eb !important;
+}
+
+html body.dark-mode .hero-description strong {
+    color: #61adff !important;
+    font-weight: 700 !important;
+}
