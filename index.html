@@ -1504,6 +1504,106 @@ body[data-theme="dark"] #skills .impact-arrow {
 }
 </style>
 
+
+<style id="footer-visitor-counter-style">
+/* =========================================================
+   VISITOR COUNTER — CENTERED IN FOOTER
+   Sits between the footer content and copyright line.
+========================================================= */
+
+.footer {
+    position: relative;
+}
+
+.footer-visitor-counter {
+    width: fit-content;
+    min-width: 215px;
+    height: 44px;
+    margin: 28px auto 24px;
+    padding: 0 18px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border: 1px solid rgba(120,160,210,.28);
+    border-radius: 24px;
+    background: rgba(19,36,61,.82);
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.16),
+        inset 0 1px 0 rgba(255,255,255,.06);
+
+    white-space: nowrap;
+}
+
+.footer-visitor-icon {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    fill: none;
+    stroke: #d7a63a;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.footer-visitor-label {
+    color: #d7a63a;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#visitorCount {
+    min-width: 58px;
+    color: #f7f9fd;
+    font-size: 21px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    text-align: left;
+}
+
+/* Light mode */
+html:not(.dark-mode) .footer-visitor-counter,
+body:not(.dark-mode) .footer-visitor-counter {
+    background: rgba(255,255,255,.94);
+    border-color: rgba(37,99,235,.16);
+    box-shadow: 0 8px 24px rgba(20,50,90,.10);
+}
+
+html:not(.dark-mode) #visitorCount,
+body:not(.dark-mode) #visitorCount {
+    color: #142a46;
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+    .footer-visitor-counter {
+        min-width: 165px;
+        height: 38px;
+        margin: 22px auto 20px;
+        padding: 0 12px;
+        gap: 6px;
+    }
+
+    .footer-visitor-icon {
+        width: 19px;
+        height: 19px;
+        flex-basis: 19px;
+    }
+
+    .footer-visitor-label {
+        font-size: 13px;
+    }
+
+    #visitorCount {
+        min-width: 48px;
+        font-size: 17px;
+    }
+}
+</style>
+
 </head>
 
 
@@ -6144,6 +6244,21 @@ body[data-theme="dark"] #skills .impact-arrow {
     </div>
 
 
+    <!-- VISITOR COUNTER -->
+    <div class="footer-visitor-counter"
+         id="footerVisitorCounter"
+         aria-label="Website visitor count">
+        <svg class="footer-visitor-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="9" cy="8" r="3"></circle>
+            <path d="M3.5 19c.4-3.2 2.2-5 5.5-5s5.1 1.8 5.5 5"></path>
+            <path d="M16 5.5a3 3 0 0 1 0 5.8"></path>
+            <path d="M17 14.2c2.1.7 3.3 2.2 3.5 4.8"></path>
+        </svg>
+        <span class="footer-visitor-label">Visitors:</span>
+        <strong id="visitorCount">0</strong>
+    </div>
+
+
     <div class="copyright">
 
         © 2026 Mr.Ramesh.
@@ -6387,6 +6502,62 @@ document.addEventListener("DOMContentLoaded", function () {
         button.setAttribute("aria-label", "Open Menu");
     }
 });
+</script>
+
+
+<script id="footer-visitor-counter-script">
+/* =========================================================
+   ONLINE VISITOR COUNTER
+   Starts at 0 and counts once per browser session.
+========================================================= */
+(function () {
+    const countEl = document.getElementById("visitorCount");
+    if (!countEl) return;
+
+    const namespace = "mr-ramesh-website";
+    const key = "visitors";
+    const sessionKey = "mrRameshVisitorCounted";
+
+    function display(value) {
+        const n = Number(value);
+        countEl.textContent = Number.isFinite(n)
+            ? Math.max(0, Math.floor(n)).toLocaleString("en-IN")
+            : "0";
+    }
+
+    function requestCount(readOnly) {
+        const url =
+            "https://counterapi.com/api/" +
+            encodeURIComponent(namespace) +
+            "/view/" +
+            encodeURIComponent(key) +
+            "?startNumber=0" +
+            (readOnly ? "&readOnly=true" : "");
+
+        fetch(url, { cache: "no-store" })
+            .then(function (response) {
+                if (!response.ok) throw new Error("Counter unavailable");
+                return response.json();
+            })
+            .then(function (data) {
+                if (data && data.value !== undefined) {
+                    display(data.value);
+                }
+                if (!readOnly) {
+                    sessionStorage.setItem(sessionKey, "1");
+                }
+            })
+            .catch(function () {
+                display(0);
+            });
+    }
+
+    if (sessionStorage.getItem(sessionKey) === "1") {
+        requestCount(true);
+    } else {
+        requestCount(false);
+    }
+})();
 </script>
 
 </body>
