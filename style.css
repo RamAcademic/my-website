@@ -14048,3 +14048,27 @@ html body.dark-mode #work.phd-research-section > .section-heading > p {
     visibility: visible !important;
     filter: none !important;
 }
+
+
+/* =========================================================
+   FINAL PHD RESEARCH LABEL — DARK MODE
+   Fixes the light/white pill background only.
+========================================================= */
+
+html body.dark-mode #work.phd-research-section > .section-heading > p {
+    background: #102238 !important;
+    color: #e1b95f !important;
+    border: 1px solid rgba(225, 185, 95, 0.35) !important;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25) !important;
+    opacity: 1 !important;
+    filter: none !important;
+    visibility: visible !important;
+}
+
+html body.dark-mode #work.phd-research-section > .section-heading > p::before {
+    color: #e1b95f !important;
+}
+
+html body.dark-mode #work.phd-research-section > .section-heading > p::after {
+    color: #e1b95f !important;
+}
