@@ -14072,3 +14072,375 @@ html body.dark-mode #work.phd-research-section > .section-heading > p::before {
 html body.dark-mode #work.phd-research-section > .section-heading > p::after {
     color: #e1b95f !important;
 }
+
+
+/* =========================================================
+   FINAL LIGHT MODE — TEXT + ICON CLARITY FIX
+   ---------------------------------------------------------
+   Only applies when dark mode is OFF.
+   No layout, spacing, font-size, background or dark-mode
+   styling is changed.
+========================================================= */
+
+/* ---------- GLOBAL LIGHT-MODE TEXT ---------- */
+
+html body:not(.dark-mode) {
+    color: #172033 !important;
+}
+
+html body:not(.dark-mode) .section-heading h2,
+html body:not(.dark-mode) h1,
+html body:not(.dark-mode) h2,
+html body:not(.dark-mode) h3 {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* ---------- HOME / HERO ---------- */
+
+html body:not(.dark-mode) .hero-description {
+    color: #334155 !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+html body:not(.dark-mode) .hero-description strong {
+    color: #0b3157 !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+html body:not(.dark-mode) .hero-small-title {
+    color: #1769e0 !important;
+    opacity: 1 !important;
+}
+
+html body:not(.dark-mode) .hero h1 {
+    color: #0b1f3a !important;
+    opacity: 1 !important;
+}
+
+html body:not(.dark-mode) .hero h2 {
+    color: #334155 !important;
+    opacity: 1 !important;
+}
+
+/* ---------- ABOUT ---------- */
+
+html body:not(.dark-mode) #about .about-heading h2 {
+    color: #09284d !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+html body:not(.dark-mode) #about .about-heading h2 span {
+    color: #1769e0 !important;
+}
+
+html body:not(.dark-mode) #about .about-label {
+    color: #9a701d !important;
+    opacity: 1 !important;
+}
+
+html body:not(.dark-mode) #about .about-introduction p,
+html body:not(.dark-mode) #about .about-content {
+    color: #334f70 !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+html body:not(.dark-mode) #about .about-introduction strong {
+    color: #0b3157 !important;
+    opacity: 1 !important;
+}
+
+/* Academic cards */
+html body:not(.dark-mode) #about .academic-info h3 {
+    color: #0b3157 !important;
+    opacity: 1 !important;
+}
+
+html body:not(.dark-mode) #about .academic-info h4 {
+    color: #a06f18 !important;
+    opacity: 1 !important;
+}
+
+html body:not(.dark-mode) #about .academic-info p {
+    color: #506b89 !important;
+    opacity: 1 !important;
+}
+
+/* Teaching approach */
+html body:not(.dark-mode) #about .about-profile .about-approach h3,
+html body:not(.dark-mode) #about .about-profile .about-approach .approach-title h3 {
+    color: #092b50 !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+html body:not(.dark-mode) #about .about-profile .about-approach .approach-label {
+    color: #a06f18 !important;
+    opacity: 1 !important;
+}
+
+html body:not(.dark-mode) #about .about-profile .about-approach .approach-method {
+    color: #153b63 !important;
+    opacity: 1 !important;
+}
+
+html body:not(.dark-mode) #about .about-profile .about-approach .approach-statement {
+    color: #435f7e !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+html body:not(.dark-mode) #about .about-profile .about-approach .approach-statement::after {
+    color: #435f7e !important;
+    opacity: 1 !important;
+}
+
+html body:not(.dark-mode) #about .about-profile .about-approach .approach-principle h4 {
+    color: #0b3157 !important;
+    opacity: 1 !important;
+}
+
+html body:not(.dark-mode) #about .about-profile .about-approach .approach-principle p {
+    color: #526b89 !important;
+    opacity: 1 !important;
+}
+
+/* ---------- LIGHT-MODE ABOUT / ACADEMIC ICONS ---------- */
+
+html body:not(.dark-mode) #about .about-icon,
+html body:not(.dark-mode) #about .about-header-icon,
+html body:not(.dark-mode) #about .academic-icon,
+html body:not(.dark-mode) #about .resume-icon,
+html body:not(.dark-mode) #about .approach-icon,
+html body:not(.dark-mode) #about .highlight-icon,
+html body:not(.dark-mode) #about .about-profile .about-approach .approach-icon {
+    opacity: 1 !important;
+    filter: none !important;
+    visibility: visible !important;
+}
+
+html body:not(.dark-mode) #about .academic-icon,
+html body:not(.dark-mode) #about .resume-icon,
+html body:not(.dark-mode) #about .highlight-icon,
+html body:not(.dark-mode) #about .approach-icon {
+    color: #a06f18 !important;
+}
+
+/* Small icons inside teaching cards */
+html body:not(.dark-mode) #about .about-profile .about-approach .approach-principle > span {
+    color: #a06f18 !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* ---------- RESUME ---------- */
+
+html body:not(.dark-mode) #about .about-resume h3,
+html body:not(.dark-mode) #about .about-resume .resume-content h3,
+html body:not(.dark-mode) #about .about-resume .resume-text h3 {
+    color: #09284d !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+html body:not(.dark-mode) #about .about-resume p,
+html body:not(.dark-mode) #about .about-resume .resume-content p,
+html body:not(.dark-mode) #about .about-resume .resume-text p {
+    color: #506b89 !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+html body:not(.dark-mode) #about .about-resume .resume-button,
+html body:not(.dark-mode) #about .about-resume .resume-button span,
+html body:not(.dark-mode) #about .about-resume .resume-button strong {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* ---------- RESEARCH ---------- */
+
+html body:not(.dark-mode) #work.phd-research-section > .section-heading > h2 {
+    color: #092d56 !important;
+    opacity: 1 !important;
+    filter: none !important;
+    visibility: visible !important;
+}
+
+html body:not(.dark-mode) #work.phd-research-section > .section-heading > h2 span {
+    color: #1769e0 !important;
+    opacity: 1 !important;
+}
+
+html body:not(.dark-mode) #work.phd-research-section > .section-heading > p {
+    color: #a06f18 !important;
+    opacity: 1 !important;
+    filter: none !important;
+    visibility: visible !important;
+}
+
+html body:not(.dark-mode) .phd-research-intro h3,
+html body:not(.dark-mode) .phd-research-card h4,
+html body:not(.dark-mode) .phd-details-content h3 {
+    color: #0b3157 !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+html body:not(.dark-mode) .phd-research-intro > p:last-child,
+html body:not(.dark-mode) .phd-research-card p:not(.phd-card-label),
+html body:not(.dark-mode) .phd-details-content > p:last-child {
+    color: #506b89 !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Research icons */
+html body:not(.dark-mode) .phd-research-symbol,
+html body:not(.dark-mode) .phd-card-icon,
+html body:not(.dark-mode) .phd-research-mark,
+html body:not(.dark-mode) .phd-research-label {
+    opacity: 1 !important;
+    filter: none !important;
+    visibility: visible !important;
+}
+
+html body:not(.dark-mode) .phd-research-symbol,
+html body:not(.dark-mode) .phd-card-icon {
+    color: #a06f18 !important;
+}
+
+/* ---------- CONTACT ---------- */
+
+html body:not(.dark-mode) #contact .section-heading h2,
+html body:not(.dark-mode) .contact-section .section-heading h2 {
+    color: #09284d !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+html body:not(.dark-mode) #contact .section-heading p,
+html body:not(.dark-mode) .contact-section .section-heading p {
+    color: #a06f18 !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+html body:not(.dark-mode) #contact .section-heading > span,
+html body:not(.dark-mode) .contact-section .section-heading > span,
+html body:not(.dark-mode) .contact-card > p:not(.contact-label) {
+    color: #506b89 !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+html body:not(.dark-mode) .contact-card h3 {
+    color: #0b3157 !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+html body:not(.dark-mode) .contact-icon,
+html body:not(.dark-mode) .contact-icon svg,
+html body:not(.dark-mode) .contact-icon svg * {
+    opacity: 1 !important;
+    filter: none !important;
+    visibility: visible !important;
+}
+
+/* ---------- SKILLS ---------- */
+
+html body:not(.dark-mode) .skills-label,
+html body:not(.dark-mode) .skill-icon,
+html body:not(.dark-mode) .skill-icon-label,
+html body:not(.dark-mode) .impact-icon {
+    opacity: 1 !important;
+    filter: none !important;
+    visibility: visible !important;
+}
+
+html body:not(.dark-mode) .skill-icon-label {
+    color: #334155 !important;
+}
+
+html body:not(.dark-mode) .skill-card h3,
+html body:not(.dark-mode) .skill-card h4 {
+    color: #0b3157 !important;
+    opacity: 1 !important;
+}
+
+/* ---------- NOTES / QUESTION PAPERS ---------- */
+
+html body:not(.dark-mode) .notes-section *,
+html body:not(.dark-mode) .resource-question-papers * {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+html body:not(.dark-mode) .notes-heading h2 {
+    color: #09284d !important;
+}
+
+html body:not(.dark-mode) .notes-heading > span,
+html body:not(.dark-mode) .notes-resource-content p,
+html body:not(.dark-mode) .notes-branch small,
+html body:not(.dark-mode) .notes-branch p,
+html body:not(.dark-mode) .question-paper-info p {
+    color: #506b89 !important;
+}
+
+html body:not(.dark-mode) .notes-branch h3,
+html body:not(.dark-mode) .notes-resource-content h4,
+html body:not(.dark-mode) .question-paper-info h4 {
+    color: #0b3157 !important;
+}
+
+html body:not(.dark-mode) .notes-branch-icon,
+html body:not(.dark-mode) .notes-semester-icon,
+html body:not(.dark-mode) .notes-resource-icon,
+html body:not(.dark-mode) .notes-access-icon,
+html body:not(.dark-mode) .resource-icon,
+html body:not(.dark-mode) .question-branch-icon,
+html body:not(.dark-mode) .question-paper-icon {
+    opacity: 1 !important;
+    filter: none !important;
+    visibility: visible !important;
+}
+
+/* ---------- THEME TOGGLE / HEADER ICONS ---------- */
+
+html body:not(.dark-mode) .header .navbar .theme-toggle,
+html body:not(.dark-mode) .header .navbar .theme-icon,
+html body:not(.dark-mode) .header .navbar .moon-icon {
+    opacity: 1 !important;
+    filter: none !important;
+    visibility: visible !important;
+}
+
+html body:not(.dark-mode) .header .navbar .moon-icon {
+    color: #0b1f3a !important;
+}
+
+html body:not(.dark-mode) .header .navbar .sun-icon {
+    opacity: 0 !important;
+    filter: none !important;
+}
+
+/* ---------- REMOVE ACCIDENTAL LIGHT-MODE DIMMING ---------- */
+
+html body:not(.dark-mode) .about-heading h2,
+html body:not(.dark-mode) .about-introduction p,
+html body:not(.dark-mode) .phd-research-intro h3,
+html body:not(.dark-mode) .phd-research-card h4,
+html body:not(.dark-mode) .contact-section .section-heading h2,
+html body:not(.dark-mode) .contact-card h3,
+html body:not(.dark-mode) .notes-heading h2,
+html body:not(.dark-mode) .notes-heading > p,
+html body:not(.dark-mode) .section-heading h2 {
+    opacity: 1 !important;
+    filter: none !important;
+}
