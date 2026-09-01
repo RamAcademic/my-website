@@ -14022,3 +14022,29 @@ html body.dark-mode .hero-description strong {
     color: #61adff !important;
     font-weight: 700 !important;
 }
+
+
+/* =========================================================
+   FINAL RESEARCH HEADING — DARK MODE TEXT FIX
+   Keeps the existing design; fixes only dark-mode contrast.
+========================================================= */
+
+html body.dark-mode #work.phd-research-section > .section-heading > h2 {
+    color: #f7f9fc !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    filter: none !important;
+}
+
+html body.dark-mode #work.phd-research-section > .section-heading > h2 span {
+    color: #61adff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+html body.dark-mode #work.phd-research-section > .section-heading > p {
+    color: #e1b95f !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    filter: none !important;
+}
