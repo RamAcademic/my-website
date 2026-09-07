@@ -1604,6 +1604,47 @@ body:not(.dark-mode) #visitorCount {
 }
 </style>
 
+
+<style id="live-visitor-counter-style">
+.footer-live-counter {
+    width: fit-content;
+    min-width: 155px;
+    height: 40px;
+    margin: 0 auto 22px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid rgba(50, 170, 95, .25);
+    border-radius: 22px;
+    background: rgba(255,255,255,.94);
+    box-shadow: 0 8px 24px rgba(20,50,90,.08);
+    white-space: nowrap;
+}
+.live-dot {
+    width: 9px; height: 9px; flex: 0 0 9px;
+    border-radius: 50%;
+    background: #2f9e5b;
+    box-shadow: 0 0 0 4px rgba(47,158,91,.12);
+    animation: livePulse 1.7s ease-in-out infinite;
+}
+.footer-live-label { color: #2f7d4a; font-size: 13px; font-weight: 700; }
+#liveVisitorCount { color: #173c28; font-size: 18px; font-weight: 800; font-variant-numeric: tabular-nums; }
+@keyframes livePulse { 0%,100% { opacity:.55; transform:scale(.9); } 50% { opacity:1; transform:scale(1); } }
+html.dark-mode .footer-live-counter, body.dark-mode .footer-live-counter, html[data-theme="dark"] .footer-live-counter, body[data-theme="dark"] .footer-live-counter {
+    background: rgba(19,36,61,.82); border-color: rgba(70,190,115,.28);
+}
+html.dark-mode .footer-live-label, body.dark-mode .footer-live-label, html[data-theme="dark"] .footer-live-label, body[data-theme="dark"] .footer-live-label { color:#75d99a; }
+html.dark-mode #liveVisitorCount, body.dark-mode #liveVisitorCount, html[data-theme="dark"] #liveVisitorCount, body[data-theme="dark"] #liveVisitorCount { color:#f2fff6; }
+@media screen and (max-width:600px) {
+    .footer-live-counter { min-width:145px; height:36px; margin-bottom:18px; padding:0 12px; gap:7px; }
+    .footer-live-label { font-size:12px; }
+    #liveVisitorCount { font-size:16px; }
+}
+</style>
+
 </head>
 
 
@@ -6258,6 +6299,15 @@ body:not(.dark-mode) #visitorCount {
         <strong id="visitorCount">0</strong>
     </div>
 
+    <!-- LIVE VISITOR COUNTER -->
+    <div class="footer-live-counter"
+         id="footerLiveCounter"
+         aria-label="Visitors active in the last 15 minutes">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span class="footer-live-label">Live now:</span>
+        <strong id="liveVisitorCount">0</strong>
+    </div>
+
 
     <div class="copyright">
 
@@ -6557,6 +6607,40 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         requestCount(false);
     }
+})();
+
+/* =========================================================
+   LIVE VISITOR COUNTER
+   Shows visitors active in the last 15 minutes.
+   CounterAPI anonymizes IP/browser information.
+========================================================= */
+(function () {
+    const liveEl = document.getElementById("liveVisitorCount");
+    if (!liveEl) return;
+
+    const namespace = "mr-ramesh-website";
+    const url =
+        "https://counterapi.com/api/" +
+        encodeURIComponent(namespace) +
+        "/any/any?timeline=15m&unique=true&readOnly=true";
+
+    function loadLiveVisitors() {
+        fetch(url, { cache: "no-store" })
+            .then(function (response) {
+                if (!response.ok) throw new Error("Live counter unavailable");
+                return response.json();
+            })
+            .then(function (data) {
+                const n = Number(data && data.value);
+                liveEl.textContent = Number.isFinite(n) ? Math.max(0, Math.floor(n)).toLocaleString("en-IN") : "0";
+            })
+            .catch(function () {
+                liveEl.textContent = "0";
+            });
+    }
+
+    loadLiveVisitors();
+    setInterval(loadLiveVisitors, 30000);
 })();
 </script>
 
