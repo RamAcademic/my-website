@@ -6410,53 +6410,7 @@ const pdfFrame =
 
 
 
-/* OPEN PDF */
 
-function openPDFViewer() {
-
-
-    /*
-       GitHub RAW PDF URL
-
-       Original:
-       github.com/RamAcademic/my-website/blob/main/...
-
-       RAW:
-       raw.githubusercontent.com/...
-    */
-
-
-    const pdfURL =
-        "https://raw.githubusercontent.com/RamAcademic/my-website/main/assets/BCS405A_MODULE.pdf";
-
-
-    /*
-       Open PDF inside iframe
-    */
-
-    pdfFrame.src =
-        pdfURL +
-        "#toolbar=0&navpanes=0&scrollbar=1";
-
-
-    /*
-       Show viewer
-    */
-
-    pdfModal.classList.add("active");
-
-
-    /*
-       Prevent background scrolling
-    */
-
-    document.body.style.overflow = "hidden";
-
-}
-
-
-
-/* CLOSE PDF */
 
 function closePDFViewer() {
 
